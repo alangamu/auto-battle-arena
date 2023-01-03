@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b3e3c109367334dbe002f15ca94c75, type: 3}
+  m_Name: 2HandSword
+  m_EditorClassIdentifier: 
+  WeareableTypeId: 10
+  FixedStats:
+  - {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  - {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
+  - {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
+  BoneParentName: 2HandSword
+  RunAnimationClipName: 2Hand-Sword-Run-Forward
+  DeathAnimationClipName: 2Hand-Sword-Death1
+  IdleAnimationClipName: 2Hand-Sword-Idle
+  AttackAnimationClipsNames:
+  - 2Hand-Sword-Attack1
+  - 2Hand-Sword-Attack2
+  - 2Hand-Sword-Attack3
+  - 2Hand-Sword-Attack4
+  - 2Hand-Sword-Attack5
+  - 2Hand-Sword-Attack6
+  - 2Hand-Sword-Attack7
+  - 2Hand-Sword-Attack8
+  - 2Hand-Sword-Attack9
+  - 2Hand-Sword-Attack10
+  Range: 2

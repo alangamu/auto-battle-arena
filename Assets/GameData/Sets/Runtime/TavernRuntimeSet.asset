@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa71a8d4dac25ac41a3fff941b3c1197, type: 3}
+  m_Name: TavernRuntimeSet
+  m_EditorClassIdentifier: 
+  Items:
+  - ThisHeroData:
+      HeroName: Monica
+      SkinColorIndex: 2
+      HairColorIndex: 2
+      EyeColorIndex: 3
+      ScarColorIndex: 3
+      BodyArtColorIndex: 1
+      HeadIndex: 3
+      HairIndex: 3
+      EyebrowsIndex: 1
+      FacialHairIndex: 11
+      StubbleColorIndex: 1
+      IsMale: 0
+      HeroId: 1
+      HeroInventory: []
+    ThisCombatStats:
+      Stats: 040000000300000004000000050000000400000003000000040000000300000002000000040000000200000004000000020000000100000004000000
+  - ThisHeroData:
+      HeroName: Logan
+      SkinColorIndex: 8
+      HairColorIndex: 11
+      EyeColorIndex: 4
+      ScarColorIndex: 3
+      BodyArtColorIndex: 7
+      HeadIndex: 22
+      HairIndex: 37
+      EyebrowsIndex: 3
+      FacialHairIndex: 18
+      StubbleColorIndex: 3
+      IsMale: 1
+      HeroId: 2
+      HeroInventory: []
+    ThisCombatStats:
+      Stats: 030000000600000005000000040000000500000002000000060000000500000004000000050000000600000005000000060000000400000006000000

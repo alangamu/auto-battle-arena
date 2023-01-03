@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8820c9234cc56ce43aa09c1c66eb639c, type: 3}
+  m_Name: Stage1
+  m_EditorClassIdentifier: 
+  StageNumber: 1
+  EnemyHeroes:
+  - ThisHeroData:
+      HeroName: Enemy 1
+      SkinColorIndex: 6
+      HairColorIndex: 2
+      EyeColorIndex: 3
+      ScarColorIndex: 1
+      BodyArtColorIndex: 1
+      HeadIndex: 16
+      HairIndex: 11
+      EyebrowsIndex: 2
+      FacialHairIndex: 5
+      StubbleColorIndex: 1
+      IsMale: 1
+      Stats: 0100000002000000030000000400000005000000
+      HeroId: 
+      HeroInventory: []
+  IsCompleted: 1
+  Rewards:
+  - Pct: 0.7
+    MinQty: 200
+    MaxQty: 500
+    RewardItem: {fileID: 11400000, guid: d8ad2a16de7fa3e4c8306e20512b5866, type: 2}
+    ItemRarity: {fileID: 0}
+  - Pct: 0.7
+    MinQty: 5
+    MaxQty: 15
+    RewardItem: {fileID: 11400000, guid: bc651b6f672273344b516808ec0fe0d7, type: 2}
+    ItemRarity: {fileID: 0}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 85efe33668c21df4ba778a671488c98d, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 09f2cd83f86c0a047922b84827d41b87, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: c30b8600ae5b89e4d8b5d596d286b6a3, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: b203e5810cb54104b96fe96eb4775062, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 827ba7be0c2091b42b1ff5efab321824, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.3
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 954c7f35b2dfb8d46b68cebe9362a1eb, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}

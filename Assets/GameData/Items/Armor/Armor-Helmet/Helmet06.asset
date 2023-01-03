@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca86b89975e94314e99826f3d870b811, type: 3}
+  m_Name: Helmet06
+  m_EditorClassIdentifier: 
+  ItemId: e5e72f18-1064-48e4-8961-2146594a4132
+  ItemName: Helmet06
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: 2c9cf7d996955c645bf8d9d89a6b7673, type: 3}
+  ItemType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  PrefabIndexOnHero: 6
+  ArmorType: {fileID: 11400000, guid: e06f953c2a414b0448e40b7bae0d2fb7, type: 2}

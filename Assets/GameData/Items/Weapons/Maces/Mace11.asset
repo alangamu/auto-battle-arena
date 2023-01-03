@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485e886cef36fe84499b95734285c4a4, type: 3}
+  m_Name: Mace11
+  m_EditorClassIdentifier: 
+  ItemId: a5ba7a6a-79f4-4625-84df-7fb6720163b2
+  ItemName: Mace11
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: c234c664511774645a8507ed0548e419, type: 3}
+  ItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  ItemPrefab: {fileID: 1943658915937524, guid: 3bff2d365f4e16843b4f7305d49075f5, type: 3}
+  WeaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}

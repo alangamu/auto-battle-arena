@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9108effe6a290c42bf8b163e418214a, type: 3}
+  m_Name: DatabaseMission
+  m_EditorClassIdentifier: 
+  Items:
+  - MissionId: 1
+    MissionName: Forgotten Marsh
+    MissionDifficulty: {fileID: 11400000, guid: c049f2d9c238c224b9e1ef4282de2885, type: 2}
+    MissionType: {fileID: 11400000, guid: 91618cefab71f654aa312fde4fa51977, type: 2}
+    GameCurrencyLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    LootLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    CrownFavorLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    SellPrice: 50
+    Owned: 1
+    MissionImage: {fileID: 0}
+    Rounds:
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+  - MissionId: 2
+    MissionName: Mountain Village
+    MissionDifficulty: {fileID: 11400000, guid: f7e66d5350070af48bd0cf55f9925905, type: 2}
+    MissionType: {fileID: 11400000, guid: 07a67a79b80f68f4597bbb50ae7492ac, type: 2}
+    GameCurrencyLevel: {fileID: 11400000, guid: 490b4b290942fb040aba02ac71732186, type: 2}
+    LootLevel: {fileID: 11400000, guid: 490b4b290942fb040aba02ac71732186, type: 2}
+    CrownFavorLevel: {fileID: 11400000, guid: 490b4b290942fb040aba02ac71732186, type: 2}
+    SellPrice: 200
+    Owned: 1
+    MissionImage: {fileID: 0}
+    Rounds:
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
+      - {fileID: 1155338616695142033, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+  - MissionId: 3
+    MissionName: Evergreen Forrest
+    MissionDifficulty: {fileID: 11400000, guid: 65cfcffe6df6ab44b983fccc853b6ba4, type: 2}
+    MissionType: {fileID: 11400000, guid: f6f954231651e834996fea6de3e93e85, type: 2}
+    GameCurrencyLevel: {fileID: 11400000, guid: 756c9315f29d56b4083f020d5d26682d, type: 2}
+    LootLevel: {fileID: 11400000, guid: 756c9315f29d56b4083f020d5d26682d, type: 2}
+    CrownFavorLevel: {fileID: 11400000, guid: 756c9315f29d56b4083f020d5d26682d, type: 2}
+    SellPrice: 500
+    Owned: 0
+    MissionImage: {fileID: 0}
+    Rounds:
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
+      - {fileID: 1155338616695142033, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+      - {fileID: 5037801433068118, guid: 0a287c285315d6b4f83a77c261811e2e, type: 3}
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
+      - {fileID: 1155338616695142033, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+      - {fileID: 5037801433068118, guid: 0a287c285315d6b4f83a77c261811e2e, type: 3}
+      - {fileID: 5596546869426158368, guid: 2597d7b548a4ffd42ae42515c31d341a, type: 3}
+    - Enemies:
+      - {fileID: 4586091471359507273, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
+      - {fileID: 5596546869426158368, guid: 2597d7b548a4ffd42ae42515c31d341a, type: 3}
+      - {fileID: 5037801433068118, guid: 0a287c285315d6b4f83a77c261811e2e, type: 3}
+      - {fileID: 1155338616695142033, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+      - {fileID: 4586091471359507273, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
+  - MissionId: 4
+    MissionName: Ruins of Fornost
+    MissionDifficulty: {fileID: 11400000, guid: c049f2d9c238c224b9e1ef4282de2885, type: 2}
+    MissionType: {fileID: 11400000, guid: f6f954231651e834996fea6de3e93e85, type: 2}
+    GameCurrencyLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    LootLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    CrownFavorLevel: {fileID: 11400000, guid: 5eaa1d2d0a699c748ae7c13757586255, type: 2}
+    SellPrice: 200
+    Owned: 1
+    MissionImage: {fileID: 0}
+    Rounds:
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+    - Enemies:
+      - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
+    - Enemies:
+      - {fileID: 4586091471359507273, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
+      - {fileID: 5596546869426158368, guid: 2597d7b548a4ffd42ae42515c31d341a, type: 3}
+      - {fileID: 5037801433068118, guid: 0a287c285315d6b4f83a77c261811e2e, type: 3}

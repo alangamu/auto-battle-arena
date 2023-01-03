@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d473277781d368d40b65fe08d6d9d45a, type: 3}
+  m_Name: HeroCombatRuntimeSet
+  m_EditorClassIdentifier: 
+  winStageGameEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
+  loseStageGameEvent: {fileID: 11400000, guid: c95bb02b46b3ce944988701779102bd9, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485e886cef36fe84499b95734285c4a4, type: 3}
+  m_Name: Sword11
+  m_EditorClassIdentifier: 
+  ItemId: c83db5d2-9942-44e2-9131-85b5cc19c6c6
+  ItemName: Sword11
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: 2bdf15753bba94142af450d6f3090880, type: 3}
+  ItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  ItemPrefab: {fileID: 1631607032641582, guid: 0c14f3ea30af4174ba288b3c2042f665, type: 3}
+  WeaponType: {fileID: 11400000, guid: b3ccee8261737804b96449e60bf8329f, type: 2}

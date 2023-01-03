@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485e886cef36fe84499b95734285c4a4, type: 3}
+  m_Name: Spear2Hand09
+  m_EditorClassIdentifier: 
+  ItemId: 7ced7ff2-d14c-43f1-910d-dfb4c878cf40
+  ItemName: Spear2Hand09
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: befe93db45b47534dba48e2ee41ad5f5, type: 3}
+  ItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  ItemPrefab: {fileID: 1740257702630048, guid: 01fea6cc6d70f874b9aa94876348b446, type: 3}
+  WeaponType: {fileID: 11400000, guid: 2306be51430c9134b82bea185a7c8a61, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485e886cef36fe84499b95734285c4a4, type: 3}
+  m_Name: Bow02
+  m_EditorClassIdentifier: 
+  ItemId: f2914e63-7e2b-41aa-b2b9-6342d0676c9b
+  ItemName: Bow02
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: 3a86d1397cbeb9343a4be5c6769d7211, type: 3}
+  ItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  ItemPrefab: {fileID: 1100521399403510, guid: 010effb2630c6cb4a8bec43beb694183, type: 3}
+  WeaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}

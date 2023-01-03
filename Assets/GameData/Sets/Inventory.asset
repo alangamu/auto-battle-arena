@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d852f721abb511d4295d680ded38151b, type: 3}
+  m_Name: Inventory
+  m_EditorClassIdentifier: 
+  Items:
+  - ItemRarityId: 0
+    ItemRefId: f3f22b94-af15-4d52-965d-8b4a3802d709
+    ItemTypeId: 7
+    ItemWeareableTypeId: 0
+    Amount: 7
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: bb3ecdef-3e8c-4462-a094-702341452c88
+    ItemTypeId: 7
+    ItemWeareableTypeId: 0
+    Amount: 11
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: 5f12f870-a07d-4d2f-a36f-fe5be815918f
+    ItemTypeId: 7
+    ItemWeareableTypeId: 0
+    Amount: 8
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: 1b82fe14-7bcd-4267-9914-6c4582b865c4
+    ItemTypeId: 5
+    ItemWeareableTypeId: 0
+    Amount: 2
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: 1fbb1a56-9e19-48ce-92ef-7d07f8bc0b88
+    ItemTypeId: 5
+    ItemWeareableTypeId: 0
+    Amount: 1
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: 03386626-628a-4869-931c-c99d653c3ee5
+    ItemTypeId: 5
+    ItemWeareableTypeId: 0
+    Amount: 4
+    IsStackable: 1
+    ItemStats: 
+  - ItemRarityId: 0
+    ItemRefId: df642655-f67d-4eeb-b6a9-7e553a79a517
+    ItemTypeId: 7
+    ItemWeareableTypeId: 0
+    Amount: 1
+    IsStackable: 1
+    ItemStats: 
+  addItemToInventory: {fileID: 11400000, guid: 91f00d942f2e47f44a4268c25cb59b19, type: 2}
+  removeItemFromInventory: {fileID: 11400000, guid: bc85d6d51e009794ba413153ce140b19, type: 2}
+  goldType: {fileID: 11400000, guid: 3c0ba024232e64c4a9311e38457e52e1, type: 2}
+  gold: {fileID: 11400000, guid: a85d08279266c7a48989d47139e61551, type: 2}

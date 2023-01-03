@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5f8402774b359468ca965ae94c4623, type: 3}
+  m_Name: Tavern
+  m_EditorClassIdentifier: 
+  Value: '{"Items":[{"ThisHeroData":{"HeroName":"Monica","SkinColorIndex":2,"HairColorIndex":2,"EyeColorIndex":3,"ScarColorIndex":3,"BodyArtColorIndex":1,"HeadIndex":3,"HairIndex":3,"EyebrowsIndex":1,"FacialHairIndex":11,"StubbleColorIndex":1,"IsMale":false,"Stats":[1,2,3,4,5,1,2,3,1,2,3,4,4,5,1],"HeroId":"1","HeroInventory":[]}},{"ThisHeroData":{"HeroName":"Logan","SkinColorIndex":8,"HairColorIndex":11,"EyeColorIndex":4,"ScarColorIndex":3,"BodyArtColorIndex":7,"HeadIndex":22,"HairIndex":37,"EyebrowsIndex":3,"FacialHairIndex":18,"StubbleColorIndex":3,"IsMale":true,"Stats":[6,5,4,3,3,2,1,6,5,6,5,4,5,6,2],"HeroId":"2","HeroInventory":[]}}]}'

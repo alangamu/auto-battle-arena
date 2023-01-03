@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca86b89975e94314e99826f3d870b811, type: 3}
+  m_Name: Shoulders12
+  m_EditorClassIdentifier: 
+  ItemId: d566cf31-a41d-4020-9eb9-a2b59c41dd47
+  ItemName: Shoulders12
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: 0f9a63bfe07d23c419a87eb875d59b73, type: 3}
+  ItemType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  PrefabIndexOnHero: 12
+  ArmorType: {fileID: 11400000, guid: 32e918cafc9a167449f3ff23a14156c8, type: 2}

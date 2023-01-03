@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8820c9234cc56ce43aa09c1c66eb639c, type: 3}
+  m_Name: Stage2
+  m_EditorClassIdentifier: 
+  StageNumber: 2
+  EnemyHeroes:
+  - ThisHeroData:
+      HeroName: Enemy 2
+      SkinColorIndex: 2
+      HairColorIndex: 8
+      EyeColorIndex: 0
+      ScarColorIndex: 1
+      BodyArtColorIndex: 6
+      HeadIndex: 4
+      HairIndex: 33
+      EyebrowsIndex: 2
+      FacialHairIndex: 1
+      StubbleColorIndex: 2
+      IsMale: 1
+      Stats: 010000000300000002000000040000000500000004000000030000000200000006000000050000000400000003000000020000000100000004000000
+      HeroId: 
+      HeroInventory: []
+  - ThisHeroData:
+      HeroName: Enemy 3
+      SkinColorIndex: 3
+      HairColorIndex: 7
+      EyeColorIndex: 1
+      ScarColorIndex: 2
+      BodyArtColorIndex: 3
+      HeadIndex: 15
+      HairIndex: 6
+      EyebrowsIndex: 0
+      FacialHairIndex: 4
+      StubbleColorIndex: 2
+      IsMale: 0
+      Stats: 050000000300000004000000030000000100000006000000040000000500000003000000060000000200000005000000030000000500000002000000
+      HeroId: 
+      HeroInventory: []
+  IsCompleted: 0
+  Rewards:
+  - Pct: 0.7
+    MinQty: 500
+    MaxQty: 800
+    RewardItem: {fileID: 11400000, guid: d8ad2a16de7fa3e4c8306e20512b5866, type: 2}
+    ItemRarity: {fileID: 0}
+  - Pct: 0.7
+    MinQty: 10
+    MaxQty: 20
+    RewardItem: {fileID: 11400000, guid: bc651b6f672273344b516808ec0fe0d7, type: 2}
+    ItemRarity: {fileID: 0}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: d12da2a807ca4944faf32812c2e06efe, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: f068afd574e41734eb4b2820bf3b62b3, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: d17c98433204eff4cb23221ed3843c09, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 7634260d937535240bb15da4fce5fe4b, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: f69dad649c157e844b71530a115da5a1, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 8a257baae09e5824d9a01800d1203997, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 622c5523fa363a74594c45892cc04584, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 622c5523fa363a74594c45892cc04584, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}

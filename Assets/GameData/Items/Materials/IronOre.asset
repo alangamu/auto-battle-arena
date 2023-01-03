@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d225daf83758d4db130dc75b0de5b0, type: 3}
+  m_Name: IronOre
+  m_EditorClassIdentifier: 
+  ItemId: bb3ecdef-3e8c-4462-a094-702341452c88
+  ItemName: Iron Ore
+  ItemDescription: 
+  ItemSprite: {fileID: 0}
+  ItemType: {fileID: 11400000, guid: 6d51f48240c6cdd4a99463275e38d652, type: 2}
+  IsStackable: 1

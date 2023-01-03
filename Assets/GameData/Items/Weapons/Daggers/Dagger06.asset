@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485e886cef36fe84499b95734285c4a4, type: 3}
+  m_Name: Dagger06
+  m_EditorClassIdentifier: 
+  ItemId: 037fef13-1602-4398-ac65-95bde0bad37c
+  ItemName: Dagger06
+  ItemDescription: 
+  ItemSprite: {fileID: 21300000, guid: 92e522b9abdb7a9479550407f3cc7543, type: 3}
+  ItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  IsStackable: 0
+  RecipeIngredients: []
+  ItemPrefab: {fileID: 1525315471275908, guid: 7bc977ffb915da94b9fda3919d561229, type: 3}
+  WeaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
