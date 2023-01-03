@@ -137,16 +137,6 @@ namespace AutoFantasy.Scripts
             }
         }
 
-        private void TakeOffHelmet()
-        {
-            Generate();
-        }
-
-        private void WearHelmet()
-        {
-            Generate();
-        }
-
         private void OnEnable()
         {
             if (_parentGameObject.TryGetComponent(out _heroController))
