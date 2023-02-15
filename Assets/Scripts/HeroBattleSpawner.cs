@@ -17,8 +17,8 @@ namespace AutoFantasy.Scripts
         private GameEvent spawnHeroes;
         [SerializeField] 
         private GameObject heroPrefab;
-        [SerializeField]
-        private GameObjectGameEvent heroSetEnemyEvent;
+        //[SerializeField]
+        //private GameObjectGameEvent heroSetEnemyEvent;
         [SerializeField]
         private TeamsSO teams;
         [SerializeField]
@@ -49,23 +49,24 @@ namespace AutoFantasy.Scripts
                 Transform spawnPoint = heroesTransforms[i];
                 GameObject hero = Instantiate(heroPrefab, spawnPoint.position, spawnPoint.rotation, transform);
 
-                Hero hetoToSpawn = heroes.Items.Find(x => x.GetHeroId() == heroesToSpawn[i]);
+                Hero heroToSpawn = heroes.Items.Find(x => x.GetHeroId() == heroesToSpawn[i]);
 
                 if (hero.TryGetComponent(out IHeroController heroController))
                 {
-                    heroController.SetHero(hetoToSpawn);
+                    heroController.SetHero(heroToSpawn);
                 }
 
                 //heroSetEvent.Raise(hero, hetoToSpawn);
-                heroSetEnemyEvent.Raise(hero);
+                //heroSetEnemyEvent.Raise(hero);
 
                 if (hero.TryGetComponent(out ICombatController combatController))
                 {
-                    combatController.SetCombatStats(hetoToSpawn.ThisCombatStats);
+                    combatController.SetCombatStats(heroToSpawn.ThisCombatStats);
+                    //combatController.SetHero(heroToSpawn);
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {
-                    var heroInventory = hetoToSpawn.ThisHeroData.HeroInventory;
+                    var heroInventory = heroToSpawn.ThisHeroData.HeroInventory;
                     WeaponSO weapon = null;
                     foreach (var item in heroInventory)
                     {

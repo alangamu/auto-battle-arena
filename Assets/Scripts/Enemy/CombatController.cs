@@ -1,4 +1,5 @@
-﻿using AutoFantasy.Scripts.Interfaces;
+﻿using AutoFantasy.Scripts.Heroes;
+using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
@@ -57,7 +58,7 @@ namespace AutoFantasy.Scripts.Enemy
             if (_targetCombatController != null)
             {
                 int totalDamage = GetDamagePoints();
-                _targetCombatController.GetDamage(totalDamage, _isCriticalHit);
+                _targetCombatController.GettingDamage(totalDamage, _isCriticalHit);
             }
         }
 
@@ -69,13 +70,13 @@ namespace AutoFantasy.Scripts.Enemy
             if (_targetCombatController != null)
             {
                 Arrow projectile = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, _projectileSpawnPoint.rotation);
-                projectile.Launch(_targetCombatController.GetImpactTransform());
+                //projectile.Launch(_targetCombatController.GetImpactTransform());
                 int totalDamage = GetDamagePoints();
-                _targetCombatController.GetDamage(totalDamage, _isCriticalHit);
+                _targetCombatController.GettingDamage(totalDamage, _isCriticalHit);
             }
         }
 
-        public void GetDamage(int amount, bool isCritical)
+        public void GettingDamage(int amount, bool isCritical)
         {
             OnGetHit?.Invoke(amount, isCritical);
         }
@@ -123,7 +124,7 @@ namespace AutoFantasy.Scripts.Enemy
         private void HealthController_OnDeath()
         {
             _healthController.OnDeath -= HealthController_OnDeath;
-            heroCombatRuntimeSet.KillThisHero(this);
+            //heroCombatRuntimeSet.KillThisHero(this);
             OnDeath?.Invoke();
             //TODO: find a better way
             Invoke(nameof(Death), 1f);
@@ -136,11 +137,11 @@ namespace AutoFantasy.Scripts.Enemy
 
         private void SetEnemy()
         {
-            _targetCombatController = enemyCombatRuntimeSet.GetClosestEnemy(transform.position);
+            //_targetCombatController = enemyCombatRuntimeSet.GetClosestEnemy(transform.position);
             if (_targetCombatController != null)
             {
-                OnSetTarget?.Invoke(_targetCombatController.GetImpactTransform());
-                _targetCombatController.OnDeath += TargetCombatController_OnDeath;
+                //OnSetTarget?.Invoke(_targetCombatController.GetImpactTransform());
+                //_targetCombatController.OnDeath += TargetCombatController_OnDeath;
                 return;
             }
             OnSetIdle?.Invoke();
@@ -148,7 +149,7 @@ namespace AutoFantasy.Scripts.Enemy
 
         private void TargetCombatController_OnDeath()
         {
-            _targetCombatController.OnDeath -= TargetCombatController_OnDeath;
+            //_targetCombatController.OnDeath -= TargetCombatController_OnDeath;
             SetEnemy();
         }
 
@@ -170,6 +171,16 @@ namespace AutoFantasy.Scripts.Enemy
             int totalDamage = (int)(heroDamage * criticalMult) - targetDefense;
 
             return totalDamage < 0 ? 0 : totalDamage;
+        }
+
+        public Hero GetHero()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetHero(Hero hero)
+        {
+            throw new NotImplementedException();
         }
     }
 }

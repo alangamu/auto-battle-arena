@@ -50,7 +50,7 @@ namespace AutoFantasy.Scripts
             }
         }
 
-        public void SetDificulty(MissionDifficultySO missionDifficulty)
+        public void SetDifficulty(MissionDifficultySO missionDifficulty)
         {
             return;
         }

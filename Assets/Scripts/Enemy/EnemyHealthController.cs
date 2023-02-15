@@ -49,7 +49,7 @@ namespace AutoFantasy.Scripts.Enemy
             }
         }
 
-        public void SetDificulty(MissionDifficultySO missionDifficulty)
+        public void SetDifficulty(MissionDifficultySO missionDifficulty)
         {
             float health = _currentHealth * missionDifficulty.DifficultyMultiplier;
             _currentHealth = (int)health;

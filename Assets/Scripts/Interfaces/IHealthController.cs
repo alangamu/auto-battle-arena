@@ -8,6 +8,6 @@ namespace AutoFantasy.Scripts.Interfaces
         event Action OnDeath;
         event Action<float> OnHealthChange;
 
-        void SetDificulty(MissionDifficultySO missionDifficulty);
+        void SetDifficulty(MissionDifficultySO missionDifficulty);
     }
 }

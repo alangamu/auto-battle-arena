@@ -1,5 +1,4 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects;
-using AutoFantasy.Scripts.ScriptableObjects.Events;
+﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace AutoFantasy.Scripts
     public class StageHeroSpawnerManager : MonoBehaviour
     {
         [SerializeField]
-        private IntVariable stageToLoad;
+        private IntVariable _stageToLoad;
         [SerializeField]
         private DatabaseStage databaseStage;
         [SerializeField]

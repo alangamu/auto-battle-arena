@@ -7,6 +7,8 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
     public abstract class RuntimeSet<T> : ScriptableObject
     {
         public Action OnChange;
+        public Action<T> OnAdd;
+        public Action<T> OnRemove;
         public List<T> Items = new List<T>();
 
         public virtual void Add(T thing)
@@ -15,6 +17,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             {
                 Items.Add(thing);
                 OnChange?.Invoke();
+                OnAdd?.Invoke(thing);
             }
         }
 
@@ -24,6 +27,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             { 
                 Items.Remove(thing);
                 OnChange?.Invoke();
+                OnRemove?.Invoke(thing);
             }
         }
 

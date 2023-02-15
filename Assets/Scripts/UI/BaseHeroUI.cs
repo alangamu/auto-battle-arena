@@ -48,7 +48,10 @@ namespace AutoFantasy.Scripts.UI
             var tex = new RenderTexture(512, 512, 16);
             heroCamera.targetTexture = tex;
             rawImage.texture = tex;
-            nameText.text = hero.HeroName;
+            if (nameText != null)
+            {
+                nameText.text = hero.HeroName;
+            }
         }
 
         public ActiveHeroSO GetActiveHero()

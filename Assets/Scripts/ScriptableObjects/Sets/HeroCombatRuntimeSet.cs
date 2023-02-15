@@ -16,43 +16,48 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             Items.Clear();    
         }
 
-        public void KillThisHero(ICombatController combatController)
+        public ICombatController GetRandomHero()
         {
-            if (Items.Contains(combatController))
-            {
-                Remove(combatController);
-                OnHeroDeath?.Invoke(combatController.GetRewards());
-
-                if (Items.Count == 0)
-                {
-                    OnHeroCombatEmpty?.Invoke();
-                }
-            }
+            return Items[UnityEngine.Random.Range(0, Items.Count)];
         }
 
-        public ICombatController GetClosestEnemy(Vector3 currentPosition)
-        {
-            if (Items.Count == 0)
-            {
-                return null;
-            }
+        //public void KillThisHero(ICombatController combatController)
+        //{
+        //    if (Items.Contains(combatController))
+        //    {
+        //        Remove(combatController);
+        //        OnHeroDeath?.Invoke(combatController.GetRewards());
 
-            Transform bestTarget = null;
-            float closestDistanceSqr = Mathf.Infinity;
-            int enemyIndex = 0;
-            for (int i = 0; i < Items.Count; i++)
-            {
-                Vector3 directionToTarget = Items[i].GetImpactTransform().position - currentPosition;
-                float dSqrToTarget = directionToTarget.sqrMagnitude;
-                if (dSqrToTarget < closestDistanceSqr)
-                {
-                    closestDistanceSqr = dSqrToTarget;
-                    bestTarget = Items[i].GetImpactTransform();
-                    enemyIndex = i;
-                }
-            }
+        //        if (Items.Count == 0)
+        //        {
+        //            OnHeroCombatEmpty?.Invoke();
+        //        }
+        //    }
+        //}
 
-            return bestTarget == null ? null : Items[enemyIndex];
-        }
+        //public ICombatController GetClosestEnemy(Vector3 currentPosition)
+        //{
+        //    if (Items.Count == 0)
+        //    {
+        //        return null;
+        //    }
+
+        //    Transform bestTarget = null;
+        //    float closestDistanceSqr = Mathf.Infinity;
+        //    int enemyIndex = 0;
+        //    for (int i = 0; i < Items.Count; i++)
+        //    {
+        //        Vector3 directionToTarget = Items[i].GetImpactTransform().position - currentPosition;
+        //        float dSqrToTarget = directionToTarget.sqrMagnitude;
+        //        if (dSqrToTarget < closestDistanceSqr)
+        //        {
+        //            closestDistanceSqr = dSqrToTarget;
+        //            bestTarget = Items[i].GetImpactTransform();
+        //            enemyIndex = i;
+        //        }
+        //    }
+
+        //    return bestTarget == null ? null : Items[enemyIndex];
+        //}
     }
 }

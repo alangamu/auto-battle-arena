@@ -47,7 +47,7 @@ namespace AutoFantasy.Scripts
 
                 if (enemy.TryGetComponent(out IHealthController healthController))
                 {
-                    healthController.SetDificulty(mission.MissionDifficulty);
+                    healthController.SetDifficulty(mission.MissionDifficulty);
                 }
             }
         }
