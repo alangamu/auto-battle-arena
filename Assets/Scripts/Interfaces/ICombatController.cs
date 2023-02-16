@@ -7,20 +7,20 @@ namespace AutoFantasy.Scripts.Interfaces
 {
     public interface ICombatController 
     {
-        //event Action<Transform> OnSetTarget;
-        //event Action OnSetIdle;
-        //event Action OnDeath;
+        //event Action<Transform> OnAttackTarget;
+        event Action OnSetIdle;
+        event Action OnSetReadyToAttack;
+        event Action OnDeath;
         event Action<int, bool> OnGetHit;
         CombatStats GetCombatStats();
         void SetCombatStats(CombatStats combatStats);
         void GettingDamage(int amount, bool isCritical);
         //List<Reward> GetRewards();
         //Transform GetImpactTransform();
-        //Hero GetHero();
-        //void SetHero(Hero hero);
+        Hero GetHero();
+        void SetHero(Hero hero);
         //bool IsSelected();
 
-
-        //void SetReadyToAttack();
+        void SetReadyToAttack();
     }
 }

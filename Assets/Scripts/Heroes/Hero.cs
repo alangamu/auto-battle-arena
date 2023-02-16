@@ -1,4 +1,3 @@
-using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using System;
 using System.Collections.Generic;

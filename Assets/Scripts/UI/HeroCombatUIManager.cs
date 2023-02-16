@@ -1,5 +1,5 @@
-﻿using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
+﻿using AutoFantasy.Scripts.ScriptableObjects;
+using AutoFantasy.Scripts.ScriptableObjects.Events;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.UI
@@ -7,17 +7,15 @@ namespace AutoFantasy.Scripts.UI
     public class HeroCombatUIManager : MonoBehaviour
     {
         [SerializeField]
-        private ActiveHeroSO _activeCombatHero;
+        private GameObject _heroContainer;
         [SerializeField]
-        private ActiveHeroSO _activeCombatEnemy;
-        //[SerializeField]
-        //private Transform _heroContainer;
-
-        private IHeroController heroController;
+        private GameEvent _heroAttackEvent;
+        [SerializeField]
+        private ActiveHeroSO _activeHero;
 
         public void Attack()
         {
-            
+            _heroAttackEvent.Raise();
         }
 
         public void Skill()
@@ -30,23 +28,31 @@ namespace AutoFantasy.Scripts.UI
 
         }
 
+        private void Start()
+        {
+            HidePanel();
+        }
+
         private void OnEnable()
         {
-            _activeCombatHero.OnHeroChanged += ChangeHero;
-            TryGetComponent(out heroController);
+            _activeHero.OnHeroChanged += ShowPanel;
+            _heroAttackEvent.OnRaise += HidePanel;
         }
 
         private void OnDisable()
         {
-            _activeCombatHero.OnHeroChanged -= ChangeHero;
+            _activeHero.OnHeroChanged -= ShowPanel;
+            _heroAttackEvent.OnRaise -= HidePanel;
         }
 
-        private void ChangeHero()
+        private void ShowPanel()
         {
-            if (heroController != null)
-            {
-                heroController.SetHero(_activeCombatHero.ActiveHero);
-            }
+            _heroContainer.SetActive(true);
+        }
+
+        private void HidePanel()
+        {
+            _heroContainer.SetActive(false);
         }
     }
 }

@@ -2,23 +2,21 @@
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
 {
     public class CombatControllerTurns : MonoBehaviour, ICombatController
     {
-        //public event Action<Transform> OnSetTarget;
-        //public event Action OnSetIdle;
-        //public event Action OnDeath;
-        //public event Action<int, bool> OnGetHit;
+        public event Action<Transform> OnAttackTarget;
+        public event Action OnSetIdle;
+        public event Action OnDeath;
+        public event Action<int, bool> OnGetHit;
+        public event Action OnSetReadyToAttack;
 
         public CombatStats GetCombatStats() => _combatStats;
 
-        //public void GetDamage(int amount, bool isCritical) => OnGetHit?.Invoke(amount, isCritical);
-
-        //public Hero GetHero() => _hero;
+        public Hero GetHero() => _hero;
 
         //public Transform GetImpactTransform() => _impactPoint;
 
@@ -26,15 +24,13 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private CombatStats _combatStats;
 
-        public event Action<int, bool> OnGetHit;
-
         //[SerializeField]
         //private Transform _impactPoint;
 
-        //[SerializeField]
-        //private HeroCombatRuntimeSet _heroCombatRuntimeSet;
+        [SerializeField]
+        private HeroCombatRuntimeSet _heroCombatRuntimeSet;
 
-        //private Hero _hero;
+        private Hero _hero;
         //private IRewardTable _rewardTable;
 
         public void SetCombatStats(CombatStats newCombatStats)
@@ -52,29 +48,30 @@ namespace AutoFantasy.Scripts
         //    return new List<Reward>();
         //}
 
-        //public void SetHero(Hero hero)
-        //{
-        //    _hero = hero;
-        //}
-
-        //private void OnEnable()
-        //{
-        //    _heroCombatRuntimeSet.Add(this);
-        //}
-
-        //private void OnDisable()
-        //{
-        //    _heroCombatRuntimeSet.Remove(this);
-        //}
-
-        public void SetReadyToAttack()
+        public void SetHero(Hero hero)
         {
-            throw new NotImplementedException();
+            _hero = hero;
+        }
+
+        private void OnEnable()
+        {
+            _heroCombatRuntimeSet.Add(this);
+        }
+
+        private void OnDisable()
+        {
+            _heroCombatRuntimeSet.Remove(this);
         }
 
         public void GettingDamage(int amount, bool isCritical)
         {
-            throw new NotImplementedException();
+            print($"gameobject {gameObject.name} getting {amount} damage, is critical? -> {isCritical}");
+            OnGetHit?.Invoke(amount, isCritical);
+        }
+
+        public void SetReadyToAttack()
+        {
+            OnSetReadyToAttack?.Invoke();
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using AutoFantasy.Scripts.Heroes;
-using AutoFantasy.Scripts.Interfaces;
+﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
+using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -48,7 +49,10 @@ namespace AutoFantasy.Scripts
         private HeroStatSO _attackSpeedStat;
         [SerializeField]
         private GameEvent _nextAttackBeginEvent;
+        [SerializeField]
         private GameEvent _heroAttackEvent;
+        [SerializeField]
+        private FloatVariable _attackDelayVariable;
 
         private List<HeroAttackSpeedContainer> _allHeroes;
         private int _currentIndex = 0;
@@ -71,17 +75,19 @@ namespace AutoFantasy.Scripts
             _heroAttackEvent.OnRaise -= PerformHeroAttack;
         }
 
-        private void PerformHeroAttack()
+        private async void PerformHeroAttack()
         {
+            await Task.Delay((int)(_attackDelayVariable.Value * 1000));
             int damagePoints = GetDamagePoints();
             _activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
+            NextHeroReadyToAttack();
         }
 
         private void NextHeroReadyToAttack()
         {
             _activeHero = _allHeroes[_currentIndex++ % _allHeroes.Count];
 
-            print($"heroAttackSpeedContainer.AttackSpeed {_activeHero.AttackSpeed}");
+            print($"active hero {_activeHero.CombatController} AttackSpeed {_activeHero.AttackSpeed}");
 
             if (!_activeHero.IsPlayer)
             {
@@ -90,10 +96,15 @@ namespace AutoFantasy.Scripts
                 return;
             }
 
-            if (_activeEnemy == null)
-            {
+            ICombatController combatController = _activeHero.CombatController;
+            combatController.SetReadyToAttack();
+            _activeCombatHero.SetHero(combatController.GetHero());
+
+                //TODO: active enemy with click
+                //if (_activeEnemy == null)
+                //{
                 _activeEnemy = _enemyCombatRuntimeSet.GetRandomHero();
-            }
+            //}
         }
 
         private void SetActiveBattleHero()
@@ -105,7 +116,7 @@ namespace AutoFantasy.Scripts
                 heroContainer.AttackSpeed = item.GetCombatStats().StatCount(_attackSpeedStat.StatId);
                 heroContainer.CombatController = item;
                 heroContainer.IsPlayer = true;
-                //heroContainer.ThisHero = item.GetHero();
+                heroContainer.CombatController.SetHero(item.GetHero());
                 _allHeroes.Add(heroContainer);
                 print($"attack speed hero {heroContainer.AttackSpeed}");
             }
@@ -117,7 +128,7 @@ namespace AutoFantasy.Scripts
                 heroContainer.AttackSpeed = item.GetCombatStats().StatCount(_attackSpeedStat.StatId);
                 heroContainer.CombatController = item;
                 heroContainer.IsPlayer = false;
-                //heroContainer.ThisHero = item.GetHero();
+                //heroContainer.CombatController.SetHero(item.GetHero());
                 _allHeroes.Add(heroContainer);
                 print($"attack speed enemy {heroContainer.AttackSpeed}");
             }

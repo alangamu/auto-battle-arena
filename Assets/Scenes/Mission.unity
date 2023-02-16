@@ -471,8 +471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38489de2985fbf04ab41d72fde748d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeCombatHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
-  _activeCombatEnemy: {fileID: 11400000, guid: af1449714ad465a40911fe913c47e104, type: 2}
+  _heroContainer: {fileID: 1387939182}
+  _heroAttackEvent: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
+  _activeHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
 --- !u!1 &584934454
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,13 +797,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb38218ab7a7bf4caeef11e39bbaece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPowerStat: {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  defenseStat: {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
+  criticalChanceStat: {fileID: 11400000, guid: 0917e9a52924753458e8593dca1828db, type: 2}
+  criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
   _startFightEvent: {fileID: 11400000, guid: 539b97498d926554baaa81e01760e5a2, type: 2}
   _activeCombatHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
   _activeCombatEnemy: {fileID: 11400000, guid: af1449714ad465a40911fe913c47e104, type: 2}
-  heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
-  enemyCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
-  attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
+  _enemyCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
+  _attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
   _nextAttackBeginEvent: {fileID: 11400000, guid: 5bd3461cd96f09f4985aa6bc794b66e3, type: 2}
+  _heroAttackEvent: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
+  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
 --- !u!1 &970906067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1387939183}
     m_Modifications:
+    - target: {fileID: 704357114922276953, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_Name
+      value: AttackButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3099744672755859696, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2609,6 +2620,34 @@ PrefabInstance:
     - target: {fileID: 4869804595969962243, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 540425329}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AutoFantasy.Scripts.UI.HeroCombatUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101610491497473297, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5547725501022187887, guid: 18699cdf1f49b284da4b3f4b8ee76b8d, type: 3}
       propertyPath: m_Pivot.x

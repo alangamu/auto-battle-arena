@@ -11,10 +11,11 @@ namespace AutoFantasy.Scripts.Enemy
 {
     public class CombatController : MonoBehaviour, ICombatController
     {
-        public event Action<Transform> OnSetTarget;
+        public event Action<Transform> OnAttackTarget;
         public event Action OnSetIdle;
         public event Action<int, bool> OnGetHit;
         public event Action OnDeath;
+        public event Action OnSetReadyToAttack;
 
         public CombatStats GetCombatStats() => combatStats;
 
@@ -179,6 +180,11 @@ namespace AutoFantasy.Scripts.Enemy
         }
 
         public void SetHero(Hero hero)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetReadyToAttack()
         {
             throw new NotImplementedException();
         }

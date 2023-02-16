@@ -347,8 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combatStats:
-    Stats: 02000000020000000200000002000000
-  _impactPoint: {fileID: 0}
+    Stats: 01000000010000000200000002000000
   _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
 --- !u!1 &3589369347062046335
 GameObject:

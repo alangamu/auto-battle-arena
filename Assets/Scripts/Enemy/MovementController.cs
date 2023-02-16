@@ -32,7 +32,7 @@ namespace AutoFantasy.Scripts.Enemy
 
             if (TryGetComponent(out _combatController))
             {
-                _combatController.OnSetTarget += CombatController_OnSetTarget;
+                //_combatController.OnAttackTarget += CombatController_OnSetTarget;
             }
             if (TryGetComponent(out _weaponController))
             {
@@ -51,7 +51,7 @@ namespace AutoFantasy.Scripts.Enemy
 
             if (_combatController != null)
             {
-                _combatController.OnSetTarget -= CombatController_OnSetTarget;
+                //_combatController.OnAttackTarget -= CombatController_OnSetTarget;
             }
             if (_weaponController != null)
             {
