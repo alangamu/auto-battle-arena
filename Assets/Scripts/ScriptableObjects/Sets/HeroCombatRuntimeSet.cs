@@ -18,22 +18,26 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         public ICombatController GetRandomHero()
         {
+            if (Items.Count == 0)
+            {
+                return null;
+            }
             return Items[UnityEngine.Random.Range(0, Items.Count)];
         }
 
-        //public void KillThisHero(ICombatController combatController)
-        //{
-        //    if (Items.Contains(combatController))
-        //    {
-        //        Remove(combatController);
-        //        OnHeroDeath?.Invoke(combatController.GetRewards());
+        public void KillThisHero(ICombatController combatController)
+        {
+            if (Items.Contains(combatController))
+            {
+                Remove(combatController);
+                OnHeroDeath?.Invoke(combatController.GetRewards());
 
-        //        if (Items.Count == 0)
-        //        {
-        //            OnHeroCombatEmpty?.Invoke();
-        //        }
-        //    }
-        //}
+                if (Items.Count == 0)
+                {
+                    OnHeroCombatEmpty?.Invoke();
+                }
+            }
+        }
 
         //public ICombatController GetClosestEnemy(Vector3 currentPosition)
         //{

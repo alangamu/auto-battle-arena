@@ -19,18 +19,13 @@ namespace AutoFantasy.Scripts.Heroes
 
         private WeaponTypeSO _weaponType;
         private IMovementController _movementController;
-        private ICombatController _combatController;
-        private float _attackSpeed = 1f;
         private IWeaponController _weaponController;
+        private IHealthController _healthController;
 
         public void SetWeaponType(WeaponTypeSO weaponType)
         {
             _weaponType = weaponType;
             SetIdle();
-            if (_combatController != null)
-            {
-                _attackSpeed = attackSpeedStat.BaseValue + (attackSpeedStat.MultiplierFactor * _combatController.GetCombatStats().StatCount(attackSpeedStat.StatId));
-            }
         }
 
         private void OnEnable()
@@ -42,9 +37,9 @@ namespace AutoFantasy.Scripts.Heroes
             {
                 _weaponController.OnSetWeapon += OnSetWeapon;
             }
-            if (TryGetComponent(out _combatController))
+            if (TryGetComponent(out _healthController))
             {
-                _combatController.OnDeath += OnDeath;
+                _healthController.OnDeath += OnDeath;
             }
             if (TryGetComponent(out _movementController))
             {
@@ -69,9 +64,9 @@ namespace AutoFantasy.Scripts.Heroes
                 _movementController.OnAttackTarget -= OnAttackTarget;
                 _movementController.OnSetIdle -= SetIdle;
             }
-            if (_combatController != null)
+            if (_healthController != null)
             {
-                _combatController.OnDeath -= OnDeath;
+                _healthController.OnDeath -= OnDeath;
             }
         }
 
@@ -85,27 +80,26 @@ namespace AutoFantasy.Scripts.Heroes
             int randomIndex = Random.Range(0, _weaponType.AttackAnimationClipsNames.Count);
             string randomClipName = _weaponType.AttackAnimationClipsNames[randomIndex];
 
-            Animate(randomClipName, _attackSpeed);
+            Animate(randomClipName);
         }
 
         private void OnDeath()
         {
-            Animate(_weaponType.DeathAnimationClipName, 1f);
+            Animate(_weaponType.DeathAnimationClipName);
         }
 
         private void OnStartRunning()
         {
-            Animate(_weaponType.RunAnimationClipName, 1f);
+            Animate(_weaponType.RunAnimationClipName);
         }
 
         private void SetIdle()
         {
-            Animate(_weaponType.IdleAnimationClipName, 1f);
+            Animate(_weaponType.IdleAnimationClipName);
         }
 
-        private void Animate(string animationKeyName, float playSpeed)
+        private void Animate(string animationKeyName)
         {
-            animator.speed = playSpeed;
             animator.Play(animationKeyName);
         }
     }

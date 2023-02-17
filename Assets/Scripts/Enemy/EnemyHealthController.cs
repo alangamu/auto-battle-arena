@@ -15,6 +15,7 @@ namespace AutoFantasy.Scripts.Enemy
 
         private ICombatController _combatController;
 
+        [SerializeField]
         private int _currentHealth = 1000;
         private int _maxHealth = 1000;
 

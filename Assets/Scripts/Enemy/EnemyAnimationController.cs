@@ -18,18 +18,11 @@ namespace AutoFantasy.Scripts.Enemy
         private GameEvent heroWinEvent;
 
         private IMovementController _movementController;
-        private ICombatController _combatController;
-        private float _attackSpeed = 1f;
+        private IHealthController _healthController;
 
         private void OnEnable()
         {
             heroWinEvent.OnRaise += SetIdle;
-
-            if (TryGetComponent(out _combatController))
-            {
-                _attackSpeed = attackSpeedStat.BaseValue + (attackSpeedStat.MultiplierFactor * _combatController.GetCombatStats().StatCount(attackSpeedStat.StatId));
-                _combatController.OnDeath += CombatController_OnDeath;
-            }
 
             if (TryGetComponent(out _movementController))
             {
@@ -37,9 +30,14 @@ namespace AutoFantasy.Scripts.Enemy
                 _movementController.OnAttackTarget += AttackTarget;
                 _movementController.OnSetIdle += SetIdle;
             }
+
+            if (TryGetComponent(out _healthController))
+            {
+                _healthController.OnDeath += OnDeath;
+            }
         }
 
-        private void CombatController_OnDeath()
+        private void OnDeath()
         {
             Animate(weaponType.DeathAnimationClipName, 1f);
         }
@@ -54,9 +52,9 @@ namespace AutoFantasy.Scripts.Enemy
                 _movementController.OnAttackTarget -= AttackTarget;
                 _movementController.OnSetIdle -= SetIdle;
             }
-            if (_combatController != null)
+            if (_healthController != null)
             {
-                _combatController.OnDeath -= CombatController_OnDeath;
+                _healthController.OnDeath -= OnDeath;
             }
         }
 
@@ -65,7 +63,7 @@ namespace AutoFantasy.Scripts.Enemy
             int randomIndex = Random.Range(0, weaponType.AttackAnimationClipsNames.Count);
             string randomClipName = weaponType.AttackAnimationClipsNames[randomIndex];
 
-            Animate(randomClipName, _attackSpeed);
+            Animate(randomClipName, 1f);
         }
 
         private void StartRunning()

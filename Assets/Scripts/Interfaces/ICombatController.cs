@@ -1,5 +1,6 @@
 using AutoFantasy.Scripts.Heroes;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Interfaces
@@ -13,11 +14,10 @@ namespace AutoFantasy.Scripts.Interfaces
         CombatStats GetCombatStats();
         void SetCombatStats(CombatStats combatStats);
         void GettingDamage(int amount, bool isCritical);
-        //List<Reward> GetRewards();
+        List<Reward> GetRewards();
         Transform GetImpactTransform();
         Hero GetHero();
         void SetHero(Hero hero);
-        //bool IsSelected();
         void PerformAttack(Transform target);
         void SetReadyToAttack();
         void Hit();

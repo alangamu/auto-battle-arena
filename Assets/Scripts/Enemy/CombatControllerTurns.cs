@@ -2,6 +2,7 @@
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -10,9 +11,9 @@ namespace AutoFantasy.Scripts
     {
         public event Action<Transform> OnAttackTarget;
         public event Action OnSetIdle;
-        public event Action OnDeath;
         public event Action<int, bool> OnGetHit;
         public event Action OnSetReadyToAttack;
+        public event Action OnDeath;
 
         public CombatStats GetCombatStats() => _combatStats;
 
@@ -31,22 +32,13 @@ namespace AutoFantasy.Scripts
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
 
         private Hero _hero;
-        //private IRewardTable _rewardTable;
+        private IRewardTable _rewardTable;
+        private IHealthController _healthController;
 
         public void SetCombatStats(CombatStats newCombatStats)
         {
             _combatStats = newCombatStats;
         }
-
-        //public List<Reward> GetRewards()
-        //{
-        //    if (TryGetComponent(out _rewardTable))
-        //    {
-        //        return _rewardTable.GetRewards();
-        //    }
-
-        //    return new List<Reward>();
-        //}
 
         public void SetHero(Hero hero)
         {
@@ -55,6 +47,7 @@ namespace AutoFantasy.Scripts
 
         public void GettingDamage(int amount, bool isCritical)
         {
+            print("getting hit");
             OnGetHit?.Invoke(amount, isCritical);
         }
 
@@ -73,14 +66,47 @@ namespace AutoFantasy.Scripts
             
         }
 
+        public List<Reward> GetRewards()
+        {
+            if (TryGetComponent(out _rewardTable))
+            {
+                return _rewardTable.GetRewards();
+            }
+
+            return new List<Reward>();
+        }
+
         private void OnEnable()
         {
             _heroCombatRuntimeSet.Add(this);
+            if (TryGetComponent(out _healthController))
+            {
+                _healthController.OnDeath += KillThisHero;
+            }
         }
 
         private void OnDisable()
         {
             _heroCombatRuntimeSet.Remove(this);
+            if (_healthController != null)
+            {
+                _healthController.OnDeath -= KillThisHero;
+            }
+        }
+
+        private void KillThisHero()
+        {
+            print("kill hero");
+            _healthController.OnDeath -= KillThisHero;
+            _heroCombatRuntimeSet.KillThisHero(this);
+            OnDeath?.Invoke();
+            //TODO: find a better way
+            Invoke(nameof(Death), 1f);
+        }
+
+        private void Death()
+        {
+            Destroy(gameObject);
         }
     }
 }
