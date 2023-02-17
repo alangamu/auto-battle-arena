@@ -55,7 +55,6 @@ namespace AutoFantasy.Scripts
 
         public void GettingDamage(int amount, bool isCritical)
         {
-            //print($"gameobject {gameObject.name} getting {amount} damage, is critical? -> {isCritical}");
             OnGetHit?.Invoke(amount, isCritical);
         }
 
