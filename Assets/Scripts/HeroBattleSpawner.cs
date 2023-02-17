@@ -17,8 +17,6 @@ namespace AutoFantasy.Scripts
         private GameEvent spawnHeroes;
         [SerializeField] 
         private GameObject heroPrefab;
-        //[SerializeField]
-        //private GameObjectGameEvent heroSetEnemyEvent;
         [SerializeField]
         private TeamsSO teams;
         [SerializeField]
@@ -51,18 +49,16 @@ namespace AutoFantasy.Scripts
 
                 Hero heroToSpawn = heroes.Items.Find(x => x.GetHeroId() == heroesToSpawn[i]);
 
+                hero.name = heroToSpawn.HeroName;
+
                 if (hero.TryGetComponent(out IHeroController heroController))
                 {
                     heroController.SetHero(heroToSpawn);
                 }
 
-                //heroSetEvent.Raise(hero, hetoToSpawn);
-                //heroSetEnemyEvent.Raise(hero);
-
                 if (hero.TryGetComponent(out ICombatController combatController))
                 {
                     combatController.SetCombatStats(heroToSpawn.ThisCombatStats);
-                    //combatController.SetHero(heroToSpawn);
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {

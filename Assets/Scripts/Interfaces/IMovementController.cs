@@ -4,7 +4,8 @@ namespace AutoFantasy.Scripts.Interfaces
 {
     public interface IMovementController 
     {
-        event Action OnReachTarget;
+        event Action OnAttackTarget;
         event Action OnStartRunning;
+        event Action OnSetIdle; 
     }
 }

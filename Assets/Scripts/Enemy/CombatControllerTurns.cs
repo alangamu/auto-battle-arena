@@ -18,14 +18,14 @@ namespace AutoFantasy.Scripts
 
         public Hero GetHero() => _hero;
 
-        //public Transform GetImpactTransform() => _impactPoint;
+        public Transform GetImpactTransform() => _impactPoint;
 
         //This is for enemies to manipulate the stats from inspector
         [SerializeField]
         private CombatStats _combatStats;
 
-        //[SerializeField]
-        //private Transform _impactPoint;
+        [SerializeField]
+        private Transform _impactPoint;
 
         [SerializeField]
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
@@ -53,6 +53,27 @@ namespace AutoFantasy.Scripts
             _hero = hero;
         }
 
+        public void GettingDamage(int amount, bool isCritical)
+        {
+            //print($"gameobject {gameObject.name} getting {amount} damage, is critical? -> {isCritical}");
+            OnGetHit?.Invoke(amount, isCritical);
+        }
+
+        public void SetReadyToAttack()
+        {
+            OnSetReadyToAttack?.Invoke();
+        }
+
+        public void PerformAttack(Transform target)
+        {
+            OnAttackTarget?.Invoke(target);
+        }
+
+        public void Hit()
+        {
+            
+        }
+
         private void OnEnable()
         {
             _heroCombatRuntimeSet.Add(this);
@@ -61,17 +82,6 @@ namespace AutoFantasy.Scripts
         private void OnDisable()
         {
             _heroCombatRuntimeSet.Remove(this);
-        }
-
-        public void GettingDamage(int amount, bool isCritical)
-        {
-            print($"gameobject {gameObject.name} getting {amount} damage, is critical? -> {isCritical}");
-            OnGetHit?.Invoke(amount, isCritical);
-        }
-
-        public void SetReadyToAttack()
-        {
-            OnSetReadyToAttack?.Invoke();
         }
     }
 }

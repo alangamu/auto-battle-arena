@@ -33,8 +33,9 @@ namespace AutoFantasy.Scripts.Enemy
 
             if (TryGetComponent(out _movementController))
             {
-                _movementController.OnStartRunning += _movementController_OnStartRunning;
-                _movementController.OnReachTarget += _movementController_OnReachTarget;
+                _movementController.OnStartRunning += StartRunning;
+                _movementController.OnAttackTarget += AttackTarget;
+                _movementController.OnSetIdle += SetIdle;
             }
         }
 
@@ -49,8 +50,9 @@ namespace AutoFantasy.Scripts.Enemy
 
             if (_movementController != null)
             {
-                _movementController.OnStartRunning -= _movementController_OnStartRunning;
-                _movementController.OnReachTarget -= _movementController_OnReachTarget;
+                _movementController.OnStartRunning -= StartRunning;
+                _movementController.OnAttackTarget -= AttackTarget;
+                _movementController.OnSetIdle -= SetIdle;
             }
             if (_combatController != null)
             {
@@ -58,7 +60,7 @@ namespace AutoFantasy.Scripts.Enemy
             }
         }
 
-        private void _movementController_OnReachTarget()
+        private void AttackTarget()
         {
             int randomIndex = Random.Range(0, weaponType.AttackAnimationClipsNames.Count);
             string randomClipName = weaponType.AttackAnimationClipsNames[randomIndex];
@@ -66,7 +68,7 @@ namespace AutoFantasy.Scripts.Enemy
             Animate(randomClipName, _attackSpeed);
         }
 
-        private void _movementController_OnStartRunning()
+        private void StartRunning()
         {
             Animate(weaponType.RunAnimationClipName, 1f);
         }

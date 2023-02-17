@@ -45,12 +45,12 @@ namespace AutoFantasy.Scripts.Heroes
             if (TryGetComponent(out _combatController))
             {
                 _combatController.OnDeath += OnDeath;
-                _combatController.OnSetIdle += SetIdle;
             }
             if (TryGetComponent(out _movementController))
             {
                 _movementController.OnStartRunning += OnStartRunning;
-                _movementController.OnReachTarget += OnReachTarget;
+                _movementController.OnAttackTarget += OnAttackTarget;
+                _movementController.OnSetIdle += SetIdle;
             }
         }
 
@@ -66,12 +66,12 @@ namespace AutoFantasy.Scripts.Heroes
             if (_movementController != null)
             {
                 _movementController.OnStartRunning -= OnStartRunning;
-                _movementController.OnReachTarget -= OnReachTarget;
+                _movementController.OnAttackTarget -= OnAttackTarget;
+                _movementController.OnSetIdle -= SetIdle;
             }
             if (_combatController != null)
             {
                 _combatController.OnDeath -= OnDeath;
-                _combatController.OnSetIdle -= SetIdle;
             }
         }
 
@@ -80,7 +80,7 @@ namespace AutoFantasy.Scripts.Heroes
             SetWeaponType(weaponSO.WeaponType);
         }
 
-        private void OnReachTarget()
+        private void OnAttackTarget()
         {
             int randomIndex = Random.Range(0, _weaponType.AttackAnimationClipsNames.Count);
             string randomClipName = _weaponType.AttackAnimationClipsNames[randomIndex];

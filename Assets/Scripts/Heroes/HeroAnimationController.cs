@@ -1,5 +1,4 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using UnityEngine;
@@ -10,8 +9,6 @@ namespace AutoFantasy.Scripts.Heroes
     {
         [SerializeField]
         private Animator _animator;
-        //[SerializeField]
-        //private ActiveHeroSO _activeHero;
         [SerializeField]
         private ItemTypeSO _weaponItemType;
         [SerializeField]

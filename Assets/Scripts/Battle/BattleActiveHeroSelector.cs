@@ -39,8 +39,8 @@ namespace AutoFantasy.Scripts
         private GameEvent _startFightEvent;
         [SerializeField]
         private ActiveHeroSO _activeCombatHero;
-        [SerializeField]
-        private ActiveHeroSO _activeCombatEnemy;
+        //[SerializeField]
+        //private ActiveHeroSO _activeCombatEnemy;
         [SerializeField]
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
         [SerializeField]
@@ -77,6 +77,9 @@ namespace AutoFantasy.Scripts
 
         private async void PerformHeroAttack()
         {
+            Transform target = _activeEnemy.GetImpactTransform();
+            _activeHero.CombatController.PerformAttack(target);
+
             await Task.Delay((int)(_attackDelayVariable.Value * 1000));
             int damagePoints = GetDamagePoints();
             _activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
@@ -87,29 +90,32 @@ namespace AutoFantasy.Scripts
         {
             _activeHero = _allHeroes[_currentIndex++ % _allHeroes.Count];
 
-            print($"active hero {_activeHero.CombatController} AttackSpeed {_activeHero.AttackSpeed}");
-
             if (!_activeHero.IsPlayer)
             {
                 _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
+                //print($"_activeHero {_activeHero.CombatController}");
+                //print($"_activeEnemy {_activeEnemy}");
                 _heroAttackEvent.Raise();
-                return;
+            }
+            else
+            {
+                ICombatController combatController = _activeHero.CombatController;
+                combatController.SetReadyToAttack();
+                _activeCombatHero.SetHero(combatController.GetHero());
+
+                    //TODO: active enemy with click
+                    //if (_activeEnemy == null)
+                    //{
+                _activeEnemy = _enemyCombatRuntimeSet.GetRandomHero();
+                //}
+                //print($"_activeHero {_activeHero.CombatController}");
+                //print($"_activeEnemy {_activeEnemy}");
             }
 
-            ICombatController combatController = _activeHero.CombatController;
-            combatController.SetReadyToAttack();
-            _activeCombatHero.SetHero(combatController.GetHero());
-
-                //TODO: active enemy with click
-                //if (_activeEnemy == null)
-                //{
-                _activeEnemy = _enemyCombatRuntimeSet.GetRandomHero();
-            //}
         }
 
         private void SetActiveBattleHero()
         {
-            print($"heroCombatRuntimeSet.Items count {_heroCombatRuntimeSet.Items.Count}");
             foreach (var item in _heroCombatRuntimeSet.Items)
             {
                 HeroAttackSpeedContainer heroContainer = new HeroAttackSpeedContainer();
@@ -118,10 +124,8 @@ namespace AutoFantasy.Scripts
                 heroContainer.IsPlayer = true;
                 heroContainer.CombatController.SetHero(item.GetHero());
                 _allHeroes.Add(heroContainer);
-                print($"attack speed hero {heroContainer.AttackSpeed}");
             }
 
-            print($"enemyCombatRuntimeSet.Items count {_enemyCombatRuntimeSet.Items.Count}");
             foreach (var item in _enemyCombatRuntimeSet.Items)
             {
                 HeroAttackSpeedContainer heroContainer = new HeroAttackSpeedContainer();
@@ -130,14 +134,13 @@ namespace AutoFantasy.Scripts
                 heroContainer.IsPlayer = false;
                 //heroContainer.CombatController.SetHero(item.GetHero());
                 _allHeroes.Add(heroContainer);
-                print($"attack speed enemy {heroContainer.AttackSpeed}");
             }
 
             _allHeroes.Sort(new AttackSpeedComparer());
-            foreach (var item in _allHeroes)
-            {
-                print($"sorted {item.AttackSpeed}");
-            }
+            //foreach (var item in _allHeroes)
+            //{
+            //    print($"sorted {item.AttackSpeed}");
+            //}
 
             NextHeroReadyToAttack();
         }

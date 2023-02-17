@@ -3522,8 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b2fda57cc7534cb9b6c585f5fcdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  returnToPositionEvent: {fileID: 11400000, guid: db26b7c25f4179748bdd2af76b63cbfc, type: 2}
+  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
 --- !u!114 &-2058687860902910774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3630,4 +3629,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatStats:
     Stats: 01000000020000000400000003000000
+  _impactPoint: {fileID: 7919035873124999477}
   _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}

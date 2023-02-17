@@ -188,5 +188,10 @@ namespace AutoFantasy.Scripts.Enemy
         {
             throw new NotImplementedException();
         }
+
+        public void PerformAttack(Transform target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
