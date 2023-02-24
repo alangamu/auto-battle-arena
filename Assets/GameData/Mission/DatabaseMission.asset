@@ -43,7 +43,7 @@ MonoBehaviour:
     - Enemies:
       - {fileID: 3135474633921551511, guid: 0b0c22dd3687cc04a9a53791fa77cd1e, type: 3}
       - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
-      - {fileID: 1155338616695142033, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+      - {fileID: 8628773938638302063, guid: 280c28fd52a024e4d96e698e208ecb96, type: 3}
   - MissionId: 3
     MissionName: Evergreen Forrest
     MissionDifficulty: {fileID: 11400000, guid: 65cfcffe6df6ab44b983fccc853b6ba4, type: 2}

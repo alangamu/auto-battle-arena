@@ -11,9 +11,20 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         public event Action OnHeroCombatEmpty;
         public event Action<List<Reward>> OnHeroDeath;
 
-        private void OnEnable()
+        public void SelectThisHero(ICombatController combatController)
         {
-            Items.Clear();    
+            DeselectHeroes();
+            combatController.SetIsSelected(true);
+        }
+
+        public ICombatController GetSelectedEnemy()
+        {
+            ICombatController combatController = Items.Find(x => x.IsSelected());
+            if (combatController == null)
+            {
+                return GetRandomHero();
+            }
+            return combatController;
         }
 
         public ICombatController GetRandomHero()
@@ -39,29 +50,17 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             }
         }
 
-        //public ICombatController GetClosestEnemy(Vector3 currentPosition)
-        //{
-        //    if (Items.Count == 0)
-        //    {
-        //        return null;
-        //    }
+        public void DeselectHeroes()
+        {
+            foreach (var item in Items)
+            {
+                item.SetIsSelected(false);
+            }
+        }
 
-        //    Transform bestTarget = null;
-        //    float closestDistanceSqr = Mathf.Infinity;
-        //    int enemyIndex = 0;
-        //    for (int i = 0; i < Items.Count; i++)
-        //    {
-        //        Vector3 directionToTarget = Items[i].GetImpactTransform().position - currentPosition;
-        //        float dSqrToTarget = directionToTarget.sqrMagnitude;
-        //        if (dSqrToTarget < closestDistanceSqr)
-        //        {
-        //            closestDistanceSqr = dSqrToTarget;
-        //            bestTarget = Items[i].GetImpactTransform();
-        //            enemyIndex = i;
-        //        }
-        //    }
-
-        //    return bestTarget == null ? null : Items[enemyIndex];
-        //}
+        private void OnEnable()
+        {
+            Items.Clear();    
+        }
     }
 }

@@ -1,44 +1,28 @@
-﻿using AutoFantasy.Scripts.Heroes;
-using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
+﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
 {
-    public class MouseHeroSelectable : MonoBehaviour, ISelectable
+    public class MouseHeroSelectable : MonoBehaviour
     {
         [SerializeField]
-        private ActiveHeroSO activeHero;
+        private HeroCombatRuntimeSet _heroCombatRuntimeSet; 
 
-        private Hero _hero;
-        private IHeroController _heroController;
+        private ICombatController _combatController;
 
-        public void Select(bool option)
+        private void OnMouseUpAsButton()
         {
-            if (!activeHero.ActiveHero.GetHeroId().Equals(_hero.GetHeroId()))
+            if (_combatController.IsSelected())
             {
-                activeHero.SetHero(_hero);
+                _heroCombatRuntimeSet.DeselectHeroes();
             }
+            _heroCombatRuntimeSet.SelectThisHero(_combatController);
         }
 
         private void OnEnable()
         {
-            if (TryGetComponent(out _heroController))
-            {
-                _heroController.OnSetHero += SetHero;
-            }
-        }
-        private void OnDisable()
-        {
-            if (_heroController != null)
-            {
-                _heroController.OnSetHero -= SetHero;
-            }
-        }
-
-        private void SetHero(Hero hero)
-        {
-            _hero = hero;
+            TryGetComponent(out _combatController);
         }
     }
 }

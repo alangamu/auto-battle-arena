@@ -42,7 +42,6 @@ namespace AutoFantasy.Scripts
             for (int i = 0; i < enemies.Count; i++)
             {
                 Transform spawnPoint = heroesTransforms[i];
-                //GameObject hero = Instantiate(enemies[i].gameObject, spawnPoint.position, spawnPoint.rotation, transform);
                 var enemy = Instantiate(enemies[i].gameObject, spawnPoint.position, spawnPoint.rotation, transform);
 
                 if (enemy.TryGetComponent(out IHealthController healthController))

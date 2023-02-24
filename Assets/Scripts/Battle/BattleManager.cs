@@ -19,8 +19,6 @@ namespace AutoFantasy.Scripts
         private GameEvent heroWinEvent;
         [SerializeField]
         private GameEvent spawnEnemies;
-        [SerializeField]
-        private GameEvent returnToPositionEvent;
 
         [SerializeField]
         private DatabaseMission missions;
@@ -68,7 +66,6 @@ namespace AutoFantasy.Scripts
 
         private void SpawnEnemies()
         {
-            returnToPositionEvent.Raise();
             spawnEnemies.Raise();
         }
     }

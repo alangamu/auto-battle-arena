@@ -47,7 +47,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void ShowPanel()
         {
-            _heroContainer.SetActive(true);
+            _heroContainer.SetActive(_activeHero.ActiveHero != null);
         }
 
         private void HidePanel()

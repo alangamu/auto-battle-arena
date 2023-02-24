@@ -1,46 +1,35 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
-using AutoFantasy.Scripts.ScriptableObjects.Events;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Battle
 {
-    public class BattleSelectIndicator : MonoBehaviour
+    public class BattleSelectIndicator : MonoBehaviour, ISelectable
     {
         [SerializeField]
         private GameObject _selectIndicator;
-        [SerializeField]
-        private GameEvent _heroAttackEvent;
 
         private ICombatController _combatController;
 
+        public void Select(bool option)
+        {
+            _selectIndicator.SetActive(option);
+        }
+
         private void OnEnable()
         {
-            HideIndicator();
+            Select(false);
             if (TryGetComponent(out _combatController))
             {
-                _combatController.OnSetReadyToAttack += ShowIndicator;
+                _combatController.OnSelectionChanged += Select;
             }
-            _heroAttackEvent.OnRaise += HideIndicator;
         }
 
         private void OnDisable()
         {
             if (_combatController != null)
             {
-                _combatController.OnSetReadyToAttack -= ShowIndicator;
+                _combatController.OnSelectionChanged -= Select;
             }
-            _heroAttackEvent.OnRaise -= HideIndicator;
-        }
-
-        private void HideIndicator()
-        {
-            _selectIndicator.SetActive(false);
-        }
-
-        private void ShowIndicator()
-        {
-            _selectIndicator.SetActive(true);
         }
     }
 }

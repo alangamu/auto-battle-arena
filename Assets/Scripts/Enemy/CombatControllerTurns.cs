@@ -10,10 +10,9 @@ namespace AutoFantasy.Scripts
     public class CombatControllerTurns : MonoBehaviour, ICombatController
     {
         public event Action<Transform> OnAttackTarget;
-        public event Action OnSetIdle;
         public event Action<int, bool> OnGetHit;
-        public event Action OnSetReadyToAttack;
         public event Action OnDeath;
+        public event Action<bool> OnSelectionChanged;
 
         public CombatStats GetCombatStats() => _combatStats;
 
@@ -31,29 +30,20 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
 
-        private Hero _hero;
         private IRewardTable _rewardTable;
         private IHealthController _healthController;
+        private IHeroController _heroController;
+        private bool _isSelected;
+        private Hero _hero;
 
         public void SetCombatStats(CombatStats newCombatStats)
         {
             _combatStats = newCombatStats;
         }
 
-        public void SetHero(Hero hero)
-        {
-            _hero = hero;
-        }
-
         public void GettingDamage(int amount, bool isCritical)
         {
-            print("getting hit");
             OnGetHit?.Invoke(amount, isCritical);
-        }
-
-        public void SetReadyToAttack()
-        {
-            OnSetReadyToAttack?.Invoke();
         }
 
         public void PerformAttack(Transform target)
@@ -76,13 +66,32 @@ namespace AutoFantasy.Scripts
             return new List<Reward>();
         }
 
+        public bool IsSelected() => _isSelected;
+
+        public void SetIsSelected(bool isSelected)
+        {
+            _isSelected = isSelected;
+            OnSelectionChanged?.Invoke(isSelected);
+        }
+
         private void OnEnable()
         {
+            _isSelected = false;
             _heroCombatRuntimeSet.Add(this);
             if (TryGetComponent(out _healthController))
             {
                 _healthController.OnDeath += KillThisHero;
             }
+            if (TryGetComponent(out _heroController))
+            {
+                _heroController.OnSetHero += OnSetHero;
+            }
+            
+        }
+
+        private void OnSetHero(Hero hero)
+        {
+            _hero = hero;
         }
 
         private void OnDisable()
@@ -91,6 +100,10 @@ namespace AutoFantasy.Scripts
             if (_healthController != null)
             {
                 _healthController.OnDeath -= KillThisHero;
+            }
+            if (_heroController != null)
+            {
+                _heroController.OnSetHero -= OnSetHero;
             }
         }
 

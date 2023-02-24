@@ -57,15 +57,16 @@ namespace AutoFantasy.Scripts
         private HeroAttackSpeedContainer _activeHero;
         private ICombatController _activeEnemy;
         private bool _isCriticalHit = false;
+        private bool _isGameRunning = false;
 
         private void OnEnable()
         {
             _startFightEvent.OnRaise += SetActiveBattleHero;
-            _allHeroes = new List<HeroAttackSpeedContainer>();
             _nextAttackBeginEvent.OnRaise += NextHeroReadyToAttack;
             _heroAttackEvent.OnRaise += PerformHeroAttack;
             _heroCombatRuntimeSet.OnRemove += HeroDeath;
             _enemyCombatRuntimeSet.OnRemove += HeroDeath;
+            _enemyCombatRuntimeSet.OnHeroCombatEmpty += NextRound;
         }
 
         private void OnDisable()
@@ -75,16 +76,28 @@ namespace AutoFantasy.Scripts
             _heroAttackEvent.OnRaise -= PerformHeroAttack;
             _heroCombatRuntimeSet.OnRemove -= HeroDeath;
             _enemyCombatRuntimeSet.OnRemove -= HeroDeath;
+            _enemyCombatRuntimeSet.OnHeroCombatEmpty -= NextRound;
+        }
+
+        private void NextRound()
+        {
+            _isGameRunning = false;
+            _heroCombatRuntimeSet.DeselectHeroes();
+            _activeCombatHero.SetHero(null);
         }
 
         private void HeroDeath(ICombatController combatController)
         {
             _allHeroes.Remove(_allHeroes.Find(x => x.CombatController == combatController));
-            print($"_allHeroes.count {_allHeroes.Count}");
         }
 
         private async void PerformHeroAttack()
         {
+            if (_activeHero.IsPlayer)
+            {
+                _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
+            }
+
             Transform target = _activeEnemy.GetImpactTransform();
             _activeHero.CombatController.PerformAttack(target);
 
@@ -96,38 +109,41 @@ namespace AutoFantasy.Scripts
 
         private void NextHeroReadyToAttack()
         {
-            print($"ready to attack {_allHeroes.Count}");
-            _activeHero = _allHeroes[_currentIndex];
-            _currentIndex++;
-            if (_currentIndex >= _allHeroes.Count) 
+            if (_isGameRunning)
             {
-                _currentIndex = 0;
-            }
-            print($"_activeHero {_activeHero}");
-            if (!_activeHero.IsPlayer)
-            {
-                _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
-                _heroAttackEvent.Raise();
-            }
-            else
-            {
-                ICombatController combatController = _activeHero.CombatController;
-                combatController.SetReadyToAttack();
-                _activeCombatHero.SetHero(combatController.GetHero());
+                if (_currentIndex >= _allHeroes.Count) 
+                {
+                    _currentIndex = 0;
+                }
 
-                _activeEnemy = _enemyCombatRuntimeSet.GetRandomHero();
+                _activeHero = _allHeroes[_currentIndex];
+                _currentIndex++;
+
+                if (!_activeHero.IsPlayer)
+                {
+                    _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
+                    _heroAttackEvent.Raise();
+                }
+                else
+                {
+                    ICombatController combatController = _activeHero.CombatController;
+
+                    _heroCombatRuntimeSet.SelectThisHero(combatController);
+                    _activeCombatHero.SetHero(combatController.GetHero());
+                }
             }
         }
 
         private void SetActiveBattleHero()
         {
+            _isGameRunning = true;
+            _allHeroes = new List<HeroAttackSpeedContainer>();
             foreach (var item in _heroCombatRuntimeSet.Items)
             {
                 HeroAttackSpeedContainer heroContainer = new HeroAttackSpeedContainer();
                 heroContainer.AttackSpeed = item.GetCombatStats().StatCount(_attackSpeedStat.StatId);
                 heroContainer.CombatController = item;
                 heroContainer.IsPlayer = true;
-                heroContainer.CombatController.SetHero(item.GetHero());
                 _allHeroes.Add(heroContainer);
             }
 

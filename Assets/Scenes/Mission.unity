@@ -781,7 +781,6 @@ MonoBehaviour:
   heroDefeatEvent: {fileID: 11400000, guid: c95bb02b46b3ce944988701779102bd9, type: 2}
   heroWinEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
   spawnEnemies: {fileID: 11400000, guid: 96b61b8764147bd4a93c9c50180ecd29, type: 2}
-  returnToPositionEvent: {fileID: 11400000, guid: db26b7c25f4179748bdd2af76b63cbfc, type: 2}
   missions: {fileID: 11400000, guid: 5a81463a65b6f564aba6a500e6bf104f, type: 2}
   missionToLoad: {fileID: 11400000, guid: cb85843bac2a0944c97e3a5ee5c83a25, type: 2}
   currentRound: {fileID: 11400000, guid: f02d2df7173b1c94ea6aa3cb533ebf77, type: 2}
@@ -803,7 +802,6 @@ MonoBehaviour:
   criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
   _startFightEvent: {fileID: 11400000, guid: 539b97498d926554baaa81e01760e5a2, type: 2}
   _activeCombatHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
-  _activeCombatEnemy: {fileID: 11400000, guid: af1449714ad465a40911fe913c47e104, type: 2}
   _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
   _enemyCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
   _attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
