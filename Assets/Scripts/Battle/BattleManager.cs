@@ -18,7 +18,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent heroWinEvent;
         [SerializeField]
-        private GameEvent spawnEnemies;
+        private GameEvent _newRoundEvent;
 
         [SerializeField]
         private DatabaseMission missions;
@@ -53,20 +53,13 @@ namespace AutoFantasy.Scripts
             }
 
             currentRound.ApplyChange(1);
-
-            //TODO: remove this when controlling flow in timeline
-            Invoke(nameof(SpawnEnemies), 2f);
+            _newRoundEvent.Raise();
         }
 
         private void HeroCombatSet_OnHeroCombatEmpty()
         {
             print($"game over");
             heroDefeatEvent.Raise();
-        }
-
-        private void SpawnEnemies()
-        {
-            spawnEnemies.Raise();
         }
     }
 }

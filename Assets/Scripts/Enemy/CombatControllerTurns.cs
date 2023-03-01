@@ -51,6 +51,7 @@ namespace AutoFantasy.Scripts
             OnAttackTarget?.Invoke(target);
         }
 
+        //TODO: remove if not necessary
         public void Hit()
         {
             
@@ -86,7 +87,6 @@ namespace AutoFantasy.Scripts
             {
                 _heroController.OnSetHero += OnSetHero;
             }
-            
         }
 
         private void OnSetHero(Hero hero)
@@ -109,7 +109,6 @@ namespace AutoFantasy.Scripts
 
         private void KillThisHero()
         {
-            print("kill hero");
             _healthController.OnDeath -= KillThisHero;
             _heroCombatRuntimeSet.KillThisHero(this);
             OnDeath?.Invoke();
