@@ -48,6 +48,7 @@ namespace AutoFantasy.Scripts
                 {
                     healthController.SetDifficulty(mission.MissionDifficulty);
                 }
+
             }
         }
     }

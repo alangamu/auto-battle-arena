@@ -18,7 +18,7 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private ItemTypeEvent itemTypeEvent;
         [SerializeField]
-        private DatabaseItem itemDatabase;
+        private ItemDatabase itemDatabase;
         [SerializeField]
         private RecipeListItemUI recipeListItemUIPrefab;
         [SerializeField]

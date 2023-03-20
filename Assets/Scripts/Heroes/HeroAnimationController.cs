@@ -12,7 +12,7 @@ namespace AutoFantasy.Scripts.Heroes
         [SerializeField]
         private ItemTypeSO _weaponItemType;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private WeaponTypeSO _unarmedType;
 

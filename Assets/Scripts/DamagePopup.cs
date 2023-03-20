@@ -35,6 +35,7 @@ namespace AutoFantasy.Scripts
         private void CombatControllerOnGetHit(int damage, bool isCritical)
         {
             GameObject damageTextObject = Instantiate(damageTextPrefab, transform);
+            //damageTextObject.transform.parent = null;
             if (damageTextObject.TryGetComponent(out TMP_Text damageText))
             {
                 damageText.text = damage.ToString();

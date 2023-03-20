@@ -13,7 +13,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent testEvent;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private Item item;
         [SerializeField]

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b3e3c109367334dbe002f15ca94c75, type: 3}
+  m_Name: 2HandCrossbow
+  m_EditorClassIdentifier: 
+  WeareableTypeId: 7
+  FixedStats:
+  - {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  - {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
+  - {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
+  BoneParentName: 2HandCrossbow
+  RunAnimationClipName: 2Hand-Crossbow-Run-Forward
+  DeathAnimationClipName: 2Hand-Crossbow-Death1
+  IdleAnimationClipName: 2Hand-Crossbow-Idle
+  AttackAnimationClipsNames:
+  - 2Hand-Crossbow-Attack1
+  - 2Hand-Crossbow-Attack2
+  - 2Hand-Crossbow-Attack3
+  - 2Hand-Crossbow-Attack4
+  - 2Hand-Crossbow-Attack5
+  - 2Hand-Crossbow-Attack6
+  Range: 6
+  AttackMovementType: {fileID: 11400000, guid: e77e3b4d6b1e5d749ae5fa473cee624c, type: 2}
+  IsLeftHanded: 0

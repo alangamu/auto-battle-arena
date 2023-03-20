@@ -12,7 +12,7 @@ namespace AutoFantasy.Scripts.UI
         private ItemEvent addItemToInventory;
 
         [SerializeField]
-        private DatabaseItem itemDatabase;
+        private ItemDatabase itemDatabase;
         [SerializeField]
         private ItemManagerSO itemManager;
 

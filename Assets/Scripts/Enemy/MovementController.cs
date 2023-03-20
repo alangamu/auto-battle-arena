@@ -1,6 +1,8 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Enemy
@@ -12,15 +14,19 @@ namespace AutoFantasy.Scripts.Enemy
         public event Action OnSetIdle;
 
         [SerializeField]
-        public FloatVariable _attackDelayVariable;
+        private MovementTypeSO _movementType;
+        [SerializeField]
+        private FloatVariable _attackDelayVariable;
 
         private ICombatController _combatController;
-        private Vector3 _startingPosition;
+
+        public void SetMovement(MovementTypeSO movementType)
+        {
+            _movementType = movementType;
+        }
 
         private void OnEnable()
         {
-            _startingPosition = transform.position;
-
             if (TryGetComponent(out _combatController))
             {
                 _combatController.OnAttackTarget += AttackTarget;
@@ -35,17 +41,15 @@ namespace AutoFantasy.Scripts.Enemy
             }
         }
 
-        private void AttackTarget(Transform target)
+        private async void AttackTarget(Transform target)
         {
             OnAttackTarget?.Invoke();
 
-            Vector3 endPos = new Vector3(target.position.x, 0, target.position.z);
+            _movementType.PerformMovement(transform, target);
 
-            LeanTween.move(gameObject, endPos, _attackDelayVariable.Value / 2).setOnComplete(() =>
-            {
-                OnSetIdle?.Invoke();
-                LeanTween.move(gameObject, _startingPosition, _attackDelayVariable.Value / 2);
-            });
+            await Task.Delay((int)(_attackDelayVariable.Value * 500));
+
+            OnSetIdle?.Invoke();
         }
     }
 }

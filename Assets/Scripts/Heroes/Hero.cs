@@ -9,9 +9,9 @@ namespace AutoFantasy.Scripts.Heroes
     {
         public HeroData ThisHeroData;
         public CombatStats ThisCombatStats;
-
         public event Action OnInventoryChanged;
 
+        public string SkillId => _skillId;
         public string HeroName => ThisHeroData.HeroName; 
         public int SkinColorIndex => ThisHeroData.SkinColorIndex;
         public int EyeColorIndex => ThisHeroData.EyeColorIndex;
@@ -22,6 +22,8 @@ namespace AutoFantasy.Scripts.Heroes
         public int HairIndex => ThisHeroData.HairIndex;
         public int EyebrowsIndex => ThisHeroData.EyebrowsIndex;
         public bool IsMale => ThisHeroData.IsMale;
+
+        private string _skillId;
 
         public Hero(bool isMale, string heroName, List<int> stats)
         {
@@ -38,6 +40,11 @@ namespace AutoFantasy.Scripts.Heroes
         public string GetHeroId()
         {
             return ThisHeroData.HeroId;
+        }
+
+        public void SetSkillId(string skillId)
+        {
+            _skillId = skillId;
         }
 
         public void AddItem(Item item)

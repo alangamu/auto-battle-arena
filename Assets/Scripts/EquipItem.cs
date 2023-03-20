@@ -23,7 +23,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private HeroRuntimeSet roster;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private ItemEvent addItemToInventory;
         [SerializeField]
@@ -67,15 +67,18 @@ namespace AutoFantasy.Scripts
                 if (_heroObject.TryGetComponent(out IAnimationController animationController))
                 {
                     ItemSO itemSO = databaseItem.GetItem(item);
-                    WeaponSO weapon = itemSO as WeaponSO;
+                    WeaponSO weaponSO = itemSO as WeaponSO;
 
-                    animationController.SetWeaponType(weapon.WeaponType);
+                    animationController.SetWeaponType(weaponSO.WeaponType);
                 }
+
+                _hero.SetSkillId(item.SkillId);
             }
             else
             {
                 oldItem = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemWeareableTypeId == aceptedWeareableType.WeareableTypeId && x.ItemTypeId == aceptedItemType.ItemTypeId);
             }
+
             if (oldItem != null)
             {
                 _hero.RemoveItem(oldItem);

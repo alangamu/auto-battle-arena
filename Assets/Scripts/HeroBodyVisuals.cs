@@ -80,7 +80,7 @@ namespace AutoFantasy.Scripts
         private ArmorTypeSO bracersType;
 
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
 
         [SerializeField]
         private ItemTypeSO armorType;

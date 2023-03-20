@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Items
@@ -12,6 +13,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Items
         public string IdleAnimationClipName;
         public List<string> AttackAnimationClipsNames;
         public float Range;
+        public MovementTypeSO AttackMovementType;
 
         //TODO: review this again later when you have the left animation for all weapons
         public bool IsLeftHanded;

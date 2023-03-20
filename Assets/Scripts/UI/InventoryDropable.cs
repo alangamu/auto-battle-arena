@@ -32,10 +32,15 @@ namespace AutoFantasy.Scripts.UI
                 {
                     addItemToInventory.Raise(itemType.ItemRef);
 
+                    //TODO: maybe get rid of taking the hero out of the roster and access directly to the active hero
                     Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
                     if (hero != null)
                     {
                         hero.RemoveItem(itemType.ItemRef);
+                        if (!string.IsNullOrEmpty(hero.SkillId))
+                        {
+                            hero.SetSkillId(string.Empty);
+                        }
                     }
                 }
             }

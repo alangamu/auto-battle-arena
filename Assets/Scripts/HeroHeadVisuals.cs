@@ -47,7 +47,7 @@ namespace AutoFantasy.Scripts
         private ItemTypeSO _armorType;
 
         [SerializeField]
-        private DatabaseItem _databaseItem;
+        private ItemDatabase _databaseItem;
 
         private List<GameObject> _armedBody;
         private IHeroController _heroController;
@@ -89,6 +89,7 @@ namespace AutoFantasy.Scripts
 
             foreach (var item in hair)
             {
+                //TODO: give me a MissingReferenceException in here when equipping a weapon
                 item.SetActive(false);
             }
 

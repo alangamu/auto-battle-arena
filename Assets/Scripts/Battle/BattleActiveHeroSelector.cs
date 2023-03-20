@@ -6,7 +6,6 @@ using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Playables;
 
 namespace AutoFantasy.Scripts
 {

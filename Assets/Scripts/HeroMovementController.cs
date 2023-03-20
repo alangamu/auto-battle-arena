@@ -24,7 +24,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameObjectGameEvent heroDeathEvent;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private GameEvent returnToPositionEvent;
 

@@ -23,7 +23,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent refreshUI;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
 
         private GameObject _weaponGO;
         private Hero _hero;

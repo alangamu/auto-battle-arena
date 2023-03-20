@@ -75,6 +75,11 @@ namespace AutoFantasy.Scripts
             OnSelectionChanged?.Invoke(isSelected);
         }
 
+        public void PerformSkill(Transform target)
+        {
+            
+        }
+
         private void OnEnable()
         {
             _isSelected = false;

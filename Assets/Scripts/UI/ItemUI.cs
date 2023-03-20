@@ -18,7 +18,7 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private TMP_Text itemAmountText;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private GameObject amountGameObject;
 

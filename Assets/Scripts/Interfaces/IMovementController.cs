@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
+using System;
 
 namespace AutoFantasy.Scripts.Interfaces
 {
@@ -6,6 +7,8 @@ namespace AutoFantasy.Scripts.Interfaces
     {
         event Action OnAttackTarget;
         event Action OnStartRunning;
-        event Action OnSetIdle; 
+        event Action OnSetIdle;
+
+        void SetMovement(MovementTypeSO movementType);
     }
 }

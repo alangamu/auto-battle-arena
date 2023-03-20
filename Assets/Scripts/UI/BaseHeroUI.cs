@@ -18,9 +18,6 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField] 
         private TMP_Text nameText;
 
-        [SerializeField]
-        private ActiveHeroSO activeHero;
-
         private Hero _hero;
         private IHeroController _heroController;
 
@@ -52,11 +49,6 @@ namespace AutoFantasy.Scripts.UI
             {
                 nameText.text = hero.HeroName;
             }
-        }
-
-        public ActiveHeroSO GetActiveHero()
-        {
-            return activeHero;
         }
     }
 }

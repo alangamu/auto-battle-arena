@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b3e3c109367334dbe002f15ca94c75, type: 3}
+  m_Name: 1HandSpear
+  m_EditorClassIdentifier: 
+  WeareableTypeId: 3
+  FixedStats:
+  - {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
+  - {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
+  - {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  BoneParentName: 1HandSpear
+  RunAnimationClipName: Armed-Run-Forward
+  DeathAnimationClipName: Armed-Death1
+  IdleAnimationClipName: Armed-Idle
+  AttackAnimationClipsNames:
+  - Spear-Attack-R1
+  - Spear-Attack-R2
+  - Spear-Attack-R3
+  - Spear-Attack-R4
+  - Spear-Attack-R5
+  - Spear-Attack-R6
+  - Spear-Attack-R7
+  Range: 1
+  AttackMovementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
+  IsLeftHanded: 0

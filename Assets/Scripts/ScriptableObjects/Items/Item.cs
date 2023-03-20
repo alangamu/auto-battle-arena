@@ -12,6 +12,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Items
         public int ItemWeareableTypeId;
         public int Amount;
         public bool IsStackable;
+        public string SkillId;
 
         public List<int> ItemStats;
 

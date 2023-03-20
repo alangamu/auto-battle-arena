@@ -16,6 +16,11 @@ namespace AutoFantasy.Scripts
             _newRoundEvent.OnRaise += NewRound;
         }
 
+        private void OnDisable()
+        {
+            _newRoundEvent.OnRaise -= NewRound;
+        }
+
         private void NewRound()
         {
             _newRoundTimeline.Play();

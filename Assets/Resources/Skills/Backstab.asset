@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72758e56e399cc144b527be789edc179, type: 3}
+  m_Name: Backstab
+  m_EditorClassIdentifier: 
+  _skillName: Backstab
+  _skillDescription: A powerful attack that deals extra damage if the player attacks
+    from behind.
+  _skillIcon: {fileID: 21300000, guid: 0d0cb663b1255ae4b9e158847e2eff47, type: 3}
+  _cooldown: 2
+  _splashAmount: 0
+  _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
+  _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

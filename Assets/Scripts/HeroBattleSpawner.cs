@@ -22,7 +22,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private HeroRuntimeSet heroes;
         [SerializeField]
-        private DatabaseItem databaseItem;
+        private ItemDatabase databaseItem;
         [SerializeField]
         private WeaponTypeSO unarmed;
         [SerializeField]
@@ -51,6 +51,19 @@ namespace AutoFantasy.Scripts
 
                 hero.name = heroToSpawn.HeroName;
 
+                //TODO: improve this weapon getting thing
+                var heroInventory = heroToSpawn.ThisHeroData.HeroInventory;
+                WeaponSO weapon = null;
+                foreach (var item in heroInventory)
+                {
+                    var itemInventory = databaseItem.GetItem(item);
+                    if (itemInventory.ItemType == weaponType)
+                    {
+                        weapon = (WeaponSO)itemInventory;
+                        continue;
+                    }
+                }
+
                 if (hero.TryGetComponent(out IHeroController heroController))
                 {
                     heroController.SetHero(heroToSpawn);
@@ -62,24 +75,17 @@ namespace AutoFantasy.Scripts
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {
-                    var heroInventory = heroToSpawn.ThisHeroData.HeroInventory;
-                    WeaponSO weapon = null;
-                    foreach (var item in heroInventory)
-                    {
-                        var itemInventory = databaseItem.GetItem(item);
-                        if (itemInventory.ItemType == weaponType)
-                        {
-                            weapon = (WeaponSO)itemInventory;
-                            continue;
-                        }
-                    }
-
-                    if (weapon == null)
-                    {
-                        animationController.SetWeaponType(unarmed);
-                        continue;
-                    }
-                    animationController.SetWeaponType(weapon.WeaponType);
+                    //if (weapon == null)
+                    //{
+                    //    animationController.SetWeaponType(unarmed);
+                    //    continue;
+                    //}
+                    //animationController.SetWeaponType(weapon.WeaponType);
+                    animationController.SetWeaponType(weapon == null ? unarmed : weapon.WeaponType);
+                }
+                if (hero.TryGetComponent(out IMovementController movementController))
+                {
+                    movementController.SetMovement(weapon == null ? unarmed.AttackMovementType : weapon.WeaponType.AttackMovementType);
                 }
             }
         }

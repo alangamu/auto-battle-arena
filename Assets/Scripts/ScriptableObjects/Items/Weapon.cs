@@ -1,10 +1,14 @@
-﻿using System;
+﻿using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
+using AutoFantasy.Scripts.ScriptableObjects.Skills;
+using System;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Items
 {
     [Serializable]
     public class Weapon : Item
     {
+        //public SkillSO Skill;
+
         public Weapon(WeaponSO itemSO, ItemRaritySO itemRarity) : base(itemSO, itemRarity.ItemRarityId, itemSO.WeaponType.WeareableTypeId)
         {
         }

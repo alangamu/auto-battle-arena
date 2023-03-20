@@ -1,6 +1,7 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
+using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace AutoFantasy.Scripts.UI
 {
     public class WinStageRewardUI : MonoBehaviour
     {
+        [SerializeField]
+        private ItemDatabase _itemDatabase;
         [SerializeField]
         private Transform parentTransform;
         [SerializeField]
@@ -60,31 +63,23 @@ namespace AutoFantasy.Scripts.UI
 
         private void CollectReward(Reward reward)
         {
-            Item item = new Item(reward.RewardItem);
+            Item item = _itemDatabase.CreateNewItem(reward.RewardItem, reward.ItemRarity);
+            ItemTypeSO itemType = reward.RewardItem.ItemType;
 
-            if (reward.RewardItem.ItemType == armorType)
+            if (itemType == armorType || itemType == weaponType)
             {
-                item = ConvertArmor(reward);
                 addItemToInventory.Raise(item);
                 _rewards.Add(item);
                 return;
             }
 
-            if (reward.RewardItem.ItemType == weaponType)
-            {
-                item = ConvertWeapon(reward);
-                addItemToInventory.Raise(item);
-                _rewards.Add(item);
-                return;
-            }
-
-            if (reward.RewardItem.ItemType == goldType)
+            if (itemType == goldType)
             {
                 HandleResource(reward, item, gold);
                 return;
             }
 
-            if (reward.RewardItem.ItemType == gemType)
+            if (itemType == gemType)
             {
                 HandleResource(reward, item, gems);
             }
@@ -104,22 +99,6 @@ namespace AutoFantasy.Scripts.UI
             item.SetAmount(resourceAmount);
             _rewards.Add(item);
             return;
-        }
-
-        private Item ConvertWeapon(Reward reward)
-        {
-            WeaponSO weaponSO = reward.RewardItem as WeaponSO;
-            Weapon weapon = new Weapon(weaponSO, reward.ItemRarity);
-            weapon.RandomizeStats(reward.ItemRarity, weaponSO);
-            return weapon;
-        }
-
-        private Item ConvertArmor(Reward reward)
-        {
-            ArmorSO armorSO = reward.RewardItem as ArmorSO;
-            ArmorItem armor = new ArmorItem(armorSO, reward.ItemRarity);
-            armor.RandomizeStats(reward.ItemRarity, armorSO);
-            return armor;
         }
     }
 }

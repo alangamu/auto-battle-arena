@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03b2fda57cc7534cb9b6c585f5fcdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
   _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
 --- !u!114 &8908235450865821113
 MonoBehaviour:
@@ -355,6 +356,21 @@ MonoBehaviour:
     MinQty: 1
     MaxQty: 1
     RewardItem: {fileID: 11400000, guid: e9f8420d38ba9f3469fde26c4ab989db, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 5b0ed33cb25d8ec4fbc0dca0fa488c39, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 558d9326b98ab90449b58166a5ae4e35, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: ba4c6ace0023efd4387c6e440e1217d5, type: 2}
     ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
 --- !u!114 &-5717662629640353255
 MonoBehaviour:
