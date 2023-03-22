@@ -18,7 +18,6 @@ namespace AutoFantasy.Scripts.Interfaces
         Transform GetImpactTransform();
         Hero GetHero();
         void PerformAttack(Transform target);
-        void PerformSkill(Transform target);
         void Hit();
         bool IsSelected();
         void SetIsSelected(bool isSelected);

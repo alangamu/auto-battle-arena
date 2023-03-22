@@ -1,6 +1,7 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Skills;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -21,6 +22,18 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return skill;
         }
 
+        public SkillSO GetSkillById(string skillId)
+        {
+            SkillSO skillSO = Items.Find(x => x.SkillId.Equals(skillId));
+            return skillSO;
+        }
+
+        public void PerformSkill(string skillId)
+        {
+            Debug.Log($"skillId {skillId}");
+            GetSkillById(skillId).PerformSkill();
+        }
+
         private void OnEnable()
         {
             Items = new List<SkillSO>();
@@ -34,12 +47,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                 }
             }
             Debug.Log($"Loaded {skillsArray.Length} skills");
-        }
-
-        public SkillSO GetSkillById(string skillId)
-        {
-            SkillSO skillSO = Items.Find(x => x.SkillId.Equals(skillId));
-            return skillSO;
         }
     }
 }

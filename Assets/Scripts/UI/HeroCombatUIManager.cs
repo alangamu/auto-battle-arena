@@ -11,6 +11,10 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private GameEvent _heroAttackEvent;
         [SerializeField]
+        private GameEvent _heroSkillEvent;
+        [SerializeField]
+        private GameEvent _heroSkipTurnEvent;
+        [SerializeField]
         private ActiveHeroSO _activeHero;
 
         public void Attack()
@@ -20,12 +24,12 @@ namespace AutoFantasy.Scripts.UI
 
         public void Skill()
         {
-
+            _heroSkillEvent.Raise();
         }
 
         public void Skip()
         {
-
+            _heroSkipTurnEvent.Raise();
         }
 
         private void Start()

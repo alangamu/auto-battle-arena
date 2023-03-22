@@ -11,6 +11,7 @@ namespace AutoFantasy.Scripts
 {
     public class BattleActiveHeroSelector : MonoBehaviour
     {
+        //TODO: refactor this class
         class HeroAttackSpeedContainer
         {
             public int AttackSpeed;
@@ -50,7 +51,13 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent _heroAttackEvent;
         [SerializeField]
+        private GameEvent _heroSkillEvent;
+        [SerializeField]
+        private GameEvent _heroSkipTurnEvent;
+        [SerializeField]
         private FloatVariable _attackDelayVariable;
+        [SerializeField]
+        private SkillDatabase _skillDatabase;
 
         private List<HeroAttackSpeedContainer> _allHeroes;
         private int _currentIndex = 0;
@@ -67,6 +74,8 @@ namespace AutoFantasy.Scripts
             _heroCombatRuntimeSet.OnRemove += HeroDeath;
             _enemyCombatRuntimeSet.OnRemove += HeroDeath;
             _enemyCombatRuntimeSet.OnHeroCombatEmpty += NextRound;
+            _heroSkillEvent.OnRaise += PerformSkill;
+            _heroSkipTurnEvent.OnRaise += SkipTurn;
         }
 
         private void OnDisable()
@@ -77,6 +86,33 @@ namespace AutoFantasy.Scripts
             _heroCombatRuntimeSet.OnRemove -= HeroDeath;
             _enemyCombatRuntimeSet.OnRemove -= HeroDeath;
             _enemyCombatRuntimeSet.OnHeroCombatEmpty -= NextRound;
+            _heroSkillEvent.OnRaise -= PerformSkill;
+            _heroSkipTurnEvent.OnRaise -= SkipTurn;
+        }
+
+        private async void SkipTurn()
+        {
+            await Task.Delay((int)(_attackDelayVariable.Value * 1000));
+            NextHeroReadyToAttack();
+        }
+
+        private async void PerformSkill()
+        {
+            if (_activeHero.IsPlayer)
+            {
+                _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
+            }
+
+            Transform target = _activeEnemy.GetImpactTransform();
+
+            string skillId = _activeHero.CombatController.GetHero().SkillId;
+
+            _skillDatabase.PerformSkill(skillId);
+
+            await Task.Delay((int)(_attackDelayVariable.Value * 1000));
+            //int damagePoints = GetDamagePoints();
+            //_activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
+            NextHeroReadyToAttack();
         }
 
         private void NextRound()
