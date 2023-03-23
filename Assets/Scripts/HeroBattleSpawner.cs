@@ -75,12 +75,6 @@ namespace AutoFantasy.Scripts
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {
-                    //if (weapon == null)
-                    //{
-                    //    animationController.SetWeaponType(unarmed);
-                    //    continue;
-                    //}
-                    //animationController.SetWeaponType(weapon.WeaponType);
                     animationController.SetWeaponType(weapon == null ? unarmed : weapon.WeaponType);
                 }
                 if (hero.TryGetComponent(out IMovementController movementController))

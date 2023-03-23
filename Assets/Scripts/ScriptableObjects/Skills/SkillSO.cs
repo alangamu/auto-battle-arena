@@ -10,6 +10,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         public WeaponTypeSO WeaponType => _weaponType;
         public Sprite SkillSprite => _skillIcon;
         public string SkillId => _skillId;
+        public int SkillTurns => _cooldown;
 
         [SerializeField]
         private string _skillName;

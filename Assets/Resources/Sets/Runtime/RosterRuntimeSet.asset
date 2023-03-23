@@ -29,14 +29,15 @@ MonoBehaviour:
       HeroId: 3
       HeroInventory:
       - ItemRarityId: 1
-        ItemRefId: 037fef13-1602-4398-ac65-95bde0bad37c
+        ItemRefId: 56fab9ce-34e2-4dba-86bf-26471e381c56
         ItemTypeId: 6
-        ItemWeareableTypeId: 1
+        ItemWeareableTypeId: 9
         Amount: 1
         IsStackable: 0
-        ItemStats: 02000000
+        SkillId: ee330592-7d6f-46f3-ad3f-94139cb14e9a
+        ItemStats: 05000000
     ThisCombatStats:
-      Stats: 01000000020000000300000004000000050000000600000005000000040000000300000002000000010000000200000003000000040000000500000002000000
+      Stats: 03000000040000000500000006000000050000000400000003000000020000000100000002000000030000000400000005000000020000000100000005000000
   - ThisHeroData:
       HeroName: Rachel
       SkinColorIndex: 5
@@ -53,21 +54,15 @@ MonoBehaviour:
       HeroId: 4
       HeroInventory:
       - ItemRarityId: 1
-        ItemRefId: ed1f2ebd-c020-4a1f-9999-7c52de850922
-        ItemTypeId: 6
-        ItemWeareableTypeId: 10
-        Amount: 1
-        IsStackable: 0
-        ItemStats: 01000000
-      - ItemRarityId: 1
         ItemRefId: 55faf77b-00ed-4aff-9fb1-13915eb964a1
         ItemTypeId: 1
         ItemWeareableTypeId: 1
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 05000000
     ThisCombatStats:
-      Stats: 0600000005000000040000000300000005000000020000000100000006000000040000000500000003000000010000000200000003000000020000000100000005000000
+      Stats: 06000000050000000400000003000000050000000200000006000000040000000500000003000000010000000200000003000000020000000100000005000000
   - ThisHeroData:
       HeroName: Javiera
       SkinColorIndex: 7
@@ -82,9 +77,17 @@ MonoBehaviour:
       StubbleColorIndex: 0
       IsMale: 0
       HeroId: 81ea43e3-ec16-4fdc-bdb8-1dbf5cbe7122
-      HeroInventory: []
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: f2914e63-7e2b-41aa-b2b9-6342d0676c9b
+        ItemTypeId: 6
+        ItemWeareableTypeId: 6
+        Amount: 1
+        IsStackable: 0
+        SkillId: eeac0fff-214c-47e6-b0c1-f5eccbbda031
+        ItemStats: 04000000
     ThisCombatStats:
-      Stats: 060000000200000001000000020000000100000003000000020000000400000002000000010000000200000003000000020000000300000002000000
+      Stats: 06000000020000000100000002000000010000000300000002000000040000000200000001000000020000000300000002000000030000000200000004000000
   - ThisHeroData:
       HeroName: Marcelo
       SkinColorIndex: 5
@@ -106,9 +109,10 @@ MonoBehaviour:
         ItemWeareableTypeId: 1
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 05000000
     ThisCombatStats:
-      Stats: 05000000060000000400000003000000040000000600000003000000050000000100000003000000020000000300000005000000010000000300000005000000
+      Stats: 05000000060000000400000003000000040000000600000003000000050000000100000003000000030000000500000001000000030000000500000002000000
   - ThisHeroData:
       HeroName: Sandra
       SkinColorIndex: 2
@@ -130,6 +134,7 @@ MonoBehaviour:
         ItemWeareableTypeId: 1
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 02000000
       - ItemRarityId: 1
         ItemRefId: 933273cb-ab1a-410c-98ff-36dc115a5817
@@ -137,6 +142,7 @@ MonoBehaviour:
         ItemWeareableTypeId: 2
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 05000000
       - ItemRarityId: 2
         ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
@@ -144,6 +150,7 @@ MonoBehaviour:
         ItemWeareableTypeId: 6
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 0600000006000000
       - ItemRarityId: 2
         ItemRefId: a33f978c-bc90-4eae-aaed-a744382af3cc
@@ -151,6 +158,7 @@ MonoBehaviour:
         ItemWeareableTypeId: 4
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 0500000002000000
       - ItemRarityId: 1
         ItemRefId: 6b32a346-e2f3-4e23-9ce3-3f058b192712
@@ -158,16 +166,18 @@ MonoBehaviour:
         ItemWeareableTypeId: 3
         Amount: 1
         IsStackable: 0
+        SkillId: 
         ItemStats: 06000000
       - ItemRarityId: 1
-        ItemRefId: f2914e63-7e2b-41aa-b2b9-6342d0676c9b
+        ItemRefId: 037fef13-1602-4398-ac65-95bde0bad37c
         ItemTypeId: 6
-        ItemWeareableTypeId: 6
+        ItemWeareableTypeId: 1
         Amount: 1
         IsStackable: 0
-        ItemStats: 03000000
+        SkillId: 408551f7-c2e6-4451-86ab-e641b6ba1a09
+        ItemStats: 02000000
     ThisCombatStats:
-      Stats: 060000000500000004000000030000000200000001000000020000000100000003000000020000000100000003000000020000000100000002000000020000000500000005000000060000000600000005000000020000000600000003000000
+      Stats: 060000000500000004000000020000000200000001000000030000000200000001000000030000000200000001000000020000000200000005000000050000000600000006000000050000000200000006000000030000000100000002000000
   - ThisHeroData:
       HeroName: Rodrigo
       SkinColorIndex: 4

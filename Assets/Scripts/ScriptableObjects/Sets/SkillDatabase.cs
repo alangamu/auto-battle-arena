@@ -1,7 +1,6 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Skills;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -30,7 +29,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         public void PerformSkill(string skillId)
         {
-            Debug.Log($"skillId {skillId}");
             GetSkillById(skillId).PerformSkill();
         }
 

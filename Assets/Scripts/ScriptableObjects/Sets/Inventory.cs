@@ -63,7 +63,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                 }
             }
 
-            //TODO: wen start play and the inventary has a Weapon, it turns into a Item. Maybe load on play be a good solution
             Items.Remove(item);
         }
 
