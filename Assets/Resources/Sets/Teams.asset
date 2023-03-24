@@ -17,12 +17,13 @@ MonoBehaviour:
   - HeroesIds:
     - c5bdc1cb-2d2a-4505-b8cd-d01851da6857
     - 3
+    - 2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343
+    - 81ea43e3-ec16-4fdc-bdb8-1dbf5cbe7122
   - HeroesIds:
     - 3
     - 4
     - 2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343
     - c5bdc1cb-2d2a-4505-b8cd-d01851da6857
-    - d0366a9f-a86d-4d09-94db-adcf123393bd
   - HeroesIds:
     - 3
   - HeroesIds: []
