@@ -11,7 +11,7 @@ namespace AutoFantasy.Scripts.Heroes
         public CombatStats ThisCombatStats;
         public event Action OnInventoryChanged;
 
-        public string SkillId => _skillId;
+        public string SkillId => GetSkillId();
         public string HeroName => ThisHeroData.HeroName; 
         public int SkinColorIndex => ThisHeroData.SkinColorIndex;
         public int EyeColorIndex => ThisHeroData.EyeColorIndex;
@@ -22,8 +22,6 @@ namespace AutoFantasy.Scripts.Heroes
         public int HairIndex => ThisHeroData.HairIndex;
         public int EyebrowsIndex => ThisHeroData.EyebrowsIndex;
         public bool IsMale => ThisHeroData.IsMale;
-
-        private string _skillId;
 
         public Hero(bool isMale, string heroName, List<int> stats)
         {
@@ -40,11 +38,6 @@ namespace AutoFantasy.Scripts.Heroes
         public string GetHeroId()
         {
             return ThisHeroData.HeroId;
-        }
-
-        public void SetSkillId(string skillId)
-        {
-            _skillId = skillId;
         }
 
         public void AddItem(Item item)
@@ -74,6 +67,12 @@ namespace AutoFantasy.Scripts.Heroes
             ThisHeroData.BodyArtColorIndex = UnityEngine.Random.Range(0, 7);
             ThisHeroData.FacialHairIndex = isMale ? UnityEngine.Random.Range(0, 18) : 0;
             ThisHeroData.StubbleColorIndex = UnityEngine.Random.Range(0, 3);
+        }
+
+        private string GetSkillId()
+        {
+            Item item = ThisHeroData.HeroInventory.Find(x => !string.IsNullOrEmpty(x.SkillId));
+            return item == null ? string.Empty : item.SkillId;
         }
 
         private void AddStats(Item item)

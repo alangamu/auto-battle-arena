@@ -16,7 +16,10 @@ MonoBehaviour:
   _skillDescription: A powerful attack that deals extra damage if the target is below
     a certain health threshold.
   _skillIcon: {fileID: 21300000, guid: b39f8baca7eece444a5ac2684dda0019, type: 3}
-  _cooldown: 4
+  _cooldown: 1
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
+  _skillId: 4f88fbe3-4533-4660-b21a-4201358e48e9
+  _skillPower: 120
+  _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}

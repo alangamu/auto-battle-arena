@@ -14,6 +14,8 @@ namespace AutoFantasy.Scripts.Enemy
 
         public event Action<WeaponSO> OnSetWeapon;
 
+        public Transform GetWeaponTransform() => handBoneTransform;
+
         private void Start()
         {
             OnSetWeapon?.Invoke(weapon);

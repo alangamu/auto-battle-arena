@@ -15,7 +15,10 @@ MonoBehaviour:
   _skillName: Shield Bash
   _skillDescription: Deals damage to a single target and stuns them for 1 turn.
   _skillIcon: {fileID: 21300000, guid: 14142b5c70151ad4aa2c2468b4de937f, type: 3}
-  _cooldown: 3
+  _cooldown: 1
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: e15b77f08f237db488ccfcdd7295308c, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
+  _skillId: 1efc10fa-a604-4e87-aca3-e02d53e584d9
+  _skillPower: 80
+  _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}

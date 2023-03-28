@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Heroes;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -9,6 +10,27 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         public Hero GetHeroById(string heroId)
         {
             return Items.Find(x => x.GetHeroId().Equals(heroId));
+        }
+
+        private void OnEnable()
+        {
+            foreach (var item in Items)
+            {
+                item.OnInventoryChanged += HeroOnInventoryChanged;
+            }
+        }
+
+        private void OnDisable()
+        {
+            foreach (var item in Items)
+            {
+                item.OnInventoryChanged -= HeroOnInventoryChanged;
+            }
+        }
+
+        private void HeroOnInventoryChanged()
+        {
+            EditorUtility.SetDirty(this);
         }
     }
 }

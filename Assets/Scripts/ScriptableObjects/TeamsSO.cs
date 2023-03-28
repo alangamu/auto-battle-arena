@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects
@@ -17,16 +18,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects
         {
             ActiveTeamNumber = teamNumber;
             OnSetActiveTeam?.Invoke();
-        }
-
-        public void SetTeams(List<Team> teams)
-        {
-            Teams = teams;
-        }
-
-        private void OnEnable()
-        {
-            hideFlags = HideFlags.DontUnloadUnusedAsset;
+            EditorUtility.SetDirty(this);
         }
     }
 }

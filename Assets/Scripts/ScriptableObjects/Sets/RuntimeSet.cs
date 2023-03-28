@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -15,6 +16,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         {
             if (!Items.Contains(thing))
             {
+                EditorUtility.SetDirty(this);
                 Items.Add(thing);
                 OnChange?.Invoke();
                 OnAdd?.Invoke(thing);
@@ -24,16 +26,12 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         public virtual void Remove(T thing)
         {
             if (Items.Contains(thing)) 
-            { 
+            {
+                EditorUtility.SetDirty(this);
                 Items.Remove(thing);
                 OnChange?.Invoke();
                 OnRemove?.Invoke(thing);
             }
-        }
-
-        private void OnEnable()
-        {
-            hideFlags = HideFlags.DontUnloadUnusedAsset;
         }
     }
 }

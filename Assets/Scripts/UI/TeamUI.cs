@@ -24,6 +24,7 @@ namespace AutoFantasy.Scripts.UI
             OnTeamSetup?.Invoke(TeamNumber);
         }
 
+        //button in the ui
         public void SelectThisTeam()
         {
             teams.SetActiveTeam(TeamNumber);

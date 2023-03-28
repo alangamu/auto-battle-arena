@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5afa514642d8241bb041259e322d9a, type: 3}
   m_Name: Teams
   m_EditorClassIdentifier: 
-  ActiveTeamNumber: 0
+  ActiveTeamNumber: 2
   Teams:
   - HeroesIds:
     - c5bdc1cb-2d2a-4505-b8cd-d01851da6857
@@ -26,4 +26,6 @@ MonoBehaviour:
     - c5bdc1cb-2d2a-4505-b8cd-d01851da6857
   - HeroesIds:
     - 3
+    - 4
+    - 2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343
   - HeroesIds: []

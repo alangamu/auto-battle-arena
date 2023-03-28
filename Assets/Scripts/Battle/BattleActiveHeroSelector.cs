@@ -57,6 +57,8 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private FloatVariable _attackDelayVariable;
         [SerializeField]
+        private FloatVariable _skillDelayVariable;
+        [SerializeField]
         private SkillDatabase _skillDatabase;
 
         private List<HeroAttackSpeedContainer> _allHeroes;
@@ -103,15 +105,11 @@ namespace AutoFantasy.Scripts
                 _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
             }
 
-            Transform target = _activeEnemy.GetImpactTransform();
-
             string skillId = _activeHero.CombatController.GetHero().SkillId;
 
-            _skillDatabase.PerformSkill(skillId);
+            _skillDatabase.PerformSkill(skillId, _activeHero.CombatController, _activeEnemy);
 
-            await Task.Delay((int)(_attackDelayVariable.Value * 1000));
-            //int damagePoints = GetDamagePoints();
-            //_activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
+            await Task.Delay((int)(_skillDelayVariable.Value * 1000));
             NextHeroReadyToAttack();
         }
 

@@ -71,8 +71,6 @@ namespace AutoFantasy.Scripts
 
                     animationController.SetWeaponType(weaponSO.WeaponType);
                 }
-
-                _hero.SetSkillId(item.SkillId);
             }
             else
             {

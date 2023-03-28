@@ -1,5 +1,6 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -40,8 +41,8 @@ namespace AutoFantasy.Scripts.UI
 
                 if (heroUI != null)
                 {
-
                     teams.Teams[_teamIndex].AddHero(heroUI.Hero);
+                    EditorUtility.SetDirty(teams);
                 }
             }
         }

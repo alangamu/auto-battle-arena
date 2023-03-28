@@ -37,10 +37,10 @@ namespace AutoFantasy.Scripts.UI
                     if (hero != null)
                     {
                         hero.RemoveItem(itemType.ItemRef);
-                        if (!string.IsNullOrEmpty(hero.SkillId))
-                        {
-                            hero.SetSkillId(string.Empty);
-                        }
+                        //if (!string.IsNullOrEmpty(hero.SkillId))
+                        //{
+                        //    hero.SetSkillId(string.Empty);
+                        //}
                     }
                 }
             }

@@ -1116,6 +1116,7 @@ MonoBehaviour:
   _heroSkillEvent: {fileID: 11400000, guid: cc4e6cc2d7001284f8be4c1455259db4, type: 2}
   _heroSkipTurnEvent: {fileID: 11400000, guid: 02cf8a1ef89a37a4e96665751d410847, type: 2}
   _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
+  _skillDelayVariable: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
   _skillDatabase: {fileID: 11400000, guid: 8ff250e403f664d4ab14089238833319, type: 2}
 --- !u!1 &876022116
 GameObject:

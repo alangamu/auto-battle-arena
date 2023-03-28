@@ -16,6 +16,7 @@ namespace AutoFantasy.Scripts.Interfaces
         void GettingDamage(int amount, bool isCritical);
         List<Reward> GetRewards();
         Transform GetImpactTransform();
+        GameObject GetGameObject();
         Hero GetHero();
         void PerformAttack(Transform target);
         void Hit();

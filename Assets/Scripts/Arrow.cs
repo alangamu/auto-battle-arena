@@ -6,12 +6,12 @@ namespace AutoFantasy.Scripts
     public class Arrow : MonoBehaviour, IProjectile
     {
         //TODO: make a arrow reference in the weaponSO
-        public void Launch(Transform targetTransform)
+        public void Launch(Transform targetTransform, float timeToImpact)
         {
             transform.LookAt(targetTransform);
-            LeanTween.move(gameObject, targetTransform, .1f);
+            LeanTween.move(gameObject, targetTransform, timeToImpact);
             transform.SetParent(targetTransform);
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, timeToImpact * 2);
         }
     }
 }

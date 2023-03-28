@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace AutoFantasy.Scripts.Enemy
 {
+    //TODO: try to remove this component
     public class MovementController : MonoBehaviour, IMovementController
     {
         public event Action OnAttackTarget;
@@ -45,7 +46,7 @@ namespace AutoFantasy.Scripts.Enemy
         {
             OnAttackTarget?.Invoke();
 
-            _movementType.PerformMovement(transform, target);
+            _movementType.PerformMovement(transform, target, _attackDelayVariable.Value);
 
             await Task.Delay((int)(_attackDelayVariable.Value * 500));
 

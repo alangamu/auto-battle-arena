@@ -30,6 +30,17 @@ namespace AutoFantasy.Scripts
         private WeaponSO _heroWeapon;
         private IHeroController _heroController;
 
+        public Transform GetWeaponTransform()
+        {
+            Transform weaponTransform = handBoneTransform;
+            if (_weaponGO.TryGetComponent(out IWeaponTransformProvider weaponTransformProvider) )
+            {
+                weaponTransform = weaponTransformProvider.GetWeaponTransform();
+            }
+
+            return weaponTransform;
+        }
+
         private void OnEnable()
         {
             if (TryGetComponent(out _heroController))

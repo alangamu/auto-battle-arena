@@ -15,10 +15,9 @@ namespace AutoFantasy.Scripts
         public event Action<bool> OnSelectionChanged;
 
         public CombatStats GetCombatStats() => _combatStats;
-
         public Hero GetHero() => _hero;
-
         public Transform GetImpactTransform() => _impactPoint;
+        public GameObject GetGameObject() => gameObject;
 
         //This is for enemies to manipulate the stats from inspector
         [SerializeField]

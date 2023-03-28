@@ -27,6 +27,7 @@ namespace AutoFantasy.Scripts.UI
         {
             _defaultSkillSprite = _skillImage.sprite;
             _activeHero.OnHeroChanged += Setup;
+            //TODO: add on weapon changed methos to update this display when equip/unequip weapons
         }
 
         private void OnDisable()

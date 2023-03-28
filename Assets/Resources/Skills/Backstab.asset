@@ -16,7 +16,10 @@ MonoBehaviour:
   _skillDescription: A powerful attack that deals extra damage if the player attacks
     from behind.
   _skillIcon: {fileID: 21300000, guid: 0d0cb663b1255ae4b9e158847e2eff47, type: 3}
-  _cooldown: 2
+  _cooldown: 1
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
-  _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
+  _movementType: {fileID: 11400000, guid: 198746710e2c92d4985b4e56a747337d, type: 2}
+  _skillId: 0309c501-33d8-4c7c-b14e-8c149a547a75
+  _skillPower: 100
+  _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}

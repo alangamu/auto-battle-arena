@@ -1,6 +1,9 @@
+using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
+using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Skills
@@ -25,16 +28,28 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         [SerializeField]
         private WeaponTypeSO _weaponType;
         [SerializeField]
-        private MovementTypeSO _movementType;
+        protected MovementTypeSO _movementType;
         [SerializeField]
         private string _skillId;
+        [SerializeField]
+        protected int _skillPower;
+        [SerializeField]
+        protected FloatVariable _attackDelay;
 
-        public abstract void PerformSkill();
+        public virtual void PerformSkill(ICombatController attacker, ICombatController target)
+        {
+            _movementType.PerformMovement(attacker.GetGameObject().transform, target.GetGameObject().transform, _attackDelay.Value);
+            LeanTween.delayedCall(_attackDelay.Value / 2, () =>
+            {
+                target.GettingDamage(_skillPower, true);
+            });
+        }
 
         public void CreateID()
         {
             Guid guid = Guid.NewGuid();
             _skillId = guid.ToString();
+            EditorUtility.SetDirty(this);
         }
     }
 } 

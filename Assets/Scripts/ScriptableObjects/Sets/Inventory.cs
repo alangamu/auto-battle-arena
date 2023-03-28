@@ -1,6 +1,7 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -43,6 +44,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         private void RemoveItemToInventory_OnRaise(Item item)
         {
+            EditorUtility.SetDirty(this);
             if (item.ItemTypeId == goldType.ItemTypeId)
             {
                 gold.ApplyChange(-item.Amount);
@@ -68,6 +70,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         private void AddItemToInventory_OnRaise(Item item)
         {
+            EditorUtility.SetDirty(this);
             if (item.ItemTypeId == goldType.ItemTypeId)
             {
                 gold.ApplyChange(item.Amount);

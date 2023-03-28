@@ -1,6 +1,8 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects.Items;
+﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Skills;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -27,9 +29,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return skillSO;
         }
 
-        public void PerformSkill(string skillId)
+        public void PerformSkill(string skillId, ICombatController attacker, ICombatController target)
         {
-            GetSkillById(skillId).PerformSkill();
+            GetSkillById(skillId).PerformSkill(attacker, target);
         }
 
         private void OnEnable()
@@ -41,6 +43,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                 Items.Add(item);
                 if (string.IsNullOrEmpty(item.SkillId))
                 {
+                    Debug.Log("creating skill id");
                     item.CreateID();
                 }
             }
