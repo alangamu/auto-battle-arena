@@ -8,9 +8,12 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
         public override void PerformMovement(Transform attacker, Transform target, float movementDuration)
         {
             Vector3 _startingPosition = attacker.position;
-            LeanTween.move(attacker.gameObject, target.position * 0.1f, movementDuration / 2).setOnComplete(() =>
+            LeanTween.move(attacker.gameObject, target.position * 0.1f, movementDuration / 4).setOnComplete(() =>
             {
-                LeanTween.move(attacker.gameObject, _startingPosition, movementDuration / 2);
+                LeanTween.delayedCall(movementDuration / 2, () =>
+                {
+                    LeanTween.move(attacker.gameObject, _startingPosition, movementDuration / 4);
+                });
             });
         }
     }

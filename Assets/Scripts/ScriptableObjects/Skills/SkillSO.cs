@@ -32,17 +32,11 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         [SerializeField]
         private string _skillId;
         [SerializeField]
-        protected int _skillPower;
-        [SerializeField]
         protected FloatVariable _attackDelay;
 
         public virtual void PerformSkill(ICombatController attacker, ICombatController target)
         {
             _movementType.PerformMovement(attacker.GetGameObject().transform, target.GetGameObject().transform, _attackDelay.Value);
-            LeanTween.delayedCall(_attackDelay.Value / 2, () =>
-            {
-                target.GettingDamage(_skillPower, true);
-            });
         }
 
         public void CreateID()

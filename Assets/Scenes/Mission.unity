@@ -2535,6 +2535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _newRoundTimeline: {fileID: 1374887403}
   _newRoundEvent: {fileID: 11400000, guid: 9cf26ac72d748ca42b50c0b18b3b5d0d, type: 2}
+  _skillTimeline: {fileID: 0}
+  _skillEvent: {fileID: 11400000, guid: cc4e6cc2d7001284f8be4c1455259db4, type: 2}
 --- !u!1 &1871921110
 GameObject:
   m_ObjectHideFlags: 0
