@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32d6c8c53d314b14c8f3c3849dc63b53, type: 3}
-  m_Name: Backstab
+  m_Name: Heal Blade
   m_EditorClassIdentifier: 
-  _skillName: Backstab
-  _skillDescription: A powerful attack from behind that deals critical damage
-  _skillIcon: {fileID: 21300000, guid: 2f26e4368cc6f20469824187c6b47a07, type: 3}
+  _skillName: Heal Blade
+  _skillDescription: Uses the sword to heal the wielder's wounds
+  _skillIcon: {fileID: 21300000, guid: 1a35f29c00c6eb542927e3d01faa739e, type: 3}
   _cooldown: 1
   _splashAmount: 0
-  _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
-  _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
-  _skillId: 07a685e4-af68-4fc0-893d-526d8dfce0f4
+  _weaponType: {fileID: 11400000, guid: b3ccee8261737804b96449e60bf8329f, type: 2}
+  _movementType: {fileID: 11400000, guid: e77e3b4d6b1e5d749ae5fa473cee624c, type: 2}
+  _skillId: 68d401b8-0952-49ca-85bd-265700d700a5
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
-  _skillPower: 120
+  _skillPower: -50

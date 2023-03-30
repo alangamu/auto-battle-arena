@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32d6c8c53d314b14c8f3c3849dc63b53, type: 3}
-  m_Name: Backstab
+  m_Name: Cleave
   m_EditorClassIdentifier: 
-  _skillName: Backstab
-  _skillDescription: A powerful attack from behind that deals critical damage
-  _skillIcon: {fileID: 21300000, guid: 2f26e4368cc6f20469824187c6b47a07, type: 3}
+  _skillName: Cleave
+  _skillDescription: A powerful swing that hits all enemies in front of the player.
+  _skillIcon: {fileID: 21300000, guid: bcb808554264e44448b4f19078720910, type: 3}
   _cooldown: 1
   _splashAmount: 0
-  _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
-  _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
-  _skillId: 07a685e4-af68-4fc0-893d-526d8dfce0f4
+  _weaponType: {fileID: 11400000, guid: 996f7bbfa7f09e5418bca4e57188d3fa, type: 2}
+  _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
+  _skillId: 36efc2d7-8965-4d8e-89c8-76fd9df1bb3d
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
-  _skillPower: 120
+  _skillPower: 60

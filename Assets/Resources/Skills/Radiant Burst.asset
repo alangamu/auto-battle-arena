@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32d6c8c53d314b14c8f3c3849dc63b53, type: 3}
-  m_Name: Clobber
+  m_Name: Radiant Burst
   m_EditorClassIdentifier: 
-  _skillName: Clobber
-  _skillDescription: A basic attack that deals damage to a single target.
-  _skillIcon: {fileID: 21300000, guid: 36766e90fcaa21447b3117fe5da6aa3f, type: 3}
+  _skillName: Radiant Burst
+  _skillDescription: A burst of holy energy that deals damage to all enemies within
+    a small area
+  _skillIcon: {fileID: 21300000, guid: 18b5cf9aa49978241a34b6b86b3d631d, type: 3}
   _cooldown: 1
-  _splashAmount: 0
+  _splashAmount: 1
   _weaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
-  _skillId: 7ef40b16-a155-4fc6-96ae-4d94a373c9b0
+  _skillId: a2493543-85f4-461b-902a-b36b37a53eb5
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
-  _skillPower: 50
+  _skillPower: 40

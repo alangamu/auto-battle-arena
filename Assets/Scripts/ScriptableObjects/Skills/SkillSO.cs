@@ -14,6 +14,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         public Sprite SkillSprite => _skillIcon;
         public string SkillId => _skillId;
         public int SkillTurns => _cooldown;
+        public string SkillName => _skillName;
 
         [SerializeField]
         private string _skillName;

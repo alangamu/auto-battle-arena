@@ -360,7 +360,22 @@ MonoBehaviour:
   - Pct: 1
     MinQty: 1
     MaxQty: 1
-    RewardItem: {fileID: 11400000, guid: 5b0ed33cb25d8ec4fbc0dca0fa488c39, type: 2}
+    RewardItem: {fileID: 11400000, guid: 2e81c4d0eacf97d4e9ccc248c9271eb0, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 51d47669a048ae34fa1fceef2a19acff, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 9cff95818d73286429cb68ac663d3341, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: f9dc2a91dfafd9c429068bd3e1a39187, type: 2}
     ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
   - Pct: 1
     MinQty: 1
@@ -370,7 +385,17 @@ MonoBehaviour:
   - Pct: 1
     MinQty: 1
     MaxQty: 1
-    RewardItem: {fileID: 11400000, guid: ba4c6ace0023efd4387c6e440e1217d5, type: 2}
+    RewardItem: {fileID: 11400000, guid: 8a257baae09e5824d9a01800d1203997, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: fe0fc34274f778548874b38d06c1c448, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 622c5523fa363a74594c45892cc04584, type: 2}
     ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
 --- !u!114 &-5717662629640353255
 MonoBehaviour:

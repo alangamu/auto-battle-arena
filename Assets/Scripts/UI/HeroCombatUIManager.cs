@@ -32,6 +32,8 @@ namespace AutoFantasy.Scripts.UI
         private TMP_Text _skillCooldownText;
         [SerializeField]
         private Button _skillButton;
+        [SerializeField]
+        private TMP_Text _skillNameText;
 
         private Sprite _defaultSkillSprite;
         private Dictionary<Hero, int> _fightersSkillCooldowns;
@@ -90,6 +92,7 @@ namespace AutoFantasy.Scripts.UI
             {
                 _skillButton.enabled = false;
                 _skillCooldownText.text = string.Empty;
+                _skillNameText.text = string.Empty;
                 _skillImage.sprite = _defaultSkillSprite;
                 return; 
             }
@@ -105,7 +108,7 @@ namespace AutoFantasy.Scripts.UI
 
             int turns = _fightersSkillCooldowns[hero];
             _skillImage.sprite = skillSO.SkillSprite;
-
+            _skillNameText.text = skillSO.SkillName;
             _skillButton.enabled = turns <= 0; ;
             _skillCooldownText.text = turns <= 0 ? string.Empty : turns.ToString();
         }

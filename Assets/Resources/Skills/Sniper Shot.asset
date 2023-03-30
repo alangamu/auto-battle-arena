@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b5f0d337d5227438ef615a1fc53f1b, type: 3}
+  m_Name: Sniper Shot
+  m_EditorClassIdentifier: 
+  _skillName: Sniper Shot
+  _skillDescription: Takes careful aim and fires a single arrow that deals massive
+    damage to a single target
+  _skillIcon: {fileID: 21300000, guid: d84ab29d8e900d84e81032277588acde, type: 3}
+  _cooldown: 1
+  _splashAmount: 0
+  _weaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}
+  _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
+  _skillId: 5281c4b2-f90f-48f0-b4fa-0a577df76332
+  _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
+  _skillPower: 120
+  _projectilePrefab: {fileID: 1381610650362966, guid: 67c60fa84a9c4854c8d4a1c85873e21d, type: 3}
+  _projectileTimeImpact: 0.3
