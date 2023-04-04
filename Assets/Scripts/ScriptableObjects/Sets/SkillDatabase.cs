@@ -29,9 +29,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return skillSO;
         }
 
-        public void PerformSkill(string skillId, ICombatController attacker, ICombatController target)
+        public void PerformSkill(string skillId, List<ICombatController> team, List<ICombatController> targets)
         {
-            GetSkillById(skillId).PerformSkill(attacker, target);
+            GetSkillById(skillId).PerformSkill(team, targets);
         }
 
         private void OnEnable()

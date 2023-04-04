@@ -7,6 +7,8 @@ namespace AutoFantasy.Scripts.Battle
     {
         [SerializeField]
         private GameObject _selectIndicator;
+        [SerializeField]
+        private GameObject _activeIndicator;
 
         private ICombatController _combatController;
 
@@ -18,10 +20,17 @@ namespace AutoFantasy.Scripts.Battle
         private void OnEnable()
         {
             Select(false);
+            Activation(false);
             if (TryGetComponent(out _combatController))
             {
                 _combatController.OnSelectionChanged += Select;
+                _combatController.OnActivationChanged += Activation;
             }
+        }
+
+        private void Activation(bool isActive)
+        {
+            _activeIndicator.SetActive(isActive);
         }
 
         private void OnDisable()

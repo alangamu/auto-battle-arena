@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Skills
@@ -11,20 +12,23 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         [SerializeField]
         private float _projectileTimeImpact;
 
-        public override void PerformSkill(ICombatController attacker, ICombatController target)
+        public override void PerformSkill(List<ICombatController> team, List<ICombatController> targets)
         {
-            base.PerformSkill(attacker, target);
+            base.PerformSkill(team, targets);
 
             LeanTween.delayedCall(_attackDelay.Value / 2, () =>
             {
-                if (attacker.GetGameObject().TryGetComponent(out IWeaponController weaponController))
+                ICombatController selectedHeroController = team.Find(x => x.IsActive());
+
+                if (selectedHeroController.GetGameObject().TryGetComponent(out IWeaponController weaponController))
                 {
                     Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
                     GameObject projectileGameObject = Instantiate(_projectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
 
                     if (projectileGameObject.TryGetComponent(out IProjectile projectile))
                     {
-                        projectile.Launch(target.GetImpactTransform(), _projectileTimeImpact);
+                        ICombatController selectedEnemy = targets.Find(x => x.IsSelected());
+                        projectile.Launch(selectedEnemy.GetImpactTransform(), _projectileTimeImpact);
                     }
                 }
             });

@@ -48,6 +48,11 @@ namespace AutoFantasy.Scripts
                 {
                     healthController.SetDifficulty(mission.MissionDifficulty);
                 }
+
+                if (enemy.TryGetComponent(out ICombatController combatController))
+                {
+                    combatController.SetTeamIndex(i);
+                }
             }
         }
     }

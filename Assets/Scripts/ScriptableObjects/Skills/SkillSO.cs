@@ -1,8 +1,10 @@
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
+using AutoFantasy.Scripts.ScriptableObjects.TargetTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -34,10 +36,17 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         private string _skillId;
         [SerializeField]
         protected FloatVariable _attackDelay;
+        [SerializeField]
+        protected TargetTypeSO _targetType;
 
-        public virtual void PerformSkill(ICombatController attacker, ICombatController target)
+        public virtual void PerformSkill(List<ICombatController> team, List<ICombatController> enemies)
         {
-            _movementType.PerformMovement(attacker.GetGameObject().transform, target.GetGameObject().transform, _attackDelay.Value);
+            ICombatController selectedEnemyController = enemies.Find(x => x.IsSelected());
+            ICombatController selectedHeroController = team.Find(x => x.IsActive());
+            _movementType.PerformMovement(
+                selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
+                selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform, 
+                _attackDelay.Value);
         }
 
         public void CreateID()

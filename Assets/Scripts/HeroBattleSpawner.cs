@@ -72,6 +72,7 @@ namespace AutoFantasy.Scripts
                 if (hero.TryGetComponent(out ICombatController combatController))
                 {
                     combatController.SetCombatStats(heroToSpawn.ThisCombatStats);
+                    combatController.SetTeamIndex(i);
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {

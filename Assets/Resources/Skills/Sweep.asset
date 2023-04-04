@@ -22,4 +22,5 @@ MonoBehaviour:
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
   _skillId: 1e4c0e26-a4a3-4c4d-8c9c-1a1dc2d3416c
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
+  _targetType: {fileID: 11400000, guid: 94e66b10dede5bd498d11b055d2ff1ba, type: 2}
   _skillPower: 40

@@ -5,6 +5,7 @@ using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -26,6 +27,9 @@ namespace AutoFantasy.Scripts
                 return y.AttackSpeed.CompareTo(x.AttackSpeed);
             }
         }
+
+        [SerializeField]
+        private TMP_Text _activeIndex;
 
         [SerializeField]
         private HeroStatSO attackPowerStat;
@@ -107,7 +111,7 @@ namespace AutoFantasy.Scripts
 
             string skillId = _activeHero.CombatController.GetHero().SkillId;
 
-            _skillDatabase.PerformSkill(skillId, _activeHero.CombatController, _activeEnemy);
+            _skillDatabase.PerformSkill(skillId, _heroCombatRuntimeSet.Items, _enemyCombatRuntimeSet.Items);
 
             await Task.Delay((int)(_skillDelayVariable.Value * 1000));
             NextHeroReadyToAttack();
@@ -151,6 +155,7 @@ namespace AutoFantasy.Scripts
                 }
 
                 _activeHero = _allHeroes[_currentIndex];
+                _activeIndex.text = _activeHero.CombatController.GetTeamIndex().ToString();
                 _currentIndex++;
 
                 if (!_activeHero.IsPlayer)
@@ -162,7 +167,7 @@ namespace AutoFantasy.Scripts
                 {
                     ICombatController combatController = _activeHero.CombatController;
 
-                    _heroCombatRuntimeSet.SelectThisHero(combatController);
+                    _heroCombatRuntimeSet.ActivateThisHero(combatController);
                     _activeCombatHero.SetHero(combatController.GetHero());
                 }
             }

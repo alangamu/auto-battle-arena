@@ -15,10 +15,11 @@ MonoBehaviour:
   _skillName: Healing Wave
   _skillDescription: Sends a wave of healing energy to allies
   _skillIcon: {fileID: 21300000, guid: 04470a11dabf4aa488fc0b163392340b, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: e15b77f08f237db488ccfcdd7295308c, type: 2}
-  _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
+  _movementType: {fileID: 11400000, guid: e77e3b4d6b1e5d749ae5fa473cee624c, type: 2}
   _skillId: 7f6c5639-95f3-480a-9179-a1fd8e09c34d
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
-  _skillPower: 20
+  _targetType: {fileID: 11400000, guid: 8c180d0aa3b9bea4bbe651c40bf66c39, type: 2}
+  _skillPower: -20

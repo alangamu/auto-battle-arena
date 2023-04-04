@@ -18,9 +18,10 @@ MonoBehaviour:
   _cooldown: 1
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}
-  _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
+  _movementType: {fileID: 11400000, guid: e77e3b4d6b1e5d749ae5fa473cee624c, type: 2}
   _skillId: d829b847-3cd6-4675-8320-ae3c747d9492
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
+  _targetType: {fileID: 11400000, guid: 39218cc1c9fd97344bddf3ac50287d6a, type: 2}
   _skillPower: -40
   _projectilePrefab: {fileID: 1381610650362966, guid: 67c60fa84a9c4854c8d4a1c85873e21d, type: 3}
   _projectileTimeImpact: 0.4

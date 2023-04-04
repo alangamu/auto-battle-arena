@@ -13,6 +13,7 @@ namespace AutoFantasy.Scripts
         public event Action<int, bool> OnGetHit;
         public event Action OnDeath;
         public event Action<bool> OnSelectionChanged;
+        public event Action<bool> OnActivationChanged;
 
         public CombatStats GetCombatStats() => _combatStats;
         public Hero GetHero() => _hero;
@@ -33,7 +34,24 @@ namespace AutoFantasy.Scripts
         private IHealthController _healthController;
         private IHeroController _heroController;
         private bool _isSelected;
+        private bool _isActive;
         private Hero _hero;
+        private int _teamIndex;
+
+        public int GetTeamIndex() => _teamIndex;
+
+        public bool IsActive() => _isActive;
+
+        public void SetIsActive(bool isActive)
+        {
+            _isActive = isActive;
+            OnActivationChanged?.Invoke(_isActive);
+        }
+
+        public void SetTeamIndex(int teamIndex)
+        {
+            _teamIndex = teamIndex;
+        }
 
         public void SetCombatStats(CombatStats newCombatStats)
         {

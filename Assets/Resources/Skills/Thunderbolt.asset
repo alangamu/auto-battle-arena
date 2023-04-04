@@ -21,6 +21,7 @@ MonoBehaviour:
   _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}
   _skillId: 57d4a4a8-8235-48b0-b98a-397f3029a3bb
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
+  _targetType: {fileID: 11400000, guid: c6f8b130c6719aa41b50207ff6cb7268, type: 2}
   _skillPower: 90
   _projectilePrefab: {fileID: 1381610650362966, guid: 67c60fa84a9c4854c8d4a1c85873e21d, type: 3}
   _projectileTimeImpact: 0.4

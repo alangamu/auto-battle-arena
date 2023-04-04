@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Skills
@@ -9,12 +10,13 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         [SerializeField]
         private int _skillHealPower;
 
-        public override void PerformSkill(ICombatController attacker, ICombatController target)
+        public override void PerformSkill(List<ICombatController> team, List<ICombatController> targets)
         {
-            base.PerformSkill(attacker, target);
+            base.PerformSkill(team, targets);
             LeanTween.delayedCall(_attackDelay.Value / 2, () =>
             {
-                attacker.GettingDamage(-_skillHealPower, true);
+                ICombatController selectedHeroController = team.Find(x => x.IsActive());
+                selectedHeroController.GettingDamage(-_skillHealPower, true);
             });
         }
     }

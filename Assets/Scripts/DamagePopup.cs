@@ -13,6 +13,8 @@ namespace AutoFantasy.Scripts
         private ColorVariable _normalHitColor;
         [SerializeField]
         private ColorVariable _criticalHitColor;
+        [SerializeField]
+        private ColorVariable _healColor;
 
         private ICombatController _combatController;
 
@@ -38,8 +40,16 @@ namespace AutoFantasy.Scripts
             //damageTextObject.transform.parent = null;
             if (damageTextObject.TryGetComponent(out TMP_Text damageText))
             {
-                damageText.text = damage.ToString();
-                damageText.color = isCritical ? _criticalHitColor.Value : _normalHitColor.Value;
+                if (damage < 0)
+                {
+                    damageText.text = (damage * -1).ToString();
+                    damageText.color = _healColor.Value;
+                }
+                else
+                {
+                    damageText.text = damage.ToString();
+                    damageText.color = isCritical ? _criticalHitColor.Value : _normalHitColor.Value;
+                }
             }
             Destroy(damageTextObject, .5f);
             LeanTween.moveLocalY(damageTextObject, 100f, .2f);

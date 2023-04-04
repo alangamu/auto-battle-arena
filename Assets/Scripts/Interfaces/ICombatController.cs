@@ -11,6 +11,7 @@ namespace AutoFantasy.Scripts.Interfaces
         event Action OnDeath;
         event Action<int, bool> OnGetHit;
         event Action<bool> OnSelectionChanged;
+        event Action<bool> OnActivationChanged;
         CombatStats GetCombatStats();
         void SetCombatStats(CombatStats combatStats);
         void GettingDamage(int amount, bool isCritical);
@@ -22,5 +23,9 @@ namespace AutoFantasy.Scripts.Interfaces
         void Hit();
         bool IsSelected();
         void SetIsSelected(bool isSelected);
+        int GetTeamIndex();
+        void SetTeamIndex(int teamIndex);
+        bool IsActive();
+        void SetIsActive(bool isActive);
     }
 }

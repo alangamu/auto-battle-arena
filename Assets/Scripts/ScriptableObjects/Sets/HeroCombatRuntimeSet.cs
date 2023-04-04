@@ -17,6 +17,12 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             combatController.SetIsSelected(true);
         }
 
+        public void ActivateThisHero(ICombatController combatController) 
+        {
+            DeactivateHeroes();
+            combatController.SetIsActive(true);
+        }
+
         public ICombatController GetSelectedEnemy()
         {
             ICombatController combatController = Items.Find(x => x.IsSelected());
@@ -55,6 +61,14 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             foreach (var item in Items)
             {
                 item.SetIsSelected(false);
+            }
+        }
+
+        public void DeactivateHeroes()
+        {
+            foreach (var item in Items)
+            {
+                item.SetIsActive(false);
             }
         }
 
