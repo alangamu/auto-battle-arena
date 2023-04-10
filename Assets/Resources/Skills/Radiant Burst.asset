@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: A burst of holy energy that deals damage to all enemies within
     a small area
   _skillIcon: {fileID: 21300000, guid: 18b5cf9aa49978241a34b6b86b3d631d, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 1
   _weaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

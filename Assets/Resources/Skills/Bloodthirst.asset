@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Bloodthirst
   _skillDescription: Strike a target with a vicious attack that heals the wielder
   _skillIcon: {fileID: 21300000, guid: cf5b36fbac38c2045aec0569cb0843f0, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 85c84aa0e1137924cabd4dbd59d3b0c9, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

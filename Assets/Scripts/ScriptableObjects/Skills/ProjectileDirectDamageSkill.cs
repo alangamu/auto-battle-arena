@@ -12,23 +12,26 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         [SerializeField]
         private float _projectileTimeImpact;
 
-        public override void PerformSkill(List<ICombatController> team, List<ICombatController> targets)
+        public override void PerformSkill(List<ICombatController> team, List<ICombatController> enemies)
         {
-            base.PerformSkill(team, targets);
+            base.PerformSkill(team, enemies);
+
+            List<ICombatController> targets = _targetType.GetTargets(team, enemies);
 
             LeanTween.delayedCall(_attackDelay.Value / 2, () =>
             {
                 ICombatController selectedHeroController = team.Find(x => x.IsActive());
-
                 if (selectedHeroController.GetGameObject().TryGetComponent(out IWeaponController weaponController))
                 {
-                    Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
-                    GameObject projectileGameObject = Instantiate(_projectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
-
-                    if (projectileGameObject.TryGetComponent(out IProjectile projectile))
+                    foreach (var item in targets)
                     {
-                        ICombatController selectedEnemy = targets.Find(x => x.IsSelected());
-                        projectile.Launch(selectedEnemy.GetImpactTransform(), _projectileTimeImpact);
+                        Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
+                        GameObject projectileGameObject = Instantiate(_projectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
+
+                        if (projectileGameObject.TryGetComponent(out IProjectile projectile))
+                        {
+                            projectile.Launch(item.GetImpactTransform(), _projectileTimeImpact);
+                        }
                     }
                 }
             });

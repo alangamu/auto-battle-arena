@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace AutoFantasy.Scripts.Enemy
 {
-    public class EnemyHealthBar : MonoBehaviour
+    public class HealthBar : MonoBehaviour
     {
         [SerializeField]
         private Image healthBarSprite;

@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: A wide swing that hits all enemies in a 180-degree arc in front
     of the user
   _skillIcon: {fileID: 21300000, guid: 0f9a63bfe07d23c419a87eb875d59b73, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 1
   _weaponType: {fileID: 11400000, guid: 2306be51430c9134b82bea185a7c8a61, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

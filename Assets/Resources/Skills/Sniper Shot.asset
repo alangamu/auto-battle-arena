@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: Takes careful aim and fires a single arrow that deals massive
     damage to a single target
   _skillIcon: {fileID: 21300000, guid: d84ab29d8e900d84e81032277588acde, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}
   _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}

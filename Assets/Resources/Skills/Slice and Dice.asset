@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Slice and Dice
   _skillDescription: Make quick successive attacks, dealing damage
   _skillIcon: {fileID: 21300000, guid: 4ce31015e35e1e64db1409e5565da029, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 85c84aa0e1137924cabd4dbd59d3b0c9, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

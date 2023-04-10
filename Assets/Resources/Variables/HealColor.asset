@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdc83078dd2df2459d61b8bf4829e8b, type: 3}
   m_Name: HealColor
   m_EditorClassIdentifier: 
-  Value: {r: 1, g: 0.21226418, b: 0.21226418, a: 1}
+  Value: {r: 0.5864869, g: 1, b: 0.2117647, a: 1}

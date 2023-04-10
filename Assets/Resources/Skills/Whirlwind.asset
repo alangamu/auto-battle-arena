@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: The player spins around with their axe, hitting all adjacent
     enemies
   _skillIcon: {fileID: 21300000, guid: 3af7e303f95a6674bb80a1502562ebd3, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 996f7bbfa7f09e5418bca4e57188d3fa, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+  _healEffectPrefab: {fileID: 1026642433091512, guid: 6878274fdfc19b747bf46c30a03cd999, type: 3}
 --- !u!114 &-3908672176701814239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,6 +3762,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 4620739032532161867, guid: 3520d8f518d74e0498095b7ac9d12fb3, type: 3}
   _normalHitColor: {fileID: 11400000, guid: 4837280dafbf81d46ab279efa16767d3, type: 2}
   _criticalHitColor: {fileID: 11400000, guid: 6a68bc0b4ecb89548be56ce03bf7033c, type: 2}
+  _healColor: {fileID: 0}
 --- !u!1 &5620802557862860893
 GameObject:
   m_ObjectHideFlags: 0

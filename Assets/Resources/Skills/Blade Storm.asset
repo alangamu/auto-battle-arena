@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: Strikes the enemy with a flurry of quick attacks, dealing moderate
     damage.
   _skillIcon: {fileID: 21300000, guid: 08dd443c7c0b81246bc38c52160f507c, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: b3ccee8261737804b96449e60bf8329f, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

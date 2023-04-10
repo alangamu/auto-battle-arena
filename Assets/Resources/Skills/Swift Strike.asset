@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Swift Strike
   _skillDescription: Quickly slashes the enemy with the sword, dealing moderate damage
   _skillIcon: {fileID: 21300000, guid: 56de9fbc9f677e5438e00d68aa22fb80, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: b3ccee8261737804b96449e60bf8329f, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

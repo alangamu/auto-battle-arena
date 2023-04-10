@@ -32,6 +32,11 @@ namespace AutoFantasy.Scripts
         {
             _currentHealth -= amount;
 
+            if (_currentHealth > _maxHealth)
+            {
+                _currentHealth = _maxHealth;  
+            }
+
             if (_currentHealth <= 0)
             {
                 OnDeath?.Invoke();

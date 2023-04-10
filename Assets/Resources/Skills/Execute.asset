@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Execute
   _skillDescription: Deal massive damage to enemies with low health
   _skillIcon: {fileID: 21300000, guid: aa3b082780a80874ea0b1b00e98b8607, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 85c84aa0e1137924cabd4dbd59d3b0c9, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

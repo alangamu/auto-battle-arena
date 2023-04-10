@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Fireball
   _skillDescription: Shoots a ball of fire at the enemy
   _skillIcon: {fileID: 21300000, guid: 83cd1552c5caf5243ba60b66524f1278, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: e15b77f08f237db488ccfcdd7295308c, type: 2}
   _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}

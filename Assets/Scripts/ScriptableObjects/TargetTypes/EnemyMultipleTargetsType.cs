@@ -14,7 +14,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.TargetTypes
             List<ICombatController> targets = new List<ICombatController>();
 
             //TODO: change the "1" to splash amount
-            targets = enemies.FindAll(x => x.GetTeamIndex() >= selectedEnemyindex - 1 && x.GetTeamIndex() >= selectedEnemyindex + 1);
+            targets = enemies.FindAll(x => x.GetTeamIndex() >= selectedEnemyindex - 1 && x.GetTeamIndex() <= selectedEnemyindex + 1);
 
             return targets;
         }

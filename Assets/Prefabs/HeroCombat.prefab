@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 5720047551648768880}
   - component: {fileID: 5983327496554476808}
   - component: {fileID: 8381248520585921862}
-  - component: {fileID: 7679364050583225179}
   - component: {fileID: 3779186173426216599}
   - component: {fileID: 5526516142282468838}
   m_Layer: 0
@@ -544,21 +543,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7679364050583225179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7173131906219478185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b69471ae42bc4f4db9ab4e088461ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBarSprite: {fileID: 926334494412602143}
-  reduceSpeed: 2
-  heroChangeHealth: {fileID: 11400000, guid: 4278a6ae91834ab4b90058a4e53710b4, type: 2}
 --- !u!114 &3779186173426216599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +668,8 @@ GameObject:
   - component: {fileID: 6254047918011266624}
   - component: {fileID: 7242977645067955979}
   - component: {fileID: 4003592737050542669}
+  - component: {fileID: 2487275267337812595}
+  - component: {fileID: 6825736168168054246}
   m_Layer: 0
   m_Name: HeroCombat
   m_TagString: Untagged
@@ -834,6 +820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+  _healEffectPrefab: {fileID: 1026642433091512, guid: 6878274fdfc19b747bf46c30a03cd999, type: 3}
 --- !u!114 &2915740885101318347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1470,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectIndicator: {fileID: 7062240357884757981}
   _activeIndicator: {fileID: 1217955914357308753}
+--- !u!114 &2487275267337812595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021379060007289243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257a3832ed844e4ca138db2bf9d74da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
+--- !u!114 &6825736168168054246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021379060007289243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febfa09be6f48844f898226404cf0150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarSprite: {fileID: 926334494412602143}
+  reduceSpeed: 2
 --- !u!1001 &6081062627790732458
 PrefabInstance:
   m_ObjectHideFlags: 0

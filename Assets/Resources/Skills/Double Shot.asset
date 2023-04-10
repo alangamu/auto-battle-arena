@@ -16,7 +16,7 @@ MonoBehaviour:
   _skillDescription: Fires two arrows at once, each dealing moderate damage to a
     single target
   _skillIcon: {fileID: 21300000, guid: 01ae1ba2a23386b4085492d1458185b1, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}
   _movementType: {fileID: 11400000, guid: 7e8fc1c5cd21d684eabadb9c4f591679, type: 2}

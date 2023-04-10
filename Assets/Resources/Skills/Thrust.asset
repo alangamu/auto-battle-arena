@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Thrust
   _skillDescription: A basic piercing attack with a spear
   _skillIcon: {fileID: 21300000, guid: 78f13606070029a4db319ee32ea75398, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 2306be51430c9134b82bea185a7c8a61, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Heal on Hit
   _skillDescription: A skill that heals the user for a percentage of damage dealt
   _skillIcon: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 2306be51430c9134b82bea185a7c8a61, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

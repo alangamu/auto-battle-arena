@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Clobber
   _skillDescription: A basic attack that deals damage to a single target
   _skillIcon: {fileID: 21300000, guid: 36766e90fcaa21447b3117fe5da6aa3f, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

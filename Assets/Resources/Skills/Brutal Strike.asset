@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Brutal Strike
   _skillDescription: A devastating blow that deals massive damage to a single target
   _skillIcon: {fileID: 21300000, guid: 10dfd8665b8f3bb4b91698abf9435b0a, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 996f7bbfa7f09e5418bca4e57188d3fa, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

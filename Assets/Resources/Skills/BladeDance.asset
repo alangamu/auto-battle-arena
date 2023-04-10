@@ -15,7 +15,7 @@ MonoBehaviour:
   _skillName: Blade Dance
   _skillDescription: A quick flurry of attacks that can hit multiple targets
   _skillIcon: {fileID: 21300000, guid: f0c1bf0723da9d145927ae40de74ce6d, type: 3}
-  _cooldown: 1
+  _cooldown: 0
   _splashAmount: 0
   _weaponType: {fileID: 11400000, guid: 2603731d4a441ff46b8e4972e7a16d97, type: 2}
   _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}

@@ -107,6 +107,7 @@ namespace AutoFantasy.Scripts
             if (_activeHero.IsPlayer)
             {
                 _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
+                _enemyCombatRuntimeSet.SelectThisHero(_activeEnemy);
             }
 
             string skillId = _activeHero.CombatController.GetHero().SkillId;

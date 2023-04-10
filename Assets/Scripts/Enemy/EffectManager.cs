@@ -9,6 +9,8 @@ namespace AutoFantasy.Scripts.Enemy
         private GameObject stepEffectPrefab;
         [SerializeField]
         private GameObject bloodEffectPrefab;
+        [SerializeField]
+        private GameObject _healEffectPrefab;
 
         private ICombatController _combatController;
 
@@ -46,8 +48,16 @@ namespace AutoFantasy.Scripts.Enemy
 
         private void OnGetHit(int damage, bool isCritical)
         {
-            GameObject stepEffect = Instantiate(bloodEffectPrefab, transform.position + Vector3.up, Random.rotation, transform);
-            Destroy(stepEffect, 1f);
+            if (damage < 0)
+            {
+                GameObject healEffect = Instantiate(_healEffectPrefab, transform.position + Vector3.up * 2f, Random.rotation, transform);
+                Destroy(healEffect, 1f);
+            }
+            else
+            {
+                GameObject hitEffect = Instantiate(bloodEffectPrefab, transform.position + Vector3.up, Random.rotation, transform);
+                Destroy(hitEffect, 1f);
+            }
         }
     }
 }
