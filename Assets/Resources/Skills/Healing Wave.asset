@@ -22,4 +22,5 @@ MonoBehaviour:
   _skillId: 7f6c5639-95f3-480a-9179-a1fd8e09c34d
   _attackDelay: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
   _targetType: {fileID: 11400000, guid: 8c180d0aa3b9bea4bbe651c40bf66c39, type: 2}
+  _skillTimeline: {fileID: 11400000, guid: 036036c77dea88940b285155edd8aa87, type: 2}
   _skillPower: -20

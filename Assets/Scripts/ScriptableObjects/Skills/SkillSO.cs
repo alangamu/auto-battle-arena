@@ -1,4 +1,5 @@
 using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.FXsTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
 using AutoFantasy.Scripts.ScriptableObjects.TargetTypes;
@@ -7,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Skills
 {
@@ -17,6 +20,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         public string SkillId => _skillId;
         public int SkillTurns => _cooldown;
         public string SkillName => _skillName;
+        public TimelineAsset SkillTimeline => _skillTimeline;
 
         [SerializeField]
         private string _skillName;
@@ -38,15 +42,17 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         protected FloatVariable _attackDelay;
         [SerializeField]
         protected TargetTypeSO _targetType;
+        [SerializeField]
+        private TimelineAsset _skillTimeline;
 
         public virtual void PerformSkill(List<ICombatController> team, List<ICombatController> enemies)
         {
-            ICombatController selectedEnemyController = enemies.Find(x => x.IsSelected());
-            ICombatController selectedHeroController = team.Find(x => x.IsActive());
-            _movementType.PerformMovement(
-                selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
-                selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform, 
-                _attackDelay.Value);
+            //ICombatController selectedEnemyController = enemies.Find(x => x.IsSelected());
+            //ICombatController selectedHeroController = team.Find(x => x.IsActive());
+            //_movementType.PerformMovement(
+            //    selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
+            //    selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform, 
+            //    _attackDelay.Value);
         }
 
         public void CreateID()
