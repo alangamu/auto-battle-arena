@@ -1,5 +1,6 @@
 //namespace DentedPixel{
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /**
@@ -142,7 +143,7 @@ public class LTDescr
 		}
 	}
 
-	public void reset(){
+    public void reset(){
 		this.toggle = this.useRecursion = this.usesNormalDt = true;
 		this.trans = null;
 		this.spriteRen = null;

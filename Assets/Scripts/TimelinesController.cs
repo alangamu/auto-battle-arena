@@ -1,10 +1,12 @@
 ﻿using AutoFantasy.Scripts.Heroes;
+using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Skills;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 namespace AutoFantasy.Scripts
 {
@@ -22,6 +24,8 @@ namespace AutoFantasy.Scripts
         private ActiveHeroSO _activeHero;
         [SerializeField]
         private SkillDatabase _skillDatabase;
+        [SerializeField]
+        private HeroCombatRuntimeSet _heroCombatRuntimeSet;
 
         private void OnEnable()
         {
@@ -37,11 +41,19 @@ namespace AutoFantasy.Scripts
 
         private void BeginSkill()
         {
-            Hero hero = _activeHero.ActiveHero;
-            SkillSO skillSO = _skillDatabase.GetSkillById(hero.SkillId);
+            //Hero hero = _activeHero.ActiveHero;
+            //ICombatController combatController = _heroCombatRuntimeSet.Items.Find(x => x.GetHero() == hero);
+            //GameObject activeHeroCombat = combatController.GetGameObject();
 
-            _skillTimeline.playableAsset = skillSO.SkillTimeline;
-            _skillTimeline.Play();
+            //SkillSO skillSO = _skillDatabase.GetSkillById(hero.SkillId);
+            //_skillTimeline.playableAsset = skillSO.SkillTimeline;
+
+            //var timelineAsset = _skillTimeline.playableAsset as TimelineAsset;
+
+            //TrackAsset miTrack = timelineAsset.GetOutputTrack(0);
+
+            //_skillTimeline.SetGenericBinding(miTrack, activeHeroCombat);
+            //_skillTimeline.Play();
         }
 
         private void NewRound()

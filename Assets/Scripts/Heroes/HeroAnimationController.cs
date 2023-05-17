@@ -74,5 +74,30 @@ namespace AutoFantasy.Scripts.Heroes
             _animator.speed = 1f;
             _animator.Play(animationKeyName);
         }
+
+        public void Run()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Attack()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Idle()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Hit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Shoot()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

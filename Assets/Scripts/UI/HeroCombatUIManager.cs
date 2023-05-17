@@ -38,11 +38,6 @@ namespace AutoFantasy.Scripts.UI
         private Sprite _defaultSkillSprite;
         private Dictionary<Hero, int> _fightersSkillCooldowns;
 
-        public void Attack()
-        {
-            _heroAttackEvent.Raise();
-        }
-
         public void Skip()
         {
             _heroSkipTurnEvent.Raise();
@@ -113,7 +108,7 @@ namespace AutoFantasy.Scripts.UI
             _skillCooldownText.text = turns <= 0 ? string.Empty : turns.ToString();
         }
 
-        private void HidePanel()
+        public void HidePanel()
         {
             _heroContainer.SetActive(false);
         }

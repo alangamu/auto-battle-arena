@@ -20,7 +20,6 @@ namespace AutoFantasy.Scripts.Interfaces
         GameObject GetGameObject();
         Hero GetHero();
         void PerformAttack(Transform target);
-        void Hit();
         bool IsSelected();
         void SetIsSelected(bool isSelected);
         int GetTeamIndex();

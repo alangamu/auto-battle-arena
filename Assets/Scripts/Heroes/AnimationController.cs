@@ -17,8 +17,13 @@ namespace AutoFantasy.Scripts.Heroes
         [SerializeField]
         private GameEvent returnToPositionEvent;
 
+        [SerializeField]
+        private GameEvent _hitTargetEvent;
+
+        [SerializeField]
+        private GameEvent _shootEvent;
+
         private WeaponTypeSO _weaponType;
-        private IMovementController _movementController;
         private IWeaponController _weaponController;
         private IHealthController _healthController;
 
@@ -41,12 +46,6 @@ namespace AutoFantasy.Scripts.Heroes
             {
                 _healthController.OnDeath += OnDeath;
             }
-            if (TryGetComponent(out _movementController))
-            {
-                _movementController.OnStartRunning += OnStartRunning;
-                _movementController.OnAttackTarget += OnAttackTarget;
-                _movementController.OnSetIdle += SetIdle;
-            }
         }
 
         private void OnDisable()
@@ -57,12 +56,6 @@ namespace AutoFantasy.Scripts.Heroes
             if (_weaponController != null)
             {
                 _weaponController.OnSetWeapon -= OnSetWeapon;
-            }
-            if (_movementController != null)
-            {
-                _movementController.OnStartRunning -= OnStartRunning;
-                _movementController.OnAttackTarget -= OnAttackTarget;
-                _movementController.OnSetIdle -= SetIdle;
             }
             if (_healthController != null)
             {
@@ -88,7 +81,7 @@ namespace AutoFantasy.Scripts.Heroes
             Animate(_weaponType.DeathAnimationClipName);
         }
 
-        private void OnStartRunning()
+        public void Run()
         {
             Animate(_weaponType.RunAnimationClipName);
         }
@@ -101,6 +94,26 @@ namespace AutoFantasy.Scripts.Heroes
         private void Animate(string animationKeyName)
         {
             animator.Play(animationKeyName);
+        }
+
+        public void Attack()
+        {
+            OnAttackTarget();
+        }
+
+        public void Idle()
+        {
+            SetIdle();
+        }
+
+        public void Hit()
+        {
+            _hitTargetEvent.Raise();
+        }
+
+        public void Shoot()
+        {
+            _shootEvent.Raise();
         }
     }
 }

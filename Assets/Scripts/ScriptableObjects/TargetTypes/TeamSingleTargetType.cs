@@ -9,6 +9,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.TargetTypes
     {
         public override List<ICombatController> GetTargets(List<ICombatController> team, List<ICombatController> enemies)
         {
+            //TODO: null when not selected
             List<ICombatController> targets = new List<ICombatController>
             {
                 team.Find(x => x.IsSelected())

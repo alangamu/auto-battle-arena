@@ -32,15 +32,6 @@ namespace AutoFantasy.Scripts
         private TMP_Text _activeIndex;
 
         [SerializeField]
-        private HeroStatSO attackPowerStat;
-        [SerializeField]
-        private HeroStatSO defenseStat;
-        [SerializeField]
-        private HeroStatSO criticalChanceStat;
-        [SerializeField]
-        private HeroStatSO criticalPowerStat;
-
-        [SerializeField]
         private GameEvent _startFightEvent;
         [SerializeField]
         private ActiveHeroSO _activeCombatHero;
@@ -54,6 +45,8 @@ namespace AutoFantasy.Scripts
         private GameEvent _nextAttackBeginEvent;
         [SerializeField]
         private GameEvent _heroAttackEvent;
+        [SerializeField]
+        private GameEvent _enemyAttackEvent;
         [SerializeField]
         private GameEvent _heroSkillEvent;
         [SerializeField]
@@ -69,7 +62,6 @@ namespace AutoFantasy.Scripts
         private int _currentIndex = 0;
         private HeroAttackSpeedContainer _activeHero;
         private ICombatController _activeEnemy;
-        private bool _isCriticalHit = false;
         private bool _isGameRunning = false;
 
         private void OnEnable()
@@ -96,17 +88,16 @@ namespace AutoFantasy.Scripts
             _heroSkipTurnEvent.OnRaise -= SkipTurn;
         }
 
-        private async void SkipTurn()
+        private void SkipTurn()
         {
-            await Task.Delay((int)(_attackDelayVariable.Value * 1000));
-            NextHeroReadyToAttack();
+            PerformHeroAttack();
         }
 
         private async void PerformSkill()
         {
             if (_activeHero.IsPlayer)
             {
-                _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
+                _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
                 _enemyCombatRuntimeSet.SelectThisHero(_activeEnemy);
             }
 
@@ -132,17 +123,7 @@ namespace AutoFantasy.Scripts
 
         private async void PerformHeroAttack()
         {
-            if (_activeHero.IsPlayer)
-            {
-                _activeEnemy = _enemyCombatRuntimeSet.GetSelectedEnemy();
-            }
-
-            Transform target = _activeEnemy.GetImpactTransform();
-            _activeHero.CombatController.PerformAttack(target);
-
             await Task.Delay((int)(_attackDelayVariable.Value * 1000));
-            int damagePoints = GetDamagePoints();
-            _activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
             NextHeroReadyToAttack();
         }
 
@@ -162,7 +143,8 @@ namespace AutoFantasy.Scripts
                 if (!_activeHero.IsPlayer)
                 {
                     _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
-                    _heroAttackEvent.Raise();
+                    _enemyAttackEvent.Raise();
+                    PerformHeroAttack();
                 }
                 else
                 {
@@ -200,27 +182,6 @@ namespace AutoFantasy.Scripts
             _allHeroes.Sort(new AttackSpeedComparer());
 
             NextHeroReadyToAttack();
-        }
-
-        private int GetDamagePoints()
-        {
-            CombatStats heroCombatStats = _activeHero.CombatController.GetCombatStats();
-            int heroDamage = (int)(attackPowerStat.BaseValue + (attackPowerStat.MultiplierFactor * heroCombatStats.StatCount(attackPowerStat.StatId)));
-            int targetDefense = (int)(defenseStat.BaseValue + (defenseStat.MultiplierFactor * _activeEnemy.GetCombatStats().StatCount(defenseStat.StatId)));
-            float criticalMult = 1.0f;
-            int randomCritical = Random.Range(1, 100);
-            int criticalPoints = (int)(criticalChanceStat.BaseValue + (heroCombatStats.StatCount(criticalChanceStat.StatId) * criticalChanceStat.MultiplierFactor));
-
-            _isCriticalHit = false;
-            if (randomCritical < criticalPoints)
-            {
-                _isCriticalHit = true;
-                criticalMult = criticalPowerStat.BaseValue + (criticalPowerStat.MultiplierFactor * heroCombatStats.StatCount(criticalPowerStat.StatId));
-            }
-
-            int totalDamage = (int)(heroDamage * criticalMult) - targetDefense;
-
-            return totalDamage < 0 ? 0 : totalDamage;
         }
     }
 }

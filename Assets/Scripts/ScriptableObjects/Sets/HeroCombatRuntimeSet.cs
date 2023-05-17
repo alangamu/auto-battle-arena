@@ -23,9 +23,19 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             combatController.SetIsActive(true);
         }
 
-        public ICombatController GetSelectedEnemy()
+        public ICombatController GetSelectedHero()
         {
             ICombatController combatController = Items.Find(x => x.IsSelected());
+            if (combatController == null)
+            {
+                return GetRandomHero();
+            }
+            return combatController;
+        }
+
+        public ICombatController GetActiveHero()
+        {
+            ICombatController combatController = Items.Find(x => x.IsActive());
             if (combatController == null)
             {
                 return GetRandomHero();

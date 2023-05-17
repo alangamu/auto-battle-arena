@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
 {
     [CreateAssetMenu(menuName = "Movements/NoMovement")]
     public class NoMovement : MovementTypeSO
     {
-        public override void PerformMovement(Transform attacker, Transform target, float movementDuration)
+        public override void PerformMovement(Transform attacker, Transform target, float movementDuration, Action action)
         {
             LeanTween.scale(attacker.gameObject, Vector3.one * 1.5f, movementDuration / 2).setOnComplete(() =>
             {

@@ -17,19 +17,21 @@ namespace AutoFantasy.Scripts.Enemy
         [SerializeField]
         private GameEvent heroWinEvent;
 
-        private IMovementController _movementController;
         private IHealthController _healthController;
+
+        public void SetWeaponType(WeaponTypeSO weaponType)
+        {
+            SetIdle();
+        }
+
+        public void PlayAnimation(string animationClipName)
+        {
+            throw new System.NotImplementedException();
+        }
 
         private void OnEnable()
         {
             heroWinEvent.OnRaise += SetIdle;
-
-            if (TryGetComponent(out _movementController))
-            {
-                _movementController.OnStartRunning += StartRunning;
-                _movementController.OnAttackTarget += AttackTarget;
-                _movementController.OnSetIdle += SetIdle;
-            }
 
             if (TryGetComponent(out _healthController))
             {
@@ -46,12 +48,6 @@ namespace AutoFantasy.Scripts.Enemy
         {
             heroWinEvent.OnRaise -= SetIdle;
 
-            if (_movementController != null)
-            {
-                _movementController.OnStartRunning -= StartRunning;
-                _movementController.OnAttackTarget -= AttackTarget;
-                _movementController.OnSetIdle -= SetIdle;
-            }
             if (_healthController != null)
             {
                 _healthController.OnDeath -= OnDeath;
@@ -87,9 +83,29 @@ namespace AutoFantasy.Scripts.Enemy
             animator.Play(animationKeyName);
         }
 
-        public void SetWeaponType(WeaponTypeSO weaponType)
+        public void Run()
+        {
+            StartRunning();
+        }
+
+        public void Attack()
+        {
+            AttackTarget();
+        }
+
+        public void Idle()
         {
             SetIdle();
+        }
+
+        public void Hit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Shoot()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

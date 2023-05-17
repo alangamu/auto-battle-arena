@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AutoFantasy.Scripts.Enemy
 {
-    public class EffectManager : MonoBehaviour
+    public class EffectManager : MonoBehaviour, IEffectController
     {
         [SerializeField]
         private GameObject stepEffectPrefab;

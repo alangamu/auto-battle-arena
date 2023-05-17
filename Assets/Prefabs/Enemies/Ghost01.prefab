@@ -197,9 +197,7 @@ GameObject:
   - component: {fileID: 3135474633921551507}
   - component: {fileID: 3135474633921551508}
   - component: {fileID: 3135474633921551509}
-  - component: {fileID: 3135474633921551510}
   - component: {fileID: 3135474633921551511}
-  - component: {fileID: -8645270194466052765}
   - component: {fileID: 8908235450865821113}
   - component: {fileID: -3908672176701814239}
   - component: {fileID: 7009457923477744709}
@@ -208,6 +206,7 @@ GameObject:
   - component: {fileID: -8416941812921694663}
   - component: {fileID: 50301538168621717}
   - component: {fileID: 8160082113355796443}
+  - component: {fileID: -3720676556484401532}
   m_Layer: 0
   m_Name: Ghost01
   m_TagString: Untagged
@@ -268,22 +267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 03b407e74f989da4f91de09dd8498a2b, type: 2}
   handBoneTransform: {fileID: 3586241850053938083}
---- !u!114 &3135474633921551510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3135474633921551464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}
-  animator: {fileID: 3135474633921551508}
-  attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
-  heroWinEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
 --- !u!114 &3135474633921551511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,20 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f0a7ccd7cc244f90ced352951458e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8645270194466052765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3135474633921551464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03b2fda57cc7534cb9b6c585f5fcdb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementType: {fileID: 11400000, guid: 5a67c3e3c0c9f8c4f9ddc27dec13db42, type: 2}
-  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
 --- !u!114 &8908235450865821113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
-  _healEffectPrefab: {fileID: 1026642433091512, guid: 6878274fdfc19b747bf46c30a03cd999, type: 3}
+  _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
 --- !u!114 &-3908672176701814239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +456,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.53399664, y: 1.6457818, z: 0.39133126}
   m_Center: {x: -0.01003024, y: 1.0104901, z: -0.008922577}
+--- !u!114 &-3720676556484401532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3135474633921551464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroWinEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
+  animator: {fileID: 3135474633921551508}
+  attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
+  returnToPositionEvent: {fileID: 11400000, guid: db26b7c25f4179748bdd2af76b63cbfc, type: 2}
+  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
+  _shootEvent: {fileID: 11400000, guid: 06722f7cbc7a6384eb95745e3fa90d88, type: 2}
 --- !u!1 &3589369347062046335
 GameObject:
   m_ObjectHideFlags: 0

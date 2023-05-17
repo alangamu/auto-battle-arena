@@ -47,12 +47,12 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
 
         public virtual void PerformSkill(List<ICombatController> team, List<ICombatController> enemies)
         {
-            //ICombatController selectedEnemyController = enemies.Find(x => x.IsSelected());
-            //ICombatController selectedHeroController = team.Find(x => x.IsActive());
-            //_movementType.PerformMovement(
-            //    selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
-            //    selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform, 
-            //    _attackDelay.Value);
+            ICombatController selectedEnemyController = enemies.Find(x => x.IsSelected());
+            ICombatController selectedHeroController = team.Find(x => x.IsActive());
+            _movementType.PerformMovement(
+                selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
+                selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform,
+                _attackDelay.Value, () => { });
         }
 
         public void CreateID()

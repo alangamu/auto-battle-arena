@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 8942012012820057483}
   - component: {fileID: 8982525778853209906}
   - component: {fileID: -4541644424525951236}
-  - component: {fileID: 3405029112496176097}
   - component: {fileID: 5359841432402848595}
   - component: {fileID: 7549042903886563230}
   - component: {fileID: 3020341778331428411}
@@ -745,20 +744,8 @@ MonoBehaviour:
   animator: {fileID: 8942012012820057483}
   attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
   returnToPositionEvent: {fileID: 11400000, guid: db26b7c25f4179748bdd2af76b63cbfc, type: 2}
---- !u!114 &3405029112496176097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8021379060007289243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03b2fda57cc7534cb9b6c585f5fcdb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementType: {fileID: 0}
-  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
+  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
+  _shootEvent: {fileID: 11400000, guid: 06722f7cbc7a6384eb95745e3fa90d88, type: 2}
 --- !u!114 &5359841432402848595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,7 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
-  _healEffectPrefab: {fileID: 1026642433091512, guid: 6878274fdfc19b747bf46c30a03cd999, type: 3}
+  _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
 --- !u!114 &2915740885101318347
 MonoBehaviour:
   m_ObjectHideFlags: 0

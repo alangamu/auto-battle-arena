@@ -68,12 +68,6 @@ namespace AutoFantasy.Scripts
             OnAttackTarget?.Invoke(target);
         }
 
-        //TODO: remove if not necessary
-        public void Hit()
-        {
-            
-        }
-
         public List<Reward> GetRewards()
         {
             if (TryGetComponent(out _rewardTable))

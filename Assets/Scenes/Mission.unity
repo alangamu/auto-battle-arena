@@ -1184,6 +1184,7 @@ GameObject:
   - component: {fileID: 867323741}
   - component: {fileID: 867323742}
   - component: {fileID: 867323743}
+  - component: {fileID: 867323744}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -1239,10 +1240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeIndex: {fileID: 89617425}
-  attackPowerStat: {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
-  defenseStat: {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
-  criticalChanceStat: {fileID: 11400000, guid: 0917e9a52924753458e8593dca1828db, type: 2}
-  criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
   _startFightEvent: {fileID: 11400000, guid: 539b97498d926554baaa81e01760e5a2, type: 2}
   _activeCombatHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
   _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
@@ -1250,11 +1247,37 @@ MonoBehaviour:
   _attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
   _nextAttackBeginEvent: {fileID: 11400000, guid: 5bd3461cd96f09f4985aa6bc794b66e3, type: 2}
   _heroAttackEvent: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
+  _enemyAttackEvent: {fileID: 11400000, guid: c921033515b19324b97e435ebf4e9d70, type: 2}
   _heroSkillEvent: {fileID: 11400000, guid: cc4e6cc2d7001284f8be4c1455259db4, type: 2}
   _heroSkipTurnEvent: {fileID: 11400000, guid: 02cf8a1ef89a37a4e96665751d410847, type: 2}
   _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
   _skillDelayVariable: {fileID: 11400000, guid: 7397958ce9038344db5e5ee073b82ccb, type: 2}
   _skillDatabase: {fileID: 11400000, guid: 8ff250e403f664d4ab14089238833319, type: 2}
+--- !u!114 &867323744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867323740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6084375038271e4e96af607d97827e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroAttackEvent: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
+  _enemyAttackEvent: {fileID: 11400000, guid: c921033515b19324b97e435ebf4e9d70, type: 2}
+  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
+  _enemyCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
+  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
+  attackPowerStat: {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  defenseStat: {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
+  criticalChanceStat: {fileID: 11400000, guid: 0917e9a52924753458e8593dca1828db, type: 2}
+  criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
+  unarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
+  weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
 --- !u!1 &876022116
 GameObject:
   m_ObjectHideFlags: 3
@@ -1965,12 +1988,14 @@ PlayableDirector:
   m_GameObject: {fileID: 1333274641}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: 036036c77dea88940b285155edd8aa87, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -146482540451477696, guid: ed1bac523850dec4f8b31bba08eef7da, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1342879403
@@ -2922,6 +2947,7 @@ MonoBehaviour:
   _skillTimeline: {fileID: 1333274643}
   _activeHero: {fileID: 11400000, guid: 9e290f3000e21e14a94d895010f02e8f, type: 2}
   _skillDatabase: {fileID: 11400000, guid: 8ff250e403f664d4ab14089238833319, type: 2}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
 --- !u!1 &1871921110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,9 +4483,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 540425329}
-        m_TargetAssemblyTypeName: AutoFantasy.Scripts.UI.HeroCombatUIManager, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
+        m_TargetAssemblyTypeName: AutoFantasy.Scripts.ScriptableObjects.Events.GameEvent,
+          Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
