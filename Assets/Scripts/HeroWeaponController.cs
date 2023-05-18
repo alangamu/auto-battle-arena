@@ -89,5 +89,10 @@ namespace AutoFantasy.Scripts
             _hero = hero;
             Refresh();
         }
+
+        public WeaponSO GetWeapon()
+        {
+            return _heroWeapon;
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace AutoFantasy.Scripts.Interfaces
     {
         event Action<WeaponSO> OnSetWeapon;
         Transform GetWeaponTransform();
+        WeaponSO GetWeapon();
     }
 }

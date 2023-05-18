@@ -1268,6 +1268,7 @@ MonoBehaviour:
   _heroAttackEvent: {fileID: 11400000, guid: 831628e9d8d55ee4baf0f1bd86b3a353, type: 2}
   _enemyAttackEvent: {fileID: 11400000, guid: c921033515b19324b97e435ebf4e9d70, type: 2}
   _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
+  _shootEvent: {fileID: 11400000, guid: 06722f7cbc7a6384eb95745e3fa90d88, type: 2}
   _heroCombatRuntimeSet: {fileID: 11400000, guid: deb0bca52d08b8a45a7cfa76325a655e, type: 2}
   _enemyCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
   _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
@@ -1278,6 +1279,7 @@ MonoBehaviour:
   unarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
   weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
   databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
+  _projectileTimeImpact: 0.5
 --- !u!1 &876022116
 GameObject:
   m_ObjectHideFlags: 3

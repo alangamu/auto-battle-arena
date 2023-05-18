@@ -7,6 +7,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Items
     {
         public GameObject ItemPrefab;
         public WeaponTypeSO WeaponType;
+        public GameObject ProjectilePrefab;
 
         private void OnEnable()
         {

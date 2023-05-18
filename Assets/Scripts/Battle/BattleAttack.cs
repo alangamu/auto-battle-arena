@@ -1,13 +1,10 @@
-﻿using AutoFantasy.Scripts.Heroes;
-using AutoFantasy.Scripts.Interfaces;
+﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
-using System.Threading.Tasks;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Battle
@@ -20,6 +17,8 @@ namespace AutoFantasy.Scripts.Battle
         private GameEvent _enemyAttackEvent;
         [SerializeField]
         private GameEvent _hitTargetEvent;
+        [SerializeField]
+        private GameEvent _shootEvent;
         [SerializeField]
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
         [SerializeField]
@@ -44,21 +43,20 @@ namespace AutoFantasy.Scripts.Battle
         [SerializeField]
         private ItemDatabase databaseItem;
 
+        [SerializeField]
+        private float _projectileTimeImpact;
+
         private ICombatController _activeEnemy;
         private ICombatController _activeHero;
 
         private bool _isCriticalHit = false;
-
-        public void Hit()
-        {
-            Debug.Log("hit");
-        }
 
         private void OnEnable()
         {
             _heroAttackEvent.OnRaise += HeroAttack;
             _enemyAttackEvent.OnRaise += EnemyAttack;
             _hitTargetEvent.OnRaise += HitTarget;
+            _shootEvent.OnRaise += ShootProjectile;
         }
 
         private void OnDisable()
@@ -66,6 +64,24 @@ namespace AutoFantasy.Scripts.Battle
             _heroAttackEvent.OnRaise -= HeroAttack;
             _enemyAttackEvent.OnRaise -= EnemyAttack;
             _hitTargetEvent.OnRaise -= HitTarget;
+            _shootEvent.OnRaise -= ShootProjectile;
+        }
+
+        private void ShootProjectile()
+        {
+            if (_activeHero.GetGameObject().TryGetComponent(out IWeaponController weaponController))
+            {
+                Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
+                GameObject projectileGameObject = Instantiate(weaponController.GetWeapon().ProjectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
+
+                if (projectileGameObject.TryGetComponent(out IProjectile projectile))
+                {
+                    projectile.Launch(_activeEnemy.GetImpactTransform(), _projectileTimeImpact);
+                }
+
+                LeanTween.delayedCall(_projectileTimeImpact, () => { HitTarget(); });
+            }
+
         }
 
         private void HitTarget()

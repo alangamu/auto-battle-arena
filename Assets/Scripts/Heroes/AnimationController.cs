@@ -14,12 +14,11 @@ namespace AutoFantasy.Scripts.Heroes
         private Animator animator;
         [SerializeField]
         private HeroStatSO attackSpeedStat;
+
         [SerializeField]
         private GameEvent returnToPositionEvent;
-
         [SerializeField]
         private GameEvent _hitTargetEvent;
-
         [SerializeField]
         private GameEvent _shootEvent;
 

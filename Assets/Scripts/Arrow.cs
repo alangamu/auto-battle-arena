@@ -5,7 +5,6 @@ namespace AutoFantasy.Scripts
 {
     public class Arrow : MonoBehaviour, IProjectile
     {
-        //TODO: make a arrow reference in the weaponSO
         public void Launch(Transform targetTransform, float timeToImpact)
         {
             transform.LookAt(targetTransform);

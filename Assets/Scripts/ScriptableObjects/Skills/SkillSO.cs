@@ -20,7 +20,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         public string SkillId => _skillId;
         public int SkillTurns => _cooldown;
         public string SkillName => _skillName;
-        public TimelineAsset SkillTimeline => _skillTimeline;
 
         [SerializeField]
         private string _skillName;
@@ -42,8 +41,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         protected FloatVariable _attackDelay;
         [SerializeField]
         protected TargetTypeSO _targetType;
-        [SerializeField]
-        private TimelineAsset _skillTimeline;
 
         public virtual void PerformSkill(List<ICombatController> team, List<ICombatController> enemies)
         {

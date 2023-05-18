@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFantasy.Scripts.Interfaces;
+using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
@@ -8,10 +9,21 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
     {
         public override void PerformMovement(Transform attacker, Transform target, float movementDuration, Action action)
         {
-            LeanTween.scale(attacker.gameObject, Vector3.one * 1.5f, movementDuration / 2).setOnComplete(() =>
+            attacker.LookAt(target);
+            IAnimationController animationController;
+
+            LeanTween.delayedCall(movementDuration / 4, () => 
             {
-                LeanTween.scale(attacker.gameObject, Vector3.one, movementDuration / 2);
+                if (attacker.gameObject.TryGetComponent(out animationController))
+                {
+                    action.Invoke();
+                }
             });
+
+            //LeanTween.scale(attacker.gameObject, Vector3.one * 1.5f, movementDuration / 2).setOnComplete(() =>
+            //{
+            //    LeanTween.scale(attacker.gameObject, Vector3.one, movementDuration / 2);
+            //});
         }
     }
 }

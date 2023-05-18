@@ -21,3 +21,4 @@ MonoBehaviour:
   RecipeIngredients: []
   ItemPrefab: {fileID: 1391629762286776, guid: cb6232a083cec354face1959a8bfa209, type: 3}
   WeaponType: {fileID: 11400000, guid: 9c8efd770578d7347ba2042cca648e60, type: 2}
+  ProjectilePrefab: {fileID: 1381610650362966, guid: 67c60fa84a9c4854c8d4a1c85873e21d, type: 3}

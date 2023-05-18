@@ -16,7 +16,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
                 animationController.Run();
             }
 
-            LeanTween.move(attacker.gameObject, target.position * 0.9f, movementDuration / 4).setOnComplete(() =>
+            LeanTween.move(attacker.gameObject, target.position * 0.9f + Vector3.down, movementDuration / 4).setOnComplete(() =>
             {
                 action.Invoke();
                 LeanTween.delayedCall(movementDuration / 2, () => 
