@@ -19,11 +19,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
                     action.Invoke();
                 }
             });
-
-            //LeanTween.scale(attacker.gameObject, Vector3.one * 1.5f, movementDuration / 2).setOnComplete(() =>
-            //{
-            //    LeanTween.scale(attacker.gameObject, Vector3.one, movementDuration / 2);
-            //});
         }
     }
 }

@@ -30,6 +30,8 @@ namespace AutoFantasy.Scripts
         private WeaponSO _heroWeapon;
         private IHeroController _heroController;
 
+        public WeaponSO GetWeapon() => _heroWeapon;
+
         public Transform GetWeaponTransform()
         {
             Transform weaponTransform = handBoneTransform;
@@ -88,11 +90,6 @@ namespace AutoFantasy.Scripts
         {
             _hero = hero;
             Refresh();
-        }
-
-        public WeaponSO GetWeapon()
-        {
-            return _heroWeapon;
         }
     }
 }
