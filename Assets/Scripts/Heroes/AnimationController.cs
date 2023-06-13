@@ -114,5 +114,15 @@ namespace AutoFantasy.Scripts.Heroes
         {
             _shootEvent.Raise();
         }
+
+        public void GetHit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Death()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

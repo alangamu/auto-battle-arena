@@ -10,5 +10,7 @@ namespace AutoFantasy.Scripts.Interfaces
         void Idle();
         void Hit();
         void Shoot();
+        void GetHit();
+        void Death();
     }
 }

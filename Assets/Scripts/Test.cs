@@ -1,8 +1,11 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects;
+﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.Map;
+using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +16,11 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent testEvent;
         [SerializeField]
-        private ItemDatabase databaseItem;
+        private TileRuntimeSet _tileRuntimeSet;
         [SerializeField]
-        private Item item;
+        private int _centerTileColumn;
         [SerializeField]
-        private ItemTypeSO armorTypeItem;
-        [SerializeField]
-        private ItemTypeSO weaponTypeItem;
-
+        private int _centerTileRow;
 
         private void OnEnable()
         {
@@ -34,38 +34,48 @@ namespace AutoFantasy.Scripts
 
         private void TestEvent_OnRaise()
         {
-            //GetItem();
-            //Load();
-            SetIdItems();
-        }
+            Hex initialHex = _tileRuntimeSet.GetHexAt(11, 2);
+            Hex finalHex = _tileRuntimeSet.GetHexAt(14, 4);
 
-        private void SetIdItems()
-        {
 
-        }
 
-        private void GetItem()
-        {
-            List<ItemSO> armors = databaseItem.Items.FindAll(x => x.ItemType.ItemTypeId == item.ItemTypeId && x.ItemId == item.ItemRefId);
+            //foreach (var item in _tileRuntimeSet.Items)
+            //{
+            //    if (item.GetGameObject().TryGetComponent(out MapTileIndicators tileIndicator))
+            //    {
+            //        tileIndicator.SetElevation(item.GetHex().Elevation.ToString());
+            //        //tileIndicator.SetMoisture(item.GetHex().Moisture.ToString());
+            //        tileIndicator.SetMoisture(item.GetHex().IsWalkable.ToString());
+            //    }
+            //}
 
-            if (item.ItemTypeId == armorTypeItem.ItemTypeId)
+            //Pathfinding hexGrid = new Pathfinding(10, 10); // Tamaño del grid hexagonal
+
+            // Configurar nodos transitables e intransitables en el grid
+            //hexGrid.SetWalkable(1, 1, false);
+            //hexGrid.SetWalkable(2, 1, false);
+            //hexGrid.SetWalkable(3, 1, false);
+            //hexGrid.SetWalkable(4, 2, false);
+            //hexGrid.SetWalkable(4, 3, false);
+            // ...
+
+            //HexNode startNode = new HexNode(0, 0); // Nodo de inicio
+            //HexNode endNode = new HexNode(9, 9); // Nodo de destino
+
+            List<Hex> path = _tileRuntimeSet.FindPath(initialHex, finalHex);
+
+            if (path.Count > 0)
             {
-                List<ArmorSO> armorsSO = armors.ConvertAll(x => (ArmorSO)x).FindAll(j => j.ArmorType.WeareableTypeId == item.ItemWeareableTypeId);
-
-                print($"Item armor {armorsSO[0]}");
+                foreach (Hex node in path)
+                {
+                    Debug.Log($"[{node.Q}, {node.R}]"); 
+                }
             }
-            if (item.ItemTypeId == weaponTypeItem.ItemTypeId)
+            else
             {
-                List<WeaponSO> weaponsSO = armors.ConvertAll(x => (WeaponSO)x).FindAll(j => j.WeaponType.WeareableTypeId == item.ItemWeareableTypeId);
-
-                print($"Item weapon {weaponsSO[0]}");
+                Debug.Log("No se encontró un camino válido.");
             }
 
-        }
-
-        private void Load()
-        {
-            //JsonUtility.FromJsonOverwrite(rosterJson.Value, rosterHeroes);
         }
     }
 }

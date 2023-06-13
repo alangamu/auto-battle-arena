@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.65080994, g: 0.666729, b: 0.7075472, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.05
@@ -4165,6 +4165,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711327672}
   m_CullTransparentMesh: 0
+--- !u!1 &721005174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721005175}
+  - component: {fileID: 721005177}
+  - component: {fileID: 721005176}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721005175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721005174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721005176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721005174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc426e0e16430d48bf7a475d6065f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _updateMapVisuals: {fileID: 11400000, guid: c25728d8a52f84944a45a1f3ae7aba76, type: 2}
+  _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _junglePrefab: {fileID: 1843149452415598, guid: 9ebc0b3419d85bc478783f8df41ecac9, type: 3}
+  _forestPrefab: {fileID: 1843149452415598, guid: 9ebc0b3419d85bc478783f8df41ecac9, type: 3}
+  _meshWater: {fileID: 4300000, guid: 8f2cab178f3b514498f7f32137d9f27e, type: 3}
+  _meshFlat: {fileID: 4300000, guid: 008bf3cac50b1a14680ce9a91f33a9b0, type: 3}
+  _meshHill: {fileID: 4300000, guid: 48b737566f18339418bf120cbced934f, type: 3}
+  _meshesMountains:
+  - {fileID: 4300000, guid: 5fd58ef91b4510e45bdae45dd50f67f1, type: 3}
+  - {fileID: 4300000, guid: 5561c535c7c91c24fab22c9d03356209, type: 3}
+  _meshesIslands:
+  - {fileID: 4300000, guid: 008bf3cac50b1a14680ce9a91f33a9b0, type: 3}
+  _matOcean: {fileID: 2100000, guid: a16b7b85a356b7d469067849a165dcff, type: 2}
+  _matPlains: {fileID: 2100000, guid: a16b7b85a356b7d469067849a165dcff, type: 2}
+  _matGrasslands: {fileID: 2100000, guid: 9b2b56775f50cfe4a9b77a3c83af5ca7, type: 2}
+  _matMountains: {fileID: 2100000, guid: a16b7b85a356b7d469067849a165dcff, type: 2}
+  _matDesert: {fileID: 2100000, guid: fd9e273c4dc19434295f097ad21244e6, type: 2}
+  _tileTerrainTypes:
+  - {fileID: 11400000, guid: 6b449ffd4bb9d4b45adf9e5c77355c46, type: 2}
+  - {fileID: 11400000, guid: 0d859f1034072a944932ebdc7bca2e33, type: 2}
+  - {fileID: 11400000, guid: f7a808a4ccef0ba438e33809277685f8, type: 2}
+  - {fileID: 11400000, guid: 26e90a6b30cda8141a997b8640075853, type: 2}
+  _moistureJungle: 0.66
+  _moistureForest: 0.33
+  _moistureGrasslands: 0
+  _moisturePlains: -0.6
+  _cityPrefab: {fileID: 6922627258534853869, guid: 605ea63b01c428543828babe0e5a539d, type: 3}
+  _cityCount: {fileID: 11400000, guid: fd0bf88ad80ca8d4cbabd5839d2b1494, type: 2}
+  _enemyPrefab: {fileID: 3135474633921551464, guid: 484388478d122354eacab66b1edc53f4, type: 3}
+--- !u!114 &721005177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721005174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10562e1fcdb4db4caac674ca83d0099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _updateMapVisuals: {fileID: 11400000, guid: c25728d8a52f84944a45a1f3ae7aba76, type: 2}
+  _mapNumRows: {fileID: 11400000, guid: bf8c7f8fa805b6a4fa799faad15f7f92, type: 2}
+  _mapNumColumns: {fileID: 11400000, guid: 2d0f2fd47e5c3d74aba45f4a9cc04167, type: 2}
+  _hexRadius: {fileID: 11400000, guid: b442a4f511e509c46bf7f7c4a6371a10, type: 2}
+  _tileRuntimeSet: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _hexPrefab: {fileID: 6279834624398028723, guid: bdc6a0e4cd055764e92562b42589e35c, type: 3}
+  _shorePrefab: {fileID: 100000, guid: e1c08a19521c1f741837f41e334f8d23, type: 3}
+  _cornerNoWaterPrefab: {fileID: 100000, guid: 0f0782f871e232545b02735a404eb61a, type: 3}
+  _cornerWithWaterPrefab: {fileID: 100000, guid: 462a15fbd2313224e839fd387bae68cd, type: 3}
 --- !u!1 &729566523
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,18 +5249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testEvent: {fileID: 11400000, guid: baf6f770fbe935a4c82abe87a66a3a04, type: 2}
-  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
-  item:
-    ItemRarityId: 1
-    ItemRefId: 4
-    ItemTypeId: 6
-    ItemWeareableTypeId: 4
-    Amount: 0
-    IsStackable: 0
-    SkillId: 
-    ItemStats: 
-  armorTypeItem: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
-  weaponTypeItem: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  _tileRuntimeSet: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _centerTileColumn: 0
+  _centerTileRow: 0
 --- !u!4 &932062075
 Transform:
   m_ObjectHideFlags: 0
@@ -10516,7 +10602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1546297054
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11488,14 +11574,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0.022957042, y: 0.97606146, z: -0.17338957, w: -0.12927918}
-  m_LocalPosition: {x: 2.32, y: 1.203, z: 2.378}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 118, y: 20, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12516,7 +12602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1831956945
 Transform:
   m_ObjectHideFlags: 0
@@ -16912,7 +16998,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.611069e+20, y: 1.5274592e+28, z: 7.036672e+22, w: 1.6258945e+25}
+  m_BoundingSphereOverride: {x: 6.6e-44, y: 5.28068e-40, z: 1.02e-43, w: 428.22388}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

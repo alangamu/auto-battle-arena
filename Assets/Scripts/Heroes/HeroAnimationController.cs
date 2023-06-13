@@ -99,5 +99,15 @@ namespace AutoFantasy.Scripts.Heroes
         {
             throw new System.NotImplementedException();
         }
+
+        public void GetHit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Death()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
