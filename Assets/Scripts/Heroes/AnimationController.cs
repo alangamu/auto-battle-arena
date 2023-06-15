@@ -39,7 +39,7 @@ namespace AutoFantasy.Scripts.Heroes
 
             if (TryGetComponent(out _weaponController))
             {
-                _weaponController.OnSetWeapon += OnSetWeapon;
+                //_weaponController.OnSetWeapon += OnSetWeapon;
             }
             if (TryGetComponent(out _healthController))
             {
@@ -54,7 +54,7 @@ namespace AutoFantasy.Scripts.Heroes
 
             if (_weaponController != null)
             {
-                _weaponController.OnSetWeapon -= OnSetWeapon;
+                //_weaponController.OnSetWeapon -= OnSetWeapon;
             }
             if (_healthController != null)
             {

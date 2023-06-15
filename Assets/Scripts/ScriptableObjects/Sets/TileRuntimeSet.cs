@@ -29,15 +29,21 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return result.ToArray();
         }
 
+        public ITile GetTileAt(int q, int r)
+        {
+            ITile tile = Items.Find(z => z.GetHex().Q == q && z.GetHex().R == r);
+            return tile;
+        }
+
         public Hex GetHexAt(int x, int y)
         {
-            x %= _mapNumColumns.Value;
-            if (x < 0)
-            {
-                x += _mapNumColumns.Value;
-            }
+            //x %= _mapNumColumns.Value;
+            //if (x < 0)
+            //{
+            //    x += _mapNumColumns.Value;
+            //}
 
-            ITile tile = Items.Find(z => z.GetHex().Q == x && z.GetHex().R == y);
+            ITile tile = GetTileAt(x, y);
             return tile.GetHex();
         }
 

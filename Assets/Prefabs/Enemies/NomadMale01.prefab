@@ -3574,6 +3574,7 @@ GameObject:
   - component: {fileID: 3765913660252531175}
   - component: {fileID: 82228646777157998}
   - component: {fileID: -5892483831738862061}
+  - component: {fileID: -8202609919507744604}
   m_Layer: 0
   m_Name: NomadMale01
   m_TagString: Untagged
@@ -3629,8 +3630,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: {fileID: 11400000, guid: 2306be51430c9134b82bea185a7c8a61, type: 2}
   animator: {fileID: 82228646777157998}
+--- !u!114 &-8202609919507744604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767446950424563261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dada101c085a00c4bb67b46808064cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handBoneTransform: {fileID: 1491066530405619768}
+  _leftHandBoneTransform: {fileID: 1491125464744788320}
 --- !u!1 &6499466965673515877
 GameObject:
   m_ObjectHideFlags: 0

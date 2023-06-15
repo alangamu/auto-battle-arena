@@ -10,8 +10,6 @@ namespace AutoFantasy.Scripts
 {
     public class HeroWeaponController : MonoBehaviour, IWeaponController
     {
-        public event Action<WeaponSO> OnSetWeapon;
-
         [SerializeField]
         private Transform handBoneTransform;
         [SerializeField]
@@ -80,7 +78,7 @@ namespace AutoFantasy.Scripts
                     string boneParentName = weaponType.BoneParentName;
                     Transform handTransform = weaponType.IsLeftHanded ? leftHandBoneTransform.Find(boneParentName) : handBoneTransform.Find(boneParentName);
 
-                    OnSetWeapon?.Invoke(_heroWeapon);
+                    //OnSetWeapon?.Invoke(_heroWeapon);
                     _weaponGO = Instantiate(_heroWeapon.ItemPrefab, handTransform);
                 }
             }
@@ -90,6 +88,11 @@ namespace AutoFantasy.Scripts
         {
             _hero = hero;
             Refresh();
+        }
+
+        public void ShowWeapon(WeaponSO weapon)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using AutoFantasy.Scripts.Enemy;
+using AutoFantasy.Scripts.Heroes;
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
+using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Map;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
@@ -65,6 +67,20 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private GameObject _enemyPrefab;
 
+        [SerializeField]
+        private HeroRuntimeSet _heroes;
+        [SerializeField]
+        private GameObject _heroMapPrefab;
+
+        private CitySO _heroSpawnCity;
+        [SerializeField]
+        private ItemDatabase _databaseItem;
+        [SerializeField]
+        private ItemTypeSO _weaponType;
+        [SerializeField]
+        private WeaponSO _unarmed;
+        [SerializeField]
+        private GameObjectVariable _activeMapHero;
         private void OnEnable()
         {
             _updateMapVisuals.OnRaise += UpdateMapVisuals;
@@ -133,33 +149,8 @@ namespace AutoFantasy.Scripts.Map
                 {
                     mr.material = _matDesert;
                 }
-//                }
-
-//                TileTerrainTypeSO tileTerrainType = _tileTerrainTypes.Find(x => x.HeightPrev < hexElevation && x.HeightLimit >= hexElevation);
 
                 mf.mesh = tileTerrainType.TerrainMeshes[Random.Range(0, tileTerrainType.TerrainMeshes.Length)];
-
-                //if (hexElevation >= _heightMountains)
-                //{
-                //    hexGO.transform.position += new Vector3(0f, _tilePrefabTileHeight, 0f);
-                //    mf.mesh = _meshesMountains[Random.Range(0, _meshesMountains.Length)];
-                //    //hex.SetTileTerrainType(_tileTerrainTypes.Find(x => x.));
-                //}
-                //else if (hexElevation >= _heightHill)
-                //{
-                //    hexGO.transform.position += new Vector3(0f, _tilePrefabTileHeight, 0f);
-                //    mf.mesh = _meshHill;
-                //}
-                //else if (hexElevation >= _heightFlat)
-                //{
-                //    hexGO.transform.position += new Vector3(0f, _tilePrefabTileHeight, 0f);
-                //    mf.mesh = _meshFlat;
-                //}
-                //else
-                //{
-                //    mr.material = _matOcean;
-                //    mf.mesh = _meshWater;
-                //}
 
                 mf.transform.Rotate(new Vector3(0f, Random.Range(0, 4) * 60f, 0f));
                 hex.SetIsWalkable(tileTerrainType.IsWalkable);
@@ -170,6 +161,35 @@ namespace AutoFantasy.Scripts.Map
             // SpawnInitialCity();
             SpawnCities();
             SpawnEnemies();
+            SpawnHeroes();
+        }
+
+        //TODO: move from here with a GameEvent
+        private void SpawnHeroes()
+        {
+            ITile spawnCityTile = _tiles.GetTileAt(_heroSpawnCity.Q, _heroSpawnCity.R);
+            Transform spwanCityTransform = spawnCityTile.GetGameObject().transform;
+            foreach (var item in _heroes.Items)
+            {
+                GameObject heroMap = Instantiate(_heroMapPrefab, spwanCityTransform);
+                if (heroMap.TryGetComponent(out IHeroController heroController))
+                {
+                    heroController.SetHero(item);
+                }
+
+                var _heroWeaponItem = item.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
+                WeaponSO heroWeapon = _heroWeaponItem == null ? _unarmed : _databaseItem.GetItem(_heroWeaponItem) as WeaponSO;
+
+                if (heroMap.TryGetComponent(out IWeaponController weaponController))
+                {
+                    weaponController.ShowWeapon(heroWeapon);
+                }
+                if (heroMap.TryGetComponent(out IAnimationMovementController animationMovementController))
+                {
+                    animationMovementController.Animate(heroWeapon.WeaponType.IdleAnimationClipName);
+                }
+                _activeMapHero.SetActiveGameObject(heroMap);
+            }
         }
 
         //TODO: move from here with a GameEvent
@@ -183,7 +203,16 @@ namespace AutoFantasy.Scripts.Map
 
                 if (enemy.TryGetComponent(out EnemyController enemyController))
                 {
-                    enemyController.Initialize(item.EnemyVisualPrefab);
+                    GameObject enemyObject = enemyController.Initialize(item.EnemyVisualPrefab);
+
+                    if (enemyObject.TryGetComponent(out IAnimationMovementController animationMovementController))
+                    {
+                        animationMovementController.Animate(item.Weapon.WeaponType.IdleAnimationClipName);
+                    }
+                    if (enemyObject.TryGetComponent(out IWeaponController weaponController))
+                    {
+                        weaponController.ShowWeapon(item.Weapon);
+                    }
                 }
 
                 enemy.transform.Rotate(new Vector3(0, 180, 0));
@@ -194,6 +223,9 @@ namespace AutoFantasy.Scripts.Map
         private void SpawnCities()
         {
             CitySO[] cities = Resources.LoadAll<CitySO>("Cities");
+
+            //TODO: find a better way
+            _heroSpawnCity = cities[0];
 
             foreach (var item in cities)
             {

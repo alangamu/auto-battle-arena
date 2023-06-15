@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b18651a9585eb84e936faab28bf38bb, type: 3}
   m_Name: GoblinMale
   m_EditorClassIdentifier: 
-  _enemyMesh: {fileID: 3767446950424563261, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
+  _enemyVisual: {fileID: 863667714171225890, guid: 0a287c285315d6b4f83a77c261811e2e, type: 3}
   _q: 12
   _r: 4
+  _weapon: {fileID: 11400000, guid: 7634260d937535240bb15da4fce5fe4b, type: 2}

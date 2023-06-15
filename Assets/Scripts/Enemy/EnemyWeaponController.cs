@@ -18,6 +18,11 @@ namespace AutoFantasy.Scripts.Enemy
 
         public Transform GetWeaponTransform() => handBoneTransform;
 
+        public void ShowWeapon(WeaponSO weapon)
+        {
+            throw new NotImplementedException();
+        }
+
         private void Start()
         {
             OnSetWeapon?.Invoke(weapon);

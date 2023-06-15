@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b18651a9585eb84e936faab28bf38bb, type: 3}
-  m_Name: NomadMale
+  m_Script: {fileID: 11500000, guid: 0f0206ebc3575cc4495e22e67cf51ce6, type: 3}
+  m_Name: ActiveHeroGO
   m_EditorClassIdentifier: 
-  _enemyVisual: {fileID: 3767446950424563261, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
-  _q: 13
-  _r: 5
-  _weapon: {fileID: 11400000, guid: f068afd574e41734eb4b2820bf3b62b3, type: 2}
+  _gameObject: {fileID: 0}

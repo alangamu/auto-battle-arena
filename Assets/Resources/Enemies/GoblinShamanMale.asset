@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b18651a9585eb84e936faab28bf38bb, type: 3}
-  m_Name: Skeleton2
+  m_Name: GoblinShamanMale
   m_EditorClassIdentifier: 
-  _enemyMesh: {fileID: 3767446950424563261, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
-  _q: 11
+  _enemyVisual: {fileID: 5064110136524787284, guid: 2597d7b548a4ffd42ae42515c31d341a, type: 3}
+  _q: 16
   _r: 6
+  _weapon: {fileID: 11400000, guid: 273c74e4560950b47b5d01beb783f503, type: 2}

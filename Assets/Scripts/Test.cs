@@ -18,9 +18,9 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private TileRuntimeSet _tileRuntimeSet;
         [SerializeField]
-        private int _centerTileColumn;
+        private GameObjectVariable _activeMapHero;
         [SerializeField]
-        private int _centerTileRow;
+        private WeaponSO _unarmed;
 
         private void OnEnable()
         {
@@ -32,49 +32,48 @@ namespace AutoFantasy.Scripts
             testEvent.OnRaise += TestEvent_OnRaise;
         }
 
-        private void TestEvent_OnRaise()
+        private async void TestEvent_OnRaise()
         {
-            Hex initialHex = _tileRuntimeSet.GetHexAt(11, 2);
+            GameObject activeHero = _activeMapHero.Value;
+            Hex initialHex = _tileRuntimeSet.GetHexAt(14, 4);
+
+            if (activeHero.TryGetComponent(out IMapUnitController mapUnitController))
+            {
+                initialHex = _tileRuntimeSet.GetHexAt(mapUnitController.GetHexCoordinatesQ(), mapUnitController.GetHexCoordinatesQ());
+            }
+
             Hex finalHex = _tileRuntimeSet.GetHexAt(14, 4);
-
-
-
-            //foreach (var item in _tileRuntimeSet.Items)
-            //{
-            //    if (item.GetGameObject().TryGetComponent(out MapTileIndicators tileIndicator))
-            //    {
-            //        tileIndicator.SetElevation(item.GetHex().Elevation.ToString());
-            //        //tileIndicator.SetMoisture(item.GetHex().Moisture.ToString());
-            //        tileIndicator.SetMoisture(item.GetHex().IsWalkable.ToString());
-            //    }
-            //}
-
-            //Pathfinding hexGrid = new Pathfinding(10, 10); // Tamaño del grid hexagonal
-
-            // Configurar nodos transitables e intransitables en el grid
-            //hexGrid.SetWalkable(1, 1, false);
-            //hexGrid.SetWalkable(2, 1, false);
-            //hexGrid.SetWalkable(3, 1, false);
-            //hexGrid.SetWalkable(4, 2, false);
-            //hexGrid.SetWalkable(4, 3, false);
-            // ...
-
-            //HexNode startNode = new HexNode(0, 0); // Nodo de inicio
-            //HexNode endNode = new HexNode(9, 9); // Nodo de destino
 
             List<Hex> path = _tileRuntimeSet.FindPath(initialHex, finalHex);
 
-            if (path.Count > 0)
+            WeaponSO weapon = _unarmed;
+
+            if (activeHero.TryGetComponent(out IWeaponController weaponController))
             {
-                foreach (Hex node in path)
-                {
-                    Debug.Log($"[{node.Q}, {node.R}]"); 
-                }
+                weapon = weaponController.GetWeapon();
             }
-            else
+            if (activeHero.TryGetComponent(out IAnimationMovementController animationController))
             {
-                Debug.Log("No se encontró un camino válido.");
+                animationController.Animate(weapon.WeaponType.RunAnimationClipName);
             }
+            if (activeHero.TryGetComponent(out IMapMovementController movementController))
+            {
+                //movementController.DoMovement(path);
+                await movementController.DoMovement(new List<Vector3>() { new Vector3(0, 0, 0), new Vector3(5, 0, 0), new Vector3(10, 0, 0) });
+                animationController.Animate(weapon.WeaponType.IdleAnimationClipName);    
+            }
+
+            //if (path.Count > 0)
+            //{
+            //    foreach (Hex node in path)
+            //    {
+            //        Debug.Log($"[{node.Q}, {node.R}]"); 
+            //    }
+            //}
+            //else
+            //{
+            //    Debug.Log("No se encontró un camino válido.");
+            //}
 
         }
     }

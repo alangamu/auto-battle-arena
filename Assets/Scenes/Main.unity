@@ -4239,6 +4239,12 @@ MonoBehaviour:
   _cityPrefab: {fileID: 6922627258534853869, guid: 605ea63b01c428543828babe0e5a539d, type: 3}
   _cityCount: {fileID: 11400000, guid: fd0bf88ad80ca8d4cbabd5839d2b1494, type: 2}
   _enemyPrefab: {fileID: 3135474633921551464, guid: 484388478d122354eacab66b1edc53f4, type: 3}
+  _heroes: {fileID: 11400000, guid: 9708d95449a15364d9868ff2666fd88b, type: 2}
+  _heroMapPrefab: {fileID: 8021379060007289243, guid: 78d5564a79731bc47ba8e6abc83dd81f, type: 3}
+  _databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
+  _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  _unarmed: {fileID: 11400000, guid: bb0ef11beee579d48a79ab35d3d384db, type: 2}
+  _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
 --- !u!114 &721005177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,8 +5256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testEvent: {fileID: 11400000, guid: baf6f770fbe935a4c82abe87a66a3a04, type: 2}
   _tileRuntimeSet: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
-  _centerTileColumn: 0
-  _centerTileRow: 0
+  _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
+  _unarmed: {fileID: 11400000, guid: bb0ef11beee579d48a79ab35d3d384db, type: 2}
 --- !u!4 &932062075
 Transform:
   m_ObjectHideFlags: 0

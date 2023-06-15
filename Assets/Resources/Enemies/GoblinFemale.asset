@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b18651a9585eb84e936faab28bf38bb, type: 3}
-  m_Name: GoblinWarriorMale
+  m_Name: GoblinFemale
   m_EditorClassIdentifier: 
-  _enemyMesh: {fileID: 3767446950424563261, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
-  _q: 16
-  _r: 6
+  _enemyVisual: {fileID: 2010064170134537189, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
+  _q: 13
+  _r: 8
+  _weapon: {fileID: 11400000, guid: 31035b99e28fe8c41a2dae29578ec8df, type: 2}

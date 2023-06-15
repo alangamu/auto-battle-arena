@@ -7,9 +7,9 @@ namespace AutoFantasy.Scripts.Enemy
         [SerializeField]
         private Transform _enemyVisualTransform;
 
-        public void Initialize(GameObject enemyPrefab)
+        public GameObject Initialize(GameObject enemyPrefab)
         {
-            Instantiate(enemyPrefab, _enemyVisualTransform);
+            return Instantiate(enemyPrefab, _enemyVisualTransform);
         }
     }
 }
