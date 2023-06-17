@@ -1,5 +1,4 @@
 ﻿using AutoFantasy.Scripts.Enemy;
-using AutoFantasy.Scripts.Heroes;
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
@@ -79,8 +78,7 @@ namespace AutoFantasy.Scripts.Map
         private ItemTypeSO _weaponType;
         [SerializeField]
         private WeaponSO _unarmed;
-        [SerializeField]
-        private GameObjectVariable _activeMapHero;
+
         private void OnEnable()
         {
             _updateMapVisuals.OnRaise += UpdateMapVisuals;
@@ -105,18 +103,11 @@ namespace AutoFantasy.Scripts.Map
                 float hexMoisture = hex.Moisture;
                 TileTerrainTypeSO tileTerrainType = _tileTerrainTypes.Find(x => x.HeightPrev < hexElevation && x.HeightLimit >= hexElevation);
 
-                //if (hexElevation >= _heightFlat && hexElevation < _heightMountains)
-                //{
                 if (hexMoisture >= _moistureJungle)
                 {
                     mr.material = _matGrasslands;
 
                 // Spawn trees
-                //Vector3 p = hexGO.transform.position;
-                //if (hexElevation >= _heightHill)
-                //{
-                //    p.y += _tilePrefabTileHeight;
-                //}
                     if (tileTerrainType.CanHaveTrees)
                     {
                         Instantiate(_forestPrefab, hexGO.transform);
@@ -127,11 +118,6 @@ namespace AutoFantasy.Scripts.Map
                     mr.material = _matGrasslands;
 
                 // Spawn trees
-                //Vector3 p = hexGO.transform.position;
-                //if (hexElevation >= _heightHill)
-                //{
-                //    p.y += _tilePrefabTileHeight;
-                //}
                     if (tileTerrainType.CanHaveTrees)
                     {
                         Instantiate(_forestPrefab, hexGO.transform);
@@ -188,7 +174,12 @@ namespace AutoFantasy.Scripts.Map
                 {
                     animationMovementController.Animate(heroWeapon.WeaponType.IdleAnimationClipName);
                 }
-                _activeMapHero.SetActiveGameObject(heroMap);
+                if (heroMap.TryGetComponent(out IMapUnitController mapUnitController))
+                {
+                    mapUnitController.SetHexCoordinates(_heroSpawnCity.Q, _heroSpawnCity.R);
+                }
+
+                //_activeMapHero.SetActiveGameObject(heroMap);
             }
         }
 
@@ -231,33 +222,20 @@ namespace AutoFantasy.Scripts.Map
             {
                 Instantiate(item.CityPrefab, _tiles.Items.Find(x => x.GetHex().Q == item.Q && x.GetHex().R == item.R).GetGameObject().transform);
             }
-
-            //List<ITile> walkableTiles = _tiles.Items.FindAll(x => x.GetHex().IsWalkable);
-            //List<ITile> tiles = walkableTiles.FindAll(x => x.GetHex().R > 6);
-
-            //for (int i = 0; i < _cityCount.Value; i++)
-            //{
-            //    if (tiles != null && tiles.Count > 0)
-            //    {
-            //        ITile tile = tiles[Random.Range(0, tiles.Count)];
-            //        Instantiate(_cityPrefab, tile.GetGameObject().transform);
-            //        print($"city tile {tile.GetHex().Q}, {tile.GetHex().R}");
-            //    }
-            //}
         }
 
-        private void SpawnInitialCity()
-        {
-            List<ITile> walkableTiles = _tiles.Items.FindAll(x => x.GetHex().IsWalkable);
-            List<ITile> tiles = walkableTiles.FindAll(x => x.GetHex().R <= 5);
+        //private void SpawnInitialCity()
+        //{
+        //    List<ITile> walkableTiles = _tiles.Items.FindAll(x => x.GetHex().IsWalkable);
+        //    List<ITile> tiles = walkableTiles.FindAll(x => x.GetHex().R <= 5);
 
-            if (tiles != null && tiles.Count > 0)
-            {
-                ITile tile = tiles[Random.Range(0, tiles.Count)];
-                Instantiate(_cityPrefab, tile.GetGameObject().transform);
-                print($"first city tile {tile.GetHex().Q}, {tile.GetHex().R}");
-            }
-        }
+        //    if (tiles != null && tiles.Count > 0)
+        //    {
+        //        ITile tile = tiles[Random.Range(0, tiles.Count)];
+        //        Instantiate(_cityPrefab, tile.GetGameObject().transform);
+        //        print($"first city tile {tile.GetHex().Q}, {tile.GetHex().R}");
+        //    }
+        //}
 
         private void UpdateIslands()
         {

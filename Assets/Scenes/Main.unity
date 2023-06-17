@@ -4176,6 +4176,7 @@ GameObject:
   - component: {fileID: 721005175}
   - component: {fileID: 721005177}
   - component: {fileID: 721005176}
+  - component: {fileID: 721005178}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -4244,7 +4245,6 @@ MonoBehaviour:
   _databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
   _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
   _unarmed: {fileID: 11400000, guid: bb0ef11beee579d48a79ab35d3d384db, type: 2}
-  _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
 --- !u!114 &721005177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4266,6 +4266,23 @@ MonoBehaviour:
   _shorePrefab: {fileID: 100000, guid: e1c08a19521c1f741837f41e334f8d23, type: 3}
   _cornerNoWaterPrefab: {fileID: 100000, guid: 0f0782f871e232545b02735a404eb61a, type: 3}
   _cornerWithWaterPrefab: {fileID: 100000, guid: 462a15fbd2313224e839fd387bae68cd, type: 3}
+--- !u!114 &721005178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721005174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6843181aa7e82f043ab0c99d0e64bf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
+  _heroes: {fileID: 11400000, guid: 20f5d9691f672844fb826a041589fe86, type: 2}
+  _nextTurnEvent: {fileID: 11400000, guid: 6bd41088990c5824d97494387d7fcf50, type: 2}
+  _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _movementStat: {fileID: 11400000, guid: 05d7bc1cdb3d1e04b8bf9d11d83a1e9b, type: 2}
 --- !u!1 &729566523
 GameObject:
   m_ObjectHideFlags: 0

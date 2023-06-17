@@ -37,12 +37,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         public Hex GetHexAt(int x, int y)
         {
-            //x %= _mapNumColumns.Value;
-            //if (x < 0)
-            //{
-            //    x += _mapNumColumns.Value;
-            //}
-
             ITile tile = GetTileAt(x, y);
             return tile.GetHex();
         }
@@ -53,54 +47,77 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             foreach (var item in Items)
             {
                 Hex centerHex = item.GetHex();
-                // find the top right neighbour
-                ITile tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R + 1);
-                if (tile != null)
+                int q = centerHex.Q;
+                int r = centerHex.R;
+                ITile tile;
+                if (r % 2 == 0)
                 {
-                    centerHex.SetTopRightNeighbourHex(tile.GetHex());
+                    // find the top right neighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R + 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetTopRightNeighbourHex(tile.GetHex());
+                    }
+                    // find the bot left neighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q - 1 && x.GetHex().R == centerHex.R - 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetBotLeftNeighbourHex(tile.GetHex());
+                    }
+                    // find the bot right nighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R - 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetBotRightNeighbourHex(tile.GetHex());
+                    }
+                    // find the top left nighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q - 1 && x.GetHex().R == centerHex.R + 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetTopLeftNeighbourHex(tile.GetHex());
+                    }
                 }
-                // find the bot left neighbour
-                tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R - 1);
-                if (tile != null)
+                else
                 {
-                    centerHex.SetBotLeftNeighbourHex(tile.GetHex());
+                    // find the top right neighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q + 1 && x.GetHex().R == centerHex.R + 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetTopRightNeighbourHex(tile.GetHex());
+                    }
+                    // find the bot left neighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R - 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetBotLeftNeighbourHex(tile.GetHex());
+                    }
+                    // find the bot right nighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q + 1 && x.GetHex().R == centerHex.R - 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetBotRightNeighbourHex(tile.GetHex());
+                    }
+                    // find the top left nighbour
+                    tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R + 1);
+                    if (tile != null)
+                    {
+                        centerHex.SetTopLeftNeighbourHex(tile.GetHex());
+                    }
                 }
-                // find the bot right nighbour
-                int q = centerHex.Q + 1;
-                q %= _mapNumColumns.Value;
-                if (q < 0)
-                {
-                    q += _mapNumColumns.Value;
-                }
-                tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R - 1);
-                if (tile != null)
-                {
-                    centerHex.SetBotRightNeighbourHex(tile.GetHex());
-                }
+
                 // find the right nighbour
-                tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R);
+                tile = Items.Find(x => x.GetHex().Q == centerHex.Q + 1 && x.GetHex().R == centerHex.R);
                 if (tile != null)
                 {
                     centerHex.SetRightNeighbourHex(tile.GetHex());
                 }
-                // find the top left nighbour
-                q = centerHex.Q - 1;
-                q %= _mapNumColumns.Value;
-                if (q < 0)
-                {
-                    q += _mapNumColumns.Value;
-                }
-                tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R + 1);
-                if (tile != null)
-                {
-                    centerHex.SetTopLeftNeighbourHex(tile.GetHex());
-                }
                 // find the left nighbour
-                tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R);
+                tile = Items.Find(x => x.GetHex().Q == centerHex.Q - 1 && x.GetHex().R == centerHex.R);
                 if (tile != null)
                 {
                     centerHex.SetLeftNeighbourHex(tile.GetHex());
                 }
+
             }
         }
 
@@ -118,8 +135,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                 processed.Add(current);
                 toSearch.Remove(current);
 
-                //current.SetColor(ClosedColor);
-
                 if (current == targetNode)
                 {
                     var currentPathTile = targetNode;
@@ -133,7 +148,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                         if (count < 0) throw new Exception();
                     }
 
-                    Debug.Log(path.Count);
                     return path;
                 }
 
@@ -141,7 +155,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
                 {
                     var inSearch = toSearch.Contains(neighbor);
 
-                    var costToNeighbor = current.G + Hex.Distance(current, neighbor); //current.GetDistance(neighbor);
+                    var costToNeighbor = current.G + Hex.Distance(current, neighbor); 
 
                     if (!inSearch || costToNeighbor < neighbor.G)
                     {
@@ -150,7 +164,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
                         if (!inSearch)
                         {
-                            neighbor.SetH(Hex.Distance(neighbor, targetNode));//neighbor.GetDistance(targetNode));
+                            neighbor.SetH(Hex.Distance(neighbor, targetNode));
                             toSearch.Add(neighbor);
                         }
                     }
@@ -159,50 +173,49 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return null;
         }
 
-        public List<Hex> GetNeighbours(Hex centerHex)
+        public List<ITile> GetNeighboursTiles(Hex centerHex, int range)
         {
-            List<Hex> result = new List<Hex>();
+            List<Hex> result = new List<Hex>
+            {
+                centerHex
+            };
 
-            // find the top right neighbour
-            ITile tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R + 1);
-            if (tile != null)
+            List<Hex> neighbors = new List<Hex>();
+            for (int i = 0; i < range; i++)
             {
-                result.Add(tile.GetHex());
-            }
-            // find the bot left neighbour
-            tile = Items.Find(x => x.GetHex().Q == centerHex.Q && x.GetHex().R == centerHex.R - 1);
-            if (tile != null)
-            {
-                result.Add(tile.GetHex());
-            }
-            // find the bot right nighbour
-            int q = centerHex.Q + 1;
-            tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R - 1);
-            if (tile != null)
-            {
-                result.Add(tile.GetHex());
-            }
-            // find the right nighbour
-            tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R);
-            if (tile != null)
-            {
-                result.Add(tile.GetHex());
-            }
-            // find the top left nighbour
-            q = centerHex.Q - 1;
-            tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R + 1);
-            if (tile != null)
-            {
-                result.Add(tile.GetHex());
-            }
-            // find the left nighbour
-            tile = Items.Find(x => x.GetHex().Q == q && x.GetHex().R == centerHex.R);
-            if (tile != null)
-            {
-                result.Add(tile.GetHex());
+                neighbors = result;
+                int neighborCount = neighbors.Count;
+                for (int j = 0; j < neighborCount; j++)
+                {
+                    foreach (var neighbor in neighbors[j].Neighbors)
+                    {
+                        if (!result.Contains(neighbor))
+                        {
+                            result.Add(neighbor);
+                        }
+                    }
+                }
             }
 
-            return result;
+            List<ITile> tiles = new List<ITile>();
+
+            foreach (var item in result)
+            {
+                tiles.Add(GetTileAt(item.Q, item.R));
+            }
+
+            return tiles;
+        }
+
+        public void ClearSelectedList()
+        {
+            foreach (var item in Items)
+            {
+                if (item.GetGameObject().TryGetComponent(out ISelectable selectable)) 
+                { 
+                    //if
+                }
+            }
         }
     }
 }

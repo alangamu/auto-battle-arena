@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012809c414a05974897fe25777bb0598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heroesGORuntimeSet: {fileID: 11400000, guid: 20f5d9691f672844fb826a041589fe86, type: 2}
 --- !u!114 &567841806305133214
 MonoBehaviour:
   m_ObjectHideFlags: 0

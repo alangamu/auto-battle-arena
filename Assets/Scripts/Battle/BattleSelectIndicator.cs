@@ -5,15 +5,19 @@ namespace AutoFantasy.Scripts.Battle
 {
     public class BattleSelectIndicator : MonoBehaviour, ISelectable
     {
+        public bool IsSelected => _isSelected;
+
         [SerializeField]
         private GameObject _selectIndicator;
         [SerializeField]
         private GameObject _activeIndicator;
 
         private ICombatController _combatController;
+        private bool _isSelected;
 
         public void Select(bool option)
         {
+            _isSelected = option;
             _selectIndicator.SetActive(option);
         }
 

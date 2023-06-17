@@ -8,8 +8,13 @@ namespace AutoFantasy.Scripts.Heroes
     {
         public event Action<Hero> OnSetHero;
 
+        private Hero _hero;
+
+        public Hero ThisHero => _hero;
+
         public void SetHero(Hero hero)
         {
+            _hero = hero;
             OnSetHero?.Invoke(hero);
         }
     }

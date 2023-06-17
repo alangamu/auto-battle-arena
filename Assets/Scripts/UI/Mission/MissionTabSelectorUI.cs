@@ -20,6 +20,10 @@ namespace AutoFantasy.Scripts.UI.Mission
         [SerializeField]
         private TMP_Text titleText;
 
+        private bool _isSelected;
+
+        public bool IsSelected => _isSelected;
+
         public void Select(bool option)
         {
             if (option == isOwnedMission)

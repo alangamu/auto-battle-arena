@@ -8,5 +8,6 @@ namespace AutoFantasy.Scripts.Interfaces
         event Action<Hero> OnSetHero;
 
         void SetHero(Hero hero);
+        Hero ThisHero { get; }
     }
 }
