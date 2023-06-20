@@ -4279,10 +4279,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
+  _selectTileEvent: {fileID: 11400000, guid: ccaa97097d376364d80feb328bd27234, type: 2}
   _heroes: {fileID: 11400000, guid: 20f5d9691f672844fb826a041589fe86, type: 2}
   _nextTurnEvent: {fileID: 11400000, guid: 6bd41088990c5824d97494387d7fcf50, type: 2}
   _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
   _movementStat: {fileID: 11400000, guid: 05d7bc1cdb3d1e04b8bf9d11d83a1e9b, type: 2}
+  _unarmed: {fileID: 11400000, guid: bb0ef11beee579d48a79ab35d3d384db, type: 2}
 --- !u!1 &729566523
 GameObject:
   m_ObjectHideFlags: 0
@@ -11598,7 +11600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 118, y: 20, z: 12}
+  m_LocalPosition: {x: 84.09, y: 20, z: 56.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

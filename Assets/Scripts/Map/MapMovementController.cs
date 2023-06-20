@@ -10,6 +10,15 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private float _movementTime;
 
+        async Task IMapMovementController.DoMovement(List<Vector3> path)
+        {
+            foreach (Vector3 position in path)
+            {
+                transform.LookAt(position);
+                await MoveObjectToPosition(position);
+            }
+        }
+
         private Task MoveObjectToPosition(Vector3 position)
         {
             TaskCompletionSource<object> tcs = new TaskCompletionSource<object>();
@@ -18,15 +27,6 @@ namespace AutoFantasy.Scripts.Map
                 .setOnComplete(() => tcs.SetResult(null));
 
             return tcs.Task;
-        }
-
-        async Task IMapMovementController.DoMovement(List<Vector3> path)
-        {
-            foreach (Vector3 position in path)
-            {
-                transform.LookAt(position);
-                await MoveObjectToPosition(position);
-            }
         }
     }
 }

@@ -212,8 +212,11 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             foreach (var item in Items)
             {
                 if (item.GetGameObject().TryGetComponent(out ISelectable selectable)) 
-                { 
-                    //if
+                {
+                    if (selectable.IsSelected)
+                    {
+                        selectable.Select(false);
+                    }
                 }
             }
         }

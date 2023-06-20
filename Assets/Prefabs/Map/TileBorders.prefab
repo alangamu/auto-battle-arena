@@ -384,9 +384,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5378971809228741583}
+  - component: {fileID: 5809463553329984813}
   - component: {fileID: 7893458156669355178}
   - component: {fileID: 8108350038375035551}
   - component: {fileID: 3895814031885998646}
+  - component: {fileID: 4025710398124016921}
   m_Layer: 0
   m_Name: TileBorders
   m_TagString: Untagged
@@ -412,6 +414,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5809463553329984813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279834624398028723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.918203, y: 0.36, z: 2.992719}
+  m_Center: {x: 0.0126440525, y: 0, z: 0.062107444}
 --- !u!114 &7893458156669355178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +468,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileSelectIndicator: {fileID: 8676317700911983662}
+--- !u!114 &4025710398124016921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279834624398028723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0c34947e0df364fa3e35b8520c0217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectTileEvent: {fileID: 11400000, guid: ccaa97097d376364d80feb328bd27234, type: 2}
+  _normalMaterial: {fileID: 2100000, guid: 931f6cb81f32ff8418b581d210c8dd21, type: 2}
+  _clickedMaterial: {fileID: 2100000, guid: ea128b040f8b0af4c9d2de400aaff30a, type: 2}
+  _renderer: {fileID: 8662987786270942914}
 --- !u!1 &7338227589794024405
 GameObject:
   m_ObjectHideFlags: 0
