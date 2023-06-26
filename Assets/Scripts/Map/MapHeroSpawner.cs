@@ -57,7 +57,6 @@ namespace AutoFantasy.Scripts.Map
                     _activeHeroStandingTile.SetActiveGameObject(tileGO);
                 }
 
-
                 var _heroWeaponItem = item.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
                 WeaponSO heroWeapon = _heroWeaponItem == null ? _unarmed : _databaseItem.GetItem(_heroWeaponItem) as WeaponSO;
 
