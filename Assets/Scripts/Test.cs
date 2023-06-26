@@ -1,12 +1,9 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.Map;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
-using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
-using System;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -19,62 +16,43 @@ namespace AutoFantasy.Scripts
         private TileRuntimeSet _tileRuntimeSet;
         [SerializeField]
         private GameObjectVariable _activeMapHero;
+
         [SerializeField]
-        private WeaponSO _unarmed;
+        private TMP_Text _activeHeroSight;
+        [SerializeField]
+        private TMP_Text _activeHeroMovement;
+        [SerializeField]
+        private HeroStatSO _sightStat;
+        [SerializeField]
+        private HeroStatSO _movementStat;
 
         private void OnEnable()
         {
+            _activeMapHero.OnValueChanged += UpdateStats;
             testEvent.OnRaise += TestEvent_OnRaise;
         }
 
         private void OnDisable()
         {
-            testEvent.OnRaise += TestEvent_OnRaise;
+            testEvent.OnRaise -= TestEvent_OnRaise;
+            _activeMapHero.OnValueChanged -= UpdateStats;
         }
 
-        private async void TestEvent_OnRaise()
+
+        private void UpdateStats(GameObject newActiveHero)
         {
-            GameObject activeHero = _activeMapHero.Value;
-            Hex initialHex = _tileRuntimeSet.GetHexAt(14, 4);
-
-            if (activeHero.TryGetComponent(out IMapUnitController mapUnitController))
+            if (newActiveHero != null)
             {
-                initialHex = _tileRuntimeSet.GetHexAt(mapUnitController.GetHexCoordinatesQ(), mapUnitController.GetHexCoordinatesQ());
+                if (newActiveHero.TryGetComponent(out IHeroController heroController))
+                {
+                    _activeHeroSight.text = $"Sight = {heroController.ThisHero.ThisCombatStats.StatCount(_sightStat.StatId)}";
+                    _activeHeroMovement.text = $"Movement = {heroController.ThisHero.ThisCombatStats.StatCount(_movementStat.StatId)}";
+                }
             }
+        }
 
-            Hex finalHex = _tileRuntimeSet.GetHexAt(14, 4);
-
-            List<Hex> path = _tileRuntimeSet.FindPath(initialHex, finalHex);
-
-            WeaponSO weapon = _unarmed;
-
-            if (activeHero.TryGetComponent(out IWeaponController weaponController))
-            {
-                weapon = weaponController.GetWeapon();
-            }
-            if (activeHero.TryGetComponent(out IAnimationMovementController animationController))
-            {
-                animationController.Animate(weapon.WeaponType.RunAnimationClipName);
-            }
-            if (activeHero.TryGetComponent(out IMapMovementController movementController))
-            {
-                //movementController.DoMovement(path);
-                await movementController.DoMovement(new List<Vector3>() { new Vector3(0, 0, 0), new Vector3(5, 0, 0), new Vector3(10, 0, 0) });
-                animationController.Animate(weapon.WeaponType.IdleAnimationClipName);    
-            }
-
-            //if (path.Count > 0)
-            //{
-            //    foreach (Hex node in path)
-            //    {
-            //        Debug.Log($"[{node.Q}, {node.R}]"); 
-            //    }
-            //}
-            //else
-            //{
-            //    Debug.Log("No se encontró un camino válido.");
-            //}
-
+        private void TestEvent_OnRaise()
+        {
         }
     }
 }

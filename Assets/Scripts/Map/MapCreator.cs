@@ -1,5 +1,6 @@
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
+using AutoFantasy.Scripts.ScriptableObjects.Map;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using UnityEngine;
@@ -20,7 +21,19 @@ namespace AutoFantasy.Scripts.Map
         protected TileRuntimeSet _tileRuntimeSet;
 
         [SerializeField]
-        private GameObject _hexPrefab; // Prefab del hexágono
+        private GameObject _hexPrefab;
+
+        [SerializeField]
+        private TileStateSO _initialTileState;
+
+        [SerializeField]
+        private GameEvent _spawnMapHeroesEvent;
+        [SerializeField]
+        private GameEvent _spawnMapEnemiesEvent;
+        [SerializeField]
+        private GameEvent _spawnMapCitiesEvent;
+        [SerializeField]
+        private GameEvent _showFogOfWarEvent;
 
         virtual public void GenerateMap()
         {
@@ -45,12 +58,6 @@ namespace AutoFantasy.Scripts.Map
 
                     Vector3 pos = new Vector3((column * hexSize) + rowOffset, 0f, row * hexSize * 0.866f);
 
-
-                    //Vector3 pos = h.PositionFromCamera(
-                    //    Camera.main.transform.position,
-                    //    numColumns
-                    //);
-
                     GameObject hexGO = Instantiate(
                         _hexPrefab,
                         pos,
@@ -61,7 +68,6 @@ namespace AutoFantasy.Scripts.Map
                     if (hexGO.TryGetComponent(out ITile tile))
                     {
                         tile.SetHex(h);
-                        //tile.SetCoordinates(column, row);
                     }
 
                     //TODO: delete this, only for testing
@@ -74,11 +80,16 @@ namespace AutoFantasy.Scripts.Map
                 }
             }
             _tileRuntimeSet.SetNeighbours();
+            _tileRuntimeSet.SetTileState(_initialTileState, _tileRuntimeSet.Items);
         }
 
         private void Start()
         {
             GenerateMap();
+            _showFogOfWarEvent.Raise();
+            _spawnMapCitiesEvent.Raise();
+            _spawnMapEnemiesEvent.Raise();
+            _spawnMapHeroesEvent.Raise();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -9,13 +10,23 @@ namespace AutoFantasy.Scripts.Map
     {
         [SerializeField]
         private float _movementTime;
+        [SerializeField]
+        private GameObjectVariable _activeHeroStandingTile;
 
-        async Task IMapMovementController.DoMovement(List<Vector3> path)
+        async Task IMapMovementController.DoMovement(List<ITile> path)
         {
-            foreach (Vector3 position in path)
+            foreach (ITile tile in path)
             {
-                transform.LookAt(position);
-                await MoveObjectToPosition(position);
+                GameObject tileGO = tile.GetGameObject();
+                Vector3 tilePosition = tileGO.transform.position;
+                transform.LookAt(tilePosition);
+                await MoveObjectToPosition(tilePosition);
+                if (TryGetComponent(out IMapUnitController mapUnit))
+                {
+                    Hex heroHex = tile.GetHex();
+                    mapUnit.SetHexCoordinates(heroHex.Q, heroHex.R);
+                }
+                _activeHeroStandingTile.SetActiveGameObject(tileGO);
             }
         }
 

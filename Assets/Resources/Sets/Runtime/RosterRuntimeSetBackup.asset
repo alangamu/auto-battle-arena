@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa71a8d4dac25ac41a3fff941b3c1197, type: 3}
+  m_Name: RosterRuntimeSetBackup
+  m_EditorClassIdentifier: 
+  Items:
+  - ThisHeroData:
+      HeroName: Ross
+      SkinColorIndex: 5
+      HairColorIndex: 4
+      EyeColorIndex: 1
+      ScarColorIndex: 2
+      BodyArtColorIndex: 2
+      HeadIndex: 11
+      HairIndex: 10
+      EyebrowsIndex: 3
+      FacialHairIndex: 4
+      StubbleColorIndex: 2
+      IsMale: 1
+      HeroId: 3
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: bfbc9e49-fe78-498a-a197-a2be1fabcbbb
+        ItemTypeId: 6
+        ItemWeareableTypeId: 5
+        Amount: 1
+        IsStackable: 0
+        SkillId: 36efc2d7-8965-4d8e-89c8-76fd9df1bb3d
+        ItemStats: 04000000
+    ThisCombatStats:
+      Stats: 040000000600000005000000040000000300000001000000020000000300000004000000050000000200000001000000050000000300000002000000040000000700000007000000070000000800000008000000
+  - ThisHeroData:
+      HeroName: Rachel
+      SkinColorIndex: 5
+      HairColorIndex: 2
+      EyeColorIndex: 3
+      ScarColorIndex: 1
+      BodyArtColorIndex: 5
+      HeadIndex: 20
+      HairIndex: 26
+      EyebrowsIndex: 2
+      FacialHairIndex: 8
+      StubbleColorIndex: 0
+      IsMale: 0
+      HeroId: 4
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: 55faf77b-00ed-4aff-9fb1-13915eb964a1
+        ItemTypeId: 1
+        ItemWeareableTypeId: 1
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 05000000
+      - ItemRarityId: 1
+        ItemRefId: 292be0e0-338c-4ba2-abad-d01879c65349
+        ItemTypeId: 6
+        ItemWeareableTypeId: 4
+        Amount: 1
+        IsStackable: 0
+        SkillId: bc8b2f23-2a85-4e0f-bf7b-e8eca83c769b
+        ItemStats: 04000000
+    ThisCombatStats:
+      Stats: 05000000040000000300000005000000020000000600000004000000050000000300000001000000020000000300000002000000010000000500000006000000040000000700000008000000
+  - ThisHeroData:
+      HeroName: Javiera
+      SkinColorIndex: 7
+      HairColorIndex: 1
+      EyeColorIndex: 0
+      ScarColorIndex: 1
+      BodyArtColorIndex: 1
+      HeadIndex: 16
+      HairIndex: 16
+      EyebrowsIndex: 1
+      FacialHairIndex: 0
+      StubbleColorIndex: 0
+      IsMale: 0
+      HeroId: 81ea43e3-ec16-4fdc-bdb8-1dbf5cbe7122
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: ca69bf10-47f9-4d1f-ba87-143e4ea0b306
+        ItemTypeId: 6
+        ItemWeareableTypeId: 2
+        Amount: 1
+        IsStackable: 0
+        SkillId: 7ef40b16-a155-4fc6-96ae-4d94a373c9b0
+        ItemStats: 01000000
+    ThisCombatStats:
+      Stats: 0600000002000000010000000200000001000000030000000200000002000000010000000200000003000000020000000300000002000000040000000100000007000000070000000800000008000000
+  - ThisHeroData:
+      HeroName: Marcelo
+      SkinColorIndex: 5
+      HairColorIndex: 8
+      EyeColorIndex: 1
+      ScarColorIndex: 1
+      BodyArtColorIndex: 3
+      HeadIndex: 14
+      HairIndex: 34
+      EyebrowsIndex: 6
+      FacialHairIndex: 0
+      StubbleColorIndex: 2
+      IsMale: 1
+      HeroId: 2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: 55faf77b-00ed-4aff-9fb1-13915eb964a1
+        ItemTypeId: 1
+        ItemWeareableTypeId: 1
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 05000000
+      - ItemRarityId: 1
+        ItemRefId: f2914e63-7e2b-41aa-b2b9-6342d0676c9b
+        ItemTypeId: 6
+        ItemWeareableTypeId: 6
+        Amount: 1
+        IsStackable: 0
+        SkillId: d829b847-3cd6-4675-8320-ae3c747d9492
+        ItemStats: 01000000
+    ThisCombatStats:
+      Stats: 0500000006000000040000000300000004000000060000000300000005000000030000000300000005000000010000000300000005000000020000000100000001000000070000000800000008000000
+  - ThisHeroData:
+      HeroName: Sandra
+      SkinColorIndex: 2
+      HairColorIndex: 0
+      EyeColorIndex: 0
+      ScarColorIndex: 0
+      BodyArtColorIndex: 0
+      HeadIndex: 20
+      HairIndex: 20
+      EyebrowsIndex: 3
+      FacialHairIndex: 0
+      StubbleColorIndex: 2
+      IsMale: 0
+      HeroId: c5bdc1cb-2d2a-4505-b8cd-d01851da6857
+      HeroInventory:
+      - ItemRarityId: 1
+        ItemRefId: 55faf77b-00ed-4aff-9fb1-13915eb964a1
+        ItemTypeId: 1
+        ItemWeareableTypeId: 1
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 02000000
+      - ItemRarityId: 1
+        ItemRefId: 933273cb-ab1a-410c-98ff-36dc115a5817
+        ItemTypeId: 1
+        ItemWeareableTypeId: 2
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 05000000
+      - ItemRarityId: 2
+        ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
+        ItemTypeId: 1
+        ItemWeareableTypeId: 6
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 0600000006000000
+      - ItemRarityId: 2
+        ItemRefId: a33f978c-bc90-4eae-aaed-a744382af3cc
+        ItemTypeId: 1
+        ItemWeareableTypeId: 4
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 0500000002000000
+      - ItemRarityId: 1
+        ItemRefId: 6b32a346-e2f3-4e23-9ce3-3f058b192712
+        ItemTypeId: 1
+        ItemWeareableTypeId: 3
+        Amount: 1
+        IsStackable: 0
+        SkillId: 
+        ItemStats: 06000000
+      - ItemRarityId: 1
+        ItemRefId: a032daa1-ce52-4dd3-8737-4ba08bdb4858
+        ItemTypeId: 6
+        ItemWeareableTypeId: 9
+        Amount: 1
+        IsStackable: 0
+        SkillId: 7f6c5639-95f3-480a-9179-a1fd8e09c34d
+        ItemStats: 06000000
+    ThisCombatStats:
+      Stats: 06000000050000000400000002000000010000000300000002000000010000000300000002000000010000000200000002000000050000000500000006000000060000000500000002000000060000000300000001000000020000000700000007000000080000000800000008000000
+  - ThisHeroData:
+      HeroName: Rodrigo
+      SkinColorIndex: 4
+      HairColorIndex: 2
+      EyeColorIndex: 1
+      ScarColorIndex: 1
+      BodyArtColorIndex: 6
+      HeadIndex: 16
+      HairIndex: 3
+      EyebrowsIndex: 2
+      FacialHairIndex: 8
+      StubbleColorIndex: 1
+      IsMale: 1
+      HeroId: af9208fc-d2a0-4835-80be-3a58de0c7dec
+      HeroInventory: []
+    ThisCombatStats:
+      Stats: 05000000060000000400000006000000030000000600000002000000060000000500000004000000050000000400000001000000010000000200000007000000070000000800000008000000
+  - ThisHeroData:
+      HeroName: Ellen
+      SkinColorIndex: 4
+      HairColorIndex: 3
+      EyeColorIndex: 2
+      ScarColorIndex: 1
+      BodyArtColorIndex: 3
+      HeadIndex: 20
+      HairIndex: 31
+      EyebrowsIndex: 5
+      FacialHairIndex: 0
+      StubbleColorIndex: 0
+      IsMale: 0
+      HeroId: d0366a9f-a86d-4d09-94db-adcf123393bd
+      HeroInventory: []
+    ThisCombatStats:
+      Stats: 04000000060000000500000002000000030000000400000001000000040000000300000002000000050000000600000005000000040000000300000007000000080000000800000008000000

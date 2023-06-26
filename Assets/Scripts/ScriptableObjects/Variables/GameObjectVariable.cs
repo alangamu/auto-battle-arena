@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Variables
 {
     [CreateAssetMenu]
     public class GameObjectVariable : ScriptableObject
     {
+        public event Action<GameObject> OnValueChanged;
         public GameObject Value => _gameObject;
 
         [SerializeField]
@@ -13,6 +15,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Variables
         public void SetActiveGameObject(GameObject activeGameObject)
         {
             _gameObject = activeGameObject;
+            OnValueChanged?.Invoke(_gameObject);
         }
     }
 }

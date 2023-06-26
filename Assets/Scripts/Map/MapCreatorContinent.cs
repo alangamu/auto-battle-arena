@@ -22,6 +22,7 @@ namespace AutoFantasy.Scripts.Map
             int numSplats = Random.Range(4, 10);
             for (int i = 0; i < numSplats; i++)
             {
+                //create a sigle land mass
                 int range = Random.Range(5, 8);
                 int y = Random.Range((numColumns / 2) - 8, (numColumns / 2) + 8);
                 int x = Random.Range((numColumns / 2) - 5, (numColumns / 2) + 5);

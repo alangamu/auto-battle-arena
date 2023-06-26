@@ -1,5 +1,6 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
+using HighlightPlus;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Map
@@ -9,21 +10,19 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private GameObjectGameEvent _selectTileEvent;
         [SerializeField]
-        private Material _normalMaterial;
-        [SerializeField]
-        private Material _clickedMaterial;
-        [SerializeField]
-        private MeshRenderer _renderer;
+        private GameObject _reactingMesh;
 
         private void OnMouseOver()
         {
             if (Input.GetMouseButtonUp(1))
             {
-                if(gameObject.TryGetComponent(out ITile tile))
+                if (gameObject.TryGetComponent(out ITile tile))
                 {
-                    _renderer.material = _clickedMaterial;
+                    if (_reactingMesh.TryGetComponent(out HighlightEffect highlight))
+                    {
+                        highlight.HitFX();
+                    }
                     _selectTileEvent.Raise(gameObject);
-                    LeanTween.delayedCall(0.5f, () => { _renderer.material = _normalMaterial; });
                 }
             }
         }

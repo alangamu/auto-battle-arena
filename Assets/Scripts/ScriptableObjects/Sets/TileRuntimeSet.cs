@@ -1,5 +1,6 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.Map;
+using AutoFantasy.Scripts.ScriptableObjects.Map;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System;
 using System.Collections.Generic;
@@ -207,17 +208,25 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return tiles;
         }
 
-        public void ClearSelectedList()
+        //public void ClearSelectedList()
+        //{
+        //    foreach (var item in Items)
+        //    {
+        //        if (item.GetGameObject().TryGetComponent(out ISelectable selectable)) 
+        //        {
+        //            if (selectable.IsSelected)
+        //            {
+        //                selectable.Select(false);
+        //            }
+        //        }
+        //    }
+        //}
+
+        public void SetTileState(TileStateSO tileState, List<ITile> tiles)
         {
-            foreach (var item in Items)
+            foreach(var tile in tiles)
             {
-                if (item.GetGameObject().TryGetComponent(out ISelectable selectable)) 
-                {
-                    if (selectable.IsSelected)
-                    {
-                        selectable.Select(false);
-                    }
-                }
+                tile.SetState(tileState);
             }
         }
     }

@@ -764,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementTime: 1
+  _activeHeroStandingTile: {fileID: 11400000, guid: 151375dd215d05147a3931400c44324a, type: 2}
 --- !u!1001 &6081062627790732458
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,15 +7,11 @@ namespace AutoFantasy.Scripts.Map
     {
         public bool IsSelected => _isSelected;
 
-        [SerializeField]
-        private GameObject _tileSelectIndicator;
-
         private bool _isSelected;
 
         public void Select(bool option)
         {
             _isSelected = option;
-            _tileSelectIndicator.SetActive(option);
         }
     }
 }

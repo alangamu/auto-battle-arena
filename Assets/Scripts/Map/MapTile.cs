@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.Map;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using UnityEngine;
 
@@ -11,6 +12,10 @@ namespace AutoFantasy.Scripts.Map
 
         [SerializeField]
         private Hex _hex;
+
+        public TileStateSO TileState => _tileState;
+
+        private TileStateSO _tileState;
 
         public GameObject GetGameObject()
         {
@@ -35,6 +40,11 @@ namespace AutoFantasy.Scripts.Map
         private void OnDisable()
         {
             _tileRuntimeSet.Remove(this);
+        }
+
+        public void SetState(TileStateSO tileState)
+        {
+            _tileState = tileState;
         }
     }
 }
