@@ -143,7 +143,7 @@ namespace AutoFantasy.Scripts.Map
             Vector3 diff = lastMouseGroundPlanePosition - hitPos;
             _viewPoint.Translate(diff, Space.World);
 
-            lastMouseGroundPlanePosition = hitPos = MouseToGroundPlane(Input.mousePosition);
+            lastMouseGroundPlanePosition = MouseToGroundPlane(Input.mousePosition);
         }
 
         private void Update_ScrollZoom()

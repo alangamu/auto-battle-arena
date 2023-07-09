@@ -13,8 +13,6 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private TileRuntimeSet _tiles;
         [SerializeField]
-        private CitySO _heroSpawnCity;
-        [SerializeField]
         private GameEvent _spawnMapHeroesEvent;
         [SerializeField]
         private HeroRuntimeSet _heroes;
@@ -30,6 +28,10 @@ namespace AutoFantasy.Scripts.Map
         private GameObjectVariable _activeMapHero;
         [SerializeField]
         private GameObjectVariable _activeHeroStandingTile;
+        [SerializeField]
+        private TileTypeSO _cityTileType;
+        [SerializeField]
+        private TileTypeSO _heroTileType;
 
         private void OnEnable()
         {
@@ -43,12 +45,13 @@ namespace AutoFantasy.Scripts.Map
 
         private void SpawnHeroes()
         {
-            ITile spawnCityTile = _tiles.GetTileAt(_heroSpawnCity.Q, _heroSpawnCity.R);
-            GameObject tileGO = spawnCityTile.GetGameObject();
-            Transform spwanCityTransform = tileGO.transform;
             foreach (var item in _heroes.Items)
             {
-                GameObject heroMap = Instantiate(_heroMapPrefab, spwanCityTransform);
+                ITile spawnHeroTile = _tiles.GetTileAt(item.MapPositionQ, item.MapPositionR);
+                GameObject tileGO = spawnHeroTile.GetGameObject();
+                Transform spwanTileTransform = tileGO.transform;
+
+                GameObject heroMap = Instantiate(_heroMapPrefab, spwanTileTransform);
 
                 if (heroMap.TryGetComponent(out IHeroController heroController))
                 {
@@ -57,7 +60,7 @@ namespace AutoFantasy.Scripts.Map
                     _activeHeroStandingTile.SetActiveGameObject(tileGO);
                 }
 
-                var _heroWeaponItem = item.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
+                var _heroWeaponItem = item.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
                 WeaponSO heroWeapon = _heroWeaponItem == null ? _unarmed : _databaseItem.GetItem(_heroWeaponItem) as WeaponSO;
 
                 if (heroMap.TryGetComponent(out IWeaponController weaponController))
@@ -70,7 +73,12 @@ namespace AutoFantasy.Scripts.Map
                 }
                 if (heroMap.TryGetComponent(out IMapUnitController mapUnitController))
                 {
-                    mapUnitController.SetHexCoordinates(_heroSpawnCity.Q, _heroSpawnCity.R);
+                    mapUnitController.SetHexCoordinates(item.MapPositionQ, item.MapPositionR);
+                }
+
+                if (spawnHeroTile.TileType != _cityTileType)
+                {
+                    spawnHeroTile.SetType(_heroTileType);
                 }
             }
         }

@@ -1,6 +1,4 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects.Items;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -32,8 +30,5 @@ namespace AutoFantasy.Scripts
 
         public bool IsMale;
         public string HeroId;
-
-        //TODO: get out the inventory
-        public List<Item> HeroInventory;
     }
 }

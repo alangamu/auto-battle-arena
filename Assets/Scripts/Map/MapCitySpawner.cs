@@ -1,4 +1,5 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects;
+﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace AutoFantasy.Scripts.Map
         private TileRuntimeSet _tiles;
         [SerializeField]
         private GameEvent _spawnMapCitiesEvent;
+        [SerializeField]
+        private TileTypeSO _cityTyleType;
 
         private void OnEnable()
         {
@@ -28,7 +31,10 @@ namespace AutoFantasy.Scripts.Map
 
             foreach (var item in cities)
             {
-                Instantiate(item.CityPrefab, _tiles.Items.Find(x => x.GetHex().Q == item.Q && x.GetHex().R == item.R).GetGameObject().transform);
+                ITile tile = _tiles.Items.Find(x => x.GetHex().Q == item.Q && x.GetHex().R == item.R);
+                GameObject city = Instantiate(item.CityPrefab, tile.GetGameObject().transform);
+                city.name = item.name;
+                tile.SetType(_cityTyleType);
             }
         }
     }

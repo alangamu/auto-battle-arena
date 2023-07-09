@@ -1,6 +1,5 @@
 ﻿using AutoFantasy.Scripts.Heroes;
 using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,7 +46,7 @@ namespace AutoFantasy.Scripts.UI
             rawImage.texture = tex;
             if (nameText != null)
             {
-                nameText.text = hero.HeroName;
+                nameText.text = hero.ThisHeroData.HeroName;
             }
         }
     }

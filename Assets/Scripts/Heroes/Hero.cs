@@ -10,18 +10,12 @@ namespace AutoFantasy.Scripts.Heroes
         public HeroData ThisHeroData;
         public CombatStats ThisCombatStats;
         public event Action OnInventoryChanged;
+        public List<Item> HeroInventory;
+
+        public int MapPositionQ;
+        public int MapPositionR;
 
         public string SkillId => GetSkillId();
-        public string HeroName => ThisHeroData.HeroName; 
-        public int SkinColorIndex => ThisHeroData.SkinColorIndex;
-        public int EyeColorIndex => ThisHeroData.EyeColorIndex;
-        public int ScarColorIndex => ThisHeroData.ScarColorIndex;
-        public int BodyArtColorIndex => ThisHeroData.BodyArtColorIndex;
-        public int HairColorIndex => ThisHeroData.HairColorIndex;
-        public int HeadIndex => ThisHeroData.HeadIndex;
-        public int HairIndex => ThisHeroData.HairIndex;
-        public int EyebrowsIndex => ThisHeroData.EyebrowsIndex;
-        public bool IsMale => ThisHeroData.IsMale;
 
         public Hero(bool isMale, string heroName, List<int> stats)
         {
@@ -30,7 +24,7 @@ namespace AutoFantasy.Scripts.Heroes
             ThisHeroData.IsMale = isMale;
             Randomize(isMale);
             ThisHeroData.HeroName = heroName;
-            ThisHeroData.HeroInventory = new List<Item>();
+            HeroInventory = new List<Item>();
             ThisCombatStats.Stats = stats;
             ThisHeroData.HeroId = CreateID();
         }
@@ -42,14 +36,14 @@ namespace AutoFantasy.Scripts.Heroes
 
         public void AddItem(Item item)
         {
-            ThisHeroData.HeroInventory.Add(item);
+            HeroInventory.Add(item);
             AddStats(item);
             OnInventoryChanged?.Invoke();
         }
 
         public void RemoveItem(Item item)
         {
-            ThisHeroData.HeroInventory.Remove(item);
+            HeroInventory.Remove(item);
             RemoveStats(item);
             OnInventoryChanged?.Invoke();
         }
@@ -71,7 +65,7 @@ namespace AutoFantasy.Scripts.Heroes
 
         private string GetSkillId()
         {
-            Item item = ThisHeroData.HeroInventory.Find(x => !string.IsNullOrEmpty(x.SkillId));
+            Item item = HeroInventory.Find(x => !string.IsNullOrEmpty(x.SkillId));
             return item == null ? string.Empty : item.SkillId;
         }
 

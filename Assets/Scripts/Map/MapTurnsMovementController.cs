@@ -18,6 +18,8 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private GameObjectGameEvent _selectTileEvent;
         [SerializeField]
+        private GameObjectGameEvent _tileShowEnemyEvent;
+        [SerializeField]
         private GameObjectRuntimeSet _heroes;
         [SerializeField]
         private GameEvent _nextTurnEvent;
@@ -31,9 +33,18 @@ namespace AutoFantasy.Scripts.Map
         private Transform _mapMovementTransform;
         [SerializeField]
         private Transform _mapTransform;
+        [SerializeField]
+        private TileTypeSO _enemyTileType;
+        [SerializeField]
+        private TileTypeSO _heroTyleType;
+        [SerializeField]
+        private TileTypeSO _freeTyleType;
+        [SerializeField]
+        private TileTypeSO _cityTyleType;
 
         private int _heroIndex;
         private List<ITile> _canWalkTiles;
+        private TileTypeSO _activeTileType;
 
         private void Awake()
         {
@@ -53,6 +64,12 @@ namespace AutoFantasy.Scripts.Map
             _selectTileEvent.OnRaise += SelectDestinationTileEvent;
         }
 
+        private void OnDisable()
+        {
+            _nextTurnEvent.OnRaise -= NextTurn;
+            _selectTileEvent.OnRaise -= SelectDestinationTileEvent;
+        }
+
         private void SelectDestinationTileEvent(GameObject obj)
         {
             if (obj.TryGetComponent(out ITile tile))
@@ -63,15 +80,10 @@ namespace AutoFantasy.Scripts.Map
                     {
                         return;
                     }
+                    _activeTileType = tile.TileType;
                     _ = MakeMovementAsync(tile.GetHex());
                 }
             } 
-        }
-
-        private void OnDisable()
-        {
-            _nextTurnEvent.OnRaise -= NextTurn;
-            _selectTileEvent.OnRaise -= SelectDestinationTileEvent;
         }
 
         public async Task MakeMovementAsync(Hex destinationHex)
@@ -81,7 +93,8 @@ namespace AutoFantasy.Scripts.Map
             {
                 if (activeHero.TryGetComponent(out IMapUnitController mapUnitController))
                 {
-                    Hex startHex = _tiles.GetHexAt(mapUnitController.GetHexCoordinatesQ(), mapUnitController.GetHexCoordinatesR());
+                    ITile startTile = _tiles.GetTileAt(mapUnitController.Q, mapUnitController.R);
+                    Hex startHex = startTile.GetHex();
                     List<ITile> path = new List<ITile>();
                     List<Hex> hexes = _tiles.FindPath(startHex, destinationHex);
 
@@ -95,12 +108,38 @@ namespace AutoFantasy.Scripts.Map
                     {
                         weapon = weaponController.GetWeapon();
                     }
-                    if (activeHero.TryGetComponent(out IAnimationMovementController animationController))
+                    if (_activeTileType == _enemyTileType)
                     {
-                        animationController.Animate(weapon.WeaponType.RunAnimationClipName);
+                        path.RemoveAt(path.Count - 1);
                     }
-                    await mapMovementController.DoMovement(path);
-                    animationController.Animate(weapon.WeaponType.IdleAnimationClipName);
+                    if (path.Count != 0)
+                    {
+                        if (activeHero.TryGetComponent(out IAnimationMovementController animationController))
+                        {
+                            animationController.Animate(weapon.WeaponType.RunAnimationClipName);
+                        }
+                        await mapMovementController.DoMovement(path);
+                        animationController.Animate(weapon.WeaponType.IdleAnimationClipName);
+                        ITile lastTyle = path[^1];
+                        lastTyle.SetType(_heroTyleType);
+                        activeHero.transform.SetParent(lastTyle.GetGameObject().transform);
+                        if (activeHero.TryGetComponent(out IHeroController heroController))
+                        {
+                            heroController.ThisHero.MapPositionQ = lastTyle.GetHex().Q;
+                            heroController.ThisHero.MapPositionR = lastTyle.GetHex().R;
+                        }
+                        if (lastTyle.TileType != _cityTyleType)
+                        {
+                            startTile.SetType(_freeTyleType);
+                        }
+                    }
+
+                    if (_activeTileType == _enemyTileType)
+                    {
+                        ITile enemyTile = _tiles.GetTileAt(destinationHex.Q, destinationHex.R);
+                        _tileShowEnemyEvent.Raise(enemyTile.GetGameObject());
+                        return;
+                    }
 
                     _nextTurnEvent.Raise();
                 }
@@ -110,7 +149,6 @@ namespace AutoFantasy.Scripts.Map
         private void NextTurn()
         {
             int heroIndex = _heroIndex++ % _heroes.Items.Count;
-            //_tiles.ClearSelectedList();
 
             GameObject activeHero = _heroes.Items[heroIndex];
             _activeMapHero.SetActiveGameObject(activeHero);
@@ -124,7 +162,7 @@ namespace AutoFantasy.Scripts.Map
 
             if (activeHero.TryGetComponent(out IMapUnitController mapUnitController))
             {
-                Hex activeHeroHex = _tiles.GetHexAt(mapUnitController.GetHexCoordinatesQ(), mapUnitController.GetHexCoordinatesR());
+                Hex activeHeroHex = _tiles.GetHexAt(mapUnitController.Q, mapUnitController.R);
                 int movementPoints = 0; 
 
                 if (_activeMapHero.Value.TryGetComponent(out IHeroController heroController))
@@ -142,11 +180,6 @@ namespace AutoFantasy.Scripts.Map
                         {
                             _canWalkTiles.Add(neighborTile);
                             neighborTile.GetGameObject().transform.SetParent(_mapMovementTransform);
-                            //GameObject tileGameObject = neighborTile.GetGameObject();
-                            //if (tileGameObject.TryGetComponent(out ISelectable selectable))
-                            //{
-                            //    selectable.Select(true);
-                            //}
                         }
                     }
                 }

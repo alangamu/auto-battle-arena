@@ -120,7 +120,7 @@ namespace AutoFantasy.Scripts.Battle
             _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
             _activeHero = _heroCombatRuntimeSet.GetActiveHero();
 
-            var heroInventory = _activeHero.GetHero().ThisHeroData.HeroInventory;
+            var heroInventory = _activeHero.GetHero().HeroInventory;
             WeaponSO weapon = null;
             foreach (var item in heroInventory)
             {

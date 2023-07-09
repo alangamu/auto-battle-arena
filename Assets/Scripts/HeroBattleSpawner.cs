@@ -49,10 +49,10 @@ namespace AutoFantasy.Scripts
 
                 Hero heroToSpawn = heroes.Items.Find(x => x.GetHeroId() == heroesToSpawn[i]);
 
-                hero.name = heroToSpawn.HeroName;
+                hero.name = heroToSpawn.ThisHeroData.HeroName;
 
                 //TODO: improve this weapon getting thing
-                var heroInventory = heroToSpawn.ThisHeroData.HeroInventory;
+                var heroInventory = heroToSpawn.HeroInventory;
                 WeaponSO weapon = null;
                 foreach (var item in heroInventory)
                 {

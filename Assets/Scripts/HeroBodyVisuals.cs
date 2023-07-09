@@ -91,26 +91,27 @@ namespace AutoFantasy.Scripts
 
         private void Generate()
         {
+            HeroData heroData = _hero.ThisHeroData;
             ClearLists();
 
             //TODO: Check this for possible nullRef
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleTorsos : femaleTorsos, chestType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleHips : femaleHips, pantsType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleLegLeft : femaleLegLeft, bootsType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleLegRight : femaleLegRight, bootsType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleHandLeft : femaleHandLeft, glovesType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleHandRight : femaleHandRight, glovesType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleArmUpperRight : femaleArmUpperRight, shouldersType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleArmUpperLeft : femaleArmUpperLeft, shouldersType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleArmLowerRight : femaleArmLowerRight, bracersType.WeareableTypeId);
-            ActivateBodyPartByTypeId(_hero.IsMale ? maleArmLowerLeft : femaleArmLowerLeft, bracersType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleTorsos : femaleTorsos, chestType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleHips : femaleHips, pantsType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleLegLeft : femaleLegLeft, bootsType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleLegRight : femaleLegRight, bootsType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleHandLeft : femaleHandLeft, glovesType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleHandRight : femaleHandRight, glovesType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleArmUpperRight : femaleArmUpperRight, shouldersType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleArmUpperLeft : femaleArmUpperLeft, shouldersType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleArmLowerRight : femaleArmLowerRight, bracersType.WeareableTypeId);
+            ActivateBodyPartByTypeId(heroData.IsMale ? maleArmLowerLeft : femaleArmLowerLeft, bracersType.WeareableTypeId);
 
             ActivateBody();
         }
 
         private void ActivateBodyPartByTypeId(GameObject[] partsList, int weareableTypeId)
         {
-            var item = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemWeareableTypeId == weareableTypeId && x.ItemTypeId == armorType.ItemTypeId);
+            var item = _hero.HeroInventory.Find(x => x.ItemWeareableTypeId == weareableTypeId && x.ItemTypeId == armorType.ItemTypeId);
 
             if (item != null)
             {
@@ -169,7 +170,7 @@ namespace AutoFantasy.Scripts
             {
                 item.SetActive(true);
                 Material itemMaterial = item.GetComponent<SkinnedMeshRenderer>().material;
-                itemMaterial.SetColor("_Color_Skin", skinColor.Items[_hero.SkinColorIndex]);
+                itemMaterial.SetColor("_Color_Skin", skinColor.Items[_hero.ThisHeroData.SkinColorIndex]);
             }
         }
 

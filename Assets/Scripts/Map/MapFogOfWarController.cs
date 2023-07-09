@@ -24,7 +24,11 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private TileStateSO _activeState; 
         [SerializeField]
-        private TileStateSO _inactiveState; 
+        private TileStateSO _inactiveState;
+
+        //TODO: remove this later
+        [SerializeField]
+        private bool _showInitialFogOfWar;
 
         private Dictionary<IHeroController, List<ITile>> _activeTiles;
 
@@ -103,12 +107,15 @@ namespace AutoFantasy.Scripts.Map
 
         private void InitialFogOfWar()
         {
-            foreach (var tile in _tiles.Items)
+            if (_showInitialFogOfWar)
             {
-                GameObject tileGO = tile.GetGameObject();
-                if (tileGO.TryGetComponent(out ITileVisionController visionController))
+                foreach (var tile in _tiles.Items)
                 {
-                    visionController.SetHidden();
+                    GameObject tileGO = tile.GetGameObject();
+                    if (tileGO.TryGetComponent(out ITileVisionController visionController))
+                    {
+                        visionController.SetHidden();
+                    }
                 }
             }
         }

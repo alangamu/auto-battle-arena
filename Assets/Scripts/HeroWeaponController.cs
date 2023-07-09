@@ -67,7 +67,7 @@ namespace AutoFantasy.Scripts
                 Destroy(_weaponGO);
             }
 
-            var _heroWeaponItem = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == weaponType.ItemTypeId);
+            var _heroWeaponItem = _hero.HeroInventory.Find(x => x.ItemTypeId == weaponType.ItemTypeId);
 
             if (_heroWeaponItem != null)
             {

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Skeleton01
   m_EditorClassIdentifier: 
   _enemyVisual: {fileID: 1279576649630488, guid: 908987278249b014f91c9e63dd7174e8, type: 3}
-  _q: 11
-  _r: 6
   _weapon: {fileID: 11400000, guid: 9cff95818d73286429cb68ac663d3341, type: 2}
+  _maxHealth: 300

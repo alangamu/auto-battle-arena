@@ -24,7 +24,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             do
             {
                 heroName = Items[Random.Range(0, Items.Count)];
-                isNameInUse = heroes.Find(y => y.HeroName == heroName) != null;
+                isNameInUse = heroes.Find(y => y.ThisHeroData.HeroName == heroName) != null;
             } while (isNameInUse);
 
             return heroName;

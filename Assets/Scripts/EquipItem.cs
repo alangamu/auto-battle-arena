@@ -62,7 +62,7 @@ namespace AutoFantasy.Scripts
             Item oldItem;
             if (isWeapon)
             {
-                oldItem = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == aceptedItemType.ItemTypeId);
+                oldItem = _hero.HeroInventory.Find(x => x.ItemTypeId == aceptedItemType.ItemTypeId);
                 
                 if (_heroObject.TryGetComponent(out IAnimationController animationController))
                 {
@@ -74,7 +74,7 @@ namespace AutoFantasy.Scripts
             }
             else
             {
-                oldItem = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemWeareableTypeId == aceptedWeareableType.WeareableTypeId && x.ItemTypeId == aceptedItemType.ItemTypeId);
+                oldItem = _hero.HeroInventory.Find(x => x.ItemWeareableTypeId == aceptedWeareableType.WeareableTypeId && x.ItemTypeId == aceptedItemType.ItemTypeId);
             }
 
             if (oldItem != null)

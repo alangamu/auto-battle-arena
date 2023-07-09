@@ -1,11 +1,9 @@
-﻿using UnityEngine;
-
-namespace AutoFantasy.Scripts.Interfaces
+﻿namespace AutoFantasy.Scripts.Interfaces
 {
     public interface IMapUnitController 
     {
-        int GetHexCoordinatesQ();
-        int GetHexCoordinatesR();
+        int Q { get; }
+        int R { get; }
         void SetHexCoordinates(int q, int r);
     }
 }

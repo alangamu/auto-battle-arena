@@ -15,6 +15,8 @@ namespace AutoFantasy.Scripts.Map
         private TileRuntimeSet _tiles;
         [SerializeField]
         private GameEvent _spawnMapEnemiesEvent;
+        [SerializeField]
+        private TileTypeSO _enemyTyleType;
 
         private void OnEnable()
         {
@@ -28,27 +30,29 @@ namespace AutoFantasy.Scripts.Map
 
         private void SpawnEnemies()
         {
-            EnemySO[] enemies = Resources.LoadAll<EnemySO>("Enemies");
+            MapEnemyStageSO[] enemyStages = Resources.LoadAll<MapEnemyStageSO>("EnemyStages");
 
-            foreach (var item in enemies)
+            foreach (var enemyStage in enemyStages)
             {
-                GameObject enemy = Instantiate(_enemyPrefab, _tiles.Items.Find(x => x.GetHex().Q == item.Q && x.GetHex().R == item.R).GetGameObject().transform);
+                ITile tile = _tiles.Items.Find(x => x.GetHex().Q == enemyStage.Q && x.GetHex().R == enemyStage.R);
+                GameObject enemy = Instantiate(_enemyPrefab, tile.GetGameObject().transform);
 
                 if (enemy.TryGetComponent(out EnemyController enemyController))
                 {
-                    GameObject enemyObject = enemyController.Initialize(item.EnemyVisualPrefab);
+                    GameObject enemyObject = enemyController.Initialize(enemyStage.Enemies[0].EnemyVisualPrefab);
 
                     if (enemyObject.TryGetComponent(out IAnimationMovementController animationMovementController))
                     {
-                        animationMovementController.Animate(item.Weapon.WeaponType.IdleAnimationClipName);
+                        animationMovementController.Animate(enemyStage.Enemies[0].Weapon.WeaponType.IdleAnimationClipName);
                     }
                     if (enemyObject.TryGetComponent(out IWeaponController weaponController))
                     {
-                        weaponController.ShowWeapon(item.Weapon);
+                        weaponController.ShowWeapon(enemyStage.Enemies[0].Weapon);
                     }
                 }
 
                 enemy.transform.Rotate(new Vector3(0, 180, 0));
+                tile.SetType(_enemyTyleType);
             }
         }
     }

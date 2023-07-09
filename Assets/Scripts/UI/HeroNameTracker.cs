@@ -24,7 +24,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void RefreshUI()
         {
-            heroNameText.text = activeHero.ActiveHero.HeroName;
+            heroNameText.text = activeHero.ActiveHero.ThisHeroData.HeroName;
         }
     }
 }

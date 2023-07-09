@@ -1,5 +1,4 @@
 using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects.FXsTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
 using AutoFantasy.Scripts.ScriptableObjects.TargetTypes;
@@ -8,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Playables;
-using UnityEngine.Timeline;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Skills
 {

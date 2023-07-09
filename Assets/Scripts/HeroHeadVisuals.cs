@@ -55,23 +55,25 @@ namespace AutoFantasy.Scripts
 
         public void Generate()
         {
+            HeroData heroData = _hero.ThisHeroData;
+
             ClearLists();
 
-            var item = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemWeareableTypeId == _helmetType.WeareableTypeId && x.ItemTypeId == _armorType.ItemTypeId);
+            var item = _hero.HeroInventory.Find(x => x.ItemWeareableTypeId == _helmetType.WeareableTypeId && x.ItemTypeId == _armorType.ItemTypeId);
 
             if (item != null)
             {
                 ArmorSO armorItem = _databaseItem.GetItem(item) as ArmorSO;
                 int prefabIndex = armorItem.PrefabIndexOnHero - 1;
-                _armedBody.Add(_hero.IsMale ? maleHelmet[prefabIndex] : femaleHelmet[prefabIndex]);
+                _armedBody.Add(heroData.IsMale ? maleHelmet[prefabIndex] : femaleHelmet[prefabIndex]);
 
                 ActivateBody(); 
                 return;
             }
 
-            _armedBody.Add(_hero.IsMale ? maleHeads[_hero.HeadIndex] : femaleHeads[_hero.HeadIndex]) ;
-            _armedBody.Add(hair[_hero.HairIndex]);
-            _armedBody.Add(_hero.IsMale ? maleEyebrows[_hero.EyebrowsIndex] : femaleEyebrows[_hero.EyebrowsIndex]);
+            _armedBody.Add(heroData.IsMale ? maleHeads[heroData.HeadIndex] : femaleHeads[heroData.HeadIndex]) ;
+            _armedBody.Add(hair[heroData.HairIndex]);
+            _armedBody.Add(heroData.IsMale ? maleEyebrows[heroData.EyebrowsIndex] : femaleEyebrows[heroData.EyebrowsIndex]);
 
             ActivateBody();
         }
@@ -130,11 +132,11 @@ namespace AutoFantasy.Scripts
             {
                 item.SetActive(true);
                 Material itemMaterial = item.GetComponent<SkinnedMeshRenderer>().material;
-                itemMaterial.SetColor("_Color_Skin", skinColor.Items[_hero.SkinColorIndex]);
-                itemMaterial.SetColor("_Color_Eyes", eyeColor.Items[_hero.EyeColorIndex]);
-                itemMaterial.SetColor("_Color_Scar", scarColor.Items[_hero.ScarColorIndex]);
-                itemMaterial.SetColor("_Color_BodyArt", bodyArtColor.Items[_hero.BodyArtColorIndex]);
-                itemMaterial.SetColor("_Color_Hair", hairColor.Items[_hero.HairColorIndex]);
+                itemMaterial.SetColor("_Color_Skin", skinColor.Items[_hero.ThisHeroData.SkinColorIndex]);
+                itemMaterial.SetColor("_Color_Eyes", eyeColor.Items[_hero.ThisHeroData.EyeColorIndex]);
+                itemMaterial.SetColor("_Color_Scar", scarColor.Items[_hero.ThisHeroData.ScarColorIndex]);
+                itemMaterial.SetColor("_Color_BodyArt", bodyArtColor.Items[_hero.ThisHeroData.BodyArtColorIndex]);
+                itemMaterial.SetColor("_Color_Hair", hairColor.Items[_hero.ThisHeroData.HairColorIndex]);
             }
         }
 

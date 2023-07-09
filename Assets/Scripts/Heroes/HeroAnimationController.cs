@@ -50,7 +50,7 @@ namespace AutoFantasy.Scripts.Heroes
 
         private void ActiveHeroChanged()
         {
-            Item item = _hero.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == _weaponItemType.ItemTypeId);
+            Item item = _hero.HeroInventory.Find(x => x.ItemTypeId == _weaponItemType.ItemTypeId);
 
             if (item != null)
             {

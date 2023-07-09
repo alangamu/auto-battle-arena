@@ -92,11 +92,11 @@ namespace AutoFantasy.Scripts.UI
             Item item;
             if (aceptedItemType != armorType)
             {
-                item = hero.ThisHeroData.HeroInventory.Find(x => x.ItemTypeId == aceptedItemType.ItemTypeId);
+                item = hero.HeroInventory.Find(x => x.ItemTypeId == aceptedItemType.ItemTypeId);
             }
             else
             {
-                item = hero.ThisHeroData.HeroInventory.Find(x => x.ItemWeareableTypeId == aceptedWeareableType.WeareableTypeId && x.ItemTypeId == aceptedItemType.ItemTypeId);
+                item = hero.HeroInventory.Find(x => x.ItemWeareableTypeId == aceptedWeareableType.WeareableTypeId && x.ItemTypeId == aceptedItemType.ItemTypeId);
             }
 
             if (item != null)

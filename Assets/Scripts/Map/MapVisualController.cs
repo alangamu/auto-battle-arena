@@ -125,7 +125,8 @@ namespace AutoFantasy.Scripts.Map
             List<ITile> tiles = _tiles.Items.FindAll(x => x.GetHex().IsWalkable);
             foreach (var item in tiles)
             {
-                if (item.GetHex().Neighbors.FindAll(y => y.IsWalkable).Count == 0)
+
+                if (_tiles.GetNeighbors(item.GetHex()).FindAll(y => y.IsWalkable).Count == 0)
                 {
                     item.GetHex().SetIsWalkable(false);
                 }

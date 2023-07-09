@@ -79,7 +79,6 @@ namespace AutoFantasy.Scripts.Map
                     hexGO.name = $"Hex: {column}, {row}";
                 }
             }
-            _tileRuntimeSet.SetNeighbours();
             _tileRuntimeSet.SetTileState(_initialTileState, _tileRuntimeSet.Items);
         }
 
