@@ -3575,6 +3575,8 @@ GameObject:
   - component: {fileID: 82228646777157998}
   - component: {fileID: -5892483831738862061}
   - component: {fileID: -8202609919507744604}
+  - component: {fileID: 4286610747713852284}
+  - component: {fileID: -639177109931608293}
   m_Layer: 0
   m_Name: NomadMale01
   m_TagString: Untagged
@@ -3645,6 +3647,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 1491066530405619768}
   _leftHandBoneTransform: {fileID: 1491125464744788320}
+--- !u!114 &4286610747713852284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767446950424563261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ab4c8495a585c44ace292074d67bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _combatStats:
+    Stats: 
+  _impactPoint: {fileID: 1491102447128517010}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
+--- !u!114 &-639177109931608293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767446950424563261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroWinEvent: {fileID: 0}
+  animator: {fileID: 0}
+  attackSpeedStat: {fileID: 0}
+  returnToPositionEvent: {fileID: 0}
+  _hitTargetEvent: {fileID: 0}
+  _shootEvent: {fileID: 0}
 --- !u!1 &6499466965673515877
 GameObject:
   m_ObjectHideFlags: 0

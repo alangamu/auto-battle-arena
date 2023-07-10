@@ -9,5 +9,10 @@ namespace AutoFantasy.Scripts.ScriptableObjects
 
         [SerializeField]
         private EnemySO[] _enemies;
+
+        public void SetEnemies(EnemySO[] enemies)
+        {
+            _enemies = enemies;
+        }
     }
 }

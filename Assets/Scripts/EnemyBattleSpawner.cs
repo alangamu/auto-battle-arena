@@ -1,9 +1,7 @@
 ﻿using AutoFantasy.Scripts.Enemy;
 using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
-using AutoFantasy.Scripts.ScriptableObjects.Sets;
-using AutoFantasy.Scripts.ScriptableObjects.Variables;
-using AutoFantasy.Scripts.UI.Mission;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,16 +12,16 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private List<Transform> heroesTransforms;
 
-        [SerializeField]
-        private DatabaseMission missions;
+        //[SerializeField]
+        //private IntVariable currentRound;
 
         [SerializeField]
-        private IntVariable missionToLoad;
-        [SerializeField]
-        private IntVariable currentRound;
+        private GameObject _enemyPrefab;
 
         [SerializeField]
         private GameEvent spawnEnemies;
+        [SerializeField]
+        private MapEnemyStageSO _activeEnemyStage;
 
         private void OnEnable()
         {
@@ -37,19 +35,26 @@ namespace AutoFantasy.Scripts
 
         private void SpawnEnemies_OnRaise()
         {
-            Mission mission = missions.GetMission(missionToLoad.Value);
-            List<EnemyController> enemies = mission.Rounds[currentRound.Value - 1].Enemies;
-            for (int i = 0; i < enemies.Count; i++)
+            EnemySO[] enemies = _activeEnemyStage.Enemies;
+            for (int i = 0; i < enemies.Length; i++)
             {
                 Transform spawnPoint = heroesTransforms[i];
-                var enemy = Instantiate(enemies[i].gameObject, spawnPoint.position, spawnPoint.rotation, transform);
+                GameObject enemyGO = Instantiate(enemies[i].EnemyVisualPrefab, spawnPoint.position, spawnPoint.rotation, transform);
 
-                if (enemy.TryGetComponent(out IHealthController healthController))
+                if (enemyGO.TryGetComponent(out IAnimationMovementController animationMovementController))
                 {
-                    healthController.SetDifficulty(mission.MissionDifficulty);
+                    animationMovementController.Animate(enemies[i].Weapon.WeaponType.IdleAnimationClipName);
                 }
+                if (enemyGO.TryGetComponent(out IWeaponController weaponController))
+                {
+                    weaponController.ShowWeapon(enemies[i].Weapon);
+                }
+                //if (enemy.TryGetComponent(out IHealthController healthController))
+                //{
+                //    healthController.SetDifficulty(mission.MissionDifficulty);
+                //}
 
-                if (enemy.TryGetComponent(out ICombatController combatController))
+                if (enemyGO.TryGetComponent(out ICombatController combatController))
                 {
                     combatController.SetTeamIndex(i);
                 }

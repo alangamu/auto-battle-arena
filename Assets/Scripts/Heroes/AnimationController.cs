@@ -9,14 +9,12 @@ namespace AutoFantasy.Scripts.Heroes
     public class AnimationController : MonoBehaviour, IAnimationController
     {
         [SerializeField]
-        private GameEvent heroWinEvent;
-        [SerializeField]
         private Animator animator;
-        [SerializeField]
-        private HeroStatSO attackSpeedStat;
+        //[SerializeField]
+        //private HeroStatSO attackSpeedStat;
 
-        [SerializeField]
-        private GameEvent returnToPositionEvent;
+        //[SerializeField]
+        //private GameEvent returnToPositionEvent;
         [SerializeField]
         private GameEvent _hitTargetEvent;
         [SerializeField]
@@ -29,13 +27,12 @@ namespace AutoFantasy.Scripts.Heroes
         public void SetWeaponType(WeaponTypeSO weaponType)
         {
             _weaponType = weaponType;
-            SetIdle();
+            //SetIdle();
         }
 
         private void OnEnable()
         {
-            returnToPositionEvent.OnRaise += SetIdle;
-            heroWinEvent.OnRaise += SetIdle;
+            //returnToPositionEvent.OnRaise += SetIdle;
 
             if (TryGetComponent(out _weaponController))
             {
@@ -49,8 +46,8 @@ namespace AutoFantasy.Scripts.Heroes
 
         private void OnDisable()
         {
-            heroWinEvent.OnRaise -= SetIdle;
-            returnToPositionEvent.OnRaise -= SetIdle;
+            //heroWinEvent.OnRaise -= SetIdle;
+            //returnToPositionEvent.OnRaise -= SetIdle;
 
             if (_weaponController != null)
             {
@@ -62,10 +59,10 @@ namespace AutoFantasy.Scripts.Heroes
             }
         }
 
-        private void OnSetWeapon(WeaponSO weaponSO)
-        {
-            SetWeaponType(weaponSO.WeaponType);
-        }
+        //private void OnSetWeapon(WeaponSO weaponSO)
+        //{
+        //    SetWeaponType(weaponSO.WeaponType);
+        //}
 
         private void OnAttackTarget()
         {
@@ -85,11 +82,6 @@ namespace AutoFantasy.Scripts.Heroes
             Animate(_weaponType.RunAnimationClipName);
         }
 
-        private void SetIdle()
-        {
-            Animate(_weaponType.IdleAnimationClipName);
-        }
-
         private void Animate(string animationKeyName)
         {
             animator.Play(animationKeyName);
@@ -102,7 +94,14 @@ namespace AutoFantasy.Scripts.Heroes
 
         public void Idle()
         {
-            SetIdle();
+            if (_weaponType == null)
+            {
+                if (!TryGetComponent(out _weaponController))
+                {
+
+                }
+            }
+                Animate(_weaponType.IdleAnimationClipName);
         }
 
         public void Hit()

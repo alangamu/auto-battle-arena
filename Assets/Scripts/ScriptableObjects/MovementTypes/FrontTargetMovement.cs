@@ -10,25 +10,25 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
         public override void PerformMovement(Transform attacker, Transform target, float movementDuration, Action action)
         {
             Vector3 _startingPosition = attacker.position;
-            IAnimationController animationController;
-            if (attacker.gameObject.TryGetComponent(out animationController))
+
+            if (attacker.gameObject.TryGetComponent(out IAnimationController animationController))
             {
                 animationController.Run();
-            }
 
-            LeanTween.move(attacker.gameObject, target.position * 0.9f + Vector3.down, movementDuration / 4).setOnComplete(() =>
-            {
-                action.Invoke();
-                LeanTween.delayedCall(movementDuration / 2, () => 
-                { 
-                    animationController.Run();
-                    LeanTween.move(attacker.gameObject, _startingPosition, movementDuration / 4).setOnComplete(() =>
-                    {
-                        attacker.LookAt(target);
-                        animationController.Idle();
+                LeanTween.move(attacker.gameObject, target.position * 0.9f + Vector3.down, movementDuration / 4).setOnComplete(() =>
+                {
+                    action.Invoke();
+                    LeanTween.delayedCall(movementDuration / 2, () => 
+                    { 
+                        animationController.Run();
+                        LeanTween.move(attacker.gameObject, _startingPosition, movementDuration / 4).setOnComplete(() =>
+                        {
+                            attacker.LookAt(target);
+                            animationController.Idle();
+                        });
                     });
                 });
-            });
+            }
         }
     }
 }

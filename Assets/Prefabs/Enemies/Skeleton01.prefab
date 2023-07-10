@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 95563511617423106}
   - component: {fileID: 5979529760264238423}
   - component: {fileID: -517014283552023678}
+  - component: {fileID: 6248721696302336032}
   m_Layer: 0
   m_Name: Skeleton01
   m_TagString: Untagged
@@ -681,6 +682,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 4128308778074034}
   _leftHandBoneTransform: {fileID: 4488742033739566}
+--- !u!114 &6248721696302336032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279576649630488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ab4c8495a585c44ace292074d67bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _combatStats:
+    Stats: 
+  _impactPoint: {fileID: 4484298023461002}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
 --- !u!1 &1299527323350150
 GameObject:
   m_ObjectHideFlags: 0

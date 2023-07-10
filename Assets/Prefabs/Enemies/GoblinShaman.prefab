@@ -4594,6 +4594,7 @@ GameObject:
   - component: {fileID: 6128998989100761668}
   - component: {fileID: -5157966939559406296}
   - component: {fileID: 2984757637027969165}
+  - component: {fileID: 8734362961324252035}
   m_Layer: 0
   m_Name: GoblinShaman
   m_TagString: Untagged
@@ -4664,6 +4665,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 1113810680271541943}
   _leftHandBoneTransform: {fileID: 1113952242906488665}
+--- !u!114 &8734362961324252035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064110136524787284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ab4c8495a585c44ace292074d67bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _combatStats:
+    Stats: 
+  _impactPoint: {fileID: 1110927574236739139}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
 --- !u!1 &6233199154895777089
 GameObject:
   m_ObjectHideFlags: 0

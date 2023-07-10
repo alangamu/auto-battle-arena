@@ -53,6 +53,7 @@ namespace AutoFantasy.Scripts.Map
 
                 enemy.transform.Rotate(new Vector3(0, 180, 0));
                 tile.SetType(_enemyTyleType);
+                //tile.GetHex().SetIsWalkable(false);
             }
         }
     }

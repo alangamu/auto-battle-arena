@@ -16,6 +16,8 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private HeroRuntimeSet _heroes;
         [SerializeField]
+        private HeroRuntimeSet _fightHeroes;
+        [SerializeField]
         private GameObject _preFightPopup;
         [SerializeField]
         private TileRuntimeSet _tiles;
@@ -37,6 +39,8 @@ namespace AutoFantasy.Scripts.UI
         private Button _cancelButton;
         [SerializeField]
         private Button _fightButton;
+        [SerializeField]
+        private MapEnemyStageSO _activeEnemyStage;
 
         private MapEnemyStageSO[] _enemyStages;
 
@@ -92,14 +96,14 @@ namespace AutoFantasy.Scripts.UI
 
         private void FillEnemiesPanel(ITile enemyTile)
         {
-            MapEnemyStageSO mapEnemyStage = _enemyStages.ToList().Find(x => x.Q == enemyTile.GetHex().Q && x.R == enemyTile.GetHex().R);
+            _activeEnemyStage.SetEnemies(_enemyStages.ToList().Find(x => x.Q == enemyTile.GetHex().Q && x.R == enemyTile.GetHex().R).Enemies);
 
             foreach (Transform item in _enemiesTransform)
             {
                 Destroy(item.gameObject);
             }
 
-            foreach (var enemy in mapEnemyStage.Enemies)
+            foreach (var enemy in _activeEnemyStage.Enemies)
             {
                 GameObject enemyGO = Instantiate(_enemyPortraitUIPrefab, _enemiesTransform);
 
@@ -112,6 +116,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void FillFightHeroesPanel(List<ITile> heroesTiles)
         {
+            _fightHeroes.Items.Clear();
             foreach (Transform hero in _fightHeroesTransform)
             {
                 Destroy(hero.gameObject);
@@ -121,7 +126,7 @@ namespace AutoFantasy.Scripts.UI
             {
                 GameObject fightHeroGO = Instantiate(_heroPortraitUIPrefab, _fightHeroesTransform);
                 Hero hero = _heroes.Items.Find(x => x.MapPositionQ == item.GetHex().Q && x.MapPositionR == item.GetHex().R);
-
+                _fightHeroes.Add(hero);
                 if (fightHeroGO.TryGetComponent(out IHeroController heroController))
                 {
                     heroController.SetHero(hero);

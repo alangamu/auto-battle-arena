@@ -1,6 +1,5 @@
 ﻿using AutoFantasy.Scripts.Heroes;
 using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
@@ -12,42 +11,38 @@ namespace AutoFantasy.Scripts
     public class HeroBattleSpawner : MonoBehaviour
     {
         [SerializeField] 
-        private List<Transform> heroesTransforms;
+        private List<Transform> _heroesTransforms;
         [SerializeField] 
-        private GameEvent spawnHeroes;
+        private GameEvent _spawnHeroes;
         [SerializeField] 
-        private GameObject heroPrefab;
+        private GameObject _heroPrefab;
         [SerializeField]
-        private TeamsSO teams;
+        private HeroRuntimeSet _fightHeroes;
         [SerializeField]
-        private HeroRuntimeSet heroes;
+        private ItemDatabase _databaseItem;
         [SerializeField]
-        private ItemDatabase databaseItem;
+        private WeaponTypeSO _unarmed;
         [SerializeField]
-        private WeaponTypeSO unarmed;
-        [SerializeField]
-        private ItemTypeSO weaponType;
+        private ItemTypeSO _weaponType;
 
         private void OnEnable()
         {
-            spawnHeroes.OnRaise += SpawnHeroes_OnRaise;
+            _spawnHeroes.OnRaise += SpawnHeroes_OnRaise;
         }
 
         private void OnDisable()
         {
-            spawnHeroes.OnRaise -= SpawnHeroes_OnRaise;
+            _spawnHeroes.OnRaise -= SpawnHeroes_OnRaise;
         }
 
         private void SpawnHeroes_OnRaise()
         {
-            List<string> heroesToSpawn = teams.Teams[teams.ActiveTeamNumber].HeroesIds;
-
-            for (int i = 0; i < heroesToSpawn.Count; i++)
+            for (int i = 0; i < _fightHeroes.Items.Count; i++)
             {
-                Transform spawnPoint = heroesTransforms[i];
-                GameObject hero = Instantiate(heroPrefab, spawnPoint.position, spawnPoint.rotation, transform);
+                Transform spawnPoint = _heroesTransforms[i];
+                GameObject hero = Instantiate(_heroPrefab, spawnPoint.position, spawnPoint.rotation, transform);
 
-                Hero heroToSpawn = heroes.Items.Find(x => x.GetHeroId() == heroesToSpawn[i]);
+                Hero heroToSpawn = _fightHeroes.Items[i];
 
                 hero.name = heroToSpawn.ThisHeroData.HeroName;
 
@@ -56,8 +51,8 @@ namespace AutoFantasy.Scripts
                 WeaponSO weapon = null;
                 foreach (var item in heroInventory)
                 {
-                    var itemInventory = databaseItem.GetItem(item);
-                    if (itemInventory.ItemType == weaponType)
+                    var itemInventory = _databaseItem.GetItem(item);
+                    if (itemInventory.ItemType == _weaponType)
                     {
                         weapon = (WeaponSO)itemInventory;
                         continue;
@@ -76,7 +71,7 @@ namespace AutoFantasy.Scripts
                 }
                 if (hero.TryGetComponent(out IAnimationController animationController))
                 {
-                    animationController.SetWeaponType(weapon == null ? unarmed : weapon.WeaponType);
+                    animationController.SetWeaponType(weapon == null ? _unarmed : weapon.WeaponType);
                 }
             }
         }

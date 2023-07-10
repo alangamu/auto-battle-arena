@@ -2187,19 +2187,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f33494a689b7e438ae51ce379e9c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroesTransforms:
+  _heroesTransforms:
   - {fileID: 1901637771}
   - {fileID: 584934455}
   - {fileID: 1301155032}
   - {fileID: 2059514655}
   - {fileID: 1329224141}
-  spawnHeroes: {fileID: 11400000, guid: 320ac430985720948b18f96f8ef1c402, type: 2}
-  heroPrefab: {fileID: 8021379060007289243, guid: ea0447a7dc8b2a04daa4b7a1ca47cbb7, type: 3}
-  teams: {fileID: 11400000, guid: 6c100d9bb7fe5ca479d27adaf6fe350d, type: 2}
-  heroes: {fileID: 11400000, guid: 9708d95449a15364d9868ff2666fd88b, type: 2}
-  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
-  unarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
-  weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  _spawnHeroes: {fileID: 11400000, guid: 320ac430985720948b18f96f8ef1c402, type: 2}
+  _heroPrefab: {fileID: 8021379060007289243, guid: ea0447a7dc8b2a04daa4b7a1ca47cbb7, type: 3}
+  _fightHeroes: {fileID: 11400000, guid: 680784fe70d23ef438823b84733cfb73, type: 2}
+  _databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
+  _unarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
+  _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
 --- !u!4 &1379018393
 Transform:
   m_ObjectHideFlags: 0
@@ -2579,10 +2578,9 @@ MonoBehaviour:
   - {fileID: 701073006}
   - {fileID: 1461645612}
   - {fileID: 1184252484}
-  missions: {fileID: 11400000, guid: 5a81463a65b6f564aba6a500e6bf104f, type: 2}
-  missionToLoad: {fileID: 11400000, guid: cb85843bac2a0944c97e3a5ee5c83a25, type: 2}
-  currentRound: {fileID: 11400000, guid: f02d2df7173b1c94ea6aa3cb533ebf77, type: 2}
+  _enemyPrefab: {fileID: 3135474633921551464, guid: 484388478d122354eacab66b1edc53f4, type: 3}
   spawnEnemies: {fileID: 11400000, guid: 96b61b8764147bd4a93c9c50180ecd29, type: 2}
+  _activeEnemyStage: {fileID: 11400000, guid: 5eb4c894a4db17a4ba9f7a9d1a5a5ac1, type: 2}
 --- !u!4 &1556967898
 Transform:
   m_ObjectHideFlags: 0
@@ -2689,10 +2687,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.001
-  far clip plane: 1001.26
+  far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.3
+  orthographic size: 1.13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2715,8 +2713,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0.014236795, y: 0.76702535, z: -0.6412327, w: -0.017029978}
-  m_LocalPosition: {x: -0.5854429, y: 2.8465958, z: 0.48317266}
+  m_LocalRotation: {x: 0.020066649, y: 0.9622233, z: -0.1046336, w: 0.2505504}
+  m_LocalPosition: {x: 0.39, y: 1.53, z: 3.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

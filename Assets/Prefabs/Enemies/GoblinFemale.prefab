@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 625138311988219893}
   - component: {fileID: 8409495349595464845}
   - component: {fileID: 1603995716487173967}
+  - component: {fileID: 3793679255733848641}
   m_Layer: 0
   m_Name: GoblinFemale
   m_TagString: Untagged
@@ -82,6 +83,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 4499824393882341709}
   _leftHandBoneTransform: {fileID: 4500086874144463429}
+--- !u!114 &3793679255733848641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010064170134537189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ab4c8495a585c44ace292074d67bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _combatStats:
+    Stats: 
+  _impactPoint: {fileID: 4498048544981467479}
+  _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
 --- !u!1 &2876824236379492859
 GameObject:
   m_ObjectHideFlags: 0

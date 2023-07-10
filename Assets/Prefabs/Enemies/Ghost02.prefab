@@ -161,6 +161,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 4620739032532161867, guid: 3520d8f518d74e0498095b7ac9d12fb3, type: 3}
   _normalHitColor: {fileID: 11400000, guid: 4837280dafbf81d46ab279efa16767d3, type: 2}
   _criticalHitColor: {fileID: 11400000, guid: 6a68bc0b4ecb89548be56ce03bf7033c, type: 2}
+  _healColor: {fileID: 0}
 --- !u!1 &1314483306591334309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,7 +3554,6 @@ GameObject:
   - component: {fileID: 8628773938638302061}
   - component: {fileID: 8628773938638302062}
   - component: {fileID: 8628773938638302063}
-  - component: {fileID: 3392701920942257731}
   - component: {fileID: -2058687860902910774}
   - component: {fileID: -6873084977257583034}
   - component: {fileID: 5259592200389114326}
@@ -3633,10 +3633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: {fileID: 11400000, guid: 3dc4cb61a9d22c54087b70b3c9bee537, type: 2}
   animator: {fileID: 8628773938638302060}
-  attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
-  heroWinEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
 --- !u!114 &8628773938638302063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3649,19 +3646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f0a7ccd7cc244f90ced352951458e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3392701920942257731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8628773938638302096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03b2fda57cc7534cb9b6c585f5fcdb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackDelayVariable: {fileID: 11400000, guid: 481c06b18171ae549b9c0b7c62b4835f, type: 2}
+  _enemyVisualTransform: {fileID: 0}
 --- !u!114 &-2058687860902910774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3676,6 +3661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+  _healEffectPrefab: {fileID: 0}
 --- !u!114 &-6873084977257583034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3784,6 +3770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectIndicator: {fileID: 2405822924939194075}
+  _activeIndicator: {fileID: 0}
 --- !u!65 &5419537109899210052
 BoxCollider:
   m_ObjectHideFlags: 0
