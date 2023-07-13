@@ -9,7 +9,8 @@ namespace AutoFantasy.Scripts.Enemy
 
         public GameObject Initialize(GameObject enemyPrefab)
         {
-            return Instantiate(enemyPrefab, _enemyVisualTransform);
+            GameObject enemyObject = Instantiate(enemyPrefab, _enemyVisualTransform);
+            return enemyObject;
         }
     }
 }

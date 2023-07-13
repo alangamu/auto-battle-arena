@@ -12,11 +12,10 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private List<Transform> heroesTransforms;
 
-        //[SerializeField]
-        //private IntVariable currentRound;
-
         [SerializeField]
         private GameObject _enemyPrefab;
+        [SerializeField]
+        private GameObject _enemyCombatPrefab;
 
         [SerializeField]
         private GameEvent spawnEnemies;
@@ -39,25 +38,34 @@ namespace AutoFantasy.Scripts
             for (int i = 0; i < enemies.Length; i++)
             {
                 Transform spawnPoint = heroesTransforms[i];
-                GameObject enemyGO = Instantiate(enemies[i].EnemyVisualPrefab, spawnPoint.position, spawnPoint.rotation, transform);
+                GameObject enemyGO = Instantiate(_enemyCombatPrefab, spawnPoint.position, spawnPoint.rotation, transform);
+            
+                if (enemyGO.TryGetComponent(out EnemyController enemyController))
+                {
+                    GameObject visualEnemy = enemyController.Initialize(enemies[i].EnemyVisualPrefab);
+                    if (visualEnemy.TryGetComponent(out IWeaponController weaponController))
+                    {
+                        weaponController.ShowWeapon(enemies[i].Weapon);
+                    }
 
-                if (enemyGO.TryGetComponent(out IAnimationMovementController animationMovementController))
-                {
-                    animationMovementController.Animate(enemies[i].Weapon.WeaponType.IdleAnimationClipName);
+                    if (enemyGO.TryGetComponent(out IAnimationController animationController))
+                    {
+                        if (visualEnemy.TryGetComponent(out Animator animator))
+                        {
+                            animationController.SetAnimator(animator);
+                            animationController.SetWeaponType(enemies[i].Weapon.WeaponType);
+                            animationController.Idle();
+                        }
+                    }
+
+                    enemyGO.name = visualEnemy.name;
                 }
-                if (enemyGO.TryGetComponent(out IWeaponController weaponController))
-                {
-                    weaponController.ShowWeapon(enemies[i].Weapon);
-                }
-                //if (enemy.TryGetComponent(out IHealthController healthController))
-                //{
-                //    healthController.SetDifficulty(mission.MissionDifficulty);
-                //}
 
                 if (enemyGO.TryGetComponent(out ICombatController combatController))
                 {
                     combatController.SetTeamIndex(i);
                 }
+
             }
         }
     }

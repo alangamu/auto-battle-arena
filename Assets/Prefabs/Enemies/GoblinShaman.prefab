@@ -4592,9 +4592,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5065646716641356174}
   - component: {fileID: 6128998989100761668}
-  - component: {fileID: -5157966939559406296}
   - component: {fileID: 2984757637027969165}
-  - component: {fileID: 8734362961324252035}
+  - component: {fileID: 7908890321244235230}
   m_Layer: 0
   m_Name: GoblinShaman
   m_TagString: Untagged
@@ -4638,19 +4637,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5157966939559406296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5064110136524787284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 6128998989100761668}
 --- !u!114 &2984757637027969165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4665,7 +4651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 1113810680271541943}
   _leftHandBoneTransform: {fileID: 1113952242906488665}
---- !u!114 &8734362961324252035
+--- !u!114 &7908890321244235230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4674,13 +4660,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5064110136524787284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ab4c8495a585c44ace292074d67bb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b39f38800edbf541b79fd65a4fd3c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _combatStats:
-    Stats: 
-  _impactPoint: {fileID: 1110927574236739139}
-  _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
+  stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
+  bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+  _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
+  _shootEvent: {fileID: 11400000, guid: 69ddb166254a9124590c569b0088ba95, type: 2}
+  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
 --- !u!1 &6233199154895777089
 GameObject:
   m_ObjectHideFlags: 0

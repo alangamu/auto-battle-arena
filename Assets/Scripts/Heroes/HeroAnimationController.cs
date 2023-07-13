@@ -109,5 +109,10 @@ namespace AutoFantasy.Scripts.Heroes
         {
             throw new System.NotImplementedException();
         }
+
+        public void SetAnimator(Animator animator)
+        {
+            _animator = animator;
+        }
     }
 }

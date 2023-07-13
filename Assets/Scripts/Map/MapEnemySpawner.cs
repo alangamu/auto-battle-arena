@@ -49,6 +49,11 @@ namespace AutoFantasy.Scripts.Map
                     {
                         weaponController.ShowWeapon(enemyStage.Enemies[0].Weapon);
                     }
+                    if (enemyObject.TryGetComponent(out BoxCollider collider))
+                    {
+                        collider.enabled = false;
+                    }
+                    
                 }
 
                 enemy.transform.Rotate(new Vector3(0, 180, 0));

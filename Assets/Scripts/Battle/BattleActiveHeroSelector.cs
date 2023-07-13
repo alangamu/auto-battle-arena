@@ -3,6 +3,7 @@ using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
@@ -13,11 +14,13 @@ namespace AutoFantasy.Scripts
     public class BattleActiveHeroSelector : MonoBehaviour
     {
         //TODO: refactor this class
+        [Serializable]
         class HeroAttackSpeedContainer
         {
             public int AttackSpeed;
             public ICombatController CombatController;
             public bool IsPlayer;
+            public string HeroName;
         }
 
         class AttackSpeedComparer : IComparer<HeroAttackSpeedContainer>
@@ -142,6 +145,7 @@ namespace AutoFantasy.Scripts
 
                 if (!_activeHero.IsPlayer)
                 {
+                    _enemyCombatRuntimeSet.ActivateThisHero(_activeHero.CombatController);
                     _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
                     _enemyAttackEvent.Raise();
                     PerformHeroAttack();
@@ -167,6 +171,7 @@ namespace AutoFantasy.Scripts
                 heroContainer.AttackSpeed = item.GetCombatStats().StatCount(_attackSpeedStat.StatId);
                 heroContainer.CombatController = item;
                 heroContainer.IsPlayer = true;
+                heroContainer.HeroName = item.GetGameObject().name;
                 _allHeroes.Add(heroContainer);
             }
 
@@ -176,6 +181,7 @@ namespace AutoFantasy.Scripts
                 heroContainer.AttackSpeed = item.GetCombatStats().StatCount(_attackSpeedStat.StatId);
                 heroContainer.CombatController = item;
                 heroContainer.IsPlayer = false;
+                heroContainer.HeroName = item.GetGameObject().name;
                 _allHeroes.Add(heroContainer);
             }
 

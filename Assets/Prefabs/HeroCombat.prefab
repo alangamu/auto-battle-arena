@@ -740,12 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroWinEvent: {fileID: 11400000, guid: 4da7e016a68c8ee41bcfd45e9a92bf82, type: 2}
-  animator: {fileID: 8942012012820057483}
-  attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
-  returnToPositionEvent: {fileID: 11400000, guid: db26b7c25f4179748bdd2af76b63cbfc, type: 2}
-  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
-  _shootEvent: {fileID: 11400000, guid: 06722f7cbc7a6384eb95745e3fa90d88, type: 2}
+  _animator: {fileID: 8942012012820057483}
 --- !u!114 &5359841432402848595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,6 +803,8 @@ MonoBehaviour:
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
   _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
+  _shootEvent: {fileID: 11400000, guid: 06722f7cbc7a6384eb95745e3fa90d88, type: 2}
+  _hitTargetEvent: {fileID: 11400000, guid: 2d34f0a3261908343bbfa7bb8114af3f, type: 2}
 --- !u!114 &2915740885101318347
 MonoBehaviour:
   m_ObjectHideFlags: 0

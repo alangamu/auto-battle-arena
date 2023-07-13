@@ -79,7 +79,6 @@ namespace AutoFantasy.Scripts.UI
 
                     if (heroesTiles != null && heroesTiles.Count > 0)
                     {
-                        print($"{heroesTiles.Count} Heroes found!");
                         if (heroesTiles.Count > _maxCombatHeroes.Value)
                         {
                             _fightButton.enabled = false;

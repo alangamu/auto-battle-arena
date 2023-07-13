@@ -16,9 +16,13 @@ namespace AutoFantasy.Scripts.Battle
         [SerializeField]
         private GameEvent _enemyAttackEvent;
         [SerializeField]
-        private GameEvent _hitTargetEvent;
+        private GameEvent _heroHitTargetEvent;
         [SerializeField]
-        private GameEvent _shootEvent;
+        private GameEvent _enemyHitTargetEvent;
+        [SerializeField]
+        private GameEvent _heroShootEvent;
+        [SerializeField]
+        private GameEvent _enemyShootEvent;
         [SerializeField]
         private HeroCombatRuntimeSet _heroCombatRuntimeSet;
         [SerializeField]
@@ -55,46 +59,92 @@ namespace AutoFantasy.Scripts.Battle
         {
             _heroAttackEvent.OnRaise += HeroAttack;
             _enemyAttackEvent.OnRaise += EnemyAttack;
-            _hitTargetEvent.OnRaise += HitTarget;
-            _shootEvent.OnRaise += ShootProjectile;
+            _heroHitTargetEvent.OnRaise += HeroHitTarget;
+            _heroShootEvent.OnRaise += HeroShootProjectile;
+            _enemyShootEvent.OnRaise += EnemyShootProjectile;
+            _enemyHitTargetEvent.OnRaise += EnemyHitTarget;
         }
 
         private void OnDisable()
         {
             _heroAttackEvent.OnRaise -= HeroAttack;
             _enemyAttackEvent.OnRaise -= EnemyAttack;
-            _hitTargetEvent.OnRaise -= HitTarget;
-            _shootEvent.OnRaise -= ShootProjectile;
+            _heroHitTargetEvent.OnRaise -= HeroHitTarget;
+            _heroShootEvent.OnRaise -= HeroShootProjectile;
+            _enemyShootEvent.OnRaise -= EnemyShootProjectile;
+            _enemyHitTargetEvent.OnRaise -= EnemyHitTarget;
         }
 
-        private void ShootProjectile()
+        private void EnemyHitTarget()
         {
+            _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
+            _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
+
+            HitTarget(_activeHero, _activeEnemy);
+        }
+
+        private void HeroHitTarget()
+        {
+            _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+            _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+
+            HitTarget(_activeHero, _activeEnemy);
+        }
+
+        private void EnemyShootProjectile()
+        {
+            _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
+            _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
+
+            IWeaponController weaponController = _activeHero.GetGameObject().GetComponentInChildren<IWeaponController>();
+            if (weaponController != null)
+            {
+                ShootProjectile(weaponController, _activeHero, _activeEnemy);
+            }
+        }
+
+        private void HeroShootProjectile()
+        {
+            _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+            _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+
             if (_activeHero.GetGameObject().TryGetComponent(out IWeaponController weaponController))
             {
-                Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
-                GameObject projectileGameObject = Instantiate(weaponController.GetWeapon().ProjectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
-
-                if (projectileGameObject.TryGetComponent(out IProjectile projectile))
-                {
-                    projectile.Launch(_activeEnemy.GetImpactTransform(), _projectileTimeImpact);
-                }
-
-                LeanTween.delayedCall(_projectileTimeImpact, () => { HitTarget(); });
+                ShootProjectile(weaponController, _activeHero, _activeEnemy);
             }
-
         }
 
-        private void HitTarget()
+        private void ShootProjectile(IWeaponController weaponController, ICombatController attackerCombatController, ICombatController targetCombatController)
         {
-            int damagePoints = GetDamagePoints();
-            _activeEnemy.GettingDamage(damagePoints, _isCriticalHit);
+            Transform spawnProjectileTransform = weaponController.GetWeaponTransform();
+            GameObject projectileGameObject = Instantiate(weaponController.GetWeapon().ProjectilePrefab, spawnProjectileTransform.position, spawnProjectileTransform.rotation);
+
+            if (projectileGameObject.TryGetComponent(out IProjectile projectile))
+            {
+                projectile.Launch(targetCombatController.GetImpactTransform(), _projectileTimeImpact);
+            }
+
+            LeanTween.delayedCall(_projectileTimeImpact, () => 
+            {
+                HitTarget(attackerCombatController, targetCombatController);
+            });
+        }
+
+        private void HitTarget(ICombatController attackerCombatController, ICombatController targetCombatController)
+        {
+            int damagePoints = GetDamagePoints(attackerCombatController);
+            targetCombatController.GettingDamage(damagePoints, _isCriticalHit);
         }
 
         private void EnemyAttack()
         {
             _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
             _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
-            Attack(_activeHero, _activeEnemy, null);
+            IWeaponController weaponController = _activeHero.GetGameObject().GetComponentInChildren<IWeaponController>();
+            if (weaponController != null)
+            {
+                Attack(_activeHero, _activeEnemy, weaponController.GetWeapon());
+            }
         }
 
         private void Attack(ICombatController attacker, ICombatController target, WeaponSO weapon)
@@ -135,9 +185,9 @@ namespace AutoFantasy.Scripts.Battle
             Attack(_activeHero, _activeEnemy, weapon);
         }
 
-        private int GetDamagePoints()
+        private int GetDamagePoints(ICombatController attackerCombatController)
         {
-            CombatStats heroCombatStats = _activeHero.GetCombatStats();
+            CombatStats heroCombatStats = attackerCombatController.GetCombatStats();
             int heroDamage = (int)(attackPowerStat.BaseValue + (attackPowerStat.MultiplierFactor * heroCombatStats.StatCount(attackPowerStat.StatId)));
             int targetDefense = (int)(defenseStat.BaseValue + (defenseStat.MultiplierFactor * _activeEnemy.GetCombatStats().StatCount(defenseStat.StatId)));
             float criticalMult = 1.0f;

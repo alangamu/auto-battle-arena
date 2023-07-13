@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
+using AutoFantasy.Scripts.ScriptableObjects.Events;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Enemy
@@ -11,8 +12,22 @@ namespace AutoFantasy.Scripts.Enemy
         private GameObject bloodEffectPrefab;
         [SerializeField]
         private GameObject _healEffectPrefab;
+        [SerializeField]
+        private GameEvent _shootEvent;
+        [SerializeField]
+        private GameEvent _hitTargetEvent;
 
         private ICombatController _combatController;
+
+        public void Hit()
+        {
+            _hitTargetEvent.Raise();
+        }
+
+        public void Shoot()
+        {
+            _shootEvent.Raise();
+        }
 
         public void FootR()
         {
