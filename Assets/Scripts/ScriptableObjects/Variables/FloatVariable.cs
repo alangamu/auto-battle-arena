@@ -3,14 +3,8 @@
 namespace AutoFantasy.Scripts.ScriptableObjects.Variables
 { 
     [CreateAssetMenu(menuName = "Variables/Float Variable")]
-    public class FloatVariable : ScriptableObject
+    public class FloatVariable : BaseVariable<float>
     {
-    #if UNITY_EDITOR
-        [Multiline]
-        public string DeveloperDescription = "";
-    #endif
-        public float Value;
-
         public void SetValue(float value)
         {
             Value = value;
