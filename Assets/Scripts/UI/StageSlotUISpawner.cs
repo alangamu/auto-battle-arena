@@ -9,8 +9,8 @@ namespace AutoFantasy.Scripts.UI
         private Transform parentTransform;
         [SerializeField]
         private GameObject stageSlotUIPrefab;
-        [SerializeField]
-        private DatabaseStage stages;
+        //[SerializeField]
+        //private DatabaseStage stages;
 
         private void OnEnable()
         {
@@ -19,15 +19,15 @@ namespace AutoFantasy.Scripts.UI
                 Destroy(child.gameObject);
             }
 
-            foreach (var stage in stages.Items)
-            {
-                GameObject stageSlotUIObject = Instantiate(stageSlotUIPrefab, parentTransform);
-                if (stageSlotUIObject.TryGetComponent(out StageSlotUI stageSlotUI))
-                {
-                    //TODO make interface (SOLID)
-                    stageSlotUI.Setup(stage);
-                }
-            }
+            //foreach (var stage in stages.Items)
+            //{
+            //    GameObject stageSlotUIObject = Instantiate(stageSlotUIPrefab, parentTransform);
+            //    if (stageSlotUIObject.TryGetComponent(out StageSlotUI stageSlotUI))
+            //    {
+            //        //TODO make interface (SOLID)
+            //        stageSlotUI.Setup(stage);
+            //    }
+            //}
         }
     }
 }

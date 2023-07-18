@@ -9,6 +9,7 @@ namespace AutoFantasy.Scripts.Map
 {
     public class MapCreator : MonoBehaviour
     {
+
         [SerializeField]
         protected GameEvent _updateMapVisuals;
         [SerializeField]
@@ -35,6 +36,8 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private GameEvent _showFogOfWarEvent;
 
+        [SerializeField]
+        private BoolVariable _isNewGame;
         virtual public void GenerateMap()
         {
             print("generate map");
@@ -52,7 +55,7 @@ namespace AutoFantasy.Scripts.Map
                 }
                 for (int column = 0; column < numColumns; column++)
                 {
-                    Hex h = new Hex(column, row, _hexRadius.Value);
+                    Hex h = new Hex(column, row);
                     h.SetElevation(-0.5f);
 
 
@@ -84,11 +87,14 @@ namespace AutoFantasy.Scripts.Map
 
         private void Start()
         {
-            GenerateMap();
-            _showFogOfWarEvent.Raise();
-            _spawnMapCitiesEvent.Raise();
-            _spawnMapEnemiesEvent.Raise();
-            _spawnMapHeroesEvent.Raise();
+            if (_isNewGame.Value)
+            {
+                GenerateMap();
+                _showFogOfWarEvent.Raise();
+                _spawnMapCitiesEvent.Raise();
+                _spawnMapEnemiesEvent.Raise();
+                _spawnMapHeroesEvent.Raise();
+            }
         }
     }
 }

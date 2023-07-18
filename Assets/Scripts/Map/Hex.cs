@@ -8,7 +8,7 @@ namespace AutoFantasy.Scripts.Map
     [Serializable]
     public class Hex
     {
-        static readonly float WIDTH_MULTIPLIER = Mathf.Sqrt(3) / 2;
+        //static readonly float WIDTH_MULTIPLIER = Mathf.Sqrt(3) / 2;
         public int Q => _q;
         public int R => _r;
         public int S => _s;
@@ -24,7 +24,7 @@ namespace AutoFantasy.Scripts.Map
         private int _s;
         private float _elevation;
         private float _moisture;
-        private float _radius;
+        //private float _radius;
 
         //private TileTerrainTypeSO _tileTerrainType;
 
@@ -64,9 +64,9 @@ namespace AutoFantasy.Scripts.Map
             H = h;
         }
 
-        public Hex(int q, int r, float radius)
+        public Hex(int q, int r)
         { 
-            _radius = radius;
+            //_radius = radius;
             _q = q;
             _r = r;
             _s = -(q + r);

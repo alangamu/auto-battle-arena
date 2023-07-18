@@ -5,11 +5,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Variables
     [CreateAssetMenu(menuName = "Variables/Float Variable")]
     public class FloatVariable : BaseVariable<float>
     {
-        public void SetValue(float value)
-        {
-            Value = value;
-        }
-
         public void SetValue(FloatVariable value)
         {
             Value = value.Value;
