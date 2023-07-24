@@ -95,7 +95,10 @@ namespace AutoFantasy.Scripts.UI
 
         private void FillEnemiesPanel(ITile enemyTile)
         {
-            _activeEnemyStage.SetEnemies(_enemyStages.ToList().Find(x => x.Q == enemyTile.GetHex().Q && x.R == enemyTile.GetHex().R).Enemies);
+            MapEnemyStageSO activeStage = _enemyStages.ToList().Find(x => x.Q == enemyTile.GetHex().Q && x.R == enemyTile.GetHex().R);
+            
+            _activeEnemyStage.SetEnemies(activeStage.Enemies);
+            _activeEnemyStage.SetRewards(activeStage.Rewards);
 
             foreach (Transform item in _enemiesTransform)
             {

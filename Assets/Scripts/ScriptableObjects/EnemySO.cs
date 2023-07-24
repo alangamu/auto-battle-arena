@@ -8,6 +8,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects
     {
         public GameObject EnemyVisualPrefab => _enemyVisual;
         public WeaponSO Weapon => _weapon;
+        public int MaxHealth => _maxHealth;
         //public Sprite EnemySprite => _enemySprite;
 
         [SerializeField] 

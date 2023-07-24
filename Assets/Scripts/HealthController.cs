@@ -59,5 +59,11 @@ namespace AutoFantasy.Scripts
         {
             return;
         }
+
+        public void SetHealth(int health)
+        {
+            _currentHealth = health;
+            _maxHealth = _currentHealth;
+        }
     }
 }

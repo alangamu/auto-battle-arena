@@ -56,5 +56,11 @@ namespace AutoFantasy.Scripts.Enemy
             _currentHealth = (int)health;
             _maxHealth = _currentHealth;
         }
+
+        public void SetHealth(int health)
+        {
+            _currentHealth = health;
+            _maxHealth = _currentHealth;
+        }
     }
 }

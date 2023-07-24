@@ -65,7 +65,10 @@ namespace AutoFantasy.Scripts
                 {
                     combatController.SetTeamIndex(i);
                 }
-
+                if (enemyGO.TryGetComponent(out IHealthController healthController))
+                {
+                    healthController.SetHealth(enemies[i].MaxHealth);
+                }
             }
         }
     }

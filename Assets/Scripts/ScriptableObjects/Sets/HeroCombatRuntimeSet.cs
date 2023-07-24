@@ -1,6 +1,5 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Sets
@@ -9,7 +8,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
     public class HeroCombatRuntimeSet : RuntimeSet<ICombatController>
     {
         public event Action OnHeroCombatEmpty;
-        public event Action<List<Reward>> OnHeroDeath;
 
         public void SelectThisHero(ICombatController combatController)
         {
@@ -57,7 +55,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             if (Items.Contains(combatController))
             {
                 Remove(combatController);
-                OnHeroDeath?.Invoke(combatController.GetRewards());
 
                 if (Items.Count == 0)
                 {

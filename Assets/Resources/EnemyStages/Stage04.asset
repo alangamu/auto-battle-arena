@@ -12,10 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8b611378561dd4ea39c3eb76a4e8ed, type: 3}
   m_Name: Stage04
   m_EditorClassIdentifier: 
-  _q: 15
-  _r: 4
+  _q: 14
+  _r: 5
   _enemies:
   - {fileID: 11400000, guid: 83da96931f1d5674591310286be70585, type: 2}
   - {fileID: 11400000, guid: 602d2d3d5de1cd2418ff681edd4a77a2, type: 2}
   - {fileID: 11400000, guid: 3a550aa8baae27c49a985aa719d50d13, type: 2}
   - {fileID: 11400000, guid: 622b1255457df984780547b60debfc91, type: 2}
+  _rewards:
+  - Pct: 0.5
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: aefdb121143f5cb41b9da3ab37d67da9, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.5
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 375bad29143607e4e932a9578bef93a8, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}

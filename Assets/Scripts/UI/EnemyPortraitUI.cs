@@ -25,10 +25,16 @@ namespace AutoFantasy.Scripts.UI
 
             GameObject enemyObject = _enemyController.Initialize(enemy.EnemyVisualPrefab);
 
-            if (enemyObject.TryGetComponent(out IAnimationMovementController animationMovementController))
+            if (TryGetComponent(out IAnimationController animationController))
             {
-                animationMovementController.Animate(enemy.Weapon.WeaponType.IdleAnimationClipName);
+                if (enemyObject.TryGetComponent(out Animator animator))
+                {
+                    animationController.SetAnimator(animator);
+                    animationController.SetWeaponType(enemy.Weapon.WeaponType);
+                    animationController.Idle();
+                }
             }
+
             if (enemyObject.TryGetComponent(out IWeaponController weaponController))
             {
                 weaponController.ShowWeapon(enemy.Weapon);

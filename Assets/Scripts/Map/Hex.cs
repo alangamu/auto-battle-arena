@@ -1,6 +1,4 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects.Map;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Map
@@ -24,7 +22,7 @@ namespace AutoFantasy.Scripts.Map
         private int _s;
         private float _elevation;
         private float _moisture;
-        private float _radius;
+        //private float _radius;
 
         //private TileTerrainTypeSO _tileTerrainType;
 
@@ -66,7 +64,7 @@ namespace AutoFantasy.Scripts.Map
 
         public Hex(int q, int r, float radius)
         { 
-            _radius = radius;
+            //_radius = radius;
             _q = q;
             _r = r;
             _s = -(q + r);

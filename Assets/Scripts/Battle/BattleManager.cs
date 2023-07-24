@@ -1,7 +1,7 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
-using AutoFantasy.Scripts.ScriptableObjects.Variables;
-using AutoFantasy.Scripts.UI.Mission;
+//using AutoFantasy.Scripts.ScriptableObjects.Variables;
+//using AutoFantasy.Scripts.UI.Mission;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -17,23 +17,23 @@ namespace AutoFantasy.Scripts
         private GameEvent heroDefeatEvent;
         [SerializeField]
         private GameEvent heroWinEvent;
-        [SerializeField]
-        private GameEvent _newRoundEvent;
+        //[SerializeField]
+        //private GameEvent _newRoundEvent;
 
-        [SerializeField]
-        private DatabaseMission missions;
+        //[SerializeField]
+        //private DatabaseMission missions;
 
-        [SerializeField]
-        private IntVariable missionToLoad;
-        [SerializeField]
-        private IntVariable currentRound;
+        //[SerializeField]
+        //private IntVariable missionToLoad;
+        //[SerializeField]
+        //private IntVariable currentRound;
 
-        private Mission _mission;
+        //private Mission _mission;
 
         private void OnEnable()
         {
-            currentRound.SetValue(1);
-            _mission = missions.GetMission(missionToLoad.Value);
+            //currentRound.SetValue(1);
+            //_mission = missions.GetMission(missionToLoad.Value);
             heroCombatSet.OnHeroCombatEmpty += HeroCombatSet_OnHeroCombatEmpty;
             enemyCombatSet.OnHeroCombatEmpty += EnemyCombatSet_OnHeroCombatEmpty;
         }
@@ -46,14 +46,15 @@ namespace AutoFantasy.Scripts
 
         private void EnemyCombatSet_OnHeroCombatEmpty()
         {
-            if (_mission.Rounds.Count == currentRound.Value)
-            {
-                heroWinEvent.Raise();
-                return;
-            }
+            heroWinEvent.Raise();
+            //if (_mission.Rounds.Count == currentRound.Value)
+            //{
+            //    heroWinEvent.Raise();
+            //    return;
+            //}
 
-            currentRound.ApplyChange(1);
-            _newRoundEvent.Raise();
+            //currentRound.ApplyChange(1);
+            //_newRoundEvent.Raise();
         }
 
         private void HeroCombatSet_OnHeroCombatEmpty()

@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combatStats:
-    Stats: 
+    Stats: 0400000005000000
   _impactPoint: {fileID: 8101679484536212655}
   _heroCombatRuntimeSet: {fileID: 11400000, guid: f43d541f37b639d44a87f1e70f6caee6, type: 2}
 --- !u!114 &4698785570893271676
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStat: {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
-  _currentHealth: 1000
+  _currentHealth: 200
 --- !u!114 &3264703101492404342
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.MovementTypes;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Battle
@@ -50,9 +51,6 @@ namespace AutoFantasy.Scripts.Battle
         [SerializeField]
         private float _projectileTimeImpact;
 
-        private ICombatController _activeEnemy;
-        private ICombatController _activeHero;
-
         private bool _isCriticalHit = false;
 
         private void OnEnable()
@@ -77,36 +75,36 @@ namespace AutoFantasy.Scripts.Battle
 
         private void EnemyHitTarget()
         {
-            _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
+            ICombatController attacker = _enemyCombatRuntimeSet.GetSelectedHero();
+            ICombatController target = _heroCombatRuntimeSet.GetSelectedHero(); 
 
-            HitTarget(_activeHero, _activeEnemy);
+            HitTarget(attacker, target);
         }
 
         private void HeroHitTarget()
         {
-            _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
 
             HitTarget(_activeHero, _activeEnemy);
         }
 
         private void EnemyShootProjectile()
         {
-            _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
+            ICombatController target = _heroCombatRuntimeSet.GetSelectedHero();
+            ICombatController attacker = _enemyCombatRuntimeSet.GetActiveHero();
 
-            IWeaponController weaponController = _activeHero.GetGameObject().GetComponentInChildren<IWeaponController>();
+            IWeaponController weaponController = attacker.GetGameObject().GetComponentInChildren<IWeaponController>();
             if (weaponController != null)
             {
-                ShootProjectile(weaponController, _activeHero, _activeEnemy);
+                ShootProjectile(weaponController, attacker, target);
             }
         }
 
         private void HeroShootProjectile()
         {
-            _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
 
             if (_activeHero.GetGameObject().TryGetComponent(out IWeaponController weaponController))
             {
@@ -132,14 +130,14 @@ namespace AutoFantasy.Scripts.Battle
 
         private void HitTarget(ICombatController attackerCombatController, ICombatController targetCombatController)
         {
-            int damagePoints = GetDamagePoints(attackerCombatController);
+            int damagePoints = GetDamagePoints(attackerCombatController, targetCombatController);
             targetCombatController.GettingDamage(damagePoints, _isCriticalHit);
         }
 
         private void EnemyAttack()
         {
-            _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
+            ICombatController _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
+            ICombatController _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
             IWeaponController weaponController = _activeHero.GetGameObject().GetComponentInChildren<IWeaponController>();
             if (weaponController != null)
             {
@@ -167,8 +165,8 @@ namespace AutoFantasy.Scripts.Battle
 
         private void HeroAttack()
         {
-            _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
 
             var heroInventory = _activeHero.GetHero().HeroInventory;
             WeaponSO weapon = null;
@@ -185,20 +183,22 @@ namespace AutoFantasy.Scripts.Battle
             Attack(_activeHero, _activeEnemy, weapon);
         }
 
-        private int GetDamagePoints(ICombatController attackerCombatController)
+        private int GetDamagePoints(ICombatController attackerCombatController, ICombatController targetCombatController)
         {
-            CombatStats heroCombatStats = attackerCombatController.GetCombatStats();
-            int heroDamage = (int)(attackPowerStat.BaseValue + (attackPowerStat.MultiplierFactor * heroCombatStats.StatCount(attackPowerStat.StatId)));
-            int targetDefense = (int)(defenseStat.BaseValue + (defenseStat.MultiplierFactor * _activeEnemy.GetCombatStats().StatCount(defenseStat.StatId)));
+            CombatStats attackerCombatStats = attackerCombatController.GetCombatStats();
+            CombatStats targetCombatStats = targetCombatController.GetCombatStats();
+            int heroDamage = (int)(attackPowerStat.BaseValue + (attackPowerStat.MultiplierFactor * attackerCombatStats.StatCount(attackPowerStat.StatId)));
+            int targetDefense = heroDamage * targetCombatStats.StatCount(defenseStat.StatId) / 10;
             float criticalMult = 1.0f;
             int randomCritical = Random.Range(1, 100);
-            int criticalPoints = (int)(criticalChanceStat.BaseValue + (heroCombatStats.StatCount(criticalChanceStat.StatId) * criticalChanceStat.MultiplierFactor));
+            int criticalPoints = (int)(criticalChanceStat.BaseValue + (attackerCombatStats.StatCount(criticalChanceStat.StatId) * criticalChanceStat.MultiplierFactor));
 
             _isCriticalHit = false;
+
             if (randomCritical < criticalPoints)
             {
                 _isCriticalHit = true;
-                criticalMult = criticalPowerStat.BaseValue + (criticalPowerStat.MultiplierFactor * heroCombatStats.StatCount(criticalPowerStat.StatId));
+                criticalMult = criticalPowerStat.BaseValue + (criticalPowerStat.MultiplierFactor * attackerCombatStats.StatCount(criticalPowerStat.StatId));
             }
 
             int totalDamage = (int)(heroDamage * criticalMult) - targetDefense;

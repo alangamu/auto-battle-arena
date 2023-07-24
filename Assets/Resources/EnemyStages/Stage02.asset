@@ -17,3 +17,9 @@ MonoBehaviour:
   _enemies:
   - {fileID: 11400000, guid: 602d2d3d5de1cd2418ff681edd4a77a2, type: 2}
   - {fileID: 11400000, guid: 83da96931f1d5674591310286be70585, type: 2}
+  _rewards:
+  - Pct: 1
+    MinQty: 25
+    MaxQty: 30
+    RewardItem: {fileID: 11400000, guid: bc651b6f672273344b516808ec0fe0d7, type: 2}
+    ItemRarity: {fileID: 0}

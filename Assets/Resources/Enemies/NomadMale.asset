@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyVisual: {fileID: 3767446950424563261, guid: f05eb0d8a3f738446a5989d7abb5f13d, type: 3}
   _weapon: {fileID: 11400000, guid: f068afd574e41734eb4b2820bf3b62b3, type: 2}
-  _maxHealth: 300
+  _maxHealth: 200

@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2686911448643652695}
   - component: {fileID: 231584577048796932}
+  - component: {fileID: 4303947307521334239}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -232,7 +233,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602f0a7ccd7cc244f90ced352951458e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyVisualTransform: {fileID: 4544087300370965903}
+  _enemyVisualTransform: {fileID: 2686911448643652695}
+--- !u!114 &4303947307521334239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2686911448643652780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1 &4547728889593804087
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8086184649836959130}
   - component: {fileID: 4871575056226659253}
+  - component: {fileID: 4613637876018221179}
   m_Layer: 0
   m_Name: EnemyPortraitUI
   m_TagString: Untagged
@@ -320,3 +335,16 @@ MonoBehaviour:
   _rawImage: {fileID: 1564649548487009676}
   _enemyVisualTransform: {fileID: 4544087300370965903}
   _enemyController: {fileID: 2686911448643652780}
+--- !u!114 &4613637876018221179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309768862703539497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}

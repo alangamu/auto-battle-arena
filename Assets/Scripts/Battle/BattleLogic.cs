@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace AutoFantasy.Scripts
 {
-    public class BattleActiveHeroSelector : MonoBehaviour
+    public class BattleLogic : MonoBehaviour
     {
         //TODO: refactor this class
         [Serializable]
@@ -147,6 +147,7 @@ namespace AutoFantasy.Scripts
                 {
                     _enemyCombatRuntimeSet.ActivateThisHero(_activeHero.CombatController);
                     _activeEnemy = _heroCombatRuntimeSet.GetRandomHero();
+                    _heroCombatRuntimeSet.SelectThisHero(_activeEnemy);
                     _enemyAttackEvent.Raise();
                     PerformHeroAttack();
                 }

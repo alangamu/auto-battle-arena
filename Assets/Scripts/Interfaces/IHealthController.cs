@@ -9,5 +9,6 @@ namespace AutoFantasy.Scripts.Interfaces
         event Action<float> OnHealthChange;
 
         void SetDifficulty(MissionDifficultySO missionDifficulty);
+        void SetHealth(int health);
     }
 }

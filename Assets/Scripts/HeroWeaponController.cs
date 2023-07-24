@@ -78,7 +78,6 @@ namespace AutoFantasy.Scripts
                     string boneParentName = weaponType.BoneParentName;
                     Transform handTransform = weaponType.IsLeftHanded ? leftHandBoneTransform.Find(boneParentName) : handBoneTransform.Find(boneParentName);
 
-                    //OnSetWeapon?.Invoke(_heroWeapon);
                     _weaponGO = Instantiate(_heroWeapon.ItemPrefab, handTransform);
                 }
             }

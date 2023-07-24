@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.Variables
 {
@@ -10,7 +9,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Variables
         public string DeveloperDescription = "";
 #endif
         public T Value;
-
 
         public void SetValue(T value)
         {

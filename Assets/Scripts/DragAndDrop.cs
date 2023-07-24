@@ -1,6 +1,4 @@
-﻿using AutoFantasy.Scripts.Interfaces;
-using AutoFantasy.Scripts.ScriptableObjects.Events;
-using AutoFantasy.Scripts.ScriptableObjects.Items;
+﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

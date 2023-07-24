@@ -53,7 +53,6 @@ namespace AutoFantasy.Scripts.Map
                     {
                         collider.enabled = false;
                     }
-                    
                 }
 
                 enemy.transform.Rotate(new Vector3(0, 180, 0));

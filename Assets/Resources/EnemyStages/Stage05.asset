@@ -20,3 +20,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 602d2d3d5de1cd2418ff681edd4a77a2, type: 2}
   - {fileID: 11400000, guid: 83da96931f1d5674591310286be70585, type: 2}
   - {fileID: 11400000, guid: 622b1255457df984780547b60debfc91, type: 2}
+  _rewards:
+  - Pct: 0.5
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: fac1a954ffd0bce41a9e89c1c6179c32, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.5
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: d0affde698e59a047ab833ae70dbeabd, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
+  - Pct: 0.5
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 674e859f9e0a34f4594cb90199ce52af, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}

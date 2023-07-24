@@ -138,6 +138,7 @@ namespace AutoFantasy.Scripts.Map
                     {
                         ITile enemyTile = _tiles.GetTileAt(destinationHex.Q, destinationHex.R);
                         _tileShowEnemyEvent.Raise(enemyTile.GetGameObject());
+                        //TODO: make the active enemy tile
                         return;
                     }
 

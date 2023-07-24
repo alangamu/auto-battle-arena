@@ -1,4 +1,5 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
+﻿using AutoFantasy.Scripts.ScriptableObjects;
+using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.UI;
 using System.Collections.Generic;
@@ -19,14 +20,12 @@ namespace AutoFantasy.Scripts
         private GameEvent winStageGameEvent;
         [SerializeField]
         private GameObject root;
-
-        private List<Reward> _rewards;
+        [SerializeField]
+        private MapEnemyStageSO _activeEnemyStage;
 
         private void OnEnable()
         {
-            _rewards = new List<Reward>();
             winStageGameEvent.OnRaise += WinStageGameEvent_OnRaise;
-            enemyCombatRuntimeSet.OnHeroDeath += EnemyCombatRuntimeSet_OnHeroDeath;
             continueButton.onClick.AddListener(ShowRewards);
             root.SetActive(false);
         }
@@ -34,7 +33,6 @@ namespace AutoFantasy.Scripts
         private void OnDisable()
         {
             winStageGameEvent.OnRaise -= WinStageGameEvent_OnRaise;
-            enemyCombatRuntimeSet.OnHeroDeath -= EnemyCombatRuntimeSet_OnHeroDeath;
         }
 
         private void WinStageGameEvent_OnRaise()
@@ -42,16 +40,9 @@ namespace AutoFantasy.Scripts
             root.SetActive(true);
         }
 
-        private void EnemyCombatRuntimeSet_OnHeroDeath(List<Reward> rewards)
-        {
-            foreach (var reward in rewards)
-            {
-                _rewards.Add(reward);
-            }
-        }
-
         private void ShowRewards()
         {
+            List<Reward> _rewards = _activeEnemyStage.Rewards;
             rewardWindow.gameObject.SetActive(true);
             rewardWindow.SetRewards(_rewards);
             gameObject.SetActive(false);
