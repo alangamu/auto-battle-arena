@@ -28,10 +28,18 @@ MonoBehaviour:
       IsMale: 1
       HeroId: 3
     ThisCombatStats:
-      Stats: 040000000600000005000000040000000300000001000000020000000300000004000000050000000200000001000000050000000300000002000000040000000700000007000000070000000800000008000000
-    HeroInventory: []
-    MapPositionQ: 12
-    MapPositionR: 3
+      Stats: 04000000060000000500000004000000010000000200000003000000040000000500000002000000010000000500000003000000020000000400000007000000070000000700000008000000080000000300000003000000060000000500000006000000
+    HeroInventory:
+    - ItemRarityId: 1
+      ItemRefId: 4a502248-ab70-4220-82fb-6c03bdff3726
+      ItemTypeId: 1
+      ItemWeareableTypeId: 4
+      Amount: 1
+      IsStackable: 0
+      SkillId: 
+      ItemStats: 06000000
+    MapPositionQ: 13
+    MapPositionR: 4
   - ThisHeroData:
       HeroName: Rachel
       SkinColorIndex: 5
@@ -47,16 +55,15 @@ MonoBehaviour:
       IsMale: 0
       HeroId: 4
     ThisCombatStats:
-      Stats: 05000000040000000300000005000000020000000600000004000000050000000300000001000000020000000300000002000000010000000500000006000000040000000700000008000000
-    HeroInventory: []
-    MapPositionQ: 15
+      Stats: 05000000040000000300000005000000020000000600000004000000050000000300000001000000020000000300000002000000010000000500000006000000040000000700000008000000060000000600000005000000
+    HeroInventory:
+    - ItemRarityId: 1
+      ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
+      ItemTypeId: 1
+      ItemWeareableTypeId: 6
+      Amount: 1
+      IsStackable: 0
+      SkillId: 
+      ItemStats: 05000000
+    MapPositionQ: 14
     MapPositionR: 4
-  _maleNames: {fileID: 11400000, guid: 5bac81dbf0f9ba941b1123ab78626401, type: 2}
-  _femaleNames: {fileID: 11400000, guid: f3d6d216bc9c1a443a71e48c9fd7e3f5, type: 2}
-  _heroBasePoints: {fileID: 11400000, guid: ae19f07d5bc1f7544b9c59b200db7edc, type: 2}
-  _healthStat: {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
-  _defenseStat: {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
-  _criticalChanceStat: {fileID: 11400000, guid: 0917e9a52924753458e8593dca1828db, type: 2}
-  _criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
-  _attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
-  _attackPowerStat: {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}

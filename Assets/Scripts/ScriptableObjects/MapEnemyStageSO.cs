@@ -15,14 +15,8 @@ namespace AutoFantasy.Scripts.ScriptableObjects
         [SerializeField]
         private List<Reward> _rewards;
 
-        public void SetEnemies(EnemySO[] enemies)
-        {
-            _enemies = enemies;
-        }
+        public void SetEnemies(EnemySO[] enemies) => _enemies = enemies;
 
-        public void SetRewards(List<Reward> rewards)
-        {
-            _rewards = rewards;
-        }
+        public void SetRewards(List<Reward> rewards) => _rewards = rewards;
     }
 }

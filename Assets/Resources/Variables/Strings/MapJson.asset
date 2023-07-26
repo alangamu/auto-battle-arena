@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a5f8402774b359468ca965ae94c4623, type: 3}
-  m_Name: Teams
+  m_Name: MapJson
   m_EditorClassIdentifier: 
-  Value: 
+  Value: '{"ActiveTeamNumber":1,"Teams":[{"HeroesIds":["3","4","b173a466-3a49-49c1-b795-a60c1fa488a4"]},{"HeroesIds":["3","2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343"]},{"HeroesIds":["81ea43e3-ec16-4fdc-bdb8-1dbf5cbe7122","2ba3a45e-3fa3-4366-afbf-d2d7cb5f8343","4"]},{"HeroesIds":["81ea43e3-ec16-4fdc-bdb8-1dbf5cbe7122"]}]}'

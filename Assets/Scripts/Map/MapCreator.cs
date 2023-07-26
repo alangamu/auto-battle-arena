@@ -10,13 +10,13 @@ namespace AutoFantasy.Scripts.Map
     public class MapCreator : MonoBehaviour
     {
         [SerializeField]
+        protected GameEvent _generateMap;
+        [SerializeField]
         protected GameEvent _updateMapVisuals;
         [SerializeField]
         protected IntVariable _mapNumRows;
         [SerializeField]
         protected IntVariable _mapNumColumns;
-        [SerializeField]
-        private FloatVariable _hexRadius;
         [SerializeField]
         protected TileRuntimeSet _tileRuntimeSet;
 
@@ -26,18 +26,8 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private TileStateSO _initialTileState;
 
-        [SerializeField]
-        private GameEvent _spawnMapHeroesEvent;
-        [SerializeField]
-        private GameEvent _spawnMapEnemiesEvent;
-        [SerializeField]
-        private GameEvent _spawnMapCitiesEvent;
-        [SerializeField]
-        private GameEvent _showFogOfWarEvent;
-
         virtual public void GenerateMap()
         {
-            print("generate map");
             float hexSize = 5f;
 
             int numRows = _mapNumRows.Value;
@@ -52,7 +42,7 @@ namespace AutoFantasy.Scripts.Map
                 }
                 for (int column = 0; column < numColumns; column++)
                 {
-                    Hex h = new Hex(column, row, _hexRadius.Value);
+                    Hex h = new Hex(column, row);
                     h.SetElevation(-0.5f);
 
 
@@ -82,13 +72,14 @@ namespace AutoFantasy.Scripts.Map
             _tileRuntimeSet.SetTileState(_initialTileState, _tileRuntimeSet.Items);
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            GenerateMap();
-            _showFogOfWarEvent.Raise();
-            _spawnMapCitiesEvent.Raise();
-            _spawnMapEnemiesEvent.Raise();
-            _spawnMapHeroesEvent.Raise();
+            _generateMap.OnRaise += GenerateMap;
+        }
+
+        private void OnDisable()
+        {
+            _generateMap.OnRaise -= GenerateMap;
         }
     }
 }

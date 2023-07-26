@@ -12,8 +12,11 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
     [CreateAssetMenu]
     public class TileRuntimeSet : RuntimeSet<ITile>
     {
-        [SerializeField]
-        private IntVariable _mapNumColumns;
+        //public List<HexBase> Map;
+        public HexBase[] Map;
+
+        //[SerializeField]
+        //private IntVariable _mapNumColumns;
 
         public Hex[] GetHexesWithinRangeOf(Hex centerHex, int range)
         {

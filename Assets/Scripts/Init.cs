@@ -15,60 +15,101 @@ namespace AutoFantasy.Scripts
         private ActiveHeroSO rosterActiveHero;
         [SerializeField]
         private ActiveHeroSO tavernActiveHero;
-        [SerializeField]
-        private HeroRuntimeSet roster;
-        [SerializeField]
-        private HeroRuntimeSet tavernRoster;
+        //[SerializeField]
+        //private HeroRuntimeSet roster;
 
         [SerializeField]
-        private TeamsSO teams;
-        [SerializeField]
-        private IntVariable maxTeamSize;
-        [SerializeField]
-        private StringVariable teamsJson;
+        private CitySO _initialCity;
 
-        [SerializeField]
-        private StringVariable tavernJson;
-        [SerializeField]
-        private HeroRuntimeSet tavernHeroes;
         [SerializeField]
         private StringVariable rosterJson;
         [SerializeField]
-        private HeroRuntimeSet rosterHeroes;
+        private HeroRuntimeSet _heroes;
         [SerializeField]
         private StringVariable inventoryJson;
         [SerializeField]
         private Inventory inventory;
 
-        private void OnEnable()
-        {
-            loadInitialData.OnRaise += LoadInitialData_OnRaise;
-        }
+        [SerializeField]
+        private BoolVariable _isNewGameVariable;
 
-        private void Start()
+        [SerializeField]
+        protected GameEvent _generateMap;
+        [SerializeField]
+        protected GameEvent _loadMap;
+        [SerializeField]
+        private GameEvent _spawnMapHeroesEvent;
+        [SerializeField]
+        private GameEvent _spawnMapEnemiesEvent;
+        [SerializeField]
+        private GameEvent _spawnMapCitiesEvent;
+        [SerializeField]
+        private GameEvent _showFogOfWarEvent;
+        [SerializeField]
+        private GameEvent _nextTurnEvent;
+        [SerializeField]
+        private IntVariable _gold;
+        [SerializeField]
+        private IntVariable _gems;
+
+        private void LoadInitialData()
         {
-            SetTeams();
+            if (_isNewGameVariable.Value)
+            {
+                ResetHeroesPosition();
+                ClearInventory();
+                InitialResources();
+                ClearHeroesInventory();
+            }
+            else
+                _loadMap.Raise();
+
+            //_isNewGameVariable.Value ? _generateMap.Raise() : _showFogOfWarEvent.Raise();
+            _generateMap.Raise();
+
             SetActiveHeroes();
-            CheckForActiveHero();
-            tavernRoster.OnChange += CheckForActiveHero;
+            _showFogOfWarEvent.Raise();
+            _spawnMapCitiesEvent.Raise();
+            _spawnMapEnemiesEvent.Raise();
+            _spawnMapHeroesEvent.Raise();
+            _nextTurnEvent.Raise();
+
+            //CheckForActiveHero();
+            //tavernRoster.OnChange += CheckForActiveHero;
+            //print("loading tavern");
+            //JsonUtility.FromJsonOverwrite(tavernJson.Value, tavernHeroes);
+            //print("loading roster");
+            //JsonUtility.FromJsonOverwrite(rosterJson.Value, rosterHeroes);
+            //print("loading inventory");
+            //JsonUtility.FromJsonOverwrite(inventoryJson.Value, inventory);
         }
 
-        private void LoadInitialData_OnRaise()
+        private void ClearHeroesInventory()
         {
-            print("loading tavern");
-            JsonUtility.FromJsonOverwrite(tavernJson.Value, tavernHeroes);
-            print("loading roster");
-            JsonUtility.FromJsonOverwrite(rosterJson.Value, rosterHeroes);
-            print("loading inventory");
-            JsonUtility.FromJsonOverwrite(inventoryJson.Value, inventory);
-            print("loading teams");
-            JsonUtility.FromJsonOverwrite(teamsJson.Value, teams);
+            foreach (var item in _heroes.Items)
+            {
+                item.HeroInventory.Clear();
+            }
         }
 
-        private void OnDisable()
+        private void InitialResources()
         {
-            tavernRoster.OnChange -= CheckForActiveHero;
-            loadInitialData.OnRaise -= LoadInitialData_OnRaise;
+            _gold.SetValue(0);
+            _gems.SetValue(0);
+        }
+
+        private void ClearInventory()
+        {
+            inventory.Items.Clear();
+        }
+
+        private void ResetHeroesPosition()
+        {
+            foreach (var item in _heroes.Items)
+            {
+                item.MapPositionQ = _initialCity.Q;
+                item.MapPositionR = _initialCity.R;
+            }
         }
 
         private void OnDestroy()
@@ -85,42 +126,27 @@ namespace AutoFantasy.Scripts
 
         private void SetActiveHeroes()
         {
-            if (roster.Items[0] != null)
+            if (_heroes.Items[0] != null)
             {
-                rosterActiveHero.SetHero(roster.Items[0]);
-            }
-
-            if (tavernRoster.Items[0] != null)
-            {
-                tavernActiveHero.SetHero(tavernRoster.Items[0]);
+                rosterActiveHero.SetHero(_heroes.Items[0]);
             }
         }
 
-        private void SetTeams()
+        private void OnEnable()
         {
-            if (teams.Teams.Count == 0)
-            {
-                for (int i = 0; i < maxTeamSize.Value; i++)
-                {
-                    Team team = new Team();
-                    teams.Teams.Add(team);
-                    if (i == 0)
-                    {
-                        teams.SetActiveTeam(i);
-                    }
-                }
-            }
+            loadInitialData.OnRaise += LoadInitialData;
         }
-    
-        private void CheckForActiveHero()
+
+        private void OnDisable()
         {
-            if (tavernRoster.Items.Find(x => x.GetHeroId() == tavernActiveHero.ActiveHero.GetHeroId()) == null)
-            {
-                if (tavernRoster.Items[0] != null)
-                {
-                    tavernActiveHero.SetHero(tavernRoster.Items[0]);
-                }
-            }
+            //tavernRoster.OnChange -= CheckForActiveHero;
+            loadInitialData.OnRaise -= LoadInitialData;
+        }
+
+        private void Start()
+        {
+            //TODO: remove form here;
+            loadInitialData.Raise();
         }
     }
 }

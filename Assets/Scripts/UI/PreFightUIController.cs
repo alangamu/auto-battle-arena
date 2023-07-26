@@ -41,6 +41,8 @@ namespace AutoFantasy.Scripts.UI
         private Button _fightButton;
         [SerializeField]
         private MapEnemyStageSO _activeEnemyStage;
+        [SerializeField]
+        private StringVariable _mapJson;
 
         private MapEnemyStageSO[] _enemyStages;
 
@@ -50,12 +52,21 @@ namespace AutoFantasy.Scripts.UI
             _enemyStages = Resources.LoadAll<MapEnemyStageSO>("EnemyStages");
             _tileShowEnemyEvent.OnRaise += ShowPopup;
             _cancelButton.onClick.AddListener(HidePopup);
+            _fightButton.onClick.AddListener(Fight);
         }
 
         private void OnDisable()
         {
             _tileShowEnemyEvent.OnRaise -= ShowPopup;
             _cancelButton.onClick.RemoveAllListeners();
+            _fightButton.onClick.RemoveAllListeners();
+        }
+
+        private void Fight()
+        { 
+            string mapValue = JsonUtility.ToJson(_tiles);
+            _mapJson.Value = mapValue;
+            print($"save json map {mapValue}");
         }
 
         private void HidePopup()

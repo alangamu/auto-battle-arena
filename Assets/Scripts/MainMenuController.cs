@@ -1,7 +1,6 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace AutoFantasy.Scripts
 {
@@ -29,7 +28,7 @@ namespace AutoFantasy.Scripts
 
         public void LoadGame()
         {
-
+            _isNewGame.SetValue(false);
         }
 
         public void ShowSettings()

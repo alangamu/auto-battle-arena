@@ -48,25 +48,13 @@ namespace AutoFantasy.Scripts
             OnActivationChanged?.Invoke(_isActive);
         }
 
-        public void SetTeamIndex(int teamIndex)
-        {
-            _teamIndex = teamIndex;
-        }
+        public void SetTeamIndex(int teamIndex) => _teamIndex = teamIndex;
 
-        public void SetCombatStats(CombatStats newCombatStats)
-        {
-            _combatStats = newCombatStats;
-        }
+        public void SetCombatStats(CombatStats newCombatStats) => _combatStats = newCombatStats;
 
-        public void GettingDamage(int amount, bool isCritical)
-        {
-            OnGetHit?.Invoke(amount, isCritical);
-        }
+        public void GettingDamage(int amount, bool isCritical) => OnGetHit?.Invoke(amount, isCritical);
 
-        public void PerformAttack(Transform target)
-        {
-            OnAttackTarget?.Invoke(target);
-        }
+        public void PerformAttack(Transform target) => OnAttackTarget?.Invoke(target);
 
         public List<Reward> GetRewards()
         {
@@ -100,10 +88,7 @@ namespace AutoFantasy.Scripts
             }
         }
 
-        private void OnSetHero(Hero hero)
-        {
-            _hero = hero;
-        }
+        private void OnSetHero(Hero hero) => _hero = hero;
 
         private void OnDisable()
         {

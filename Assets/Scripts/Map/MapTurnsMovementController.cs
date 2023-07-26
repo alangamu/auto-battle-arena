@@ -51,11 +51,6 @@ namespace AutoFantasy.Scripts.Map
             _canWalkTiles = new List<ITile>();
         }
 
-        private void Start()
-        {
-            _nextTurnEvent.Raise();
-        }
-
         private void OnEnable()
         {
             //TODO: remove from here when changing scenes (battle)

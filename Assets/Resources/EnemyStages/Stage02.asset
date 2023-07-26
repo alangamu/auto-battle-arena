@@ -23,3 +23,8 @@ MonoBehaviour:
     MaxQty: 30
     RewardItem: {fileID: 11400000, guid: bc651b6f672273344b516808ec0fe0d7, type: 2}
     ItemRarity: {fileID: 0}
+  - Pct: 1
+    MinQty: 1
+    MaxQty: 1
+    RewardItem: {fileID: 11400000, guid: 674e859f9e0a34f4594cb90199ce52af, type: 2}
+    ItemRarity: {fileID: 11400000, guid: 739ee12edbe70c5448a9fedd595ed2bf, type: 2}
