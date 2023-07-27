@@ -43,6 +43,8 @@ namespace AutoFantasy.Scripts.UI
         private MapEnemyStageSO _activeEnemyStage;
         [SerializeField]
         private StringVariable _mapJson;
+        [SerializeField]
+        private BoolVariable _isNewGame;
 
         private MapEnemyStageSO[] _enemyStages;
 
@@ -63,10 +65,10 @@ namespace AutoFantasy.Scripts.UI
         }
 
         private void Fight()
-        { 
-            string mapValue = JsonUtility.ToJson(_tiles);
-            _mapJson.Value = mapValue;
-            print($"save json map {mapValue}");
+        {
+            _isNewGame.Value = false;
+            _mapJson.Value = JsonUtility.ToJson(_tiles);
+            print($"save json map {_mapJson.Value}");
         }
 
         private void HidePopup()

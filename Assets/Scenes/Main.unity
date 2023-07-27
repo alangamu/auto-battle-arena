@@ -1240,11 +1240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1253,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: f7ed431712532e542b5549e6c049635c, type: 2}
+      objectReference: {fileID: 11400000, guid: fe5c2effd1fdbcb40b19cc2bab8f4a48, type: 2}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1268,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetValue
+      value: Raise
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1276,7 +1276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AutoFantasy.Scripts.ScriptableObjects.Variables.BaseVariable`1[[System.Boolean,
+      value: AutoFantasy.Scripts.ScriptableObjects.Events.BaseGameEvent`1[[System.String,
         mscorlib
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
@@ -1286,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: Mission
       objectReference: {fileID: 0}
     - target: {fileID: 40681050482973063, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -4126,6 +4126,7 @@ GameObject:
   - component: {fileID: 721005180}
   - component: {fileID: 721005182}
   - component: {fileID: 721005181}
+  - component: {fileID: 721005183}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -4309,6 +4310,22 @@ MonoBehaviour:
   _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
   _spawnMapEnemiesEvent: {fileID: 11400000, guid: 3b161b026f3974c44b5a9ebdb64abf06, type: 2}
   _enemyTyleType: {fileID: 11400000, guid: 9d5bd24c1bde2754696b7f9ff42a7aff, type: 2}
+--- !u!114 &721005183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721005174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cf975c9957ac54dbd0dd364c639a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileRuntimeSet: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _mapJson: {fileID: 11400000, guid: b95b28c1199f6374fb1fb74c79ad4038, type: 2}
+  _loadMapEvent: {fileID: 11400000, guid: ae78c8945d6b0034f918c887d47ecd90, type: 2}
+  _hexPrefab: {fileID: 6279834624398028723, guid: bdc6a0e4cd055764e92562b42589e35c, type: 3}
 --- !u!1 &729566523
 GameObject:
   m_ObjectHideFlags: 0
@@ -13302,6 +13319,7 @@ MonoBehaviour:
   _fightButton: {fileID: 1254319007}
   _activeEnemyStage: {fileID: 11400000, guid: 5eb4c894a4db17a4ba9f7a9d1a5a5ac1, type: 2}
   _mapJson: {fileID: 11400000, guid: b95b28c1199f6374fb1fb74c79ad4038, type: 2}
+  _isNewGame: {fileID: 11400000, guid: f7ed431712532e542b5549e6c049635c, type: 2}
 --- !u!1 &1882487080
 GameObject:
   m_ObjectHideFlags: 0

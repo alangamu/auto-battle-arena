@@ -60,12 +60,12 @@ namespace AutoFantasy.Scripts
                 ClearInventory();
                 InitialResources();
                 ClearHeroesInventory();
+                _generateMap.Raise();
             }
             else
                 _loadMap.Raise();
 
             //_isNewGameVariable.Value ? _generateMap.Raise() : _showFogOfWarEvent.Raise();
-            _generateMap.Raise();
 
             SetActiveHeroes();
             _showFogOfWarEvent.Raise();

@@ -12,4 +12,3604 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26ccde551b3e3b4383b73e124cc4713, type: 3}
   m_Name: TileRuntimeSet
   m_EditorClassIdentifier: 
-  _mapNumColumns: {fileID: 11400000, guid: 2d0f2fd47e5c3d74aba45f4a9cc04167, type: 2}
+  Map:
+  - q: 0
+    r: 0
+    elevation: -0.8160607
+    moisture: -0.0582906
+  - q: 1
+    r: 0
+    elevation: -0.3895756
+    moisture: -0.37797248
+  - q: 2
+    r: 0
+    elevation: 0.14652097
+    moisture: 0.3314259
+  - q: 3
+    r: 0
+    elevation: -0.8170147
+    moisture: -0.36452574
+  - q: 4
+    r: 0
+    elevation: -0.7536039
+    moisture: 0.19221854
+  - q: 5
+    r: 0
+    elevation: -1.2222753
+    moisture: -0.053409874
+  - q: 6
+    r: 0
+    elevation: -0.7695412
+    moisture: -0.031847358
+  - q: 7
+    r: 0
+    elevation: -0.59058964
+    moisture: 0.010347486
+  - q: 8
+    r: 0
+    elevation: -0.4753641
+    moisture: 0.8554386
+  - q: 9
+    r: 0
+    elevation: -0.6894651
+    moisture: 0.13934541
+  - q: 10
+    r: 0
+    elevation: -0.37994695
+    moisture: 0.0075569153
+  - q: 11
+    r: 0
+    elevation: -0.67137593
+    moisture: 0.8554386
+  - q: 12
+    r: 0
+    elevation: -0.7104332
+    moisture: 0.24500608
+  - q: 13
+    r: 0
+    elevation: -0.7312753
+    moisture: 0.30583835
+  - q: 14
+    r: 0
+    elevation: -0.494277
+    moisture: 0.100684285
+  - q: 15
+    r: 0
+    elevation: -0.09280312
+    moisture: -0.4473226
+  - q: 16
+    r: 0
+    elevation: -0.25844443
+    moisture: 0.012235522
+  - q: 17
+    r: 0
+    elevation: -0.22051287
+    moisture: 0.13163781
+  - q: 18
+    r: 0
+    elevation: -0.18210733
+    moisture: -0.26741636
+  - q: 19
+    r: 0
+    elevation: -0.28034234
+    moisture: 0.09348273
+  - q: 20
+    r: 0
+    elevation: -0.60012734
+    moisture: -0.18721801
+  - q: 21
+    r: 0
+    elevation: -0.88536406
+    moisture: -0.18713605
+  - q: 22
+    r: 0
+    elevation: -0.70224786
+    moisture: 0.36320245
+  - q: 23
+    r: 0
+    elevation: -1.0324787
+    moisture: 0.14632988
+  - q: 24
+    r: 0
+    elevation: -0.019071579
+    moisture: 0.19061911
+  - q: 25
+    r: 0
+    elevation: -0.78459
+    moisture: 0.06830299
+  - q: 26
+    r: 0
+    elevation: -0.9853879
+    moisture: -0.67470515
+  - q: 27
+    r: 0
+    elevation: -0.78651905
+    moisture: 0.0040427446
+  - q: 28
+    r: 0
+    elevation: -0.86141753
+    moisture: -0.12676072
+  - q: 29
+    r: 0
+    elevation: -0.88617176
+    moisture: -0.6980852
+  - q: 0
+    r: 1
+    elevation: -0.69434345
+    moisture: 0.12567043
+  - q: 1
+    r: 1
+    elevation: -0.16546059
+    moisture: -0.19401139
+  - q: 2
+    r: 1
+    elevation: -0.6304738
+    moisture: 0.21770632
+  - q: 3
+    r: 1
+    elevation: -0.19832146
+    moisture: -0.067260385
+  - q: 4
+    r: 1
+    elevation: -0.33084822
+    moisture: -0.07207245
+  - q: 5
+    r: 1
+    elevation: -0.2816838
+    moisture: 0.29256737
+  - q: 6
+    r: 1
+    elevation: -1.3007898
+    moisture: -0.36032134
+  - q: 7
+    r: 1
+    elevation: -0.9342027
+    moisture: -0.076835155
+  - q: 8
+    r: 1
+    elevation: -0.18368685
+    moisture: -0.066790104
+  - q: 9
+    r: 1
+    elevation: -1.2465215
+    moisture: -0.06679034
+  - q: 10
+    r: 1
+    elevation: 0.057519197
+    moisture: -0.06679082
+  - q: 11
+    r: 1
+    elevation: -0.20297754
+    moisture: -0.066790104
+  - q: 12
+    r: 1
+    elevation: -0.6905672
+    moisture: 0.023862004
+  - q: 13
+    r: 1
+    elevation: -0.6017831
+    moisture: 0.062462926
+  - q: 14
+    r: 1
+    elevation: -0.930528
+    moisture: -0.72229373
+  - q: 15
+    r: 1
+    elevation: -0.56731814
+    moisture: 0.30744362
+  - q: 16
+    r: 1
+    elevation: -0.1830666
+    moisture: 0.06977832
+  - q: 17
+    r: 1
+    elevation: -1.0977631
+    moisture: 0.009411573
+  - q: 18
+    r: 1
+    elevation: -0.4720403
+    moisture: -0.35593426
+  - q: 19
+    r: 1
+    elevation: -0.5445049
+    moisture: -0.08207291
+  - q: 20
+    r: 1
+    elevation: -0.7169651
+    moisture: -0.43346643
+  - q: 21
+    r: 1
+    elevation: -1.2108932
+    moisture: 0.22188282
+  - q: 22
+    r: 1
+    elevation: -0.16483319
+    moisture: -0.056789756
+  - q: 23
+    r: 1
+    elevation: -0.02990079
+    moisture: 0.29622602
+  - q: 24
+    r: 1
+    elevation: -0.70338583
+    moisture: -0.267241
+  - q: 25
+    r: 1
+    elevation: -0.25791883
+    moisture: 0.05244112
+  - q: 26
+    r: 1
+    elevation: 0.031624556
+    moisture: 0.010407805
+  - q: 27
+    r: 1
+    elevation: -0.78358835
+    moisture: -0.3554651
+  - q: 28
+    r: 1
+    elevation: -0.5479196
+    moisture: -0.07679194
+  - q: 29
+    r: 1
+    elevation: -0.9894874
+    moisture: -0.070126
+  - q: 0
+    r: 2
+    elevation: -0.5566253
+    moisture: 0.4164803
+  - q: 1
+    r: 2
+    elevation: -0.6839914
+    moisture: -0.005525291
+  - q: 2
+    r: 2
+    elevation: -0.04592192
+    moisture: 0.6788732
+  - q: 3
+    r: 2
+    elevation: -0.25437987
+    moisture: -0.23213416
+  - q: 4
+    r: 2
+    elevation: -0.37737763
+    moisture: -0.34363645
+  - q: 5
+    r: 2
+    elevation: -0.104254246
+    moisture: 0.068473935
+  - q: 6
+    r: 2
+    elevation: -0.9136296
+    moisture: -0.40123284
+  - q: 7
+    r: 2
+    elevation: -0.6535928
+    moisture: -0.7190052
+  - q: 8
+    r: 2
+    elevation: -0.05743432
+    moisture: -0.4548939
+  - q: 9
+    r: 2
+    elevation: -0.2694366
+    moisture: -0.10452443
+  - q: 10
+    r: 2
+    elevation: -0.620194
+    moisture: -0.3561746
+  - q: 11
+    r: 2
+    elevation: 0.39461118
+    moisture: -0.098924994
+  - q: 12
+    r: 2
+    elevation: -0.0126595795
+    moisture: 0.22489023
+  - q: 13
+    r: 2
+    elevation: 0.4804286
+    moisture: -0.48902035
+  - q: 14
+    r: 2
+    elevation: 0.8385509
+    moisture: 0.22664785
+  - q: 15
+    r: 2
+    elevation: 0.16531429
+    moisture: 0.55805635
+  - q: 16
+    r: 2
+    elevation: 0.47533658
+    moisture: 0.5074785
+  - q: 17
+    r: 2
+    elevation: -0.25888002
+    moisture: -0.03200668
+  - q: 18
+    r: 2
+    elevation: -0.5368739
+    moisture: 0.16091514
+  - q: 19
+    r: 2
+    elevation: -0.4079312
+    moisture: -0.3300196
+  - q: 20
+    r: 2
+    elevation: -0.9938103
+    moisture: -0.3898226
+  - q: 21
+    r: 2
+    elevation: -0.28294444
+    moisture: 0.06865096
+  - q: 22
+    r: 2
+    elevation: -0.6814416
+    moisture: -0.4994349
+  - q: 23
+    r: 2
+    elevation: -1.1815369
+    moisture: -0.19897676
+  - q: 24
+    r: 2
+    elevation: -0.49537945
+    moisture: 0.17287874
+  - q: 25
+    r: 2
+    elevation: -0.8692729
+    moisture: 0.20862877
+  - q: 26
+    r: 2
+    elevation: -0.16927683
+    moisture: 0.69632494
+  - q: 27
+    r: 2
+    elevation: -0.22769451
+    moisture: -0.19292581
+  - q: 28
+    r: 2
+    elevation: -0.34515584
+    moisture: 0.0857476
+  - q: 29
+    r: 2
+    elevation: -0.524081
+    moisture: 0.6216781
+  - q: 0
+    r: 3
+    elevation: -0.2500528
+    moisture: -0.50802207
+  - q: 1
+    r: 3
+    elevation: -0.30603516
+    moisture: 0.006052375
+  - q: 2
+    r: 3
+    elevation: -0.44973063
+    moisture: 0.2194066
+  - q: 3
+    r: 3
+    elevation: -0.66437495
+    moisture: -0.62150025
+  - q: 4
+    r: 3
+    elevation: -0.20229447
+    moisture: 0.14134955
+  - q: 5
+    r: 3
+    elevation: -1.0273856
+    moisture: 0.3791175
+  - q: 6
+    r: 3
+    elevation: -0.6439329
+    moisture: 0.11884904
+  - q: 7
+    r: 3
+    elevation: -0.64105827
+    moisture: 0.36596227
+  - q: 8
+    r: 3
+    elevation: -0.32231164
+    moisture: 0.18768787
+  - q: 9
+    r: 3
+    elevation: -0.32661355
+    moisture: 0.27402377
+  - q: 10
+    r: 3
+    elevation: 0.10273601
+    moisture: 0.020503163
+  - q: 11
+    r: 3
+    elevation: -0.3389441
+    moisture: -0.40037036
+  - q: 12
+    r: 3
+    elevation: 0.5680976
+    moisture: -0.35832888
+  - q: 13
+    r: 3
+    elevation: 0.7546377
+    moisture: 0.36599314
+  - q: 14
+    r: 3
+    elevation: 0.5146977
+    moisture: 0.0213691
+  - q: 15
+    r: 3
+    elevation: 0.026328042
+    moisture: -0.62927866
+  - q: 16
+    r: 3
+    elevation: 0.41887876
+    moisture: -0.63776565
+  - q: 17
+    r: 3
+    elevation: -0.28681746
+    moisture: -0.8403859
+  - q: 18
+    r: 3
+    elevation: 0.8741256
+    moisture: -0.39357346
+  - q: 19
+    r: 3
+    elevation: 0.21946797
+    moisture: 0.15360725
+  - q: 20
+    r: 3
+    elevation: -0.8498996
+    moisture: 0.01899755
+  - q: 21
+    r: 3
+    elevation: -0.93094033
+    moisture: 0.030453086
+  - q: 22
+    r: 3
+    elevation: -0.5927796
+    moisture: 0.5487368
+  - q: 23
+    r: 3
+    elevation: -0.97347397
+    moisture: -0.1400677
+  - q: 24
+    r: 3
+    elevation: -0.040156126
+    moisture: -0.34454167
+  - q: 25
+    r: 3
+    elevation: -0.36353016
+    moisture: -0.5542048
+  - q: 26
+    r: 3
+    elevation: -0.877204
+    moisture: -0.04045546
+  - q: 27
+    r: 3
+    elevation: -0.5092298
+    moisture: -0.7820303
+  - q: 28
+    r: 3
+    elevation: -0.8091696
+    moisture: -0.45853817
+  - q: 29
+    r: 3
+    elevation: -1.0273846
+    moisture: 0.041490078
+  - q: 0
+    r: 4
+    elevation: -0.7160227
+    moisture: -0.35789335
+  - q: 1
+    r: 4
+    elevation: -0.55404127
+    moisture: -0.076812685
+  - q: 2
+    r: 4
+    elevation: -0.55130726
+    moisture: -0.43314195
+  - q: 3
+    r: 4
+    elevation: -0.63032407
+    moisture: 0.12833369
+  - q: 4
+    r: 4
+    elevation: -0.2523595
+    moisture: -0.1913473
+  - q: 5
+    r: 4
+    elevation: -0.7839437
+    moisture: -0.14931619
+  - q: 6
+    r: 4
+    elevation: -0.47872925
+    moisture: 0.217026
+  - q: 7
+    r: 4
+    elevation: -0.2881384
+    moisture: -0.056833982
+  - q: 8
+    r: 4
+    elevation: -0.50467575
+    moisture: -0.06679064
+  - q: 9
+    r: 4
+    elevation: 0.17479081
+    moisture: -0.06679058
+  - q: 10
+    r: 4
+    elevation: 0.07391575
+    moisture: -0.06679058
+  - q: 11
+    r: 4
+    elevation: 1.1194133
+    moisture: -0.0701251
+  - q: 12
+    r: 4
+    elevation: 0.23036605
+    moisture: -0.071648
+  - q: 13
+    r: 4
+    elevation: 0.5488873
+    moisture: -0.06683451
+  - q: 14
+    r: 4
+    elevation: 0.049955085
+    moisture: -0.07012522
+  - q: 15
+    r: 4
+    elevation: 0.17688671
+    moisture: -0.16300362
+  - q: 16
+    r: 4
+    elevation: -0.15629
+    moisture: -0.20401132
+  - q: 17
+    r: 4
+    elevation: 1.0246985
+    moisture: 0.21437275
+  - q: 18
+    r: 4
+    elevation: -0.13387817
+    moisture: -0.1627692
+  - q: 19
+    r: 4
+    elevation: 0.8351055
+    moisture: -0.2013703
+  - q: 20
+    r: 4
+    elevation: -0.12681508
+    moisture: 0.5800525
+  - q: 21
+    r: 4
+    elevation: -1.093019
+    moisture: -0.4512089
+  - q: 22
+    r: 4
+    elevation: -0.19948328
+    moisture: -0.20872933
+  - q: 23
+    r: 4
+    elevation: -0.9258966
+    moisture: 0.21969914
+  - q: 24
+    r: 4
+    elevation: -1.4136186
+    moisture: -0.15791166
+  - q: 25
+    r: 4
+    elevation: -0.5933826
+    moisture: -0.20132738
+  - q: 26
+    r: 4
+    elevation: 0.04877889
+    moisture: -0.14931637
+  - q: 27
+    r: 4
+    elevation: -0.7108487
+    moisture: 0.12590504
+  - q: 28
+    r: 4
+    elevation: -1.2825935
+    moisture: -0.19137055
+  - q: 29
+    r: 4
+    elevation: -0.43549836
+    moisture: 0.21870244
+  - q: 0
+    r: 5
+    elevation: -0.8898525
+    moisture: 0.24848008
+  - q: 1
+    r: 5
+    elevation: -0.731059
+    moisture: -0.15402508
+  - q: 2
+    r: 5
+    elevation: -0.69671386
+    moisture: -0.15684807
+  - q: 3
+    r: 5
+    elevation: -0.73785233
+    moisture: -0.28595132
+  - q: 4
+    r: 5
+    elevation: -0.7380225
+    moisture: -0.45630717
+  - q: 5
+    r: 5
+    elevation: -0.6169598
+    moisture: -0.38686192
+  - q: 6
+    r: 5
+    elevation: -0.28807628
+    moisture: 0.3048432
+  - q: 7
+    r: 5
+    elevation: -0.808739
+    moisture: -0.35090762
+  - q: 8
+    r: 5
+    elevation: 0.41952533
+    moisture: -0.5446244
+  - q: 9
+    r: 5
+    elevation: -0.31004485
+    moisture: -0.46049333
+  - q: 10
+    r: 5
+    elevation: 0.38151926
+    moisture: -0.7121434
+  - q: 11
+    r: 5
+    elevation: 0.8513288
+    moisture: 0.29388535
+  - q: 12
+    r: 5
+    elevation: 0.40685254
+    moisture: 0.38098752
+  - q: 13
+    r: 5
+    elevation: 0.32268256
+    moisture: -0.60719407
+  - q: 14
+    r: 5
+    elevation: 0.6463033
+    moisture: -0.66441095
+  - q: 15
+    r: 5
+    elevation: 0.9562245
+    moisture: 0.07613623
+  - q: 16
+    r: 5
+    elevation: 0.80138505
+    moisture: 0.20201397
+  - q: 17
+    r: 5
+    elevation: 0.33220255
+    moisture: 0.46668398
+  - q: 18
+    r: 5
+    elevation: 0.22117567
+    moisture: 0.15120435
+  - q: 19
+    r: 5
+    elevation: 0.26749885
+    moisture: -0.4539373
+  - q: 20
+    r: 5
+    elevation: -0.18007076
+    moisture: 0.34250546
+  - q: 21
+    r: 5
+    elevation: -0.59081507
+    moisture: -0.29184675
+  - q: 22
+    r: 5
+    elevation: -0.3812492
+    moisture: -0.39897662
+  - q: 23
+    r: 5
+    elevation: -0.36494935
+    moisture: 0.09049487
+  - q: 24
+    r: 5
+    elevation: -0.6516124
+    moisture: -0.78327763
+  - q: 25
+    r: 5
+    elevation: -0.7598103
+    moisture: 0.24314737
+  - q: 26
+    r: 5
+    elevation: -0.6556915
+    moisture: -0.05639863
+  - q: 27
+    r: 5
+    elevation: -0.2645135
+    moisture: -0.24956155
+  - q: 28
+    r: 5
+    elevation: -0.45955276
+    moisture: -0.2005803
+  - q: 29
+    r: 5
+    elevation: -0.39430594
+    moisture: 0.3204577
+  - q: 0
+    r: 6
+    elevation: 0.026325822
+    moisture: -0.18561411
+  - q: 1
+    r: 6
+    elevation: -0.5925249
+    moisture: -0.17862183
+  - q: 2
+    r: 6
+    elevation: 0.09954393
+    moisture: 0.09889245
+  - q: 3
+    r: 6
+    elevation: -0.6908854
+    moisture: -0.0781762
+  - q: 4
+    r: 6
+    elevation: -0.20448971
+    moisture: 0.302922
+  - q: 5
+    r: 6
+    elevation: -0.36767912
+    moisture: -0.40225923
+  - q: 6
+    r: 6
+    elevation: -0.865873
+    moisture: -0.11803424
+  - q: 7
+    r: 6
+    elevation: 0.0024340302
+    moisture: -0.38004196
+  - q: 8
+    r: 6
+    elevation: -0.35974082
+    moisture: 0.15537226
+  - q: 9
+    r: 6
+    elevation: 0.7244456
+    moisture: 0.398481
+  - q: 10
+    r: 6
+    elevation: 0.39103913
+    moisture: 0.37128866
+  - q: 11
+    r: 6
+    elevation: 0.3854702
+    moisture: 0.021367908
+  - q: 12
+    r: 6
+    elevation: -0.095525846
+    moisture: -0.5668611
+  - q: 13
+    r: 6
+    elevation: 0.081469804
+    moisture: 0.06518519
+  - q: 14
+    r: 6
+    elevation: 0.95448047
+    moisture: -0.056129813
+  - q: 15
+    r: 6
+    elevation: 1.2552118
+    moisture: 0.3083675
+  - q: 16
+    r: 6
+    elevation: 0.26167756
+    moisture: -0.14270383
+  - q: 17
+    r: 6
+    elevation: -0.22252458
+    moisture: -0.37456942
+  - q: 18
+    r: 6
+    elevation: 0.4807428
+    moisture: -0.49536914
+  - q: 19
+    r: 6
+    elevation: 0.31282145
+    moisture: 0.4856305
+  - q: 20
+    r: 6
+    elevation: 0.27642012
+    moisture: 0.32142484
+  - q: 21
+    r: 6
+    elevation: 0.42999578
+    moisture: -0.59801894
+  - q: 22
+    r: 6
+    elevation: 0.50529873
+    moisture: -0.34337902
+  - q: 23
+    r: 6
+    elevation: -0.94525737
+    moisture: 0.5810907
+  - q: 24
+    r: 6
+    elevation: -0.55824745
+    moisture: 0.24233234
+  - q: 25
+    r: 6
+    elevation: -0.3366151
+    moisture: -0.39504236
+  - q: 26
+    r: 6
+    elevation: -0.7842501
+    moisture: -0.08077103
+  - q: 27
+    r: 6
+    elevation: -0.6248315
+    moisture: -0.029472053
+  - q: 28
+    r: 6
+    elevation: -0.81144416
+    moisture: -0.1474449
+  - q: 29
+    r: 6
+    elevation: -1.0534878
+    moisture: -0.24024385
+  - q: 0
+    r: 7
+    elevation: -1.3174896
+    moisture: -0.15814686
+  - q: 1
+    r: 7
+    elevation: -1.2437222
+    moisture: -0.20396751
+  - q: 2
+    r: 7
+    elevation: -1.2793864
+    moisture: 0.21770668
+  - q: 3
+    r: 7
+    elevation: -0.291605
+    moisture: 0.023861289
+  - q: 4
+    r: 7
+    elevation: -0.5870836
+    moisture: 0.062462807
+  - q: 5
+    r: 7
+    elevation: -0.36502516
+    moisture: -0.3576101
+  - q: 6
+    r: 7
+    elevation: 0.46113795
+    moisture: -0.16300344
+  - q: 7
+    r: 7
+    elevation: 0.33554175
+    moisture: -0.2040118
+  - q: 8
+    r: 7
+    elevation: 1.0833737
+    moisture: 0.5807235
+  - q: 9
+    r: 7
+    elevation: 0.76882
+    moisture: -0.35789323
+  - q: 10
+    r: 7
+    elevation: 0.9274032
+    moisture: -0.07681316
+  - q: 11
+    r: 7
+    elevation: -0.12804334
+    moisture: -0.0701251
+  - q: 12
+    r: 7
+    elevation: -0.3275595
+    moisture: -0.16300362
+  - q: 13
+    r: 7
+    elevation: 0.50778836
+    moisture: -0.20401096
+  - q: 14
+    r: 7
+    elevation: 0.37374902
+    moisture: 0.57905686
+  - q: 15
+    r: 7
+    elevation: -0.2511992
+    moisture: -0.36079073
+  - q: 16
+    r: 7
+    elevation: 0.31467992
+    moisture: -0.0821172
+  - q: 17
+    r: 7
+    elevation: 0.5182029
+    moisture: -0.43513358
+  - q: 18
+    r: 7
+    elevation: 0.61918175
+    moisture: 0.31034136
+  - q: 19
+    r: 7
+    elevation: 1.1353362
+    moisture: 0.07508206
+  - q: 20
+    r: 7
+    elevation: 0.2715629
+    moisture: 0.008069158
+  - q: 21
+    r: 7
+    elevation: 0.5266706
+    moisture: -0.2699042
+  - q: 22
+    r: 7
+    elevation: -0.2010459
+    moisture: 0.04977703
+  - q: 23
+    r: 7
+    elevation: -1.0442284
+    moisture: -0.7199558
+  - q: 24
+    r: 7
+    elevation: -0.8123104
+    moisture: 0.3125354
+  - q: 25
+    r: 7
+    elevation: -0.33035946
+    moisture: 0.07246411
+  - q: 26
+    r: 7
+    elevation: -0.7489019
+    moisture: 0.0070744753
+  - q: 27
+    r: 7
+    elevation: -0.93269545
+    moisture: -0.2696696
+  - q: 28
+    r: 7
+    elevation: -0.5083535
+    moisture: 0.052419186
+  - q: 29
+    r: 7
+    elevation: -0.5595906
+    moisture: -0.3576098
+  - q: 0
+    r: 8
+    elevation: -0.51967233
+    moisture: -0.8380233
+  - q: 1
+    r: 8
+    elevation: -0.2939496
+    moisture: 0.32851994
+  - q: 2
+    r: 8
+    elevation: -0.59655124
+    moisture: 0.524917
+  - q: 3
+    r: 8
+    elevation: -0.2822107
+    moisture: -0.0023508072
+  - q: 4
+    r: 8
+    elevation: -0.48690045
+    moisture: -0.49689233
+  - q: 5
+    r: 8
+    elevation: -0.75756145
+    moisture: 0.3684827
+  - q: 6
+    r: 8
+    elevation: 0.18796493
+    moisture: -0.053724885
+  - q: 7
+    r: 8
+    elevation: 0.014650315
+    moisture: 0.18919826
+  - q: 8
+    r: 8
+    elevation: 0.029881656
+    moisture: 0.4248662
+  - q: 9
+    r: 8
+    elevation: 0.87629133
+    moisture: -0.121851206
+  - q: 10
+    r: 8
+    elevation: 0.3860168
+    moisture: -0.36954963
+  - q: 11
+    r: 8
+    elevation: 0.45076054
+    moisture: 0.13992906
+  - q: 12
+    r: 8
+    elevation: 0.3239669
+    moisture: 0.6940311
+  - q: 13
+    r: 8
+    elevation: 0.21297973
+    moisture: -0.14516973
+  - q: 14
+    r: 8
+    elevation: 0.7392426
+    moisture: -0.6086761
+  - q: 15
+    r: 8
+    elevation: 0.19950193
+    moisture: -0.10904521
+  - q: 16
+    r: 8
+    elevation: 0.6679956
+    moisture: 0.020302773
+  - q: 17
+    r: 8
+    elevation: -0.14436
+    moisture: 0.37264836
+  - q: 18
+    r: 8
+    elevation: 0.89557266
+    moisture: 0.24759758
+  - q: 19
+    r: 8
+    elevation: 0.2902354
+    moisture: -0.32935196
+  - q: 20
+    r: 8
+    elevation: 0.58602935
+    moisture: -0.06627989
+  - q: 21
+    r: 8
+    elevation: 0.86627614
+    moisture: 0.4093554
+  - q: 22
+    r: 8
+    elevation: 0.5364003
+    moisture: 0.6119919
+  - q: 23
+    r: 8
+    elevation: -0.2820412
+    moisture: -0.57136905
+  - q: 24
+    r: 8
+    elevation: 0.037587762
+    moisture: -0.45592022
+  - q: 25
+    r: 8
+    elevation: -0.32489192
+    moisture: 0.30928576
+  - q: 26
+    r: 8
+    elevation: -1.0209168
+    moisture: 0.26395845
+  - q: 27
+    r: 8
+    elevation: -0.2374773
+    moisture: -0.4178952
+  - q: 28
+    r: 8
+    elevation: -0.791003
+    moisture: 0.051082015
+  - q: 29
+    r: 8
+    elevation: -0.42211843
+    moisture: -0.013665438
+  - q: 0
+    r: 9
+    elevation: -0.4229455
+    moisture: -0.121797025
+  - q: 1
+    r: 9
+    elevation: -0.30940664
+    moisture: -0.34752297
+  - q: 2
+    r: 9
+    elevation: 0.06537104
+    moisture: -0.16821516
+  - q: 3
+    r: 9
+    elevation: -1.1047918
+    moisture: -0.6470027
+  - q: 4
+    r: 9
+    elevation: -0.5891957
+    moisture: 0.35599113
+  - q: 5
+    r: 9
+    elevation: -0.45966542
+    moisture: 0.45696402
+  - q: 6
+    r: 9
+    elevation: -0.09838794
+    moisture: -0.32031816
+  - q: 7
+    r: 9
+    elevation: 0.17870697
+    moisture: 0.21283662
+  - q: 8
+    r: 9
+    elevation: 0.11083573
+    moisture: -0.042679906
+  - q: 9
+    r: 9
+    elevation: 1.0134964
+    moisture: -0.55869806
+  - q: 10
+    r: 9
+    elevation: 0.5090688
+    moisture: -0.39574856
+  - q: 11
+    r: 9
+    elevation: 0.94601685
+    moisture: -0.17151755
+  - q: 12
+    r: 9
+    elevation: 0.76714814
+    moisture: 0.014780879
+  - q: 13
+    r: 9
+    elevation: 0.3991956
+    moisture: 0.17871428
+  - q: 14
+    r: 9
+    elevation: 0.0068991184
+    moisture: -0.20061052
+  - q: 15
+    r: 9
+    elevation: 0.6245146
+    moisture: 0.6569494
+  - q: 16
+    r: 9
+    elevation: 0.56138736
+    moisture: 0.025488496
+  - q: 17
+    r: 9
+    elevation: 0.71086544
+    moisture: -0.03568524
+  - q: 18
+    r: 9
+    elevation: 0.61878836
+    moisture: -0.71108055
+  - q: 19
+    r: 9
+    elevation: 0.35403734
+    moisture: -0.3656605
+  - q: 20
+    r: 9
+    elevation: 0.16128886
+    moisture: -0.08442229
+  - q: 21
+    r: 9
+    elevation: -0.15116972
+    moisture: 0.33528948
+  - q: 22
+    r: 9
+    elevation: 0.2927433
+    moisture: -0.519251
+  - q: 23
+    r: 9
+    elevation: -0.7979642
+    moisture: -0.4101267
+  - q: 24
+    r: 9
+    elevation: -0.26209617
+    moisture: 0.07682955
+  - q: 25
+    r: 9
+    elevation: -0.65341777
+    moisture: -0.6298648
+  - q: 26
+    r: 9
+    elevation: -1.226897
+    moisture: 0.3740648
+  - q: 27
+    r: 9
+    elevation: -0.1805532
+    moisture: 0.055940747
+  - q: 28
+    r: 9
+    elevation: -0.80978924
+    moisture: 0.05535662
+  - q: 29
+    r: 9
+    elevation: -0.9315237
+    moisture: -0.6532794
+  - q: 0
+    r: 10
+    elevation: -0.29168165
+    moisture: -0.35789335
+  - q: 1
+    r: 10
+    elevation: -0.5110222
+    moisture: -0.07681316
+  - q: 2
+    r: 10
+    elevation: -1.0796043
+    moisture: 0.29455876
+  - q: 3
+    r: 10
+    elevation: -1.0694969
+    moisture: -0.36032194
+  - q: 4
+    r: 10
+    elevation: -0.93766856
+    moisture: -0.07683581
+  - q: 5
+    r: 10
+    elevation: -0.67663586
+    moisture: -0.43480885
+  - q: 6
+    r: 10
+    elevation: 0.36308938
+    moisture: 0.21702635
+  - q: 7
+    r: 10
+    elevation: 0.9409821
+    moisture: -0.05683416
+  - q: 8
+    r: 10
+    elevation: 0.9344157
+    moisture: -0.06679094
+  - q: 9
+    r: 10
+    elevation: -0.07416588
+    moisture: -0.15814686
+  - q: 10
+    r: 10
+    elevation: 0.15403014
+    moisture: -0.20396799
+  - q: 11
+    r: 10
+    elevation: 1.0000573
+    moisture: 0.5823903
+  - q: 12
+    r: 10
+    elevation: 0.8264058
+    moisture: -0.44682074
+  - q: 13
+    r: 10
+    elevation: 0.012404859
+    moisture: -0.21396762
+  - q: 14
+    r: 10
+    elevation: 0.974566
+    moisture: -0.14697671
+  - q: 15
+    r: 10
+    elevation: 1.2596762
+    moisture: 0.22188342
+  - q: 16
+    r: 10
+    elevation: -0.050494373
+    moisture: -0.05679047
+  - q: 17
+    r: 10
+    elevation: 0.7829183
+    moisture: 0.29455864
+  - q: 18
+    r: 10
+    elevation: 1.5022414
+    moisture: -0.36079103
+  - q: 19
+    r: 10
+    elevation: 0.6136288
+    moisture: -0.0821172
+  - q: 20
+    r: 10
+    elevation: 0.18853146
+    moisture: -0.06878257
+  - q: 21
+    r: 10
+    elevation: 0.6923344
+    moisture: -0.15814662
+  - q: 22
+    r: 10
+    elevation: 0.7511412
+    moisture: -0.20396751
+  - q: 23
+    r: 10
+    elevation: 1.0132669
+    moisture: -0.150311
+  - q: 24
+    r: 10
+    elevation: 0.04967153
+    moisture: 0.12567067
+  - q: 25
+    r: 10
+    elevation: 0.10297918
+    moisture: -0.19401187
+  - q: 26
+    r: 10
+    elevation: 0.119466305
+    moisture: 0.58072317
+  - q: 27
+    r: 10
+    elevation: -1.3094828
+    moisture: -0.26724112
+  - q: 28
+    r: 10
+    elevation: -1.2395713
+    moisture: 0.05244112
+  - q: 29
+    r: 10
+    elevation: -0.27252507
+    moisture: -0.7206268
+  - q: 0
+    r: 11
+    elevation: -0.8979192
+    moisture: -0.62800366
+  - q: 1
+    r: 11
+    elevation: -0.79422426
+    moisture: -0.1677537
+  - q: 2
+    r: 11
+    elevation: -0.3806312
+    moisture: -0.23350471
+  - q: 3
+    r: 11
+    elevation: -0.6440714
+    moisture: 0.54679585
+  - q: 4
+    r: 11
+    elevation: -0.65165216
+    moisture: -0.6014487
+  - q: 5
+    r: 11
+    elevation: -0.70324427
+    moisture: -0.009244621
+  - q: 6
+    r: 11
+    elevation: 0.42354447
+    moisture: 0.5139656
+  - q: 7
+    r: 11
+    elevation: 0.0945386
+    moisture: -0.50123936
+  - q: 8
+    r: 11
+    elevation: 0.14886332
+    moisture: -0.10893589
+  - q: 9
+    r: 11
+    elevation: 0.27144665
+    moisture: -0.07703823
+  - q: 10
+    r: 11
+    elevation: 0.5170515
+    moisture: 0.18898797
+  - q: 11
+    r: 11
+    elevation: 0.19376005
+    moisture: -0.42733556
+  - q: 12
+    r: 11
+    elevation: -0.1883949
+    moisture: -0.672215
+  - q: 13
+    r: 11
+    elevation: 0.31587544
+    moisture: 0.3342638
+  - q: 14
+    r: 11
+    elevation: 0.43687594
+    moisture: 0.7343843
+  - q: 15
+    r: 11
+    elevation: 0.0859673
+    moisture: -0.070059955
+  - q: 16
+    r: 11
+    elevation: 0.59784496
+    moisture: 0.090004325
+  - q: 17
+    r: 11
+    elevation: 0.14636391
+    moisture: 0.41221058
+  - q: 18
+    r: 11
+    elevation: 0.8134862
+    moisture: 0.45604634
+  - q: 19
+    r: 11
+    elevation: 0.8729717
+    moisture: 0.22593892
+  - q: 20
+    r: 11
+    elevation: 0.55712605
+    moisture: -0.6301377
+  - q: 21
+    r: 11
+    elevation: 0.21438545
+    moisture: -0.05006981
+  - q: 22
+    r: 11
+    elevation: 0.5106317
+    moisture: -0.25506264
+  - q: 23
+    r: 11
+    elevation: 0.89742696
+    moisture: -0.5383718
+  - q: 24
+    r: 11
+    elevation: -0.81995195
+    moisture: -0.036868572
+  - q: 25
+    r: 11
+    elevation: -0.6221432
+    moisture: -0.35655087
+  - q: 26
+    r: 11
+    elevation: -0.49990237
+    moisture: 0.45571434
+  - q: 27
+    r: 11
+    elevation: -0.55619234
+    moisture: 0.17287874
+  - q: 28
+    r: 11
+    elevation: -0.86915
+    moisture: 0.20862877
+  - q: 29
+    r: 11
+    elevation: -0.7512236
+    moisture: 0.37345946
+  - q: 0
+    r: 12
+    elevation: -0.8916366
+    moisture: 0.17305374
+  - q: 1
+    r: 12
+    elevation: -0.30976605
+    moisture: 0.21728754
+  - q: 2
+    r: 12
+    elevation: 0.11985552
+    moisture: -0.85476506
+  - q: 3
+    r: 12
+    elevation: -0.8004346
+    moisture: -0.3379317
+  - q: 4
+    r: 12
+    elevation: -0.64615136
+    moisture: 0.07311571
+  - q: 5
+    r: 12
+    elevation: -0.26024282
+    moisture: -0.28611922
+  - q: 6
+    r: 12
+    elevation: -0.030642852
+    moisture: -0.47597516
+  - q: 7
+    r: 12
+    elevation: 0.12819639
+    moisture: 0.19707954
+  - q: 8
+    r: 12
+    elevation: 0.3840914
+    moisture: -0.24204075
+  - q: 9
+    r: 12
+    elevation: 0.46209064
+    moisture: -0.4733106
+  - q: 10
+    r: 12
+    elevation: -0.107293054
+    moisture: 0.21145678
+  - q: 11
+    r: 12
+    elevation: 0.7244266
+    moisture: -0.046357512
+  - q: 12
+    r: 12
+    elevation: 0.71308506
+    moisture: -0.044246316
+  - q: 13
+    r: 12
+    elevation: 0.6905823
+    moisture: -0.3138302
+  - q: 14
+    r: 12
+    elevation: 0.34164774
+    moisture: 0.2953694
+  - q: 15
+    r: 12
+    elevation: 0.3745014
+    moisture: -0.5258943
+  - q: 16
+    r: 12
+    elevation: 0.5922163
+    moisture: -0.24722064
+  - q: 17
+    r: 12
+    elevation: 0.43981147
+    moisture: -0.3126952
+  - q: 18
+    r: 12
+    elevation: 0.6802221
+    moisture: -0.10943532
+  - q: 19
+    r: 12
+    elevation: 0.9760234
+    moisture: 0.008536339
+  - q: 20
+    r: 12
+    elevation: 0.22848839
+    moisture: -0.40973473
+  - q: 21
+    r: 12
+    elevation: 0.6407255
+    moisture: 0.34443998
+  - q: 22
+    r: 12
+    elevation: 0.10915384
+    moisture: 0.106398344
+  - q: 23
+    r: 12
+    elevation: 0.57254696
+    moisture: -0.26637143
+  - q: 24
+    r: 12
+    elevation: -0.080913186
+    moisture: 0.34777915
+  - q: 25
+    r: 12
+    elevation: -0.70710695
+    moisture: 0.37389302
+  - q: 26
+    r: 12
+    elevation: -0.61300284
+    moisture: 0.096841455
+  - q: 27
+    r: 12
+    elevation: -0.5806007
+    moisture: -0.74466527
+  - q: 28
+    r: 12
+    elevation: -0.78502274
+    moisture: -0.55934536
+  - q: 29
+    r: 12
+    elevation: -0.67089224
+    moisture: -0.02052182
+  - q: 0
+    r: 13
+    elevation: -1.3684492
+    moisture: 0.21945477
+  - q: 1
+    r: 13
+    elevation: -0.18515694
+    moisture: -0.05681193
+  - q: 2
+    r: 13
+    elevation: -0.14828122
+    moisture: -0.070124745
+  - q: 3
+    r: 13
+    elevation: -0.9284467
+    moisture: -0.16300386
+  - q: 4
+    r: 13
+    elevation: -0.2890488
+    moisture: -0.20401245
+  - q: 5
+    r: 13
+    elevation: -0.69546527
+    moisture: 0.21437204
+  - q: 6
+    r: 13
+    elevation: -0.9928391
+    moisture: -0.07211703
+  - q: 7
+    r: 13
+    elevation: -0.5448554
+    moisture: -0.072117925
+  - q: 8
+    r: 13
+    elevation: -0.5939962
+    moisture: -0.43513393
+  - q: 9
+    r: 13
+    elevation: -0.29625785
+    moisture: 0.21945548
+  - q: 10
+    r: 13
+    elevation: 0.43860298
+    moisture: -0.05681163
+  - q: 11
+    r: 13
+    elevation: 0.059015155
+    moisture: 0.29455864
+  - q: 12
+    r: 13
+    elevation: 0.52372265
+    moisture: -0.26943612
+  - q: 13
+    r: 13
+    elevation: 0.2697631
+    moisture: 0.055060506
+  - q: 14
+    r: 13
+    elevation: 0.6045209
+    moisture: 0.011404276
+  - q: 15
+    r: 13
+    elevation: 1.5189431
+    moisture: -0.35546386
+  - q: 16
+    r: 13
+    elevation: 0.73948383
+    moisture: -0.076790154
+  - q: 17
+    r: 13
+    elevation: 0.2786467
+    moisture: -0.4314738
+  - q: 18
+    r: 13
+    elevation: 1.5906231
+    moisture: 0.13076305
+  - q: 19
+    r: 13
+    elevation: 0.29015923
+    moisture: -0.1913259
+  - q: 20
+    r: 13
+    elevation: 0.2766202
+    moisture: 0.21870375
+  - q: 21
+    r: 13
+    elevation: 0.5948328
+    moisture: -0.06725949
+  - q: 22
+    r: 13
+    elevation: 1.2114172
+    moisture: -0.072074115
+  - q: 23
+    r: 13
+    elevation: 0.19227624
+    moisture: -0.4368018
+  - q: 24
+    r: 13
+    elevation: -0.38384628
+    moisture: 0.21702528
+  - q: 25
+    r: 13
+    elevation: -0.50504416
+    moisture: -0.056833804
+  - q: 26
+    r: 13
+    elevation: -0.9900438
+    moisture: 0.294559
+  - q: 27
+    r: 13
+    elevation: -0.8029587
+    moisture: -0.45144325
+  - q: 28
+    r: 13
+    elevation: 0.101703644
+    moisture: -0.21137148
+  - q: 29
+    r: 13
+    elevation: -0.39807224
+    moisture: 0.21870303
+  - q: 0
+    r: 14
+    elevation: -0.78202784
+    moisture: -0.153548
+  - q: 1
+    r: 14
+    elevation: -0.4582522
+    moisture: -0.60462
+  - q: 2
+    r: 14
+    elevation: -0.6865594
+    moisture: -0.6644107
+  - q: 3
+    r: 14
+    elevation: -1.0036091
+    moisture: 0.0447886
+  - q: 4
+    r: 14
+    elevation: -0.8110819
+    moisture: -0.15102571
+  - q: 5
+    r: 14
+    elevation: -0.034703612
+    moisture: -0.68628466
+  - q: 6
+    r: 14
+    elevation: -0.29552436
+    moisture: 0.064130306
+  - q: 7
+    r: 14
+    elevation: -0.6759328
+    moisture: -0.12295735
+  - q: 8
+    r: 14
+    elevation: -0.96740013
+    moisture: -0.14728785
+  - q: 9
+    r: 14
+    elevation: -0.009232521
+    moisture: -0.21186405
+  - q: 10
+    r: 14
+    elevation: -0.11295812
+    moisture: -0.51360947
+  - q: 11
+    r: 14
+    elevation: 0.6637598
+    moisture: -0.23817259
+  - q: 12
+    r: 14
+    elevation: -0.49497575
+    moisture: -0.40334702
+  - q: 13
+    r: 14
+    elevation: 0.23793188
+    moisture: 0.2149241
+  - q: 14
+    r: 14
+    elevation: 0.74955237
+    moisture: -0.84590673
+  - q: 15
+    r: 14
+    elevation: -0.13815191
+    moisture: -0.387686
+  - q: 16
+    r: 14
+    elevation: 0.6508521
+    moisture: 0.09563553
+  - q: 17
+    r: 14
+    elevation: 0.095889986
+    moisture: -0.42755908
+  - q: 18
+    r: 14
+    elevation: 0.79214424
+    moisture: -0.48575372
+  - q: 19
+    r: 14
+    elevation: 0.2957396
+    moisture: -0.3491066
+  - q: 20
+    r: 14
+    elevation: 0.5032512
+    moisture: -0.9964784
+  - q: 21
+    r: 14
+    elevation: 0.6906873
+    moisture: -0.42689443
+  - q: 22
+    r: 14
+    elevation: 0.8028975
+    moisture: -0.33374822
+  - q: 23
+    r: 14
+    elevation: -0.19502777
+    moisture: 0.35895586
+  - q: 24
+    r: 14
+    elevation: -0.098780155
+    moisture: 0.54531324
+  - q: 25
+    r: 14
+    elevation: -0.6256259
+    moisture: -0.1481983
+  - q: 26
+    r: 14
+    elevation: -1.1882063
+    moisture: 0.05357158
+  - q: 27
+    r: 14
+    elevation: -1.1841292
+    moisture: 0.3797077
+  - q: 28
+    r: 14
+    elevation: -0.7333899
+    moisture: 0.25788736
+  - q: 29
+    r: 14
+    elevation: -0.20470786
+    moisture: 0.2280556
+  - q: 0
+    r: 15
+    elevation: -0.16929436
+    moisture: 0.5571765
+  - q: 1
+    r: 15
+    elevation: -0.49486303
+    moisture: 0.1098479
+  - q: 2
+    r: 15
+    elevation: -0.53360176
+    moisture: -0.2663715
+  - q: 3
+    r: 15
+    elevation: -0.9914851
+    moisture: 0.4402535
+  - q: 4
+    r: 15
+    elevation: -0.7028012
+    moisture: 0.18561447
+  - q: 5
+    r: 15
+    elevation: -0.29922533
+    moisture: -0.28332686
+  - q: 6
+    r: 15
+    elevation: -0.6630259
+    moisture: 0.3583852
+  - q: 7
+    r: 15
+    elevation: -0.25893807
+    moisture: 0.2360686
+  - q: 8
+    r: 15
+    elevation: -0.78838664
+    moisture: 0.11283815
+  - q: 9
+    r: 15
+    elevation: 0.3562525
+    moisture: -0.04134333
+  - q: 10
+    r: 15
+    elevation: -0.23669104
+    moisture: 0.19513476
+  - q: 11
+    r: 15
+    elevation: 0.19256736
+    moisture: 0.4694668
+  - q: 12
+    r: 15
+    elevation: 0.59013426
+    moisture: 0.14086759
+  - q: 13
+    r: 15
+    elevation: 0.2698303
+    moisture: -0.53426766
+  - q: 14
+    r: 15
+    elevation: 0.47246164
+    moisture: -0.6238608
+  - q: 15
+    r: 15
+    elevation: 0.45053494
+    moisture: 0.28363526
+  - q: 16
+    r: 15
+    elevation: 0.7810003
+    moisture: -0.5694108
+  - q: 17
+    r: 15
+    elevation: 0.74726385
+    moisture: 0.0076292753
+  - q: 18
+    r: 15
+    elevation: 0.22759604
+    moisture: 0.5460136
+  - q: 19
+    r: 15
+    elevation: 0.13675192
+    moisture: 0.41836655
+  - q: 20
+    r: 15
+    elevation: 1.0145255
+    moisture: -0.17392778
+  - q: 21
+    r: 15
+    elevation: 0.8678293
+    moisture: 0.59317017
+  - q: 22
+    r: 15
+    elevation: 0.21426344
+    moisture: 0.1625086
+  - q: 23
+    r: 15
+    elevation: 1.29431
+    moisture: 0.05222857
+  - q: 24
+    r: 15
+    elevation: -0.2153523
+    moisture: -0.24200529
+  - q: 25
+    r: 15
+    elevation: -0.80456716
+    moisture: 0.061596036
+  - q: 26
+    r: 15
+    elevation: -0.65333295
+    moisture: -0.6946388
+  - q: 27
+    r: 15
+    elevation: -0.26472688
+    moisture: -0.57522464
+  - q: 28
+    r: 15
+    elevation: -0.8315749
+    moisture: -0.39808285
+  - q: 29
+    r: 15
+    elevation: -0.80714685
+    moisture: -0.36630243
+  - q: 0
+    r: 16
+    elevation: -0.03172481
+    moisture: 0.21898532
+  - q: 1
+    r: 16
+    elevation: -1.281888
+    moisture: -0.06209582
+  - q: 2
+    r: 16
+    elevation: -0.45449138
+    moisture: -0.43680185
+  - q: 3
+    r: 16
+    elevation: -0.59307617
+    moisture: 0.12566948
+  - q: 4
+    r: 16
+    elevation: -0.54642195
+    moisture: -0.19401139
+  - q: 5
+    r: 16
+    elevation: -1.1069412
+    moisture: 0.57905567
+  - q: 6
+    r: 16
+    elevation: -0.50222003
+    moisture: -0.2699055
+  - q: 7
+    r: 16
+    elevation: -0.6359993
+    moisture: 0.049776554
+  - q: 8
+    r: 16
+    elevation: -1.2419933
+    moisture: -0.35527194
+  - q: 9
+    r: 16
+    elevation: 0.9679226
+    moisture: -0.06725937
+  - q: 10
+    r: 16
+    elevation: 0.15076907
+    moisture: -0.072074056
+  - q: 11
+    r: 16
+    elevation: 0.61383903
+    moisture: 0.29590118
+  - q: 12
+    r: 16
+    elevation: 0.18629664
+    moisture: -0.44682062
+  - q: 13
+    r: 16
+    elevation: 0.61346024
+    moisture: -0.21396798
+  - q: 14
+    r: 16
+    elevation: 1.450908
+    moisture: 0.2143724
+  - q: 15
+    r: 16
+    elevation: 1.1672963
+    moisture: 0.018768787
+  - q: 16
+    r: 16
+    elevation: 0.7566337
+    moisture: 0.05977738
+  - q: 17
+    r: 16
+    elevation: 0.39245886
+    moisture: -0.35527235
+  - q: 18
+    r: 16
+    elevation: 0.66516435
+    moisture: 0.023861408
+  - q: 19
+    r: 16
+    elevation: 1.289247
+    moisture: 0.062461853
+  - q: 20
+    r: 16
+    elevation: 0.23769903
+    moisture: -0.35427624
+  - q: 21
+    r: 16
+    elevation: 0.4103363
+    moisture: -0.15791214
+  - q: 22
+    r: 16
+    elevation: 1.0511867
+    moisture: -0.20132679
+  - q: 23
+    r: 16
+    elevation: -0.80870706
+    moisture: -0.14764804
+  - q: 24
+    r: 16
+    elevation: -1.2588745
+    moisture: 0.31010735
+  - q: 25
+    r: 16
+    elevation: 0.14145935
+    moisture: 0.07244241
+  - q: 26
+    r: 16
+    elevation: -0.39538348
+    moisture: -0.35760987
+  - q: 27
+    r: 16
+    elevation: -0.62532246
+    moisture: 0.019004226
+  - q: 28
+    r: 16
+    elevation: -1.2010435
+    moisture: 0.06242025
+  - q: 29
+    r: 16
+    elevation: -0.697821
+    moisture: -0.35427475
+  - q: 0
+    r: 17
+    elevation: -0.8032211
+    moisture: 0.26185477
+  - q: 1
+    r: 17
+    elevation: -0.65304285
+    moisture: 0.02097404
+  - q: 2
+    r: 17
+    elevation: -0.41257334
+    moisture: -0.24069953
+  - q: 3
+    r: 17
+    elevation: -0.19234145
+    moisture: 0.025826573
+  - q: 4
+    r: 17
+    elevation: -0.8690807
+    moisture: 0.3495313
+  - q: 5
+    r: 17
+    elevation: -0.55407786
+    moisture: 0.10860479
+  - q: 6
+    r: 17
+    elevation: -0.8669443
+    moisture: -0.12105113
+  - q: 7
+    r: 17
+    elevation: -0.45593953
+    moisture: -0.3046695
+  - q: 8
+    r: 17
+    elevation: -0.86849415
+    moisture: 0.13674259
+  - q: 9
+    r: 17
+    elevation: 0.3454414
+    moisture: 0.13819695
+  - q: 10
+    r: 17
+    elevation: 0.26912358
+    moisture: -0.12811154
+  - q: 11
+    r: 17
+    elevation: 0.6716321
+    moisture: -0.11149758
+  - q: 12
+    r: 17
+    elevation: 0.0023720562
+    moisture: -0.5659851
+  - q: 13
+    r: 17
+    elevation: 0.2373186
+    moisture: -0.27293515
+  - q: 14
+    r: 17
+    elevation: 0.40270987
+    moisture: 0.113387346
+  - q: 15
+    r: 17
+    elevation: 0.20780453
+    moisture: -0.44255543
+  - q: 16
+    r: 17
+    elevation: 0.7364543
+    moisture: -0.21445966
+  - q: 17
+    r: 17
+    elevation: 0.25416008
+    moisture: -0.53447783
+  - q: 18
+    r: 17
+    elevation: 0.32402897
+    moisture: -0.5173532
+  - q: 19
+    r: 17
+    elevation: 0.3759513
+    moisture: 0.30715752
+  - q: 20
+    r: 17
+    elevation: -0.12612844
+    moisture: -0.40380454
+  - q: 21
+    r: 17
+    elevation: 0.6049484
+    moisture: -0.06686926
+  - q: 22
+    r: 17
+    elevation: -0.40510166
+    moisture: -0.44426006
+  - q: 23
+    r: 17
+    elevation: -0.6413568
+    moisture: -0.7291385
+  - q: 24
+    r: 17
+    elevation: -0.26696086
+    moisture: -0.15760434
+  - q: 25
+    r: 17
+    elevation: -0.6210274
+    moisture: -0.13813967
+  - q: 26
+    r: 17
+    elevation: -0.22966456
+    moisture: 0.15030098
+  - q: 27
+    r: 17
+    elevation: -1.1685379
+    moisture: 0.7070651
+  - q: 28
+    r: 17
+    elevation: -0.37396967
+    moisture: 0.32402563
+  - q: 29
+    r: 17
+    elevation: -0.7575591
+    moisture: 0.10611987
+  - q: 0
+    r: 18
+    elevation: -1.201726
+    moisture: -0.5080222
+  - q: 1
+    r: 18
+    elevation: -0.8048015
+    moisture: 0.0060527325
+  - q: 2
+    r: 18
+    elevation: -0.4747324
+    moisture: 0.27702093
+  - q: 3
+    r: 18
+    elevation: -0.8672234
+    moisture: 0.5848075
+  - q: 4
+    r: 18
+    elevation: -0.70577157
+    moisture: -0.3007583
+  - q: 5
+    r: 18
+    elevation: -1.000291
+    moisture: 0.009724975
+  - q: 6
+    r: 18
+    elevation: -0.5973648
+    moisture: 0.7069688
+  - q: 7
+    r: 18
+    elevation: -0.20206153
+    moisture: 0.4042611
+  - q: 8
+    r: 18
+    elevation: 0.01405032
+    moisture: 0.037550807
+  - q: 9
+    r: 18
+    elevation: 0.5110438
+    moisture: -0.51690924
+  - q: 10
+    r: 18
+    elevation: -0.027899966
+    moisture: 0.22230685
+  - q: 11
+    r: 18
+    elevation: 0.94582057
+    moisture: 0.11283815
+  - q: 12
+    r: 18
+    elevation: 0.3202771
+    moisture: -0.094610155
+  - q: 13
+    r: 18
+    elevation: 0.69742733
+    moisture: 0.11783373
+  - q: 14
+    r: 18
+    elevation: 0.36052644
+    moisture: 0.4037044
+  - q: 15
+    r: 18
+    elevation: 0.51384765
+    moisture: -0.19273692
+  - q: 16
+    r: 18
+    elevation: 0.6468678
+    moisture: 0.24610448
+  - q: 17
+    r: 18
+    elevation: 0.33366847
+    moisture: 0.38558757
+  - q: 18
+    r: 18
+    elevation: 0.0015717745
+    moisture: 0.46888828
+  - q: 19
+    r: 18
+    elevation: 0.33125883
+    moisture: -0.22931969
+  - q: 20
+    r: 18
+    elevation: 0.16471225
+    moisture: -0.6137099
+  - q: 21
+    r: 18
+    elevation: 0.33021572
+    moisture: 0.11548364
+  - q: 22
+    r: 18
+    elevation: -0.8015641
+    moisture: 0.5028728
+  - q: 23
+    r: 18
+    elevation: -0.6375656
+    moisture: 0.1230607
+  - q: 24
+    r: 18
+    elevation: -0.6904401
+    moisture: 0.56196153
+  - q: 25
+    r: 18
+    elevation: -0.38920712
+    moisture: -0.1889677
+  - q: 26
+    r: 18
+    elevation: -1.0980805
+    moisture: -0.3695112
+  - q: 27
+    r: 18
+    elevation: -0.58299845
+    moisture: -0.17041516
+  - q: 28
+    r: 18
+    elevation: -0.78194445
+    moisture: -0.62623036
+  - q: 29
+    r: 18
+    elevation: -0.3323996
+    moisture: -0.3175094
+  - q: 0
+    r: 19
+    elevation: -0.115138054
+    moisture: -0.3578931
+  - q: 1
+    r: 19
+    elevation: -0.9374415
+    moisture: -0.07681227
+  - q: 2
+    r: 19
+    elevation: -0.509361
+    moisture: -0.06679046
+  - q: 3
+    r: 19
+    elevation: -0.5355447
+    moisture: 0.024096012
+  - q: 4
+    r: 19
+    elevation: 0.055394173
+    moisture: 0.06510496
+  - q: 5
+    r: 19
+    elevation: -0.49716878
+    moisture: -0.7179638
+  - q: 6
+    r: 19
+    elevation: -1.1294944
+    moisture: 0.31277013
+  - q: 7
+    r: 19
+    elevation: -0.598692
+    moisture: 0.07510483
+  - q: 8
+    r: 19
+    elevation: -0.6932567
+    moisture: 0.008069634
+  - q: 9
+    r: 19
+    elevation: 0.9502638
+    moisture: -0.26990455
+  - q: 10
+    r: 19
+    elevation: 0.65696824
+    moisture: 0.049776554
+  - q: 11
+    r: 19
+    elevation: 0.19339263
+    moisture: -0.35527194
+  - q: 12
+    r: 19
+    elevation: 0.70493317
+    moisture: 0.0236274
+  - q: 13
+    r: 19
+    elevation: 1.2661059
+    moisture: 0.059820294
+  - q: 14
+    r: 19
+    elevation: 0.673057
+    moisture: 0.0060760975
+  - q: 15
+    r: 19
+    elevation: -0.14401895
+    moisture: -0.45144415
+  - q: 16
+    r: 19
+    elevation: 0.787536
+    moisture: -0.21137094
+  - q: 17
+    r: 19
+    elevation: 0.61085576
+    moisture: -0.14598107
+  - q: 18
+    r: 19
+    elevation: 0.13677436
+    moisture: 0.22188354
+  - q: 19
+    r: 19
+    elevation: 0.6020417
+    moisture: -0.05678934
+  - q: 20
+    r: 19
+    elevation: 0.6747395
+    moisture: -0.43480897
+  - q: 21
+    r: 19
+    elevation: 0.07424465
+    moisture: 0.30791247
+  - q: 22
+    r: 19
+    elevation: -0.24273789
+    moisture: 0.07506025
+  - q: 23
+    r: 19
+    elevation: -0.2479744
+    moisture: -0.35328037
+  - q: 24
+    r: 19
+    elevation: -0.9628242
+    moisture: -0.15791196
+  - q: 25
+    r: 19
+    elevation: 0.09743214
+    moisture: -0.2013275
+  - q: 26
+    r: 19
+    elevation: -1.0470864
+    moisture: -0.14764875
+  - q: 27
+    r: 19
+    elevation: -0.40275156
+    moisture: 0.12809956
+  - q: 28
+    r: 19
+    elevation: 0.14510548
+    moisture: -0.19398999
+  - q: 29
+    r: 19
+    elevation: -0.70617115
+    moisture: 0.21770692
+  - q: 0
+    r: 20
+    elevation: -0.42264748
+    moisture: -0.17352116
+  - q: 1
+    r: 20
+    elevation: -0.87102437
+    moisture: -0.15200967
+  - q: 2
+    r: 20
+    elevation: -0.26383722
+    moisture: -0.77281713
+  - q: 3
+    r: 20
+    elevation: -1.0047767
+    moisture: 0.089254856
+  - q: 4
+    r: 20
+    elevation: -0.78872925
+    moisture: 0.2325871
+  - q: 5
+    r: 20
+    elevation: -0.11575925
+    moisture: 0.018725634
+  - q: 6
+    r: 20
+    elevation: -0.8711566
+    moisture: -0.18495846
+  - q: 7
+    r: 20
+    elevation: -0.48077548
+    moisture: -0.69183433
+  - q: 8
+    r: 20
+    elevation: 0.20527525
+    moisture: 0.023450613
+  - q: 9
+    r: 20
+    elevation: 0.51090086
+    moisture: 0.5281913
+  - q: 10
+    r: 20
+    elevation: 0.7389737
+    moisture: -0.2988127
+  - q: 11
+    r: 20
+    elevation: 0.6852316
+    moisture: 0.13674259
+  - q: 12
+    r: 20
+    elevation: 0.9510146
+    moisture: 0.15753865
+  - q: 13
+    r: 20
+    elevation: 0.4838984
+    moisture: -0.100043535
+  - q: 14
+    r: 20
+    elevation: 0.5248431
+    moisture: 0.06638765
+  - q: 15
+    r: 20
+    elevation: 0.79290503
+    moisture: -0.1319573
+  - q: 16
+    r: 20
+    elevation: 0.96482444
+    moisture: -0.0021275878
+  - q: 17
+    r: 20
+    elevation: 0.68614626
+    moisture: 0.07888174
+  - q: 18
+    r: 20
+    elevation: 0.07074821
+    moisture: -0.14160502
+  - q: 19
+    r: 20
+    elevation: 0.4537303
+    moisture: -0.013821542
+  - q: 20
+    r: 20
+    elevation: -0.15681753
+    moisture: 0.5467409
+  - q: 21
+    r: 20
+    elevation: -0.5909731
+    moisture: -0.1302976
+  - q: 22
+    r: 20
+    elevation: -0.71085864
+    moisture: -0.33858323
+  - q: 23
+    r: 20
+    elevation: -0.9889736
+    moisture: 0.19140816
+  - q: 24
+    r: 20
+    elevation: -0.4214338
+    moisture: -0.5213516
+  - q: 25
+    r: 20
+    elevation: -0.40999985
+    moisture: -0.46000487
+  - q: 26
+    r: 20
+    elevation: -0.96737957
+    moisture: -0.28343886
+  - q: 27
+    r: 20
+    elevation: -0.62644076
+    moisture: 0.4384067
+  - q: 28
+    r: 20
+    elevation: -0.81134516
+    moisture: -0.35226327
+  - q: 29
+    r: 20
+    elevation: -0.9944115
+    moisture: -0.028396964
+  - q: 0
+    r: 21
+    elevation: -0.07836664
+    moisture: 0.80110264
+  - q: 1
+    r: 21
+    elevation: -0.54195595
+    moisture: 0.23468316
+  - q: 2
+    r: 21
+    elevation: -0.62523615
+    moisture: -0.70837855
+  - q: 3
+    r: 21
+    elevation: -0.9407701
+    moisture: 0.054655194
+  - q: 4
+    r: 21
+    elevation: -0.75803095
+    moisture: -0.52024984
+  - q: 5
+    r: 21
+    elevation: -0.15129304
+    moisture: -0.18002361
+  - q: 6
+    r: 21
+    elevation: -0.60249734
+    moisture: -0.51674473
+  - q: 7
+    r: 21
+    elevation: 0.31590217
+    moisture: 0.3784274
+  - q: 8
+    r: 21
+    elevation: 0.03963515
+    moisture: -0.32713264
+  - q: 9
+    r: 21
+    elevation: 0.41755974
+    moisture: -0.33951807
+  - q: 10
+    r: 21
+    elevation: 0.71353817
+    moisture: 0.39328825
+  - q: 11
+    r: 21
+    elevation: 0.5724013
+    moisture: 0.037551403
+  - q: 12
+    r: 21
+    elevation: 0.32037652
+    moisture: -0.5004729
+  - q: 13
+    r: 21
+    elevation: 0.4657163
+    moisture: 0.40739524
+  - q: 14
+    r: 21
+    elevation: 1.2944472
+    moisture: 0.18262815
+  - q: 15
+    r: 21
+    elevation: 0.8788423
+    moisture: -0.053743303
+  - q: 16
+    r: 21
+    elevation: 0.39355063
+    moisture: -0.12904322
+  - q: 17
+    r: 21
+    elevation: 0.9017113
+    moisture: -0.4752189
+  - q: 18
+    r: 21
+    elevation: 0.50163674
+    moisture: -0.9138504
+  - q: 19
+    r: 21
+    elevation: 0.63920164
+    moisture: -0.5652046
+  - q: 20
+    r: 21
+    elevation: -0.29803646
+    moisture: 0.49054897
+  - q: 21
+    r: 21
+    elevation: -0.7625348
+    moisture: -0.21670687
+  - q: 22
+    r: 21
+    elevation: -0.7263917
+    moisture: -0.3655352
+  - q: 23
+    r: 21
+    elevation: -0.9477
+    moisture: 0.49399626
+  - q: 24
+    r: 21
+    elevation: 0.051211834
+    moisture: -0.078177035
+  - q: 25
+    r: 21
+    elevation: -0.49561346
+    moisture: 0.3029225
+  - q: 26
+    r: 21
+    elevation: -0.93858343
+    moisture: -0.43181336
+  - q: 27
+    r: 21
+    elevation: -0.09208834
+    moisture: -0.24788254
+  - q: 28
+    r: 21
+    elevation: -0.59587455
+    moisture: 0.36545646
+  - q: 29
+    r: 21
+    elevation: -0.6446253
+    moisture: -0.0755344
+  - q: 0
+    r: 22
+    elevation: -0.6082752
+    moisture: 0.22188354
+  - q: 1
+    r: 22
+    elevation: -0.9355582
+    moisture: -0.056790173
+  - q: 2
+    r: 22
+    elevation: -0.67678875
+    moisture: -0.43480915
+  - q: 3
+    r: 22
+    elevation: -1.2418233
+    moisture: 0.12566996
+  - q: 4
+    r: 22
+    elevation: -0.5492266
+    moisture: -0.19401032
+  - q: 5
+    r: 22
+    elevation: -0.9197421
+    moisture: 0.5823915
+  - q: 6
+    r: 22
+    elevation: -0.98068833
+    moisture: -0.26457715
+  - q: 7
+    r: 22
+    elevation: 0.4400099
+    moisture: 0.05510378
+  - q: 8
+    r: 22
+    elevation: -0.030670375
+    moisture: -0.3566144
+  - q: 9
+    r: 22
+    elevation: 0.7769603
+    moisture: 0.01923871
+  - q: 10
+    r: 22
+    elevation: 0.29090565
+    moisture: 0.0650605
+  - q: 11
+    r: 22
+    elevation: 0.65339524
+    moisture: 0.008069634
+  - q: 12
+    r: 22
+    elevation: 0.0111864805
+    moisture: -0.26966995
+  - q: 13
+    r: 22
+    elevation: 0.5700385
+    moisture: 0.052417636
+  - q: 14
+    r: 22
+    elevation: 0.08742696
+    moisture: -0.3542763
+  - q: 15
+    r: 22
+    elevation: 0.6386311
+    moisture: 0.0236274
+  - q: 16
+    r: 22
+    elevation: 0.6760717
+    moisture: 0.05982077
+  - q: 17
+    r: 22
+    elevation: 1.0092212
+    moisture: -0.35860693
+  - q: 18
+    r: 22
+    elevation: 0.3871924
+    moisture: -0.1627689
+  - q: 19
+    r: 22
+    elevation: -0.51124656
+    moisture: -0.20136958
+  - q: 20
+    r: 22
+    elevation: -0.4290725
+    moisture: 0.21870339
+  - q: 21
+    r: 22
+    elevation: -1.0330223
+    moisture: -0.06725925
+  - q: 22
+    r: 22
+    elevation: -1.237026
+    moisture: -0.07207352
+  - q: 23
+    r: 22
+    elevation: 0.10422552
+    moisture: -0.06878269
+  - q: 24
+    r: 22
+    elevation: -1.0758659
+    moisture: 0.023862004
+  - q: 25
+    r: 22
+    elevation: -0.21382582
+    moisture: 0.062463284
+  - q: 26
+    r: 22
+    elevation: -0.24812222
+    moisture: 0.008741617
+  - q: 27
+    r: 22
+    elevation: -1.1524847
+    moisture: -0.3578931
+  - q: 28
+    r: 22
+    elevation: -0.6291186
+    moisture: -0.07681322
+  - q: 29
+    r: 22
+    elevation: -0.67664
+    moisture: 0.2962265
+  - q: 0
+    r: 23
+    elevation: -0.5977627
+    moisture: 0.15718114
+  - q: 1
+    r: 23
+    elevation: -0.403643
+    moisture: 0.09787643
+  - q: 2
+    r: 23
+    elevation: -0.6575638
+    moisture: 0.25699377
+  - q: 3
+    r: 23
+    elevation: -1.0047767
+    moisture: 0.45667803
+  - q: 4
+    r: 23
+    elevation: -0.67385024
+    moisture: -0.25473893
+  - q: 5
+    r: 23
+    elevation: -0.24822497
+    moisture: -0.62200874
+  - q: 6
+    r: 23
+    elevation: -0.932142
+    moisture: -0.3683443
+  - q: 7
+    r: 23
+    elevation: -0.09100674
+    moisture: 0.123704195
+  - q: 8
+    r: 23
+    elevation: 0.28529903
+    moisture: -0.4591403
+  - q: 9
+    r: 23
+    elevation: 0.15273142
+    moisture: -0.093217075
+  - q: 10
+    r: 23
+    elevation: 0.8513527
+    moisture: -0.6809361
+  - q: 11
+    r: 23
+    elevation: 1.2187332
+    moisture: -0.13517344
+  - q: 12
+    r: 23
+    elevation: 0.7566736
+    moisture: -0.23085153
+  - q: 13
+    r: 23
+    elevation: 0.6785832
+    moisture: 0.30816793
+  - q: 14
+    r: 23
+    elevation: 0.105828345
+    moisture: -0.052503467
+  - q: 15
+    r: 23
+    elevation: -0.060186744
+    moisture: -0.7277949
+  - q: 16
+    r: 23
+    elevation: 0.58819723
+    moisture: 0.4884827
+  - q: 17
+    r: 23
+    elevation: 0.71492136
+    moisture: 0.2576902
+  - q: 18
+    r: 23
+    elevation: -0.27052844
+    moisture: -0.53823566
+  - q: 19
+    r: 23
+    elevation: -0.520856
+    moisture: -0.2105794
+  - q: 20
+    r: 23
+    elevation: -0.8748388
+    moisture: 0.16183472
+  - q: 21
+    r: 23
+    elevation: -0.53260565
+    moisture: -0.7069391
+  - q: 22
+    r: 23
+    elevation: -0.6563319
+    moisture: 0.21119952
+  - q: 23
+    r: 23
+    elevation: -1.0142465
+    moisture: -0.12021303
+  - q: 24
+    r: 23
+    elevation: -0.5274402
+    moisture: -0.0023508072
+  - q: 25
+    r: 23
+    elevation: -0.6814257
+    moisture: -0.49689323
+  - q: 26
+    r: 23
+    elevation: -0.86438817
+    moisture: -0.47033644
+  - q: 27
+    r: 23
+    elevation: -0.5944246
+    moisture: -0.17352128
+  - q: 28
+    r: 23
+    elevation: -0.2922628
+    moisture: -0.15200871
+  - q: 29
+    r: 23
+    elevation: -0.58120406
+    moisture: -0.7986311
+  - q: 0
+    r: 24
+    elevation: -0.49715197
+    moisture: -0.50002253
+  - q: 1
+    r: 24
+    elevation: -0.38264012
+    moisture: -0.6110022
+  - q: 2
+    r: 24
+    elevation: 0.2730186
+    moisture: -0.41816002
+  - q: 3
+    r: 24
+    elevation: -0.86587405
+    moisture: -0.41879547
+  - q: 4
+    r: 24
+    elevation: -0.259171
+    moisture: 0.11924398
+  - q: 5
+    r: 24
+    elevation: -0.49392784
+    moisture: -0.2501878
+  - q: 6
+    r: 24
+    elevation: -0.7013786
+    moisture: 0.29769552
+  - q: 7
+    r: 24
+    elevation: -0.031015918
+    moisture: -0.22652966
+  - q: 8
+    r: 24
+    elevation: 0.17342976
+    moisture: -0.39184815
+  - q: 9
+    r: 24
+    elevation: 0.105327904
+    moisture: 0.3665892
+  - q: 10
+    r: 24
+    elevation: 0.75675386
+    moisture: 0.40118873
+  - q: 11
+    r: 24
+    elevation: 1.2497118
+    moisture: 0.6394664
+  - q: 12
+    r: 24
+    elevation: 0.142331
+    moisture: 0.39508355
+  - q: 13
+    r: 24
+    elevation: 0.70850706
+    moisture: -0.5742698
+  - q: 14
+    r: 24
+    elevation: 0.45773545
+    moisture: 0.29683864
+  - q: 15
+    r: 24
+    elevation: 0.73753154
+    moisture: 0.14734328
+  - q: 16
+    r: 24
+    elevation: 0.39443484
+    moisture: -0.6094972
+  - q: 17
+    r: 24
+    elevation: -0.1971494
+    moisture: 0.19793856
+  - q: 18
+    r: 24
+    elevation: -1.0028253
+    moisture: -0.25840217
+  - q: 19
+    r: 24
+    elevation: -0.5955318
+    moisture: -0.15537506
+  - q: 20
+    r: 24
+    elevation: -0.93377143
+    moisture: 0.49269032
+  - q: 21
+    r: 24
+    elevation: -0.72947073
+    moisture: -0.09212428
+  - q: 22
+    r: 24
+    elevation: -0.88306874
+    moisture: 0.0012965202
+  - q: 23
+    r: 24
+    elevation: -0.9066109
+    moisture: -0.5005802
+  - q: 24
+    r: 24
+    elevation: -0.13536799
+    moisture: -0.69868094
+  - q: 25
+    r: 24
+    elevation: -0.20276868
+    moisture: -0.041483223
+  - q: 26
+    r: 24
+    elevation: -0.87167394
+    moisture: 0.020117879
+  - q: 27
+    r: 24
+    elevation: -0.733748
+    moisture: 0.46309984
+  - q: 28
+    r: 24
+    elevation: -0.59587455
+    moisture: 0.07382262
+  - q: 29
+    r: 24
+    elevation: -1.1820383
+    moisture: -0.49876487
+  - q: 0
+    r: 25
+    elevation: 0.09828603
+    moisture: -0.35836208
+  - q: 1
+    r: 25
+    elevation: -0.93887866
+    moisture: -0.082093954
+  - q: 2
+    r: 25
+    elevation: -1.0084867
+    moisture: 0.2942351
+  - q: 3
+    r: 25
+    elevation: -0.10034084
+    moisture: -0.26747543
+  - q: 4
+    r: 25
+    elevation: -0.63919616
+    moisture: 0.049798608
+  - q: 5
+    r: 25
+    elevation: -0.010376215
+    moisture: -0.35860586
+  - q: 6
+    r: 25
+    elevation: 0.013020039
+    moisture: -0.0716477
+  - q: 7
+    r: 25
+    elevation: 0.10339852
+    moisture: -0.06683487
+  - q: 8
+    r: 25
+    elevation: 0.8159411
+    moisture: -0.43480903
+  - q: 9
+    r: 25
+    elevation: -0.34931728
+    moisture: 0.30791318
+  - q: 10
+    r: 25
+    elevation: 0.37146577
+    moisture: 0.07505977
+  - q: 11
+    r: 25
+    elevation: 0.33092198
+    moisture: -0.35328144
+  - q: 12
+    r: 25
+    elevation: 0.23921216
+    moisture: 0.02362585
+  - q: 13
+    r: 25
+    elevation: -0.42621654
+    moisture: 0.05982244
+  - q: 14
+    r: 25
+    elevation: 0.45158768
+    moisture: -0.3552727
+  - q: 15
+    r: 25
+    elevation: 0.5716138
+    moisture: -0.06726074
+  - q: 16
+    r: 25
+    elevation: -0.88745606
+    moisture: -0.07207185
+  - q: 17
+    r: 25
+    elevation: -0.6709455
+    moisture: 0.2925676
+  - q: 18
+    r: 25
+    elevation: -0.18279767
+    moisture: -0.26966947
+  - q: 19
+    r: 25
+    elevation: -0.33018363
+    moisture: 0.05241835
+  - q: 20
+    r: 25
+    elevation: -0.08551395
+    moisture: -0.35761076
+  - q: 21
+    r: 25
+    elevation: -0.5596974
+    moisture: -0.16276884
+  - q: 22
+    r: 25
+    elevation: -0.56416243
+    moisture: -0.20137018
+  - q: 23
+    r: 25
+    elevation: -0.63274467
+    moisture: 0.5800537
+  - q: 24
+    r: 25
+    elevation: -1.3265316
+    moisture: -0.45167667
+  - q: 25
+    r: 25
+    elevation: -0.56152993
+    moisture: -0.21401292
+  - q: 26
+    r: 25
+    elevation: -0.6953698
+    moisture: -0.15031189
+  - q: 27
+    r: 25
+    elevation: -0.69468725
+    moisture: 0.3076787
+  - q: 28
+    r: 25
+    elevation: -1.2832317
+    moisture: 0.07242048
+  - q: 29
+    r: 25
+    elevation: -1.0955775
+    moisture: -0.72062707
+  - q: 0
+    r: 26
+    elevation: -0.8325751
+    moisture: 0.25073135
+  - q: 1
+    r: 26
+    elevation: -0.79415786
+    moisture: -0.12867081
+  - q: 2
+    r: 26
+    elevation: -0.27377713
+    moisture: -0.05629611
+  - q: 3
+    r: 26
+    elevation: -0.74405575
+    moisture: 0.27007306
+  - q: 4
+    r: 26
+    elevation: -0.46144176
+    moisture: -0.10060197
+  - q: 5
+    r: 26
+    elevation: -0.14101434
+    moisture: -0.23406982
+  - q: 6
+    r: 26
+    elevation: -0.8937094
+    moisture: -0.5356934
+  - q: 7
+    r: 26
+    elevation: -0.40036452
+    moisture: -0.37170887
+  - q: 8
+    r: 26
+    elevation: -0.09345436
+    moisture: -0.38337892
+  - q: 9
+    r: 26
+    elevation: -0.9229445
+    moisture: 0.10245621
+  - q: 10
+    r: 26
+    elevation: -0.73808974
+    moisture: 0.13109934
+  - q: 11
+    r: 26
+    elevation: -0.11774075
+    moisture: -0.47514474
+  - q: 12
+    r: 26
+    elevation: -0.7128627
+    moisture: 0.05130875
+  - q: 13
+    r: 26
+    elevation: -0.7887386
+    moisture: 0.50715554
+  - q: 14
+    r: 26
+    elevation: -0.17711902
+    moisture: -0.26823884
+  - q: 15
+    r: 26
+    elevation: -0.28792548
+    moisture: -0.4483503
+  - q: 16
+    r: 26
+    elevation: -0.40295315
+    moisture: 0.5721121
+  - q: 17
+    r: 26
+    elevation: -0.3542186
+    moisture: 0.6164441
+  - q: 18
+    r: 26
+    elevation: -0.2154162
+    moisture: 0.23134732
+  - q: 19
+    r: 26
+    elevation: -0.6798411
+    moisture: 0.056937814
+  - q: 20
+    r: 26
+    elevation: -1.0109189
+    moisture: -0.1722908
+  - q: 21
+    r: 26
+    elevation: -0.7917927
+    moisture: -0.42649323
+  - q: 22
+    r: 26
+    elevation: -0.37823904
+    moisture: -0.35596824
+  - q: 23
+    r: 26
+    elevation: -0.72126174
+    moisture: 0.11698389
+  - q: 24
+    r: 26
+    elevation: -0.29110324
+    moisture: -0.14650542
+  - q: 25
+    r: 26
+    elevation: -0.6229669
+    moisture: -0.1659702
+  - q: 26
+    r: 26
+    elevation: -0.34970117
+    moisture: -0.18974227
+  - q: 27
+    r: 26
+    elevation: -0.64406633
+    moisture: -0.4381193
+  - q: 28
+    r: 26
+    elevation: -0.8378659
+    moisture: -0.15231508
+  - q: 29
+    r: 26
+    elevation: -1.0201993
+    moisture: -0.49243492
+  - q: 0
+    r: 27
+    elevation: -0.36334264
+    moisture: -0.44310427
+  - q: 1
+    r: 27
+    elevation: -0.35471785
+    moisture: 0.5672568
+  - q: 2
+    r: 27
+    elevation: -0.114408016
+    moisture: -0.19936079
+  - q: 3
+    r: 27
+    elevation: -0.77089447
+    moisture: -0.10035145
+  - q: 4
+    r: 27
+    elevation: -0.2025547
+    moisture: 0.4125353
+  - q: 5
+    r: 27
+    elevation: -0.5895478
+    moisture: 0.24629807
+  - q: 6
+    r: 27
+    elevation: -0.79487085
+    moisture: -0.29602176
+  - q: 7
+    r: 27
+    elevation: -0.2777239
+    moisture: -0.20996916
+  - q: 8
+    r: 27
+    elevation: -0.19714797
+    moisture: 0.26652074
+  - q: 9
+    r: 27
+    elevation: -0.6091989
+    moisture: 0.6380733
+  - q: 10
+    r: 27
+    elevation: -0.35849476
+    moisture: -0.22345906
+  - q: 11
+    r: 27
+    elevation: -0.22229266
+    moisture: -0.3800432
+  - q: 12
+    r: 27
+    elevation: -0.8986113
+    moisture: 0.341766
+  - q: 13
+    r: 27
+    elevation: -0.6833153
+    moisture: -0.59448147
+  - q: 14
+    r: 27
+    elevation: -0.8749038
+    moisture: -0.008553743
+  - q: 15
+    r: 27
+    elevation: 0.085621
+    moisture: 0.5409634
+  - q: 16
+    r: 27
+    elevation: -0.37881613
+    moisture: -0.12472266
+  - q: 17
+    r: 27
+    elevation: -0.9613097
+    moisture: -0.21656805
+  - q: 18
+    r: 27
+    elevation: -0.6150016
+    moisture: -0.5927983
+  - q: 19
+    r: 27
+    elevation: -0.69413185
+    moisture: 0.20731628
+  - q: 20
+    r: 27
+    elevation: -0.9972031
+    moisture: 0.24285054
+  - q: 21
+    r: 27
+    elevation: 0.04234147
+    moisture: -0.08303976
+  - q: 22
+    r: 27
+    elevation: -0.4869933
+    moisture: 0.40529537
+  - q: 23
+    r: 27
+    elevation: -0.79573613
+    moisture: 0.024436593
+  - q: 24
+    r: 27
+    elevation: -0.787234
+    moisture: -0.40859675
+  - q: 25
+    r: 27
+    elevation: -0.3545046
+    moisture: 0.56017196
+  - q: 26
+    r: 27
+    elevation: -1.0470574
+    moisture: 0.5335722
+  - q: 27
+    r: 27
+    elevation: -0.72024
+    moisture: 0.10409975
+  - q: 28
+    r: 27
+    elevation: -0.38029015
+    moisture: -0.20482951
+  - q: 29
+    r: 27
+    elevation: -0.42839754
+    moisture: 0.22516191
+  - q: 0
+    r: 28
+    elevation: 0.0028022528
+    moisture: -0.07164687
+  - q: 1
+    r: 28
+    elevation: -1.1998334
+    moisture: -0.06683576
+  - q: 2
+    r: 28
+    elevation: -0.76606345
+    moisture: -0.066791296
+  - q: 3
+    r: 28
+    elevation: -0.8227267
+    moisture: 0.02386117
+  - q: 4
+    r: 28
+    elevation: -0.5984524
+    moisture: 0.06246209
+  - q: 5
+    r: 28
+    elevation: -0.5405701
+    moisture: 0.00707376
+  - q: 6
+    r: 28
+    elevation: -0.50353193
+    moisture: -0.4514429
+  - q: 7
+    r: 28
+    elevation: -0.59845227
+    moisture: -0.21137124
+  - q: 8
+    r: 28
+    elevation: -0.72484046
+    moisture: 0.21870184
+  - q: 9
+    r: 28
+    elevation: -0.5282517
+    moisture: -0.06679201
+  - q: 10
+    r: 28
+    elevation: -0.58253235
+    moisture: -0.06679106
+  - q: 11
+    r: 28
+    elevation: -0.19880748
+    moisture: -0.43147534
+  - q: 12
+    r: 28
+    elevation: -1.2648134
+    moisture: 0.22141373
+  - q: 13
+    r: 28
+    elevation: -0.6773556
+    moisture: -0.062071443
+  - q: 14
+    r: 28
+    elevation: -0.16816628
+    moisture: -0.43346685
+  - q: 15
+    r: 28
+    elevation: -1.4136196
+    moisture: 0.22188222
+  - q: 16
+    r: 28
+    elevation: 0.14215899
+    moisture: -0.05679071
+  - q: 17
+    r: 28
+    elevation: -1.2697201
+    moisture: 0.29622626
+  - q: 18
+    r: 28
+    elevation: -0.3568964
+    moisture: -0.3578931
+  - q: 19
+    r: 28
+    elevation: -0.93766856
+    moisture: -0.07681388
+  - q: 20
+    r: 28
+    elevation: -0.20047307
+    moisture: 0.29455876
+  - q: 21
+    r: 28
+    elevation: -0.1269294
+    moisture: -0.2696696
+  - q: 22
+    r: 28
+    elevation: -0.25788414
+    moisture: 0.052417755
+  - q: 23
+    r: 28
+    elevation: -0.08551395
+    moisture: 0.0070735216
+  - q: 24
+    r: 28
+    elevation: -0.9989179
+    moisture: -0.36032146
+  - q: 25
+    r: 28
+    elevation: -0.9553507
+    moisture: -0.07683647
+  - q: 26
+    r: 28
+    elevation: -1.0957705
+    moisture: -0.06679201
+  - q: 27
+    r: 28
+    elevation: -0.3440833
+    moisture: -0.15791297
+  - q: 28
+    r: 28
+    elevation: -0.88108623
+    moisture: -0.2013275
+  - q: 29
+    r: 28
+    elevation: -0.855156
+    moisture: 0.5817189
+  - q: 0
+    r: 29
+    elevation: -0.10174215
+    moisture: -0.19670981
+  - q: 1
+    r: 29
+    elevation: -0.34548295
+    moisture: -0.5092249
+  - q: 2
+    r: 29
+    elevation: -0.8517273
+    moisture: -0.5546354
+  - q: 3
+    r: 29
+    elevation: -0.4786203
+    moisture: -0.74459434
+  - q: 4
+    r: 29
+    elevation: -0.4858848
+    moisture: 0.29928398
+  - q: 5
+    r: 29
+    elevation: -0.17748272
+    moisture: 0.48680842
+  - q: 6
+    r: 29
+    elevation: -0.7440562
+    moisture: -0.1319573
+  - q: 7
+    r: 29
+    elevation: -0.37410057
+    moisture: -0.0021273494
+  - q: 8
+    r: 29
+    elevation: -0.9758459
+    moisture: -0.6405095
+  - q: 9
+    r: 29
+    elevation: -0.23825002
+    moisture: -0.10452443
+  - q: 10
+    r: 29
+    elevation: -0.3500656
+    moisture: -0.3561746
+  - q: 11
+    r: 29
+    elevation: -0.27594745
+    moisture: -0.04808235
+  - q: 12
+    r: 29
+    elevation: -1.1687217
+    moisture: -0.75724864
+  - q: 13
+    r: 29
+    elevation: -0.37805295
+    moisture: 0.3587166
+  - q: 14
+    r: 29
+    elevation: -0.1284225
+    moisture: -0.123583615
+  - q: 15
+    r: 29
+    elevation: -0.75126046
+    moisture: 0.0598011
+  - q: 16
+    r: 29
+    elevation: -0.34603083
+    moisture: 0.10282028
+  - q: 17
+    r: 29
+    elevation: -0.29716182
+    moisture: 0.29278374
+  - q: 18
+    r: 29
+    elevation: -1.0657265
+    moisture: 0.14558744
+  - q: 19
+    r: 29
+    elevation: -0.7337372
+    moisture: -0.6108916
+  - q: 20
+    r: 29
+    elevation: -1.0260956
+    moisture: -0.58680236
+  - q: 21
+    r: 29
+    elevation: -0.3513869
+    moisture: -0.0036103725
+  - q: 22
+    r: 29
+    elevation: -0.48506093
+    moisture: 0.31604016
+  - q: 23
+    r: 29
+    elevation: -0.87369126
+    moisture: -0.08734214
+  - q: 24
+    r: 29
+    elevation: -1.1933726
+    moisture: 0.15062952
+  - q: 25
+    r: 29
+    elevation: -0.40491867
+    moisture: -0.70820487
+  - q: 26
+    r: 29
+    elevation: -0.7757618
+    moisture: -0.23204398
+  - q: 27
+    r: 29
+    elevation: 0.048942327
+    moisture: 0.25775206
+  - q: 28
+    r: 29
+    elevation: -0.7629404
+    moisture: -0.4413315
+  - q: 29
+    r: 29
+    elevation: -0.6545351
+    moisture: 0.15885377
