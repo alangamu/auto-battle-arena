@@ -59,6 +59,7 @@ namespace AutoFantasy.Scripts.Map
                         if (item.GetGameObject().TryGetComponent(out ITileVisionController visionController))
                         {
                             item.SetState(_activeState);
+                            _tiles.Map.Find(x => x.q == item.GetHex().Q && x.r == item.GetHex().R).tileState = _activeState;
                             visionController.SetActive();
                         }
                     }
@@ -99,6 +100,7 @@ namespace AutoFantasy.Scripts.Map
                     if (tile.GetGameObject().TryGetComponent(out ITileVisionController visionController))
                     {
                         tile.SetState(_inactiveState);
+                        _tiles.Map.Find(x => x.q == tile.GetHex().Q && x.r == tile.GetHex().R).tileState = _inactiveState;
                         visionController.SetInactive();
                     }
                 }
@@ -112,9 +114,16 @@ namespace AutoFantasy.Scripts.Map
                 foreach (var tile in _tiles.Items)
                 {
                     GameObject tileGO = tile.GetGameObject();
+
                     if (tileGO.TryGetComponent(out ITileVisionController visionController))
                     {
-                        visionController.SetHidden();
+                        Hex hex = tile.GetHex();
+                        HexBase hexBase = _tiles.Map.Find(x => x.q == hex.Q && x.r == hex.R);
+
+                        if (hexBase.tileState == _inactiveState)
+                            visionController.SetInactive();
+                        else
+                            visionController.SetHidden();
                     }
                 }
             }

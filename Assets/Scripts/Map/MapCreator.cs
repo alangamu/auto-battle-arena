@@ -24,7 +24,7 @@ namespace AutoFantasy.Scripts.Map
         private GameObject _hexPrefab;
 
         [SerializeField]
-        private TileStateSO _initialTileState;
+        protected TileStateSO _initialTileState;
 
         virtual public void GenerateMap()
         {

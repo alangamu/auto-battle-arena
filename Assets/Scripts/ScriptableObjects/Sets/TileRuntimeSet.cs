@@ -1,7 +1,6 @@
 ﻿using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.Map;
 using AutoFantasy.Scripts.ScriptableObjects.Map;
-using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +11,8 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
     [CreateAssetMenu]
     public class TileRuntimeSet : RuntimeSet<ITile>
     {
-        //public List<HexBase> Map;
-        public HexBase[] Map;
+        public List<HexBase> Map;
+        //public HexBase[,] Map;
 
         //[SerializeField]
         //private IntVariable _mapNumColumns;

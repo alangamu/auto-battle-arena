@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFantasy.Scripts.ScriptableObjects.Map;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,5 +12,6 @@ namespace AutoFantasy.Scripts.Map
         public int r;
         public float elevation;
         public float moisture;
+        public TileStateSO tileState; 
     }
 }

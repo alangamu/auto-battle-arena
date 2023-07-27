@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: IsNewGame
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  Value: 1
+  Value: 0

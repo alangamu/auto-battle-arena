@@ -4326,6 +4326,7 @@ MonoBehaviour:
   _mapJson: {fileID: 11400000, guid: b95b28c1199f6374fb1fb74c79ad4038, type: 2}
   _loadMapEvent: {fileID: 11400000, guid: ae78c8945d6b0034f918c887d47ecd90, type: 2}
   _hexPrefab: {fileID: 6279834624398028723, guid: bdc6a0e4cd055764e92562b42589e35c, type: 3}
+  _updateMapVisuals: {fileID: 11400000, guid: c25728d8a52f84944a45a1f3ae7aba76, type: 2}
 --- !u!1 &729566523
 GameObject:
   m_ObjectHideFlags: 0

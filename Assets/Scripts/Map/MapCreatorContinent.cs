@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AutoFantasy.Scripts.ScriptableObjects.Sets;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Map
@@ -69,6 +70,7 @@ namespace AutoFantasy.Scripts.Map
             _updateMapVisuals.Raise();
             //ShowBorders();
             List<HexBase> map = new List<HexBase>();
+            //HexBase[,] map = new HexBase[numColumns, numRows];
             foreach (var item in _tileRuntimeSet.Items)
             {
                 Hex hex = item.GetHex();
@@ -77,11 +79,14 @@ namespace AutoFantasy.Scripts.Map
                     q = hex.Q,
                     r = hex.R,
                     moisture = hex.Moisture,
-                    elevation = hex.Elevation
+                    elevation = hex.Elevation,
+                    tileState = _initialTileState
                 };
                 map.Add(hexBase);
+                //map[hex.Q, hex.R] = hexBase;
+                //_tileRuntimeSet.Map[hex.Q,hex.R] = hexBase;
             }
-            _tileRuntimeSet.Map = map.ToArray();
+            _tileRuntimeSet.Map = map;
         }
 
         //private void ShowBorders()
