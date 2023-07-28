@@ -30,24 +30,5 @@ MonoBehaviour:
     ThisCombatStats:
       Stats: 04000000060000000500000004000000010000000200000003000000040000000500000002000000010000000500000003000000020000000400000007000000070000000700000008000000080000000300000003000000060000000500000006000000
     HeroInventory: []
-    MapPositionQ: 13
-    MapPositionR: 4
-  - ThisHeroData:
-      HeroName: Rachel
-      SkinColorIndex: 5
-      HairColorIndex: 2
-      EyeColorIndex: 3
-      ScarColorIndex: 1
-      BodyArtColorIndex: 5
-      HeadIndex: 20
-      HairIndex: 26
-      EyebrowsIndex: 2
-      FacialHairIndex: 8
-      StubbleColorIndex: 0
-      IsMale: 0
-      HeroId: 4
-    ThisCombatStats:
-      Stats: 05000000040000000300000005000000020000000600000004000000050000000300000001000000020000000300000002000000010000000500000006000000040000000700000008000000060000000600000005000000
-    HeroInventory: []
-    MapPositionQ: 14
-    MapPositionR: 4
+    MapPositionQ: 12
+    MapPositionR: 3
