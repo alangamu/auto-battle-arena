@@ -1,6 +1,7 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
+using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using AutoFantasy.Scripts.UI;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameObject root;
         [SerializeField]
-        private MapEnemyStageSO _activeEnemyStage;
+        private MapEnemyStageVariable _activeEnemyStage;
 
         private void OnEnable()
         {
@@ -38,11 +39,12 @@ namespace AutoFantasy.Scripts
         private void WinStageGameEvent_OnRaise()
         {
             root.SetActive(true);
+            _activeEnemyStage.Value.SetIsDefeated(true);
         }
 
         private void ShowRewards()
         {
-            List<Reward> _rewards = _activeEnemyStage.Rewards;
+            List<Reward> _rewards = _activeEnemyStage.Value.Rewards;
             rewardWindow.gameObject.SetActive(true);
             rewardWindow.SetRewards(_rewards);
             gameObject.SetActive(false);

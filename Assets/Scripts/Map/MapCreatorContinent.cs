@@ -1,5 +1,4 @@
-﻿using AutoFantasy.Scripts.ScriptableObjects.Sets;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Map

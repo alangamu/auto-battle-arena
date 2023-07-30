@@ -8,15 +8,15 @@ namespace AutoFantasy.Scripts.ScriptableObjects
     {
         public EnemySO[] Enemies => _enemies;
         public List<Reward> Rewards => _rewards;
+        public bool IsDefeated => _isDefeated;
 
         [SerializeField]
         private EnemySO[] _enemies;
-
         [SerializeField]
         private List<Reward> _rewards;
+        [SerializeField]
+        private bool _isDefeated;
 
-        public void SetEnemies(EnemySO[] enemies) => _enemies = enemies;
-
-        public void SetRewards(List<Reward> rewards) => _rewards = rewards;
+        public void SetIsDefeated(bool isDefeated) => _isDefeated = isDefeated;
     }
 }

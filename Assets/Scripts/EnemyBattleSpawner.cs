@@ -2,6 +2,7 @@
 using AutoFantasy.Scripts.Interfaces;
 using AutoFantasy.Scripts.ScriptableObjects;
 using AutoFantasy.Scripts.ScriptableObjects.Events;
+using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ namespace AutoFantasy.Scripts
         [SerializeField]
         private GameEvent spawnEnemies;
         [SerializeField]
-        private MapEnemyStageSO _activeEnemyStage;
+        private MapEnemyStageVariable _activeEnemyStage;
 
         private void OnEnable()
         {
@@ -34,7 +35,7 @@ namespace AutoFantasy.Scripts
 
         private void SpawnEnemies_OnRaise()
         {
-            EnemySO[] enemies = _activeEnemyStage.Enemies;
+            EnemySO[] enemies = _activeEnemyStage.Value.Enemies;
             for (int i = 0; i < enemies.Length; i++)
             {
                 Transform spawnPoint = heroesTransforms[i];

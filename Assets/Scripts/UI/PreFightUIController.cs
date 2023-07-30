@@ -40,7 +40,7 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private Button _fightButton;
         [SerializeField]
-        private MapEnemyStageSO _activeEnemyStage;
+        private MapEnemyStageVariable _activeEnemyStage;
         [SerializeField]
         private StringVariable _mapJson;
         [SerializeField]
@@ -109,16 +109,15 @@ namespace AutoFantasy.Scripts.UI
         private void FillEnemiesPanel(ITile enemyTile)
         {
             MapEnemyStageSO activeStage = _enemyStages.ToList().Find(x => x.Q == enemyTile.GetHex().Q && x.R == enemyTile.GetHex().R);
-            
-            _activeEnemyStage.SetEnemies(activeStage.Enemies);
-            _activeEnemyStage.SetRewards(activeStage.Rewards);
+
+            _activeEnemyStage.SetValue(activeStage);
 
             foreach (Transform item in _enemiesTransform)
             {
                 Destroy(item.gameObject);
             }
 
-            foreach (var enemy in _activeEnemyStage.Enemies)
+            foreach (var enemy in _activeEnemyStage.Value.Enemies)
             {
                 GameObject enemyGO = Instantiate(_enemyPortraitUIPrefab, _enemiesTransform);
 

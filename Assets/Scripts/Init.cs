@@ -2,6 +2,7 @@
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
+using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -57,6 +58,7 @@ namespace AutoFantasy.Scripts
             if (_isNewGameVariable.Value)
             {
                 ResetHeroesPosition();
+                ResetEnemiesDefeated();
                 ClearInventory();
                 InitialResources();
                 ClearHeroesInventory();
@@ -82,6 +84,16 @@ namespace AutoFantasy.Scripts
             //JsonUtility.FromJsonOverwrite(rosterJson.Value, rosterHeroes);
             //print("loading inventory");
             //JsonUtility.FromJsonOverwrite(inventoryJson.Value, inventory);
+        }
+
+        private void ResetEnemiesDefeated()
+        {
+            MapEnemyStageSO[] enemyStages = Resources.LoadAll<MapEnemyStageSO>("EnemyStages");
+
+            foreach (var item in enemyStages)
+            {
+                item.SetIsDefeated(false);
+            }
         }
 
         private void ClearHeroesInventory()

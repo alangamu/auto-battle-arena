@@ -1829,7 +1829,7 @@ PrefabInstance:
     - target: {fileID: 8743409717966877044, guid: 4482cd8560f79934ba0c8d9ced70449e, type: 3}
       propertyPath: _activeEnemyStage
       value: 
-      objectReference: {fileID: 11400000, guid: 5eb4c894a4db17a4ba9f7a9d1a5a5ac1, type: 2}
+      objectReference: {fileID: 11400000, guid: e25b9537ec886ec40a2bc513cc651a5d, type: 2}
     - target: {fileID: 8743409717966877044, guid: 4482cd8560f79934ba0c8d9ced70449e, type: 3}
       propertyPath: enemyCombatRuntimeSet
       value: 
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 3135474633921551464, guid: 484388478d122354eacab66b1edc53f4, type: 3}
   _enemyCombatPrefab: {fileID: 7289150523029843523, guid: d351188864f8f7147af80eec1e75c815, type: 3}
   spawnEnemies: {fileID: 11400000, guid: 96b61b8764147bd4a93c9c50180ecd29, type: 2}
-  _activeEnemyStage: {fileID: 11400000, guid: 5eb4c894a4db17a4ba9f7a9d1a5a5ac1, type: 2}
+  _activeEnemyStage: {fileID: 11400000, guid: e25b9537ec886ec40a2bc513cc651a5d, type: 2}
 --- !u!4 &1556967898
 Transform:
   m_ObjectHideFlags: 0
