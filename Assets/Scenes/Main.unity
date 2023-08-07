@@ -595,14 +595,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18823531, g: 0.22352943, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af6f2350bc9cb4f82b6b5b65ff7aa15e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3847425fda57d4b81cd3657d583974, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1146,6 +1146,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Fight
       objectReference: {fileID: 0}
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.854902
+      objectReference: {fileID: 0}
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.80392164
+      objectReference: {fileID: 0}
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38823533
+      objectReference: {fileID: 0}
     - target: {fileID: 40681050482973061, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_Name
       value: FightButton
@@ -1609,14 +1621,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18823531, g: 0.22352943, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af6f2350bc9cb4f82b6b5b65ff7aa15e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3847425fda57d4b81cd3657d583974, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18049,6 +18061,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8558328861845682601}
     m_Modifications:
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 40681050482973056, guid: e56a82115b481cd4987505898946cca3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.90196085
+      objectReference: {fileID: 0}
     - target: {fileID: 40681050482973061, guid: e56a82115b481cd4987505898946cca3, type: 3}
       propertyPath: m_Name
       value: CancelButton
@@ -35994,14 +36018,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18823531, g: 0.22352943, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 246a04cf0d1bb4f1e8ea21fe06a9c393, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3847425fda57d4b81cd3657d583974, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36121,14 +36145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.34901962, g: 0.38431376, b: 0.45882356, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2285a0f38fb1240dabc094f3251eca16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3847425fda57d4b81cd3657d583974, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36198,14 +36222,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18823531, g: 0.22352943, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00cabadf5d5884448a6929ed54247fbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad3847425fda57d4b81cd3657d583974, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

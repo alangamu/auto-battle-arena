@@ -39,7 +39,7 @@ MonoBehaviour:
       SkillId: 
       ItemStats: 06000000
     MapPositionQ: 13
-    MapPositionR: 7
+    MapPositionR: 4
   - ThisHeroData:
       HeroName: Rachel
       SkinColorIndex: 5

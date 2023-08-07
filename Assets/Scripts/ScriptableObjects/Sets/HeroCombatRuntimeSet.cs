@@ -24,20 +24,12 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         public ICombatController GetSelectedHero()
         {
             ICombatController combatController = Items.Find(x => x.IsSelected());
-            if (combatController == null)
-            {
-                return GetRandomHero();
-            }
             return combatController;
         }
 
         public ICombatController GetActiveHero()
         {
             ICombatController combatController = Items.Find(x => x.IsActive());
-            if (combatController == null)
-            {
-                return GetRandomHero();
-            }
             return combatController;
         }
 

@@ -101,6 +101,10 @@ namespace AutoFantasy.Scripts
             if (_activeHero.IsPlayer)
             {
                 _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
+                if (_activeEnemy == null)
+                {
+                    _activeEnemy = _enemyCombatRuntimeSet.GetRandomHero();
+                }
                 _enemyCombatRuntimeSet.SelectThisHero(_activeEnemy);
             }
 

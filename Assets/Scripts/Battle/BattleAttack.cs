@@ -51,6 +51,8 @@ namespace AutoFantasy.Scripts.Battle
         private float _projectileTimeImpact;
 
         private bool _isCriticalHit = false;
+        private ICombatController _target;
+        private ICombatController _attacker;
 
         private void OnEnable()
         {
@@ -74,40 +76,28 @@ namespace AutoFantasy.Scripts.Battle
 
         private void EnemyHitTarget()
         {
-            ICombatController attacker = _enemyCombatRuntimeSet.GetSelectedHero();
-            ICombatController target = _heroCombatRuntimeSet.GetSelectedHero(); 
-
-            HitTarget(attacker, target);
+            HitTarget(_attacker, _target);
         }
 
         private void HeroHitTarget()
         {
-            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
-
-            HitTarget(_activeHero, _activeEnemy);
+            HitTarget(_attacker, _target);
         }
 
         private void EnemyShootProjectile()
         {
-            ICombatController target = _heroCombatRuntimeSet.GetSelectedHero();
-            ICombatController attacker = _enemyCombatRuntimeSet.GetActiveHero();
-
-            IWeaponController weaponController = attacker.GetGameObject().GetComponentInChildren<IWeaponController>();
+            IWeaponController weaponController = _attacker.GetGameObject().GetComponentInChildren<IWeaponController>();
             if (weaponController != null)
             {
-                ShootProjectile(weaponController, attacker, target);
+                ShootProjectile(weaponController, _attacker, _target);
             }
         }
 
         private void HeroShootProjectile()
         {
-            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
-
-            if (_activeHero.GetGameObject().TryGetComponent(out IWeaponController weaponController))
+            if (_attacker.GetGameObject().TryGetComponent(out IWeaponController weaponController))
             {
-                ShootProjectile(weaponController, _activeHero, _activeEnemy);
+                ShootProjectile(weaponController, _attacker, _target);
             }
         }
 
@@ -135,12 +125,18 @@ namespace AutoFantasy.Scripts.Battle
 
         private void EnemyAttack()
         {
-            ICombatController _activeEnemy = _heroCombatRuntimeSet.GetSelectedHero();
-            ICombatController _activeHero = _enemyCombatRuntimeSet.GetActiveHero();
-            IWeaponController weaponController = _activeHero.GetGameObject().GetComponentInChildren<IWeaponController>();
+            _target = _heroCombatRuntimeSet.GetSelectedHero();
+            _attacker = _enemyCombatRuntimeSet.GetActiveHero();
+
+            if (_target == null)
+            {
+                _target = _heroCombatRuntimeSet.GetRandomHero();
+            }
+
+            IWeaponController weaponController = _attacker.GetGameObject().GetComponentInChildren<IWeaponController>();
             if (weaponController != null)
             {
-                Attack(_activeHero, _activeEnemy, weaponController.GetWeapon());
+                Attack(_attacker, _target, weaponController.GetWeapon());
             }
         }
 
@@ -164,10 +160,15 @@ namespace AutoFantasy.Scripts.Battle
 
         private void HeroAttack()
         {
-            ICombatController _activeEnemy = _enemyCombatRuntimeSet.GetSelectedHero();
-            ICombatController _activeHero = _heroCombatRuntimeSet.GetActiveHero();
+            _target = _enemyCombatRuntimeSet.GetSelectedHero();
+            _attacker = _heroCombatRuntimeSet.GetActiveHero();
 
-            var heroInventory = _activeHero.GetHero().HeroInventory;
+            if (_target == null )
+            {
+                _target = _enemyCombatRuntimeSet.GetRandomHero();
+            }
+
+            var heroInventory = _attacker.GetHero().HeroInventory;
             WeaponSO weapon = null;
             foreach (var item in heroInventory)
             {
@@ -179,7 +180,7 @@ namespace AutoFantasy.Scripts.Battle
                 }
             }
 
-            Attack(_activeHero, _activeEnemy, weapon);
+            Attack(_attacker, _target, weapon);
         }
 
         private int GetDamagePoints(ICombatController attackerCombatController, ICombatController targetCombatController)
