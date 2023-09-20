@@ -8,5 +8,6 @@ namespace AutoFantasy.Scripts.ScriptableObjects
         public int StatId;
         public float BaseValue;
         public float MultiplierFactor;
+        public Sprite StatIcon;
     }
 }

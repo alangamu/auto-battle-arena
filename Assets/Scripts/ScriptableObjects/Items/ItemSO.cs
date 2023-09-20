@@ -25,7 +25,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Items
             {
                 Guid guid = Guid.NewGuid();
                 ItemId = guid.ToString();
+#if UNITY_EDITOR
                 EditorUtility.SetDirty(this);
+#endif            
                 Debug.Log($"saving item {ItemName}");
             }
         }

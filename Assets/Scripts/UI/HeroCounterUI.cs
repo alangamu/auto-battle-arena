@@ -27,7 +27,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void RefreshUI()
         {
-            countText.text = $"{heroesList.Items.Count} <#6f89a6>/ {maxHeroesCount.Value}";
+            countText.text = $"{heroesList.Items.Count} / {maxHeroesCount.Value}";
         }
     }
 }

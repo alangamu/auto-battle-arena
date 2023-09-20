@@ -16,7 +16,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         {
             if (!Items.Contains(thing))
             {
+#if UNITY_EDITOR
                 EditorUtility.SetDirty(this);
+#endif            
                 Items.Add(thing);
                 OnChange?.Invoke();
                 OnAdd?.Invoke(thing);
@@ -27,7 +29,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         {
             if (Items.Contains(thing)) 
             {
+#if UNITY_EDITOR
                 EditorUtility.SetDirty(this);
+#endif            
                 Items.Remove(thing);
                 OnChange?.Invoke();
                 OnRemove?.Invoke(thing);

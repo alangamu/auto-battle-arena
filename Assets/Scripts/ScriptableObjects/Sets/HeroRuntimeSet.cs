@@ -30,7 +30,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         private void HeroOnInventoryChanged()
         {
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
+#endif            
         }
     }
 }

@@ -44,7 +44,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         private void RemoveItemToInventory_OnRaise(Item item)
         {
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
+#endif            
             if (item.ItemTypeId == goldType.ItemTypeId)
             {
                 gold.ApplyChange(-item.Amount);
@@ -70,7 +72,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
 
         private void AddItemToInventory_OnRaise(Item item)
         {
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
+#endif            
             if (item.ItemTypeId == goldType.ItemTypeId)
             {
                 gold.ApplyChange(item.Amount);

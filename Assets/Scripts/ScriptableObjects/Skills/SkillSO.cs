@@ -53,7 +53,9 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
         {
             Guid guid = Guid.NewGuid();
             _skillId = guid.ToString();
+#if UNITY_EDITOR
             EditorUtility.SetDirty(this);
+#endif
         }
     }
 } 

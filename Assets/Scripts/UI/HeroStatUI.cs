@@ -12,24 +12,28 @@ namespace AutoFantasy.Scripts.UI
     public class HeroStatUI : MonoBehaviour
     {
         [SerializeField]
-        private HeroStatSO heroStat;
-
-        [SerializeField]
         private TMP_Text statText;
         [SerializeField]
         private Image statFillImage;
-
+        [SerializeField]
+        private Image _statIcon;
         [SerializeField]
         private ActiveHeroSO activeHero;
         [SerializeField]
         private HeroRuntimeSet roster;
-
         [SerializeField] 
         private IntVariable heroMaxPointsCategory;
         [SerializeField]
         private ItemEvent equipItem;
         [SerializeField]
         private GameEvent refreshUI;
+
+        private HeroStatSO _heroStat;
+
+        public void Initialize(HeroStatSO heroStat)
+        {
+            _heroStat = heroStat;
+        }
 
         private void OnEnable()
         {
@@ -42,7 +46,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void EquipItem_OnRaise(Item item)
         {
-            if (item.ItemStats.Contains(heroStat.StatId) )
+            if (item.ItemStats.Contains(_heroStat.StatId) )
             {
                 RefreshUI();
             }
@@ -59,9 +63,10 @@ namespace AutoFantasy.Scripts.UI
         {
             //TODO: make the fill amount 0 to value fade
             var hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
-            var statCount = hero.ThisCombatStats.StatCount(heroStat.StatId);
+            var statCount = hero.ThisCombatStats.StatCount(_heroStat.StatId);
             statText.text = statCount.ToString();
             statFillImage.fillAmount = (float)statCount / heroMaxPointsCategory.Value;
+            _statIcon.sprite = _heroStat.StatIcon;
         }
     }
 }
