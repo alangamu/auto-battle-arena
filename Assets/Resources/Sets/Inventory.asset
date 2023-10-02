@@ -20,7 +20,7 @@ MonoBehaviour:
     Amount: 1
     IsStackable: 0
     SkillId: 
-    ItemStats: 05000000
+    ItemStats: 06000000
   - ItemRarityId: 1
     ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
     ItemTypeId: 1
@@ -28,7 +28,7 @@ MonoBehaviour:
     Amount: 1
     IsStackable: 0
     SkillId: 
-    ItemStats: 02000000
+    ItemStats: 05000000
   addItemToInventory: {fileID: 11400000, guid: 91f00d942f2e47f44a4268c25cb59b19, type: 2}
   removeItemFromInventory: {fileID: 11400000, guid: bc85d6d51e009794ba413153ce140b19, type: 2}
   goldType: {fileID: 11400000, guid: 3c0ba024232e64c4a9311e38457e52e1, type: 2}

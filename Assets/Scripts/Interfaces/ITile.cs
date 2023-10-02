@@ -14,5 +14,6 @@ namespace AutoFantasy.Scripts.Interfaces
         public Hex GetHex();
         public void SetState(TileStateSO tileState);
         public void SetType(TileTypeSO tileType);
+        public Transform GetActiveTile();
     }
 }

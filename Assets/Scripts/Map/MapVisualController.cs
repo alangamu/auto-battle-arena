@@ -69,7 +69,7 @@ namespace AutoFantasy.Scripts.Map
             foreach (var h in _tiles.Items)
             {
                 GameObject hexGO = h.GetGameObject();
-
+                Transform visualsTransform = h.GetActiveTile();
                 MeshRenderer mr = hexGO.GetComponentInChildren<MeshRenderer>();
                 MeshFilter mf = hexGO.GetComponentInChildren<MeshFilter>();
 
@@ -85,7 +85,7 @@ namespace AutoFantasy.Scripts.Map
                 // Spawn trees
                     if (tileTerrainType.CanHaveTrees)
                     {
-                        Instantiate(_forestPrefab, hexGO.transform);
+                        Instantiate(_forestPrefab, visualsTransform);
                     }
                 }
                 else if (hexMoisture >= _moistureForest)
@@ -95,7 +95,7 @@ namespace AutoFantasy.Scripts.Map
                 // Spawn trees
                     if (tileTerrainType.CanHaveTrees)
                     {
-                        Instantiate(_forestPrefab, hexGO.transform);
+                        Instantiate(_forestPrefab, visualsTransform);
                     }
                 }
                 else if (hexMoisture >= _moistureGrasslands)

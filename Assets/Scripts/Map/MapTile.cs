@@ -15,6 +15,8 @@ namespace AutoFantasy.Scripts.Map
 
         [SerializeField]
         private TileRuntimeSet _tileRuntimeSet;
+        [SerializeField]
+        private Transform _activeTileTransform;
 
         [SerializeField]
         private Hex _hex;
@@ -45,6 +47,11 @@ namespace AutoFantasy.Scripts.Map
         public void SetType(TileTypeSO tileType)
         {
             _tileType = tileType;
+        }
+
+        public Transform GetActiveTile()
+        {
+            return _activeTileTransform;
         }
     }
 }

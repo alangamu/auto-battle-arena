@@ -35,7 +35,7 @@ namespace AutoFantasy.Scripts.Map
             foreach (var enemyStage in enemyStages)
             {
                 ITile tile = _tiles.Items.Find(x => x.GetHex().Q == enemyStage.Q && x.GetHex().R == enemyStage.R);
-                GameObject enemy = Instantiate(_enemyPrefab, tile.GetGameObject().transform);
+                GameObject enemy = Instantiate(_enemyPrefab, tile.GetActiveTile());
 
                 if (enemy.TryGetComponent(out EnemyController enemyController))
                 {

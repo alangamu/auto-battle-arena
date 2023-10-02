@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b12dcac9f7d6b994486dc4aa5a3a9f84, type: 3}
-  m_Name: CriticalPower
+  m_Name: Critical Power
   m_EditorClassIdentifier: 
   StatId: 4
   BaseValue: 1
   MultiplierFactor: 0.2
+  StatIcon: {fileID: 21300000, guid: 57c9bc65f09114f608733305e6e15e2a, type: 3}

@@ -32,7 +32,7 @@ namespace AutoFantasy.Scripts.Map
             foreach (var item in cities)
             {
                 ITile tile = _tiles.Items.Find(x => x.GetHex().Q == item.Q && x.GetHex().R == item.R);
-                GameObject city = Instantiate(item.CityPrefab, tile.GetGameObject().transform);
+                GameObject city = Instantiate(item.CityPrefab, tile.GetActiveTile());
                 city.name = item.name;
                 tile.SetType(_cityTyleType);
             }

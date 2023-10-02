@@ -608,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileRuntimeSet: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _activeTileTransform: {fileID: 7976913924436817131}
 --- !u!114 &8108350038375035551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,7 +1044,7 @@ MonoBehaviour:
   seeThroughTexture: {fileID: 0}
   seeThroughTextureUVSpace: 0
   seeThroughTextureScale: 1
-  rmsCount: 1
+  rmsCount: 13
   hitFxInitialIntensity: 0.607
   hitFxMode: 0
   hitFxFadeOutDuration: 0.25

@@ -14,6 +14,8 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private TMP_Text statText;
         [SerializeField]
+        private TMP_Text _statNameText;
+        [SerializeField]
         private Image statFillImage;
         [SerializeField]
         private Image _statIcon;
@@ -27,13 +29,8 @@ namespace AutoFantasy.Scripts.UI
         private ItemEvent equipItem;
         [SerializeField]
         private GameEvent refreshUI;
-
+        [SerializeField]
         private HeroStatSO _heroStat;
-
-        public void Initialize(HeroStatSO heroStat)
-        {
-            _heroStat = heroStat;
-        }
 
         private void OnEnable()
         {
@@ -42,6 +39,8 @@ namespace AutoFantasy.Scripts.UI
             activeHero.OnHeroChanged += RefreshUI;
             refreshUI.OnRaise += RefreshUI;
             Invoke(nameof(RefreshUI), 0.05f);
+            _statIcon.sprite = _heroStat.StatIcon;
+            _statNameText.text = _heroStat.name;
         }
 
         private void EquipItem_OnRaise(Item item)
@@ -66,7 +65,6 @@ namespace AutoFantasy.Scripts.UI
             var statCount = hero.ThisCombatStats.StatCount(_heroStat.StatId);
             statText.text = statCount.ToString();
             statFillImage.fillAmount = (float)statCount / heroMaxPointsCategory.Value;
-            _statIcon.sprite = _heroStat.StatIcon;
         }
     }
 }

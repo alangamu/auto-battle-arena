@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b12dcac9f7d6b994486dc4aa5a3a9f84, type: 3}
-  m_Name: MovementPoints
+  m_Name: Attack Speed
   m_EditorClassIdentifier: 
-  StatId: 7
-  BaseValue: 0
-  MultiplierFactor: 0
+  StatId: 2
+  BaseValue: 0.5
+  MultiplierFactor: 0.1
+  StatIcon: {fileID: 21300000, guid: 5e19d38a7a0e446d3b8caef98a3795d4, type: 3}
