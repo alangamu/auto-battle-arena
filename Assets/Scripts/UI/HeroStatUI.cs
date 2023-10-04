@@ -61,7 +61,7 @@ namespace AutoFantasy.Scripts.UI
         private void RefreshUI()
         {
             //TODO: make the fill amount 0 to value fade
-            var hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            var hero = activeHero.ActiveHero;
             var statCount = hero.ThisCombatStats.StatCount(_heroStat.StatId);
             statText.text = statCount.ToString();
             statFillImage.fillAmount = (float)statCount / heroMaxPointsCategory.Value;

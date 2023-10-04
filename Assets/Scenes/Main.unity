@@ -1187,6 +1187,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: efbafa985dd4d364986d9f32f3a5b6b7, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &97375262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1463,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: b01f155ff82b179419c938e65851a9bc, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &103254034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3535,6 +3537,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 32e918cafc9a167449f3ff23a14156c8, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &371071496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3815,6 +3818,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: efbafa985dd4d364986d9f32f3a5b6b7, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &401737979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,6 +5427,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: b01f155ff82b179419c938e65851a9bc, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &609666742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5964,6 +5969,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 0}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &629445643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7432,6 +7438,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 0d5a9ab73b192b2418413236f772124a, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &711327675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9268,6 +9275,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: e06f953c2a414b0448e40b7bae0d2fb7, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &958646583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10808,6 +10816,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: e06f953c2a414b0448e40b7bae0d2fb7, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &1054450272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12025,6 +12034,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 15f4cde007878244c88bcb06d7ae12b5, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &1198350630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12609,6 +12619,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 0d5a9ab73b192b2418413236f772124a, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &1269023508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18875,6 +18886,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 32e918cafc9a167449f3ff23a14156c8, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &1597370508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20376,6 +20388,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: b7faa2e35b9d57e4cbc2c683a29ae111, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!114 &1702461240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20613,6 +20626,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: 15f4cde007878244c88bcb06d7ae12b5, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &1713547388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21429,6 +21443,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 11400000, guid: b7faa2e35b9d57e4cbc2c683a29ae111, type: 2}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
 --- !u!114 &1764662573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22759,7 +22774,7 @@ GameObject:
   - component: {fileID: 1871921121}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: MainCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43402,6 +43417,7 @@ MonoBehaviour:
   aceptedWeareableType: {fileID: 0}
   armorType: {fileID: 11400000, guid: f54966bf83ceab74f808ef8ec3c3b6ba, type: 2}
   equipItem: {fileID: 11400000, guid: 97e955edf5bac0445b69684764a2b775, type: 2}
+  _refreshUI: {fileID: 0}
 --- !u!222 &5906748507815076370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49929,7 +49945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addItemToInventory: {fileID: 11400000, guid: 91f00d942f2e47f44a4268c25cb59b19, type: 2}
   activeHero: {fileID: 11400000, guid: 49b8016dc3678284c823883738690149, type: 2}
-  roster: {fileID: 11400000, guid: 9708d95449a15364d9868ff2666fd88b, type: 2}
+  _inventory: {fileID: 11400000, guid: e9f26f4b54e618944beba5285ff40a01, type: 2}
 --- !u!114 &8858318320654215081
 MonoBehaviour:
   m_ObjectHideFlags: 0

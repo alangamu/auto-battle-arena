@@ -26,6 +26,8 @@ namespace AutoFantasy.Scripts.UI
         private ItemTypeSO armorType;
         [SerializeField]
         private ItemEvent equipItem;
+        [SerializeField]
+        private GameEvent _refreshUI;
 
         private Item _item;
         private GameObject _itemUI;
@@ -39,6 +41,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void OnEnable()
         {
+            _refreshUI.OnRaise += RefreshUI;
             equipItem.OnRaise += EquipItem_OnRaise;
             activeHero.OnHeroChanged += Setup;
             Invoke(nameof(Setup), 0.05f);
@@ -46,8 +49,18 @@ namespace AutoFantasy.Scripts.UI
 
         private void OnDisable()
         {
+            _refreshUI.OnRaise -= RefreshUI;
             equipItem.OnRaise -= EquipItem_OnRaise;
             activeHero.OnHeroChanged -= Setup;
+        }
+
+        private void RefreshUI()
+        {
+            if (_item == null)
+            {
+                return;
+            }
+            Setup();
         }
 
         private void EquipItem_OnRaise(Item item)
@@ -87,7 +100,8 @@ namespace AutoFantasy.Scripts.UI
 
         private void Setup()
         {
-            Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            //Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            Hero hero = activeHero.ActiveHero;
 
             Item item;
             if (aceptedItemType != armorType)

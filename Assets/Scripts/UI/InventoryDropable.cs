@@ -15,7 +15,8 @@ namespace AutoFantasy.Scripts.UI
         [SerializeField]
         private ActiveHeroSO activeHero;
         [SerializeField]
-        private HeroRuntimeSet roster;
+        private Inventory _inventory;
+        //private HeroRuntimeSet roster;
 
         public void OnDrop(PointerEventData eventData)
         {
@@ -30,10 +31,15 @@ namespace AutoFantasy.Scripts.UI
 
                 if (itemType != null)
                 {
+                    if (_inventory.Items.Contains(itemType.ItemRef))
+                    {
+                        return;
+                    }
                     addItemToInventory.Raise(itemType.ItemRef);
 
                     //TODO: maybe get rid of taking the hero out of the roster and access directly to the active hero
-                    Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+                    //Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+                    Hero hero = activeHero.ActiveHero;
                     if (hero != null)
                     {
                         hero.RemoveItem(itemType.ItemRef);

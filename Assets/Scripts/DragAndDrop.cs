@@ -9,14 +9,14 @@ namespace AutoFantasy.Scripts
         [SerializeField] 
         private GameEvent refreshUI;
 
-        private RectTransform _rectTransform;
         private Canvas _canvas;
+        private RectTransform _rectTransform;
         private CanvasGroup _canvasGroup;
 
         private void Awake()
         {
+            _canvas = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>();
             _rectTransform = transform as RectTransform;
-            _canvas = FindObjectOfType<Canvas>();
             _canvasGroup = GetComponent<CanvasGroup>();
         }
 

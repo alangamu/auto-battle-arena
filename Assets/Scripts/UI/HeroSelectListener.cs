@@ -28,7 +28,7 @@ namespace AutoFantasy.Scripts.UI
 
         private void SetActiveHero()
         {
-            Hero hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            Hero hero = activeHero.ActiveHero;
             if (TryGetComponent(out _heroController))
             {
                 _heroController.SetHero(hero);

@@ -44,7 +44,8 @@ namespace AutoFantasy.Scripts.UI
         {
             if (_activeHero == null) return;
 
-            Hero hero = _roster.GetHeroById(_activeHero.ActiveHero.GetHeroId());
+            //Hero hero = _roster.GetHeroById(_activeHero.ActiveHero.GetHeroId());
+            Hero hero = _activeHero.ActiveHero;
 
             SkillSO skillSO = _skillDatabase.GetSkillById(hero.SkillId);
 

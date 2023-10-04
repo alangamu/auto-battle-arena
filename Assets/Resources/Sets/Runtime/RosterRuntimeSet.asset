@@ -28,7 +28,7 @@ MonoBehaviour:
       IsMale: 1
       HeroId: 3
     ThisCombatStats:
-      Stats: 0400000005000000040000000100000002000000030000000400000005000000020000000100000005000000030000000200000004000000070000000700000007000000080000000800000003000000030000000600000005000000060000000200000006000000
+      Stats: 04000000040000000100000003000000040000000500000001000000050000000300000002000000040000000700000007000000070000000800000008000000030000000300000005000000020000000200000006000000060000000500000002000000
     HeroInventory:
     - ItemRarityId: 1
       ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
@@ -38,16 +38,8 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 02000000
-    - ItemRarityId: 1
-      ItemRefId: 4a502248-ab70-4220-82fb-6c03bdff3726
-      ItemTypeId: 1
-      ItemWeareableTypeId: 4
-      Amount: 1
-      IsStackable: 0
-      SkillId: 
-      ItemStats: 06000000
-    MapPositionQ: 11
-    MapPositionR: 11
+    MapPositionQ: 13
+    MapPositionR: 7
   - ThisHeroData:
       HeroName: Rachel
       SkinColorIndex: 5
@@ -81,5 +73,5 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 05000000
-    MapPositionQ: 12
-    MapPositionR: 5
+    MapPositionQ: 14
+    MapPositionR: 4

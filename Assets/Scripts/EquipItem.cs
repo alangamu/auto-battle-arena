@@ -58,7 +58,8 @@ namespace AutoFantasy.Scripts
 
         private void Equip(Item item, bool isWeapon)
         {
-            Hero _hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            //Hero _hero = roster.GetHeroById(activeHero.ActiveHero.GetHeroId());
+            Hero _hero = activeHero.ActiveHero;
             Item oldItem;
             if (isWeapon)
             {
