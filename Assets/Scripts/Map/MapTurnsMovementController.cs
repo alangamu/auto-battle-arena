@@ -14,6 +14,8 @@ namespace AutoFantasy.Scripts.Map
     public class MapTurnsMovementController : MonoBehaviour
     {
         [SerializeField]
+        private ActiveHeroSO _activeHero;
+        [SerializeField]
         private GameObjectVariable _activeMapHero;
         [SerializeField]
         private GameObjectGameEvent _selectTileEvent;
@@ -145,7 +147,6 @@ namespace AutoFantasy.Scripts.Map
         {
 
             int heroIndex = _activeHeroIndex.Value;
-            print($"current heroIndex -> {heroIndex}");
             if (heroIndex == _heroes.Items.Count - 1)
             {
                 heroIndex = 0;
@@ -159,8 +160,6 @@ namespace AutoFantasy.Scripts.Map
             GameObject activeHero = _heroes.Items[_activeHeroIndex.Value];
 
             _activeMapHero.SetActiveGameObject(activeHero);
-
-            print($"next heroIndex -> {heroIndex}");
 
             foreach (var canWalkTile in _canWalkTiles)
             {
@@ -177,6 +176,7 @@ namespace AutoFantasy.Scripts.Map
                 if (_activeMapHero.Value.TryGetComponent(out IHeroController heroController))
                 {
                     movementPoints = heroController.ThisHero.ThisCombatStats.StatCount(_movementStat.StatId);
+                    _activeHero.SetHero(heroController.ThisHero);
                 }
 
                 List<ITile> neighborTiles = _tiles.GetNeighboursTiles(activeHeroHex, movementPoints);
