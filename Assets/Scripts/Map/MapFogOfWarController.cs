@@ -13,8 +13,8 @@ namespace AutoFantasy.Scripts.Map
     {
         [SerializeField]
         private TileRuntimeSet _tiles;
-        //[SerializeField]
-        //private GameEvent _showFogOfWarEvent;
+        [SerializeField]
+        private GameEvent _showFogOfWarEvent;
         //[SerializeField]
         //private GameObjectVariable _activeHeroStandingTile;
         [SerializeField]
@@ -36,11 +36,13 @@ namespace AutoFantasy.Scripts.Map
         {
             _activeMapHero.OnValueChanged += ShowThisFogOfWar;
             _activeTiles = new Dictionary<IHeroController, List<ITile>>();
+            _showFogOfWarEvent.OnRaise += InitialFogOfWar;
         }
 
         private void OnDisable()
         {
             _activeMapHero.OnValueChanged -= ShowThisFogOfWar;
+            _showFogOfWarEvent.OnRaise -= InitialFogOfWar;
         }
 
         private void ShowThisFogOfWar(GameObject heroObject)
@@ -109,26 +111,26 @@ namespace AutoFantasy.Scripts.Map
             }
         }
 
-        //private void InitialFogOfWar()
-        //{
-        //    if (_showInitialFogOfWar)
-        //    {
-        //        foreach (var tile in _tiles.Items)
-        //        {
-        //            GameObject tileGO = tile.GetGameObject();
+        private void InitialFogOfWar()
+        {
+            if (_showInitialFogOfWar)
+            {
+                foreach (var tile in _tiles.Items)
+                {
+                    GameObject tileGO = tile.GetGameObject();
 
-        //            if (tileGO.TryGetComponent(out ITileVisionController visionController))
-        //            {
-        //                Hex hex = tile.GetHex();
-        //                HexBase hexBase = _tiles.Map.Find(x => x.q == hex.Q && x.r == hex.R);
+                    if (tileGO.TryGetComponent(out ITileVisionController visionController))
+                    {
+                        Hex hex = tile.GetHex();
+                        HexBase hexBase = _tiles.Map.Find(x => x.q == hex.Q && x.r == hex.R);
 
-        //                if (hexBase.tileState == _inactiveState)
-        //                    visionController.SetInactive();
-        //                else
-        //                    visionController.SetHidden();
-        //            }
-        //        }
-        //    }
-        //}
+                        if (hexBase.tileState == _inactiveState)
+                            visionController.SetInactive();
+                        else
+                            visionController.SetHidden();
+                    }
+                }
+            }
+        }
     }
 }

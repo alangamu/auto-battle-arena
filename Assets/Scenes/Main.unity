@@ -7631,6 +7631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
+  _showFogOfWarEvent: {fileID: 11400000, guid: f9bf8c29e28bef547a7590ee691ae92e, type: 2}
   _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
   _sightStat: {fileID: 11400000, guid: d80aa95a80b6d114594d28674f1ebf6d, type: 2}
   _activeState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
