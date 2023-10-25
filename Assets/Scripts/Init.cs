@@ -2,7 +2,6 @@
 using AutoFantasy.Scripts.ScriptableObjects.Events;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
-using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts
@@ -52,17 +51,22 @@ namespace AutoFantasy.Scripts
         private IntVariable _gold;
         [SerializeField]
         private IntVariable _gems;
+        [SerializeField]
+        private IntVariable _activeHeroIndex;
 
         private void LoadInitialData()
         {
             if (_isNewGameVariable.Value)
             {
+                //TODO: Make the default heroes
+
                 ResetHeroesPosition();
                 ResetEnemiesDefeated();
                 ClearInventory();
                 InitialResources();
                 ClearHeroesInventory();
                 _generateMap.Raise();
+                _activeHeroIndex.SetValue(_heroes.Items.Count - 1);
             }
             else
                 _loadMap.Raise();
@@ -74,6 +78,7 @@ namespace AutoFantasy.Scripts
             _spawnMapCitiesEvent.Raise();
             _spawnMapEnemiesEvent.Raise();
             _spawnMapHeroesEvent.Raise();
+            
             _nextTurnEvent.Raise();
 
             //CheckForActiveHero();

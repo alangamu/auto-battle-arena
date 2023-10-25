@@ -30,6 +30,7 @@ namespace AutoFantasy.Scripts.Map
 
         private void NewActiveMapHero(GameObject obj)
         {
+            print($"NewActiveMapHero {obj}");
             CenterOnObject(obj.transform);
         }
 

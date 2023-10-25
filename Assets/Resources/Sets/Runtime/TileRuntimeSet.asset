@@ -382,17 +382,17 @@ MonoBehaviour:
     r: 2
     elevation: 0.4804286
     moisture: -0.48902035
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 14
     r: 2
     elevation: 0.8385509
     moisture: 0.22664785
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 15
     r: 2
     elevation: 0.16531429
     moisture: 0.55805635
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 16
     r: 2
     elevation: 0.47533658
@@ -527,7 +527,7 @@ MonoBehaviour:
     r: 3
     elevation: 0.5680976
     moisture: -0.35832888
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 13
     r: 3
     elevation: 0.7546377
@@ -542,7 +542,7 @@ MonoBehaviour:
     r: 3
     elevation: 0.026328042
     moisture: -0.62927866
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 16
     r: 3
     elevation: 0.41887876
@@ -677,7 +677,7 @@ MonoBehaviour:
     r: 4
     elevation: 0.23036605
     moisture: -0.071648
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 13
     r: 4
     elevation: 0.5488873
@@ -697,7 +697,7 @@ MonoBehaviour:
     r: 4
     elevation: -0.15629
     moisture: -0.20401132
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 17
     r: 4
     elevation: 1.0246985
@@ -842,12 +842,12 @@ MonoBehaviour:
     r: 5
     elevation: 0.9562245
     moisture: 0.07613623
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 16
     r: 5
     elevation: 0.80138505
     moisture: 0.20201397
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 17
     r: 5
     elevation: 0.33220255
@@ -977,7 +977,7 @@ MonoBehaviour:
     r: 6
     elevation: -0.095525846
     moisture: -0.5668611
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 13
     r: 6
     elevation: 0.081469804
@@ -997,7 +997,7 @@ MonoBehaviour:
     r: 6
     elevation: 0.26167756
     moisture: -0.14270383
-    tileState: {fileID: 0}
+    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   - q: 17
     r: 6
     elevation: -0.22252458
@@ -1122,12 +1122,12 @@ MonoBehaviour:
     r: 7
     elevation: -0.12804334
     moisture: -0.0701251
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 12
     r: 7
     elevation: -0.3275595
     moisture: -0.16300362
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 13
     r: 7
     elevation: 0.50778836
@@ -1277,22 +1277,22 @@ MonoBehaviour:
     r: 8
     elevation: 0.3239669
     moisture: 0.6940311
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 13
     r: 8
     elevation: 0.21297973
     moisture: -0.14516973
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 14
     r: 8
     elevation: 0.7392426
     moisture: -0.6086761
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 15
     r: 8
     elevation: 0.19950193
     moisture: -0.10904521
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 16
     r: 8
     elevation: 0.6679956
@@ -1427,17 +1427,17 @@ MonoBehaviour:
     r: 9
     elevation: 0.76714814
     moisture: 0.014780879
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 13
     r: 9
     elevation: 0.3991956
     moisture: 0.17871428
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 14
     r: 9
     elevation: 0.0068991184
     moisture: -0.20061052
-    tileState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
+    tileState: {fileID: 0}
   - q: 15
     r: 9
     elevation: 0.6245146

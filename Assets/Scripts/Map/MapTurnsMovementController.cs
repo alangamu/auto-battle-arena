@@ -41,8 +41,9 @@ namespace AutoFantasy.Scripts.Map
         private TileTypeSO _freeTyleType;
         [SerializeField]
         private TileTypeSO _cityTyleType;
+        [SerializeField]
+        private IntVariable _activeHeroIndex;
 
-        private int _heroIndex;
         private List<ITile> _canWalkTiles;
         private TileTypeSO _activeTileType;
 
@@ -53,8 +54,6 @@ namespace AutoFantasy.Scripts.Map
 
         private void OnEnable()
         {
-            //TODO: remove from here when changing scenes (battle)
-            _heroIndex = 0;
             _nextTurnEvent.OnRaise += NextTurn;
             _selectTileEvent.OnRaise += SelectDestinationTileEvent;
         }
@@ -144,10 +143,24 @@ namespace AutoFantasy.Scripts.Map
 
         private void NextTurn()
         {
-            int heroIndex = _heroIndex++ % _heroes.Items.Count;
 
-            GameObject activeHero = _heroes.Items[heroIndex];
+            int heroIndex = _activeHeroIndex.Value;
+            print($"current heroIndex -> {heroIndex}");
+            if (heroIndex == _heroes.Items.Count - 1)
+            {
+                heroIndex = 0;
+            }
+            else
+            {
+                heroIndex++;
+            }
+
+            _activeHeroIndex.SetValue(heroIndex);
+            GameObject activeHero = _heroes.Items[_activeHeroIndex.Value];
+
             _activeMapHero.SetActiveGameObject(activeHero);
+
+            print($"next heroIndex -> {heroIndex}");
 
             foreach (var canWalkTile in _canWalkTiles)
             {

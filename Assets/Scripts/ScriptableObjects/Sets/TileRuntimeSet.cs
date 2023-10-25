@@ -209,6 +209,11 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
             return tiles;
         }
 
+        public List<ITile> GetNeighboursTiles(int q, int r, int range)
+        {
+            Hex hex = GetHexAt(q,r);
+            return GetNeighboursTiles(hex, range);
+        }
         public void SetTileState(TileStateSO tileState, List<ITile> tiles)
         {
             foreach(var tile in tiles)

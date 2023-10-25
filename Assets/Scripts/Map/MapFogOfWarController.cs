@@ -13,10 +13,10 @@ namespace AutoFantasy.Scripts.Map
     {
         [SerializeField]
         private TileRuntimeSet _tiles;
-        [SerializeField]
-        private GameEvent _showFogOfWarEvent;
-        [SerializeField]
-        private GameObjectVariable _activeHeroStandingTile;
+        //[SerializeField]
+        //private GameEvent _showFogOfWarEvent;
+        //[SerializeField]
+        //private GameObjectVariable _activeHeroStandingTile;
         [SerializeField]
         private GameObjectVariable _activeMapHero;
         [SerializeField]
@@ -34,25 +34,27 @@ namespace AutoFantasy.Scripts.Map
 
         private void OnEnable()
         {
-            _showFogOfWarEvent.OnRaise += InitialFogOfWar;
-            _activeHeroStandingTile.OnValueChanged += ShowThisFogOfWar;
+            _activeMapHero.OnValueChanged += ShowThisFogOfWar;
             _activeTiles = new Dictionary<IHeroController, List<ITile>>();
         }
 
         private void OnDisable()
         {
-            _showFogOfWarEvent.OnRaise -= InitialFogOfWar;
-            _activeHeroStandingTile.OnValueChanged -= ShowThisFogOfWar;
+            _activeMapHero.OnValueChanged -= ShowThisFogOfWar;
         }
 
-        private void ShowThisFogOfWar(GameObject activeTile)
+        private void ShowThisFogOfWar(GameObject heroObject)
         {
-            if (_activeMapHero.Value.TryGetComponent(out IHeroController heroController))
+            if (!_showInitialFogOfWar)
             {
-                if (activeTile.TryGetComponent(out ITile tile))
+                return;
+            }
+            if (heroObject.TryGetComponent(out IHeroController heroController))
+            {
+                if (heroObject.TryGetComponent(out IMapUnitController mapUnitController))
                 {
                     int sightPoints = heroController.ThisHero.ThisCombatStats.StatCount(_sightStat.StatId);
-                    List<ITile> sightTiles = _tiles.GetNeighboursTiles(tile.GetHex(), sightPoints);
+                    List<ITile> sightTiles = _tiles.GetNeighboursTiles(mapUnitController.Q, mapUnitController.R, sightPoints);
 
                     foreach (var item in sightTiles)
                     {
@@ -107,26 +109,26 @@ namespace AutoFantasy.Scripts.Map
             }
         }
 
-        private void InitialFogOfWar()
-        {
-            if (_showInitialFogOfWar)
-            {
-                foreach (var tile in _tiles.Items)
-                {
-                    GameObject tileGO = tile.GetGameObject();
+        //private void InitialFogOfWar()
+        //{
+        //    if (_showInitialFogOfWar)
+        //    {
+        //        foreach (var tile in _tiles.Items)
+        //        {
+        //            GameObject tileGO = tile.GetGameObject();
 
-                    if (tileGO.TryGetComponent(out ITileVisionController visionController))
-                    {
-                        Hex hex = tile.GetHex();
-                        HexBase hexBase = _tiles.Map.Find(x => x.q == hex.Q && x.r == hex.R);
+        //            if (tileGO.TryGetComponent(out ITileVisionController visionController))
+        //            {
+        //                Hex hex = tile.GetHex();
+        //                HexBase hexBase = _tiles.Map.Find(x => x.q == hex.Q && x.r == hex.R);
 
-                        if (hexBase.tileState == _inactiveState)
-                            visionController.SetInactive();
-                        else
-                            visionController.SetHidden();
-                    }
-                }
-            }
-        }
+        //                if (hexBase.tileState == _inactiveState)
+        //                    visionController.SetInactive();
+        //                else
+        //                    visionController.SetHidden();
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

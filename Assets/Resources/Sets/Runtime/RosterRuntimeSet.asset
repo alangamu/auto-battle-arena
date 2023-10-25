@@ -38,40 +38,73 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 02000000
-    MapPositionQ: 13
-    MapPositionR: 7
+    MapPositionQ: 10
+    MapPositionR: 3
   - ThisHeroData:
-      HeroName: Rachel
-      SkinColorIndex: 5
-      HairColorIndex: 2
+      HeroName: Ryan
+      SkinColorIndex: 1
+      HairColorIndex: 3
       EyeColorIndex: 3
       ScarColorIndex: 1
-      BodyArtColorIndex: 5
+      BodyArtColorIndex: 4
       HeadIndex: 20
-      HairIndex: 26
-      EyebrowsIndex: 2
-      FacialHairIndex: 8
+      HairIndex: 14
+      EyebrowsIndex: 6
+      FacialHairIndex: 16
+      StubbleColorIndex: 1
+      IsMale: 1
+      HeroId: 39c4d85b-e614-49d8-b87a-6495d65f2aed
+    ThisCombatStats:
+      Stats: 05000000020000000100000001000000040000000100000006000000010000000600000006000000030000000100000001000000020000000100000008000000080000000700000007000000
+    HeroInventory: []
+    MapPositionQ: 12
+    MapPositionR: 3
+  - ThisHeroData:
+      HeroName: Joaquin
+      SkinColorIndex: 7
+      HairColorIndex: 8
+      EyeColorIndex: 2
+      ScarColorIndex: 2
+      BodyArtColorIndex: 1
+      HeadIndex: 6
+      HairIndex: 31
+      EyebrowsIndex: 7
+      FacialHairIndex: 10
+      StubbleColorIndex: 2
+      IsMale: 1
+      HeroId: 97ce32c1-8936-4316-b13e-f26d21e30077
+    ThisCombatStats:
+      Stats: 05000000050000000200000004000000060000000500000004000000030000000300000002000000020000000600000006000000030000000300000008000000080000000700000007000000
+    HeroInventory: []
+    MapPositionQ: 15
+    MapPositionR: 3
+  - ThisHeroData:
+      HeroName: Charlotte
+      SkinColorIndex: 1
+      HairColorIndex: 6
+      EyeColorIndex: 0
+      ScarColorIndex: 1
+      BodyArtColorIndex: 0
+      HeadIndex: 7
+      HairIndex: 15
+      EyebrowsIndex: 4
+      FacialHairIndex: 0
       StubbleColorIndex: 0
       IsMale: 0
-      HeroId: 4
+      HeroId: 29432307-f25a-48b5-b766-da18d3c1656b
     ThisCombatStats:
-      Stats: 0500000004000000030000000500000002000000060000000400000005000000030000000100000002000000030000000200000001000000050000000600000004000000070000000800000006000000060000000500000005000000
-    HeroInventory:
-    - ItemRarityId: 1
-      ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
-      ItemTypeId: 1
-      ItemWeareableTypeId: 6
-      Amount: 1
-      IsStackable: 0
-      SkillId: 
-      ItemStats: 05000000
-    - ItemRarityId: 1
-      ItemRefId: 4a502248-ab70-4220-82fb-6c03bdff3726
-      ItemTypeId: 1
-      ItemWeareableTypeId: 4
-      Amount: 1
-      IsStackable: 0
-      SkillId: 
-      ItemStats: 05000000
-    MapPositionQ: 14
+      Stats: 04000000060000000600000001000000010000000100000006000000040000000500000001000000050000000300000006000000050000000400000008000000080000000700000007000000
+    HeroInventory: []
+    MapPositionQ: 13
     MapPositionR: 4
+  _maleNames: {fileID: 11400000, guid: 5bac81dbf0f9ba941b1123ab78626401, type: 2}
+  _femaleNames: {fileID: 11400000, guid: f3d6d216bc9c1a443a71e48c9fd7e3f5, type: 2}
+  _heroBasePoints: {fileID: 11400000, guid: ae19f07d5bc1f7544b9c59b200db7edc, type: 2}
+  _healthStat: {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
+  _defenseStat: {fileID: 11400000, guid: 9e51e98000904c94ba20ee2411c9eaf8, type: 2}
+  _criticalChanceStat: {fileID: 11400000, guid: 0917e9a52924753458e8593dca1828db, type: 2}
+  _criticalPowerStat: {fileID: 11400000, guid: cbe996666b9265649823d1099982e760, type: 2}
+  _attackSpeedStat: {fileID: 11400000, guid: cbed2d1703fd5f14db65ce439a9f11cd, type: 2}
+  _attackPowerStat: {fileID: 11400000, guid: c642b1e4ed626c943b6f0bc3660a7f6d, type: 2}
+  _sightStat: {fileID: 11400000, guid: d80aa95a80b6d114594d28674f1ebf6d, type: 2}
+  _movementPointsStat: {fileID: 11400000, guid: 05d7bc1cdb3d1e04b8bf9d11d83a1e9b, type: 2}
