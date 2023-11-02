@@ -11,7 +11,7 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private float _movementTime;
         [SerializeField]
-        private GameObjectVariable _activeHeroStandingTile;
+        private GameObjectVariable _activeHeroMoveToTile;
 
         async Task IMapMovementController.DoMovement(List<ITile> path)
         {
@@ -26,7 +26,7 @@ namespace AutoFantasy.Scripts.Map
                     Hex heroHex = tile.GetHex();
                     mapUnit.SetHexCoordinates(heroHex.Q, heroHex.R);
                 }
-                _activeHeroStandingTile.SetActiveGameObject(tileGO);
+                _activeHeroMoveToTile.SetActiveGameObject(gameObject);
             }
         }
 

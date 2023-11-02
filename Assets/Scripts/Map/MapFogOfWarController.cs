@@ -15,16 +15,18 @@ namespace AutoFantasy.Scripts.Map
         private TileRuntimeSet _tiles;
         [SerializeField]
         private GameEvent _showFogOfWarEvent;
-        //[SerializeField]
-        //private GameObjectVariable _activeHeroStandingTile;
         [SerializeField]
-        private GameObjectVariable _activeMapHero;
+        private GameObjectVariable _activeHeroMoveToTile;
         [SerializeField]
         private HeroStatSO _sightStat;
         [SerializeField]
         private TileStateSO _activeState; 
         [SerializeField]
         private TileStateSO _inactiveState;
+        [SerializeField]
+        private GameObjectRuntimeSet _heroes;
+        [SerializeField]
+        private GameEvent _heroesReadyEvent;
 
         //TODO: remove this later
         [SerializeField]
@@ -34,15 +36,25 @@ namespace AutoFantasy.Scripts.Map
 
         private void OnEnable()
         {
-            _activeMapHero.OnValueChanged += ShowThisFogOfWar;
+            _activeHeroMoveToTile.OnValueChanged += ShowThisFogOfWar;
             _activeTiles = new Dictionary<IHeroController, List<ITile>>();
             _showFogOfWarEvent.OnRaise += InitialFogOfWar;
+            _heroesReadyEvent.OnRaise += ShowFogOfWar;
         }
 
         private void OnDisable()
         {
-            _activeMapHero.OnValueChanged -= ShowThisFogOfWar;
+            _activeHeroMoveToTile.OnValueChanged -= ShowThisFogOfWar;
             _showFogOfWarEvent.OnRaise -= InitialFogOfWar;
+            _heroesReadyEvent.OnRaise -= ShowFogOfWar;
+        }
+
+        private void ShowFogOfWar()
+        {
+            foreach (var hero in _heroes.Items)
+            {
+                ShowThisFogOfWar(hero);
+            }
         }
 
         private void ShowThisFogOfWar(GameObject heroObject)
@@ -67,6 +79,7 @@ namespace AutoFantasy.Scripts.Map
                             visionController.SetActive();
                         }
                     }
+
                     if (!_activeTiles.ContainsKey(heroController))
                     {
                         _activeTiles.Add(heroController, sightTiles);
@@ -111,6 +124,9 @@ namespace AutoFantasy.Scripts.Map
             }
         }
 
+        /// <summary>
+        /// For every tile in the map sets hidden if _showInitialFogOfWar is true, inactive otherwise
+        /// </summary>
         private void InitialFogOfWar()
         {
             if (_showInitialFogOfWar)

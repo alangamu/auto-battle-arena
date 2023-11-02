@@ -7632,10 +7632,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
   _showFogOfWarEvent: {fileID: 11400000, guid: f9bf8c29e28bef547a7590ee691ae92e, type: 2}
-  _activeMapHero: {fileID: 11400000, guid: 18e5591722f8fba43bca7a89623aa10f, type: 2}
+  _activeHeroMoveToTile: {fileID: 11400000, guid: 151375dd215d05147a3931400c44324a, type: 2}
   _sightStat: {fileID: 11400000, guid: d80aa95a80b6d114594d28674f1ebf6d, type: 2}
   _activeState: {fileID: 11400000, guid: 7a6d907ae73607948ae172bad3e3d0a9, type: 2}
   _inactiveState: {fileID: 11400000, guid: 84d3286298741f64a86494eb9c3e6f00, type: 2}
+  _heroes: {fileID: 11400000, guid: 20f5d9691f672844fb826a041589fe86, type: 2}
+  _heroesReadyEvent: {fileID: 11400000, guid: 36214d1261fd47645a59b862aba970c4, type: 2}
   _showInitialFogOfWar: 1
 --- !u!114 &721005180
 MonoBehaviour:
@@ -7651,6 +7653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiles: {fileID: 11400000, guid: de0796e7904bf2c488c4f2766c67311c, type: 2}
   _spawnMapHeroesEvent: {fileID: 11400000, guid: 1a3fe5825cb45894a827bd6522037bc6, type: 2}
+  _heroesReadyEvent: {fileID: 11400000, guid: 36214d1261fd47645a59b862aba970c4, type: 2}
   _heroes: {fileID: 11400000, guid: 9708d95449a15364d9868ff2666fd88b, type: 2}
   _heroMapPrefab: {fileID: 8021379060007289243, guid: 78d5564a79731bc47ba8e6abc83dd81f, type: 3}
   _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}

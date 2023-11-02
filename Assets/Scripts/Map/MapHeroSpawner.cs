@@ -15,6 +15,8 @@ namespace AutoFantasy.Scripts.Map
         [SerializeField]
         private GameEvent _spawnMapHeroesEvent;
         [SerializeField]
+        private GameEvent _heroesReadyEvent;
+        [SerializeField]
         private HeroRuntimeSet _heroes;
         [SerializeField]
         private GameObject _heroMapPrefab;
@@ -91,6 +93,8 @@ namespace AutoFantasy.Scripts.Map
             {
                 SpawnHero(item);
             }
+
+            _heroesReadyEvent.Raise();
         }
     }
 }

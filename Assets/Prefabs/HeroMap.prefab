@@ -76,6 +76,8 @@ MonoBehaviour:
   stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
   bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
   _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
+  _shootEvent: {fileID: 0}
+  _hitTargetEvent: {fileID: 0}
 --- !u!114 &2915740885101318347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementTime: 1
-  _activeHeroStandingTile: {fileID: 11400000, guid: 151375dd215d05147a3931400c44324a, type: 2}
+  _activeHeroMoveToTile: {fileID: 11400000, guid: 151375dd215d05147a3931400c44324a, type: 2}
 --- !u!1001 &6081062627790732458
 PrefabInstance:
   m_ObjectHideFlags: 0

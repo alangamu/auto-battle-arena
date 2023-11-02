@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0206ebc3575cc4495e22e67cf51ce6, type: 3}
-  m_Name: ActiveHeroStandingTile
+  m_Script: {fileID: 11500000, guid: 71ac5c9816d1b0043b08901057cf6485, type: 3}
+  m_Name: HeroesReadyEvent
   m_EditorClassIdentifier: 
-  _gameObject: {fileID: 0}

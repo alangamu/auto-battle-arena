@@ -1,7 +1,5 @@
 ﻿using AutoFantasy.Scripts.ScriptableObjects.Map;
 using System;
-using System.Collections;
-using UnityEngine;
 
 namespace AutoFantasy.Scripts.Map
 {
