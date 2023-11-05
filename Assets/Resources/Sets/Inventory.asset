@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d852f721abb511d4295d680ded38151b, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  Items: []
+  Items:
+  - ItemRarityId: 1
+    ItemRefId: 21b3f6ed-ca7a-4db3-b506-f02f1bab3a01
+    ItemTypeId: 6
+    ItemWeareableTypeId: 3
+    Amount: 1
+    IsStackable: 0
+    SkillId: 
+    ItemStats: 06000000
   addItemToInventory: {fileID: 11400000, guid: 91f00d942f2e47f44a4268c25cb59b19, type: 2}
   removeItemFromInventory: {fileID: 11400000, guid: bc85d6d51e009794ba413153ce140b19, type: 2}
   goldType: {fileID: 11400000, guid: 3c0ba024232e64c4a9311e38457e52e1, type: 2}

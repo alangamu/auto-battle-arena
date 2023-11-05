@@ -8,5 +8,6 @@ namespace AutoFantasy.Scripts.Interfaces
         Transform GetWeaponTransform();
         WeaponSO GetWeapon();
         void ShowWeapon(WeaponSO weapon);
+        void HideWeapon();
     }
 }

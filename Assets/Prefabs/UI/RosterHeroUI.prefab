@@ -802,6 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f7f552c1a531845a817e40a3446919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
+  _unnarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
 --- !u!114 &3356245609254876176
 MonoBehaviour:
   m_ObjectHideFlags: 0

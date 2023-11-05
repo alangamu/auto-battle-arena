@@ -28,7 +28,6 @@ namespace AutoFantasy.Scripts.Map
 
         virtual public void GenerateMap()
         {
-            print($"generate map");
             float hexSize = 5f;
 
             int numRows = _mapNumRows.Value;

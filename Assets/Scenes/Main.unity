@@ -9695,6 +9695,8 @@ GameObject:
   - component: {fileID: 1023768344}
   - component: {fileID: 1023768353}
   - component: {fileID: 1023768354}
+  - component: {fileID: 1023768355}
+  - component: {fileID: 1023768356}
   m_Layer: 0
   m_Name: HeroDisplay
   m_TagString: Untagged
@@ -9732,7 +9734,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023768342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 072bce4bdb849a6488460ffa7d6d43f0, type: 3}
   m_Name: 
@@ -9748,7 +9750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023768342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd06474c96722f1478b084beca5e004c, type: 3}
   m_Name: 
@@ -10394,6 +10396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f7f552c1a531845a817e40a3446919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
+  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
+  _unnarmed: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
 --- !u!114 &1023768349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10479,6 +10484,33 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1023768355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023768342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1599195549}
+--- !u!114 &1023768356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023768342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dada101c085a00c4bb67b46808064cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handBoneTransform: {fileID: 1915371915}
+  _leftHandBoneTransform: {fileID: 1915371916}
 --- !u!1 &1043082479
 GameObject:
   m_ObjectHideFlags: 0
@@ -38152,6 +38184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f7f552c1a531845a817e40a3446919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponType: {fileID: 0}
+  databaseItem: {fileID: 0}
+  _unnarmed: {fileID: 0}
 --- !u!114 &5906748506286310345
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -62,11 +62,7 @@ namespace AutoFantasy.Scripts
 
         private void Refresh()
         {
-            if (_weaponGO != null)
-            {
-                Destroy(_weaponGO);
-            }
-
+            HideWeapon();
             var _heroWeaponItem = _hero.HeroInventory.Find(x => x.ItemTypeId == weaponType.ItemTypeId);
 
             if (_heroWeaponItem != null)
@@ -91,7 +87,15 @@ namespace AutoFantasy.Scripts
 
         public void ShowWeapon(WeaponSO weapon)
         {
-            throw new NotImplementedException();
+            Refresh();
+        }
+
+        public void HideWeapon()
+        {
+            if (_weaponGO != null)
+            {
+                Destroy(_weaponGO);
+            }
         }
     }
 }

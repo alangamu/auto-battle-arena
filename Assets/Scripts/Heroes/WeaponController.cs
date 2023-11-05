@@ -17,12 +17,10 @@ namespace AutoFantasy.Scripts.Heroes
         private WeaponSO _weapon;
         private GameObject _weaponGO;
 
+
         public void ShowWeapon(WeaponSO weapon)
         {
-            if (_weaponGO != null)
-            {
-                Destroy(_weaponGO);
-            }
+            HideWeapon();
 
             _weapon = weapon;
             if (_weapon.ItemPrefab != null)
@@ -32,6 +30,14 @@ namespace AutoFantasy.Scripts.Heroes
                 Transform handTransform = weaponType.IsLeftHanded ? _leftHandBoneTransform.Find(boneParentName) : _handBoneTransform.Find(boneParentName);
 
                 _weaponGO = Instantiate(_weapon.ItemPrefab, handTransform);
+            }
+        }
+
+        public void HideWeapon()
+        {
+            if ( _weaponGO != null)
+            {
+                Destroy(_weaponGO);
             }
         }
     }

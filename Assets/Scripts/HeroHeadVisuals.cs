@@ -53,7 +53,7 @@ namespace AutoFantasy.Scripts
         private IHeroController _heroController;
         private Hero _hero;
 
-        public void Generate()
+        public void Generate(Item newItem)
         {
             HeroData heroData = _hero.ThisHeroData;
 
@@ -81,8 +81,8 @@ namespace AutoFantasy.Scripts
         public void SetHero(Hero hero)
         {
             _hero = hero;
-            _hero.OnInventoryChanged += Generate;
-            Generate();
+            _hero.OnAddItem += Generate;
+            Generate(null);
         }
 
         private void ClearLists()
@@ -158,7 +158,7 @@ namespace AutoFantasy.Scripts
 
             if (_hero != null)
             {
-                _hero.OnInventoryChanged -= Generate;
+                _hero.OnAddItem -= Generate;
             }
         }
     }

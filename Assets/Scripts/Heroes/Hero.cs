@@ -9,7 +9,8 @@ namespace AutoFantasy.Scripts.Heroes
     {
         public HeroData ThisHeroData;
         public CombatStats ThisCombatStats;
-        public event Action OnInventoryChanged;
+        public event Action<Item> OnAddItem;
+        public event Action<Item> OnRemoveItem;
         public List<Item> HeroInventory;
 
         public int MapPositionQ;
@@ -38,14 +39,14 @@ namespace AutoFantasy.Scripts.Heroes
         {
             HeroInventory.Add(item);
             AddStats(item);
-            OnInventoryChanged?.Invoke();
+            OnAddItem?.Invoke(item);
         }
 
         public void RemoveItem(Item item)
         {
             HeroInventory.Remove(item);
             RemoveStats(item);
-            OnInventoryChanged?.Invoke();
+            OnRemoveItem?.Invoke(item);
         }
 
         public void Randomize(bool isMale)

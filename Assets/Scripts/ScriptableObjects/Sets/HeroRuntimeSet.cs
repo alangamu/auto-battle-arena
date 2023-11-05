@@ -1,4 +1,5 @@
 ﻿using AutoFantasy.Scripts.Heroes;
+using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Variables;
 using System.Collections.Generic;
 using UnityEditor;
@@ -92,7 +93,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         {
             foreach (var item in Items)
             {
-                item.OnInventoryChanged += HeroOnInventoryChanged;
+                item.OnAddItem += HeroOnInventoryChanged;
             }
         }
 
@@ -100,11 +101,11 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Sets
         {
             foreach (var item in Items)
             {
-                item.OnInventoryChanged -= HeroOnInventoryChanged;
+                item.OnAddItem -= HeroOnInventoryChanged;
             }
         }
 
-        private void HeroOnInventoryChanged()
+        private void HeroOnInventoryChanged(Item item)
         {
 #if UNITY_EDITOR
             EditorUtility.SetDirty(this);

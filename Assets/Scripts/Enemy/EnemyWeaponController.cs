@@ -18,6 +18,11 @@ namespace AutoFantasy.Scripts.Enemy
 
         public Transform GetWeaponTransform() => handBoneTransform;
 
+        public void HideWeapon()
+        {
+            throw new NotImplementedException();
+        }
+
         public void ShowWeapon(WeaponSO weapon)
         {
             throw new NotImplementedException();
