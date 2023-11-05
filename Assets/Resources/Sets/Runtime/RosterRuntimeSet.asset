@@ -46,8 +46,8 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 04000000
-    MapPositionQ: 21
-    MapPositionR: 11
+    MapPositionQ: 22
+    MapPositionR: 10
   - ThisHeroData:
       HeroName: Ryan
       SkinColorIndex: 1
@@ -63,8 +63,16 @@ MonoBehaviour:
       IsMale: 1
       HeroId: 39c4d85b-e614-49d8-b87a-6495d65f2aed
     ThisCombatStats:
-      Stats: 05000000020000000100000001000000040000000100000006000000010000000600000006000000010000000100000002000000010000000800000008000000070000000700000003000000
-    HeroInventory: []
+      Stats: 0500000002000000010000000100000004000000010000000600000001000000060000000600000001000000010000000200000001000000080000000800000007000000070000000300000006000000
+    HeroInventory:
+    - ItemRarityId: 1
+      ItemRefId: 21b3f6ed-ca7a-4db3-b506-f02f1bab3a01
+      ItemTypeId: 6
+      ItemWeareableTypeId: 3
+      Amount: 1
+      IsStackable: 0
+      SkillId: 
+      ItemStats: 06000000
     MapPositionQ: 13
     MapPositionR: 4
   - ThisHeroData:

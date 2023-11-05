@@ -9691,8 +9691,6 @@ GameObject:
   - component: {fileID: 1023768348}
   - component: {fileID: 1023768347}
   - component: {fileID: 1023768346}
-  - component: {fileID: 1023768345}
-  - component: {fileID: 1023768344}
   - component: {fileID: 1023768353}
   - component: {fileID: 1023768354}
   - component: {fileID: 1023768355}
@@ -9727,40 +9725,6 @@ RectTransform:
   m_AnchoredPosition: {x: 399.42856, y: -238.18182}
   m_SizeDelta: {x: 798.8571, y: 476.36365}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1023768344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023768342}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072bce4bdb849a6488460ffa7d6d43f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 1599195549}
-  _weaponItemType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
-  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
-  _unarmedType: {fileID: 11400000, guid: 759c8eb9d084aab4ca6aa193dc6fbbd4, type: 2}
---- !u!114 &1023768345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023768342}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd06474c96722f1478b084beca5e004c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handBoneTransform: {fileID: 1915371915}
-  leftHandBoneTransform: {fileID: 1915371916}
-  thisHero: {fileID: 1023768342}
-  weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
-  refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
-  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
 --- !u!114 &1023768346
 MonoBehaviour:
   m_ObjectHideFlags: 0
