@@ -151,11 +151,11 @@ namespace AutoFantasy.Scripts.Battle
 
             movementType.PerformMovement(attackerGameObject.transform, targetTransform, attackDelay, () =>
             {
-                if (attackerGameObject.TryGetComponent(out IAnimationController animationController))
+                if (attackerGameObject.TryGetComponent(out IAnimationMovementController animationMovementController))
                 {
-                    animationController.Attack();
+                    animationMovementController.Animate(weapon == null ? unarmed.AttackAnimationClipsNames[0] : weapon.WeaponType.AttackAnimationClipsNames[0]);
                 }
-            });
+            }, weapon == null ? unarmed : weapon.WeaponType);
         }
 
         private void HeroAttack()

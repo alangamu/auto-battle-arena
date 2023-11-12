@@ -11,6 +11,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Items
         public string RunAnimationClipName;
         public string DeathAnimationClipName;
         public string IdleAnimationClipName;
+        public string GetHitAnimationClipName;
         public List<string> AttackAnimationClipsNames;
         public float Range;
         public MovementTypeSO AttackMovementType;

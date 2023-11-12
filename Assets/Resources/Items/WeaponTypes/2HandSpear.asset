@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: 2Hand-Spear-Run-Forward
   DeathAnimationClipName: 2Hand-Spear-Death1
   IdleAnimationClipName: 2Hand-Spear-Idle
+  GetHitAnimationClipName: 2Hand-Spear-GetHit-F1
   AttackAnimationClipsNames:
   - 2Hand-Spear-Attack1
   - 2Hand-Spear-Attack2

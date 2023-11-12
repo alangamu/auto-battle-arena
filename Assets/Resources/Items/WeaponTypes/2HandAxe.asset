@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: 2Hand-Axe-Run-Forward
   DeathAnimationClipName: 2Hand-Axe-Death1
   IdleAnimationClipName: 2Hand-Axe-Idle
+  GetHitAnimationClipName: 2Hand-Axe-GetHit-F1
   AttackAnimationClipsNames:
   - 2Hand-Axe-Attack1
   - 2Hand-Axe-Attack2

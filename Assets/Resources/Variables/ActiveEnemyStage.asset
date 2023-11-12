@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ActiveEnemyStage
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  Value: {fileID: 0}
+  Value: {fileID: 11400000, guid: 9a6e4b28843625f46827c0c824a70938, type: 2}

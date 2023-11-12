@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: Armed-Run-Forward
   DeathAnimationClipName: Armed-Death1
   IdleAnimationClipName: Armed-Idle
+  GetHitAnimationClipName: Armed-GetHit-F1
   AttackAnimationClipsNames:
   - Spear-Attack-R1
   - Spear-Attack-R2

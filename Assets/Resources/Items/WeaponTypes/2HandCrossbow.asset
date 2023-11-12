@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: 2Hand-Crossbow-Run-Forward
   DeathAnimationClipName: 2Hand-Crossbow-Death1
   IdleAnimationClipName: 2Hand-Crossbow-Idle
+  GetHitAnimationClipName: 2Hand-Crossbow-GetHit-F1
   AttackAnimationClipsNames:
   - 2Hand-Crossbow-Attack1
   - 2Hand-Crossbow-Attack2

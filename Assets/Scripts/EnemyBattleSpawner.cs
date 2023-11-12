@@ -14,8 +14,6 @@ namespace AutoFantasy.Scripts
         private List<Transform> heroesTransforms;
 
         [SerializeField]
-        private GameObject _enemyPrefab;
-        [SerializeField]
         private GameObject _enemyCombatPrefab;
 
         [SerializeField]
@@ -44,18 +42,19 @@ namespace AutoFantasy.Scripts
                 if (enemyGO.TryGetComponent(out EnemyController enemyController))
                 {
                     GameObject visualEnemy = enemyController.Initialize(enemies[i].EnemyVisualPrefab);
+                    enemyController.SetWeaponType(enemies[i].Weapon.WeaponType);
+                    
                     if (visualEnemy.TryGetComponent(out IWeaponController weaponController))
                     {
                         weaponController.ShowWeapon(enemies[i].Weapon);
                     }
 
-                    if (enemyGO.TryGetComponent(out IAnimationController animationController))
+                    if (enemyGO.TryGetComponent(out IAnimationMovementController animationController))
                     {
                         if (visualEnemy.TryGetComponent(out Animator animator))
                         {
                             animationController.SetAnimator(animator);
-                            animationController.SetWeaponType(enemies[i].Weapon.WeaponType);
-                            animationController.Idle();
+                            animationController.Animate(enemies[i].Weapon.WeaponType.IdleAnimationClipName);
                         }
                     }
 

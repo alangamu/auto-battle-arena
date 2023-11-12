@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFantasy.Scripts.ScriptableObjects.Items;
+using System;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
@@ -8,7 +9,7 @@ namespace AutoFantasy.Scripts.ScriptableObjects.MovementTypes
     {
         [SerializeField]
         private float _distance = 1.5f;
-        public override void PerformMovement(Transform attacker, Transform target, float movementDuration, Action action)
+        public override void PerformMovement(Transform attacker, Transform target, float movementDuration, Action action, WeaponTypeSO weaponType)
         {
             Vector3 _startingPosition = attacker.position;
             Vector3 _targetPosition = _startingPosition + Vector3.forward * _distance;

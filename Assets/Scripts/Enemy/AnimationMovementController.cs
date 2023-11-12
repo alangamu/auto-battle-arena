@@ -6,11 +6,20 @@ namespace AutoFantasy.Scripts.Enemy
     public class AnimationMovementController : MonoBehaviour, IAnimationMovementController
     {
         [SerializeField]
-        private Animator animator;
+        private Animator _animator;
 
         public void Animate(string animationClipName)
         {
-            animator.Play(animationClipName);
+            if (_animator == null)
+            {
+                TryGetComponent(out _animator);
+            }
+            _animator.Play(animationClipName);
+        }
+
+        public void SetAnimator(Animator animator)
+        {
+            _animator = animator;
         }
     }
 }

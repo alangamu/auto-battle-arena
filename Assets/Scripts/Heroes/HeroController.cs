@@ -2,6 +2,7 @@
 using AutoFantasy.Scripts.ScriptableObjects.Items;
 using AutoFantasy.Scripts.ScriptableObjects.Sets;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AutoFantasy.Scripts.Heroes
@@ -21,19 +22,36 @@ namespace AutoFantasy.Scripts.Heroes
         private Hero _hero;
         private IWeaponController _weaponController;
         private IAnimationMovementController _animationController;
+        private ICombatController _combatController;
+        private IHealthController _healthController;
+        private Item _weapon;
+        private WeaponSO _heroWeapon;
+        private IEffectController _effectController;
 
         private void OnEnable()
         {
             TryGetComponent(out _weaponController);
             TryGetComponent(out _animationController);
+            TryGetComponent(out _combatController);
+            TryGetComponent(out _healthController);
+            TryGetComponent(out _effectController);
         }
 
         private void OnDisable()
         {
             if (_hero != null)
             {
-                _hero.OnAddItem -= OnAddItem;
+                _hero.OnAddItem -= SetWeapon;
                 _hero.OnRemoveItem -= HeroRemoveItem;
+            }
+            if (_combatController != null)
+            {
+                _combatController.OnGetHit -= GetHit;
+            }
+
+            if (_healthController != null)
+            {
+                _healthController.OnDeath -= HeroDeath;
             }
         }
 
@@ -41,14 +59,14 @@ namespace AutoFantasy.Scripts.Heroes
         {
             _hero = hero;
             OnSetHero?.Invoke(hero);
-            _hero.OnAddItem += OnAddItem;
+            _hero.OnAddItem += SetWeapon;
             _hero.OnRemoveItem += HeroRemoveItem;
 
-            var _heroWeaponItem = _hero.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
+            _weapon = _hero.HeroInventory.Find(x => x.ItemTypeId == _weaponType.ItemTypeId);
 
-            if (_heroWeaponItem != null)
+            if (_weapon != null)
             {
-                OnAddItem(_heroWeaponItem);
+                SetWeapon(_weapon);
             }
             else
             {
@@ -59,15 +77,51 @@ namespace AutoFantasy.Scripts.Heroes
                 }
             }
 
+            if (TryGetComponent(out _combatController))
+            {
+                _combatController.OnGetHit += GetHit;
+            }
+
+            if (_healthController != null)
+            {
+                _healthController.OnDeath += HeroDeath;
+            }
         }
 
-        private void OnAddItem(Item item)
+        private void HeroDeath()
+        {
+            if (_weaponController != null)
+            {
+                _animationController?.Animate(_weapon != null ? _heroWeapon.WeaponType.DeathAnimationClipName : _unnarmed.DeathAnimationClipName);
+            }
+        }
+
+        async private void GetHit(int amount, bool isCritical)
+        {
+            _effectController?.GetHit();
+            if (_weaponController != null)
+            {
+                if (_weapon != null)
+                {
+                    _animationController?.Animate(_weaponController.GetWeapon().WeaponType.GetHitAnimationClipName);
+                    await Task.Delay(700);
+                    _animationController?.Animate(_weaponController.GetWeapon().WeaponType.IdleAnimationClipName);
+                    return;
+                }
+
+                _animationController?.Animate(_unnarmed.GetHitAnimationClipName);
+                await Task.Delay(700);
+                _animationController?.Animate(_unnarmed.IdleAnimationClipName);
+            }
+        }
+
+        private void SetWeapon(Item item)
         {
             if (item.ItemTypeId == _weaponType.ItemTypeId)
             {
                 if (_weaponController != null)
                 {
-                    WeaponSO _heroWeapon = databaseItem.GetItem(item) as WeaponSO;
+                    _heroWeapon = databaseItem.GetItem(item) as WeaponSO;
                     _weaponController.ShowWeapon(_heroWeapon);
                     
                     _animationController?.Animate(_heroWeapon.WeaponType.IdleAnimationClipName);

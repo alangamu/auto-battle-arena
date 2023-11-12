@@ -46,7 +46,8 @@ namespace AutoFantasy.Scripts.ScriptableObjects.Skills
             _movementType.PerformMovement(
                 selectedHeroController == null ? null : selectedHeroController.GetGameObject().transform,
                 selectedEnemyController == null ? null : selectedEnemyController.GetGameObject().transform,
-                _attackDelay.Value, () => { });
+                _attackDelay.Value, () => { },
+                _weaponType);
         }
 
         public void CreateID()

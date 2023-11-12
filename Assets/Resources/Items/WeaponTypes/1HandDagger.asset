@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: Armed-Run-Forward
   DeathAnimationClipName: Armed-Death1
   IdleAnimationClipName: Armed-Idle
+  GetHitAnimationClipName: Armed-GetHit-F1
   AttackAnimationClipsNames:
   - Dagger-Attack-R1
   - Dagger-Attack-R2

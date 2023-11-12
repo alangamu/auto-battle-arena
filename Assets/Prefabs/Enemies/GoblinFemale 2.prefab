@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2012740944345424959}
   - component: {fileID: 625138311988219893}
   - component: {fileID: 1603995716487173967}
-  - component: {fileID: 1737325283398720044}
+  - component: {fileID: 541966071093955065}
   m_Layer: 0
-  m_Name: GoblinFemale
+  m_Name: GoblinFemale 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 4499824393882341709}
   _leftHandBoneTransform: {fileID: 4500086874144463429}
---- !u!114 &1737325283398720044
+--- !u!114 &541966071093955065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

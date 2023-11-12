@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: Staff-Run-Forward
   DeathAnimationClipName: Staff-Death1
   IdleAnimationClipName: Staff-Idle
+  GetHitAnimationClipName: Staff-GetHit-F1
   AttackAnimationClipsNames:
   - Staff-Attack1
   - Staff-Attack2

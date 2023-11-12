@@ -21,6 +21,7 @@ MonoBehaviour:
   RunAnimationClipName: Unarmed-Run-Forward
   DeathAnimationClipName: Unarmed-Death1
   IdleAnimationClipName: Unarmed-Idle
+  GetHitAnimationClipName: Unarmed-GetHit-F1
   AttackAnimationClipsNames:
   - Unarmed-Attack-L1
   - Unarmed-Attack-L2

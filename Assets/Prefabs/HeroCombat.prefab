@@ -658,10 +658,8 @@ GameObject:
   - component: {fileID: 8023785397307188801}
   - component: {fileID: 8942012012820057483}
   - component: {fileID: 8982525778853209906}
-  - component: {fileID: -4541644424525951236}
   - component: {fileID: 5359841432402848595}
   - component: {fileID: 7549042903886563230}
-  - component: {fileID: 3020341778331428411}
   - component: {fileID: 4555174499277333418}
   - component: {fileID: 2915740885101318347}
   - component: {fileID: 6254047918011266624}
@@ -669,6 +667,8 @@ GameObject:
   - component: {fileID: 4003592737050542669}
   - component: {fileID: 2487275267337812595}
   - component: {fileID: 6825736168168054246}
+  - component: {fileID: 846592117062339350}
+  - component: {fileID: 678042576311582964}
   m_Layer: 0
   m_Name: HeroCombat
   m_TagString: Untagged
@@ -728,19 +728,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3331483, y: 1.649309, z: 0.31688246}
   m_Center: {x: 0, y: 0.9408336, z: 0}
---- !u!114 &-4541644424525951236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8021379060007289243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 8942012012820057483}
 --- !u!114 &5359841432402848595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,24 +757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthStat: {fileID: 11400000, guid: 1f5ae5700607fac4387c53a983005cac, type: 2}
---- !u!114 &3020341778331428411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8021379060007289243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd06474c96722f1478b084beca5e004c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handBoneTransform: {fileID: 4269318237502353737}
-  leftHandBoneTransform: {fileID: 4269331994017841805}
-  thisHero: {fileID: 8021379060007289243}
-  weaponType: {fileID: 11400000, guid: e7f29b0757157c3468b451dd24ea83be, type: 2}
-  refreshUI: {fileID: 11400000, guid: 5406951520c086344bb9d7bb9a76289d, type: 2}
-  databaseItem: {fileID: 11400000, guid: 237396e38f4eb484f90c6826e67ec77c, type: 2}
 --- !u!114 &4555174499277333418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,6 +1453,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarSprite: {fileID: 926334494412602143}
   reduceSpeed: 2
+--- !u!114 &846592117062339350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021379060007289243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dada101c085a00c4bb67b46808064cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _handBoneTransform: {fileID: 4269318237502353737}
+  _leftHandBoneTransform: {fileID: 4269331994017841805}
+--- !u!114 &678042576311582964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021379060007289243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8942012012820057483}
 --- !u!1001 &6081062627790732458
 PrefabInstance:
   m_ObjectHideFlags: 0

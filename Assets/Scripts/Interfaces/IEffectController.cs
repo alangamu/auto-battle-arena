@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
-
-namespace AutoFantasy.Scripts.Interfaces
+﻿namespace AutoFantasy.Scripts.Interfaces
 {
     public interface IEffectController 
     {
-
+        void GetHit();
+        void GetHeal();
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoblinFemale
   m_EditorClassIdentifier: 
   _enemyVisual: {fileID: 2010064170134537189, guid: a598643ca84c9a94e97f69bcd2b5a4f4, type: 3}
-  _weapon: {fileID: 11400000, guid: 31035b99e28fe8c41a2dae29578ec8df, type: 2}
+  _weapon: {fileID: 11400000, guid: b158d105eb29ab74490d23383036a944, type: 2}
   _maxHealth: 300

@@ -17,8 +17,6 @@ namespace AutoFantasy.Scripts.Enemy
         [SerializeField]
         private GameEvent _hitTargetEvent;
 
-        private ICombatController _combatController;
-
         public void Hit()
         {
             _hitTargetEvent.Raise();
@@ -45,34 +43,16 @@ namespace AutoFantasy.Scripts.Enemy
             Destroy(stepEffect, 1f);
         }
 
-        private void OnEnable()
+        public void GetHit()
         {
-            if (TryGetComponent(out _combatController))
-            {
-                _combatController.OnGetHit += OnGetHit;
-            }
+            GameObject hitEffect = Instantiate(bloodEffectPrefab, transform.position + Vector3.up, Random.rotation, transform);
+            Destroy(hitEffect, 1f);
         }
 
-        private void OnDisable()
+        public void GetHeal()
         {
-            if (_combatController != null)
-            {
-                _combatController.OnGetHit -= OnGetHit;
-            }
-        }
-
-        private void OnGetHit(int damage, bool isCritical)
-        {
-            if (damage < 0)
-            {
-                GameObject healEffect = Instantiate(_healEffectPrefab, transform.position + Vector3.up * 2f, Random.rotation, transform);
-                Destroy(healEffect, 1f);
-            }
-            else
-            {
-                GameObject hitEffect = Instantiate(bloodEffectPrefab, transform.position + Vector3.up, Random.rotation, transform);
-                Destroy(hitEffect, 1f);
-            }
+            GameObject healEffect = Instantiate(_healEffectPrefab, transform.position + Vector3.up * 2f, Random.rotation, transform);
+            Destroy(healEffect, 1f);
         }
     }
 }

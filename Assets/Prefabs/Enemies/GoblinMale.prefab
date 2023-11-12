@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 862371961461645560}
   - component: {fileID: 1780501270162950962}
   - component: {fileID: -3041666246162492396}
-  - component: {fileID: 2094592458592092278}
   m_Layer: 0
   m_Name: GoblinMale
   m_TagString: Untagged
@@ -69,23 +68,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handBoneTransform: {fileID: 4813790045892419521}
   _leftHandBoneTransform: {fileID: 4813932158145353263}
---- !u!114 &2094592458592092278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863667714171225890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b39f38800edbf541b79fd65a4fd3c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepEffectPrefab: {fileID: 1878560746460868, guid: 2397083e876e5b1408fcc1333f50c082, type: 3}
-  bloodEffectPrefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
-  _healEffectPrefab: {fileID: 1881552412633134, guid: da7875cab77480d49972b42ca872af40, type: 3}
-  _shootEvent: {fileID: 11400000, guid: 69ddb166254a9124590c569b0088ba95, type: 2}
-  _hitTargetEvent: {fileID: 11400000, guid: e4cf4c938623c1347bdd0a17caad8b6e, type: 2}
 --- !u!1 &919422861783827040
 GameObject:
   m_ObjectHideFlags: 0

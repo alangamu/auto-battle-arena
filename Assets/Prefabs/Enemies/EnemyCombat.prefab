@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 3264703101492404342}
   - component: {fileID: 5103178864769571429}
   - component: {fileID: 3162465610677006427}
-  - component: {fileID: 3687568596674862403}
+  - component: {fileID: -4766215976154465455}
   m_Layer: 0
   m_Name: EnemyCombat
   m_TagString: Untagged
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyVisualTransform: {fileID: 6667265498676722610}
---- !u!114 &3687568596674862403
+--- !u!114 &-4766215976154465455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7289150523029843523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b553e48ea6a88f4dbf8da8f8d0d27f3, type: 3}
+  m_Script: {fileID: 11500000, guid: c0ec01018c44aa348b813ed528cc506c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
