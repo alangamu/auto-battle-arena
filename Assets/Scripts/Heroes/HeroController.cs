@@ -22,7 +22,6 @@ namespace AutoFantasy.Scripts.Heroes
         private Hero _hero;
         private IWeaponController _weaponController;
         private IAnimationMovementController _animationController;
-        private ICombatController _combatController;
         private IHealthController _healthController;
         private Item _weapon;
         private WeaponSO _heroWeapon;
@@ -32,7 +31,6 @@ namespace AutoFantasy.Scripts.Heroes
         {
             TryGetComponent(out _weaponController);
             TryGetComponent(out _animationController);
-            TryGetComponent(out _combatController);
             TryGetComponent(out _healthController);
             TryGetComponent(out _effectController);
         }
@@ -44,14 +42,10 @@ namespace AutoFantasy.Scripts.Heroes
                 _hero.OnAddItem -= SetWeapon;
                 _hero.OnRemoveItem -= HeroRemoveItem;
             }
-            if (_combatController != null)
-            {
-                _combatController.OnGetHit -= GetHit;
-            }
-
             if (_healthController != null)
             {
                 _healthController.OnDeath -= HeroDeath;
+                _healthController.OnHealthChange -= GetHit;
             }
         }
 
@@ -77,14 +71,10 @@ namespace AutoFantasy.Scripts.Heroes
                 }
             }
 
-            if (TryGetComponent(out _combatController))
-            {
-                _combatController.OnGetHit += GetHit;
-            }
-
             if (_healthController != null)
             {
                 _healthController.OnDeath += HeroDeath;
+                _healthController.OnHealthChange += GetHit;
             }
         }
 
@@ -92,16 +82,17 @@ namespace AutoFantasy.Scripts.Heroes
         {
             if (_weaponController != null)
             {
+                _healthController.OnHealthChange -= GetHit;
                 _animationController?.Animate(_weapon != null ? _heroWeapon.WeaponType.DeathAnimationClipName : _unnarmed.DeathAnimationClipName);
             }
         }
 
-        async private void GetHit(int amount, bool isCritical)
+        async private void GetHit(float amount)
         {
             _effectController?.GetHit();
             if (_weaponController != null)
             {
-                if (_weapon != null)
+                if (_weapon.ItemRefId != null)
                 {
                     _animationController?.Animate(_weaponController.GetWeapon().WeaponType.GetHitAnimationClipName);
                     await Task.Delay(700);
