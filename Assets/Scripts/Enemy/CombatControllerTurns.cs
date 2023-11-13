@@ -109,7 +109,7 @@ namespace AutoFantasy.Scripts
             _heroCombatRuntimeSet.KillThisHero(this);
             OnDeath?.Invoke();
             //TODO: find a better way
-            Invoke(nameof(Death), 1f);
+            Invoke(nameof(Death), 2f);
         }
 
         private void Death()

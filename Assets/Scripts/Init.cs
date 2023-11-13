@@ -93,6 +93,7 @@ namespace AutoFantasy.Scripts
 
         private void ResetEnemiesDefeated()
         {
+            print("reset enemies");
             MapEnemyStageSO[] enemyStages = Resources.LoadAll<MapEnemyStageSO>("EnemyStages");
 
             foreach (var item in enemyStages)

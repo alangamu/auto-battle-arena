@@ -92,12 +92,15 @@ namespace AutoFantasy.Scripts.Heroes
             _effectController?.GetHit();
             if (_weaponController != null)
             {
-                if (_weapon.ItemRefId != null)
+                if (_weapon != null)
                 {
-                    _animationController?.Animate(_weaponController.GetWeapon().WeaponType.GetHitAnimationClipName);
-                    await Task.Delay(700);
-                    _animationController?.Animate(_weaponController.GetWeapon().WeaponType.IdleAnimationClipName);
-                    return;
+                    if (_weapon.ItemRefId != null)
+                    {
+                        _animationController?.Animate(_weaponController.GetWeapon().WeaponType.GetHitAnimationClipName);
+                        await Task.Delay(700);
+                        _animationController?.Animate(_weaponController.GetWeapon().WeaponType.IdleAnimationClipName);
+                        return;
+                    }
                 }
 
                 _animationController?.Animate(_unnarmed.GetHitAnimationClipName);

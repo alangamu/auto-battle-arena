@@ -41,7 +41,6 @@ namespace AutoFantasy.Scripts.UI
             }
 
             enemyObject.transform.SetParent(_enemyVisualTransform);
-            enemyObject.transform.Rotate(new Vector3(0, 180, 0));
         }
     }
 }

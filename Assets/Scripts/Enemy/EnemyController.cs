@@ -12,7 +12,6 @@ namespace AutoFantasy.Scripts.Enemy
 
         private GameObject _enemyObject;
         private IHealthController _healthController;
-        private ICombatController _combatController;
         private IAnimationMovementController _animationController;
         private IWeaponController _weaponController;
         private WeaponTypeSO _weaponType;
@@ -25,11 +24,7 @@ namespace AutoFantasy.Scripts.Enemy
             if (TryGetComponent(out _healthController))
             {
                 _healthController.OnDeath += OnDeath;
-            }
-
-            if (TryGetComponent(out _combatController))
-            {
-                _combatController.OnGetHit += GetHit;
+                _healthController.OnHealthChange += GetHit;
             }
 
             _enemyObject.TryGetComponent(out _weaponController);
@@ -49,15 +44,11 @@ namespace AutoFantasy.Scripts.Enemy
             if (_healthController != null)
             {
                 _healthController.OnDeath -= OnDeath;
-            }
-
-            if (_combatController != null)
-            {
-                _combatController.OnGetHit -= GetHit;
+                _healthController.OnHealthChange -= GetHit;
             }
         }
 
-        async private void GetHit(int amount, bool isCritical)
+        async private void GetHit(float amount)
         {
             if (_weaponController != null && _weaponType != null)
             {
@@ -72,6 +63,7 @@ namespace AutoFantasy.Scripts.Enemy
         {
             if (_weaponController != null && _weaponType != null)
             {
+                _healthController.OnHealthChange -= GetHit;
                 _animationController?.Animate(_weaponType.DeathAnimationClipName);
             }
         }

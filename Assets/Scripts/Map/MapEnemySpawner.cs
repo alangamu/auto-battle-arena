@@ -34,6 +34,11 @@ namespace AutoFantasy.Scripts.Map
 
             foreach (var enemyStage in enemyStages)
             {
+                if (enemyStage.IsDefeated)
+                {
+                    continue;
+                }
+
                 ITile tile = _tiles.Items.Find(x => x.GetHex().Q == enemyStage.Q && x.GetHex().R == enemyStage.R);
                 GameObject enemy = Instantiate(_enemyPrefab, tile.GetActiveTile());
 
