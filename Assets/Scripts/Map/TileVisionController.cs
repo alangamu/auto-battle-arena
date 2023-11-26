@@ -21,9 +21,13 @@ namespace AutoFantasy.Scripts.Map
 
         public void SetInactive()
         {
-            _tileHidden.SetActive(false);
+            MeshFilter mf = _tileInactive.GetComponent<MeshFilter>();
             _tileInactive.SetActive(true);
-            _tileActive.SetActive(false);
+            mf.mesh = _tileActive.GetComponent<MeshFilter>().mesh;
+            mf.transform.rotation = _tileActive.transform.rotation;
+
+            _tileHidden.SetActive(false);
+            //_tileActive.SetActive(false);
         }
 
         public void SetHidden()

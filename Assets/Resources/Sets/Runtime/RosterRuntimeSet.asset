@@ -28,7 +28,7 @@ MonoBehaviour:
       IsMale: 1
       HeroId: 3
     ThisCombatStats:
-      Stats: 040000000400000001000000040000000500000001000000050000000200000004000000070000000700000007000000080000000800000005000000020000000200000006000000050000000200000003000000030000000300000003000000060000000400000005000000
+      Stats: 04000000010000000400000001000000050000000200000004000000070000000700000007000000080000000800000005000000020000000200000006000000050000000200000003000000030000000300000003000000060000000400000005000000
     HeroInventory:
     - ItemRarityId: 1
       ItemRefId: fd54a843-2494-4c37-9f38-36325b80ac94
@@ -38,22 +38,6 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 02000000
-    - ItemRarityId: 1
-      ItemRefId: 0d7983d1-004c-41c7-9b2d-e5d59f0c5066
-      ItemTypeId: 6
-      ItemWeareableTypeId: 1
-      Amount: 1
-      IsStackable: 0
-      SkillId: 
-      ItemStats: 04000000
-    - ItemRarityId: 1
-      ItemRefId: 4a502248-ab70-4220-82fb-6c03bdff3726
-      ItemTypeId: 1
-      ItemWeareableTypeId: 4
-      Amount: 1
-      IsStackable: 0
-      SkillId: 
-      ItemStats: 05000000
     MapPositionQ: 9
     MapPositionR: 12
   - ThisHeroData:
@@ -116,8 +100,8 @@ MonoBehaviour:
       IsStackable: 0
       SkillId: 
       ItemStats: 02000000
-    MapPositionQ: 15
-    MapPositionR: 4
+    MapPositionQ: 14
+    MapPositionR: 2
   - ThisHeroData:
       HeroName: Charlotte
       SkinColorIndex: 1
@@ -133,7 +117,7 @@ MonoBehaviour:
       IsMale: 0
       HeroId: 29432307-f25a-48b5-b766-da18d3c1656b
     ThisCombatStats:
-      Stats: 040000000600000006000000010000000100000001000000060000000400000005000000010000000500000003000000060000000500000004000000080000000800000007000000070000000500000003000000
+      Stats: 040000000600000006000000010000000100000001000000060000000400000005000000010000000500000006000000050000000400000008000000080000000700000007000000050000000300000003000000
     HeroInventory:
     - ItemRarityId: 1
       ItemRefId: 4a502248-ab70-4220-82fb-6c03bdff3726
@@ -144,9 +128,9 @@ MonoBehaviour:
       SkillId: 
       ItemStats: 05000000
     - ItemRarityId: 1
-      ItemRefId: 3cf72b5a-3d0d-4955-bb49-82b29b23f2bb
+      ItemRefId: 037fef13-1602-4398-ac65-95bde0bad37c
       ItemTypeId: 6
-      ItemWeareableTypeId: 6
+      ItemWeareableTypeId: 1
       Amount: 1
       IsStackable: 0
       SkillId: 
